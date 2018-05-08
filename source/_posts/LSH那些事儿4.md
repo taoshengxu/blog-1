@@ -1,0 +1,117 @@
+---
+layout: post
+title: LSH那些事儿 (IV) - p-stable LSH
+categories:
+  - Index
+tags:
+  - Algorithms
+  - Hashing
+  - indexing
+  - LSH
+  - Principles
+  - similarity measurement
+draft: false
+id: 172
+date: 2013-05-06 11:41:46
+permalink:
+description:
+cover_img:
+toc-disable:
+comments:
+---
+
+> LSH是用局部敏感的方法解决近似最近邻搜索的问题。在原始的LSH方法中，通过将原始空间嵌入到Hamming空间中，将[latex]d[/latex]维空间转换成[latex]{d}' = Cd[/latex]维的Hamming空间（C是指原始空间中点的坐标的最大值)，使用[latex](r,(1+e)r,1-r/{d}',1-(1+e)r/{d}')[/latex]-sensetive 哈希函数来解决[latex](r,e)[/latex]-Neighbor问题。
+> 
+>   而后来提出的p-stable LSH算法中，不需要将原始空间嵌入到Hamming空间中，可以直接在欧几里得空间下进行局部敏感哈希运算。
+
+### 1\. 背景介绍
+
+p-stable LSH应用在d维[latex]L_p[/latex]-norm下的欧几里得空间中，$latex 0 < p \leq 2 $
+
+p-stable LSH是LSH的进化版本，要解决的问题相同，而使用的方法和应用环境不同。因此，下面重点介绍p-stable LSH的应用环境，对于LSH的细节参见[第一篇](http://wp.me/p61l9A-1B)。
+
+p-stable LSH使用的$latex (r,cr,p_1,p_2)$-sensetive哈希中，$latex c=1+e$，并且不失一般性，设$latex R=1$。下面的工作主要是确定在1（即$latex r$）和 c（即$latex cr$）下的$latex p_1$与$latex p_2$。
+
+### 2\. 概念解释
+
+p-stable LSH之所以会叫这个名字，是因为该算法应用到p-stable distribution（p-稳定分布）的概念。下面给出的就是p-稳定分布的概念：
+
+> **_Definition 1_**
+> 
+>   一个分布$latex D$如果称为p-稳定分布，则对于任意n个实数$latex v_1, v_2, ..., v_n$和符合$latex D$分布的n个独立同分布随机变量$latex X_1, X_2, ..., X_n$，都存在一个$latex p \geq 0$，使得变量$latex \sum_i v_i X_i$和$latex \sum_{i} (|v_i|^p)^{1/p}X$ (i.e., $latex ||v||_p X$) 具有相同的分布，此处$latex X$是一个符合$latex D$分布的随机变量。
+
+p-稳定分布不是具体的分布，而是满足某条件的分布族。
+
+> 1.  Cauchy Distribution, defined by the density function [latex]c(x) = \frac{1}{\pi} \frac{1}{1+x^2}[/latex], is 1-stable.
+> 2.  Gaussian Distribution, defined by the density function [latex]g(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}[/latex], is 2-stable.
+
+p-stable分布有一个重要的应用，就是可以估计给定向量$latex v$在欧几里得空间p-norm下长度，记为[latex]||v||_p[/latex]。
+
+方法是对于取定的d维向量$latex v$，从p-稳定分布中抽取d个随机变量组成d维向量$latex a$，计算$latex a$与$latex v$的点积$latex a \cdot v$（点积的概念是将向量对应位置的元素相乘后所有乘积之和）。
+
+根据p-stable的定义，由于$latex a \cdot v = \sum_{i} (|v_i|^p)^{\frac{1}{p}}X$ (i.e., $latex ||v||_p X$)，具有相同的分布，此处$latex X$是一个符合$latex D$分布的随机变量。选取若干个向量$latex a$，计算多个$latex a \cdot v$的值，称为向量$latex v$的概略（sketch），利用$latex v$的“sketch”可以用来估算$latex ||v||_p$的值。
+
+### 3\. 局部敏感哈希函数
+
+在p-stable LSH中，$latex a$与$latex v$的点积$latex a \cdot v$不用来估计$latex ||v||_p$的值，而是用来生成哈希函数族，且该哈希函数族是局部敏感的（即空间中距离较近的点映射后发生冲突的概率高，空间中距离较远的点映射后发生冲突的概率低）。
+
+大体方法是将一条直线分成等长且长度为r的若干段，给映射到同一段的点赋予相同的hash值，映射到不同段的点赋予不同的hash值。($latex a \cdot v_1 - a \cdot v_2$)是映射后的距离，而其值与$latex ||v_1 - v_2||_p X$同分布，原始距离$latex ||v_1 - v_2||_p$较小时，映射后的距离也小，因此使用点积来生成哈希函数族可以保持局部敏感性。
+
+哈希函数族的形式为：
+
+> [latex]h_{a,b} = \left \lfloor \frac{a \cdot v + b}{r} \right \rfloor[/latex]
+
+其中b是(0,r)里的随机数，r为直线上分段的段长。哈希族中的函数根据$latex a$和$latex b$的不同建立函数索引。
+
+从哈希函数族中随机选取一个哈希函数，现在估计两个向量$latex v_1$和$latex v_2$在该哈希函数下映射后发生冲突的概率。
+
+定义符合p-stable分布的随机变量绝对值的概率密度函数为$latex f_p(t)$。设$latex c=||v_1 - v_2||_p$，则$latex a \cdot v_1 - a \cdot v_2$与$latex cX$同分布，$latex X$为p-stable分布下的随机变量。给出概率的计算公式如下，之后会有详细分析。
+
+> $latex p(c) = Pr_{a,b}[h_{a,b}(v_1) = h_{a,b}(v_2)] = \int_0^r \frac{1}{c}f_p(\frac{t}{c})(1-\frac{t}{r})dt $
+
+其中$latex |a \cdot v_1 - a \cdot v_2| = ||v_1 - v_2||_p|X| = c|X|$，$latex X$为p-stable分布下的随机变量，$latex |X|$的概率密度函数为$latex f_p(t)$。
+
+若要向量$latex v_1$和$latex v_2$映射后发生冲突，需要满足如下条件：$latex v_1$和$latex v_2$通过与$latex a$进行点积运算分别映射到一段长度为r线段后，再通过加b运算，能使映射后的点在同一条线段上。
+
+### 4\. 证明
+
+以下是对该概率公式正确性的证明
+
+设点$latex a \cdot v_1$在点M处，点$latex a \cdot v_2$在点N处，此处设N点在靠近Q的位置。
+
+#### 4.1 b对映射后点的影响
+
+在加b后，因为$latex b \geq 0$，因此加b后点会后移。不失一般性，设$latex r=1$，则有以下两种情况：
+
+1.  若映射到同一条线段上，不妨设为线段PQ（P为前端点，Q为后端点），设|MN|=t，|NQ|=m，则若要保证加b后点M和点N仍在同一条线段中，则要满足$latex 0 \leq b \leq m$（此时加b后M,N仍在线段PQ中），或者$latex t+m \leq b < r$（此时加b后点M,N落入下一条线段中）。</p>
+2.  若映射到不同线段上，但|MN| &lt; r（此时必在相邻线段中），不妨设相邻两条线段为PQ和QR，设|MQ|=m，则|QN|=t-m，则若要保证加b后点M和点N仍在同一条线段中，则要满足$latex m < b < r-(t-m)$。
+
+<p>可以看到，不管是那种情况，b的取值范围都是r-t，而b是(0,r)内的随机数，因此取得满足条件b的概率是$latex (r-t)/r=1-t/r$。现在只需讨论向量$latex v_1$和$latex v_2$经过$latex a$的点积映射后的距离为t的概率（因为讨论b是设|MN|=t，即b是在向量映射后距离为t的情况下讨论的），即求$latex | a \cdot v_1 - a \cdot v_2 | = || v_1 - v_2||_p |X| = c|X| = t$的概率。
+
+#### 4.2 点积对映射后点的影响
+
+因为随机变量$latex |X|$的概率密度函数为$f_p(x)$，而这里要求的是$latex c|X| = t$的概率。
+
+在这里有一个误区，要注意的是，$latex c|X| = t$的概率并不是$latex Pr(|X|=t/c)=f_p(t/c)$，这是因为$latex |X|$是连续随机变量，不能通过某点的概率来生成其密度函数，虽然密度函数的意义是$latex f_p(x)=Pr(|X|=x)$，但反过来是不成立的。因此，要求$latex c|X|=t$的概率，只能通过密度函数的定义来解决。
+
+密度函数的大致定义是
+
+> 对于随机变量X的分布函数$latex F(x)$，如果存在函数$latex f(x)$，使得$latex F(x)$是$latex f(x)$在全部定义域内（一般就可取负无穷到正无穷，随机变量取不到的地方概率为0）的积分，那么$latex f(x)$就称为$latex X$的概率密度函数。
+> 
+>   $latex F(x) = Pr(X < x)$，$latex f(x) = Pr(X = x)$。
+
+这里再强调一遍，对于连续型随机变量，第二个式子的反过来没有意义，因为连续型随机变量在某点的概率恒为0。而分布函数代表的是某段区域内概率之和，因此，第二个式子反过来推导是有意义的。
+
+因此，要求$latex c|X| = t$的概率，可用如下方法：设随机变量$latex Y=c|X|$，则原始问题转化成求$latex Y=t$的概率。
+
+设$latex |X|$的分布函数为$latex F_p(t)$，Y的分布函数为$latex G_p(t)$
+
+> $latex G_p(t) = Pr(Y < t) = Pr(c|X| < t) = Pr(|X| < t/c) = F_p(t/c)$
+
+因此，$latex c|X| = t$的概率为$latex G_p'(t) = F_p'(t/c) = 1/c \cdot f_p(t/c)$，这样，经过点积映射后，两向量在线上点的距离等于t的概率便求出来了。
+
+至此，我们得到了原始空间中的两个向量经过点积运算后映射到线段上的距离为t的概率以及在距离为t的前提下加b后能落在同一线段上的概率。因为如果两个向量经过点积后映射到线段上的距离大于r，且b是(0,r)上的随机数，因此这种情况下不论b取多少，两点都不可能落入同一条线段上。因此，t的取值范围是(0,r)。综上所述，该概率公式得证。
+
+在上概率公式中，对于给定的r，概率p(c)是关于c的单调递减函数。即，$latex c=||v_1 - v2||$越大，映射后发生冲突的概率就越小，这符合局部敏感哈希函数的要求。因此，所选取的哈希函数族是局部敏感哈希函数族，并且是$latex (r1,r2,p1,p2)$-敏感的，其中$latex p_1 = p(1)$，$latex p_2 = p(c)$，$latex r2/r1 = c$。$latex c > 1$时，满足$latex p_1 > p_2$，$latex r_1 < r_2$。
+
+以上就是对p-stable LSH的讨论，它通过涉入稳定分布和点积的概念，实现了LSH算法在欧几里得空间下的直接应用，而不需要嵌入Hamming空间。p-stable LSH中，度量是欧几里得空间下的$latex L_p$准则，即向量$latex v_1$与$latex v_2$的距离定义为$latex ||v_1 - v_2||_p$，然后通过设定的哈希函数将原始点映射到直线的等长线段上，每条线段便相当于一个哈希桶，与LSH方法类似，距离较近的点映射到同一哈希桶（线段）中的概率大，距离较远的点映射到同一哈希桶中的概率小，正好符合局部敏感的定义。
