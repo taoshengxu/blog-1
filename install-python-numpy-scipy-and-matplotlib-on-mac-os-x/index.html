@@ -9,7 +9,7 @@
     <meta name="description" content="This is the site where Steven post his thoughts, ideas and feelings">
     <meta name="author" content="Huan Li">
     <meta name="keyword" content="Computer Science, Travel Notes">
-    <link rel="canonical" href="https://longaspire.github.io/blog/blog/LSH那些事儿2/">
+    <link rel="canonical" href="https://longaspire.github.io/blog/blog/install-python-numpy-scipy-and-matplotlib-on-mac-os-x/">
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -21,7 +21,7 @@
 
     <title>
         
-        LSH那些事儿 (II) - 图说｜Little Stone - Huan Li&#39;s Blog
+        Install Python, NumPy, SciPy, and matplotlib on Mac OS X｜Little Stone - Huan Li&#39;s Blog
         
     </title>
 
@@ -150,38 +150,41 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                     <div class="site-heading">
-                        <h1>LSH那些事儿 (II) - 图说</h1>
+                        <h1>Install Python, NumPy, SciPy, and matplotlib on Mac OS X</h1>
                         
                         
                           <span class="meta">
                                <span class="meta-item">Author: Huan Li</span>
-                               <span class="meta-item">Date: Apr 18, 2013</span>
+                               <span class="meta-item">Date: May 30, 2013</span>
                                
                                  <span class="meta-item">Updated On: May 8, 2018</span>
                                
                           </span>
                           <div class="tags text-center">
                               Categories: 
-                              <a class="tag" href="/blog/categories/#Data Mining"
-                                 title="Data Mining">Data Mining</a>
+                              <a class="tag" href="/blog/categories/#Mac"
+                                 title="Mac">Mac</a>
                               
-                              <a class="tag" href="/blog/categories/#Index"
-                                 title="Index">Index</a>
+                              <a class="tag" href="/blog/categories/#Python"
+                                 title="Python">Python</a>
                               
                           </div>
                           <div class="tags text-center">
                               Tags: 
-                              <a class="tag" href="/blog/tags/#Hashing"
-                                 title="Hashing">Hashing</a>
+                              <a class="tag" href="/blog/tags/#Mac"
+                                 title="Mac">Mac</a>
                               
-                              <a class="tag" href="/blog/tags/#indexing"
-                                 title="indexing">indexing</a>
+                              <a class="tag" href="/blog/tags/#matplotlib"
+                                 title="matplotlib">matplotlib</a>
                               
-                              <a class="tag" href="/blog/tags/#LSH"
-                                 title="LSH">LSH</a>
+                              <a class="tag" href="/blog/tags/#numpy"
+                                 title="numpy">numpy</a>
                               
-                              <a class="tag" href="/blog/tags/#Principles"
-                                 title="Principles">Principles</a>
+                              <a class="tag" href="/blog/tags/#Python"
+                                 title="Python">Python</a>
+                              
+                              <a class="tag" href="/blog/tags/#scipy"
+                                 title="scipy">scipy</a>
                               
                           </div>
                         
@@ -201,52 +204,73 @@
       <div class="col-lg-8 col-lg-offset-1 col-sm-9">
           
           
-          <h3 id="Locality-Sensitive-Hashing的定义"><a href="#Locality-Sensitive-Hashing的定义" class="headerlink" title="Locality Sensitive Hashing的定义"></a>Locality Sensitive Hashing的定义</h3><p>Locality Sensitive Hashing (LSH) 是构造一种Hash函数集 $ { D | R^d \rightarrow U}$，其中$ d $是点的维数，使得对任意的点$ p$，$ q$有</p>
-<ol>
-<li>如果$ || p - q || \leq r$, 那么$ Pr[D(p) = D(q)]$要很高</li>
-<li>如果$ || p - q || \geq cr$, 那么$ Pr[D(p) = D(q)] $要很低</li>
-</ol>
-<p>如下图：</p>
-<p><img src="http://longaspire.com/blog/wp-content/uploads/2013/04/201203141042366430.png" alt="figure 1" title="Figure 1"></p>
-<h3 id="基于投影的LSH原理"><a href="#基于投影的LSH原理" class="headerlink" title="基于投影的LSH原理"></a>基于投影的LSH原理</h3><p><img src="http://longaspire.com/blog/wp-content/uploads/2013/04/201203141042388707.png" alt="figure 2"></p>
-<p>如图有四个点：</p>
-<p>$ A(x_a, y_a), B(x_b, y_b), C(x_c, y_c), D(x_d, y_d)$</p>
-<p>如果取的Hash函数为</p>
-<p>$ H(A(x_a,y_a)) = x_a $</p>
-<p>即在X轴上的投影，那么就有$ A,<del>B,</del>C,<del>D$在X轴上的投影分别是：$ x_a,</del>x_b,<del>x_c,</del>x_d$</p>
-<p>重点来了，空间相近的点在X轴上的投影也是相近的，这样我们可以利用这个特性来做临近点的查询，基于投影的LSH的基本原理就是这样的。</p>
-<p>不过上面这种方法是能能保证挨得近的点hash后得到的一维值也挨的很近，但是一些本来不近的点在hash后，得到的也是很近的值，如A与D点。</p>
-<h3 id="P1-P2-r-cr-sensitive-LSH的图解"><a href="#P1-P2-r-cr-sensitive-LSH的图解" class="headerlink" title="(P1,P2,r,cr)-sensitive LSH的图解"></a>(P1,P2,r,cr)-sensitive LSH的图解</h3><p>先给出定义：</p>
-<blockquote>
-<p>A family $ H$ of functions $ D: R^d \rightarrow U $ is called $ (P_1,P_2,r,cr) $-sensitive, if for any $ p$，$ q$:</p>
-<ol>
-<li>if $ || p - q || \leq r$, then $ Pr[g(p) = g(q)] &gt; P_1$</li>
-<li>if $ || p - q || \geq cr$, then $ Pr[g(p) = g(q)] &lt; P_2$</li>
-</ol>
-</blockquote>
-<p>第2节构造的$ H(A(x_a,y_a)) = x_a $（即在X轴上的投影）是不能满足这个要求的， 解决的办法是：</p>
-<p><img src="http://longaspire.com/blog/wp-content/uploads/2013/04/201203141042424690.png" alt="201203141042424690"></p>
-<p>如图，基本想法也是很简单的，就是在空间多做几条线，这样本来很久的点，无论在哪条线上的映射都是很近的，而挨的不近点可能在某个方向的的投影很近，但在其它方向就可能很远，这样，把每个方向的投影结果都利用，也就是说可以对这些结果在进行hash：</p>
-<blockquote>
-<p>$ h_1(a_1,a_2,…,a_k) = ((\sum_{i=1}^{k}\hat{r}_i a_i) ~ mod ~ prime) ~ mod ~ tableSize$</p>
-</blockquote>
-<p>就可以达到定义的要求。 现在的问题是：空间线怎么取？到底要取多少条这样的线？</p>
-<p>空间的线怎样取，在$ E^2$LSH中，是根据标准正态分布取的，为什么是这样呢？</p>
-<p>我觉得是便于理论证明 可以满足$ (P_1,P_2,r,cr) $-sensitive LSH的定义。证明可以看看作者的论文和相关文档。</p>
+          <p><strong>Update: These instructions are over a year old, though they may still work for you. See the <a href="http://penandpants.com/install-python/" title="Install Python" target="_blank" rel="noopener">“Install Python”</a> page for the most recent instructions.</strong></p>
+<p>A bit ago a friend and I both had fresh Mac OS X Lion installs so I helped him set up his computers with a scientific Python setup and did mine at the same time.</p>
+<p>These instructions are for Lion but should work on Snow Leopard or Mountain Lion without much trouble. On Snow Leopard you won’t install Xcode via the App Store, you’ll have to download it from Apple.</p>
+<p>After I’d helped my friend I found <a href="http://www.thisisthegreenroom.com/2011/installing-python-numpy-scipy-matplotlib-and-ipython-on-lion/" target="_blank" rel="noopener">this blog post</a> describing a procedure pretty much the same as below.</p>
+<p>Update: If doing all the stuff below doesn’t seem like your cup of tea, it’s also possible to install Python, NumPy, SciPy, and matplotlib using double-click binary installers (resulting in a much less flexible installation), <a href="http://penandpants.com/2012/03/01/install-python-2/" target="_blank" rel="noopener">see this post</a> to learn how.</p>
+<h1 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h1><p>You will need Apple’s developer tools in order to compile Python and the other installs. On Lion you can install <a href="https://developer.apple.com/xcode/" target="_blank" rel="noopener">Xcode from the App Store</a>, on Snow Leopard you’ll have to get an older Xcode from <a href="http://developer.apple.com/downloads" target="_blank" rel="noopener">developer.apple.com</a>.</p>
+<p>I use the Xcode editor because I like its syntax highlighting, code completion, and organizer. However, I use hardly any of its features and unless you’re an iOS or Mac developer you probably won’t either. If you prefer another editor it’s possible to get only the libraries and compilers that you need with the <a href="http://developer.apple.com/downloads" target="_blank" rel="noopener">Command Line Tools for Xcode</a>. (You’ll need a free Apple ID.) (See also <a href="http://www.kennethreitz.com/xcode-gcc-and-homebrew.html" target="_blank" rel="noopener">http://www.kennethreitz.com/xcode-gcc-and-homebrew.html</a>.)</p>
+<h1 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h1><p><a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a> is an excellent package manager for Mac OS X that can install a <a href="https://github.com/mxcl/homebrew/tree/master/Library/Formula" target="_blank" rel="noopener">large number of packages</a>. To install it simply launch a terminal and enter</p>
+<pre><code>ruby -e &quot;$(curl -fsSkL raw.github.com/mxcl/homebrew/go)&quot;
+</code></pre><p>Homebrew installs things to <code>/usr/local/</code> so you don’t need <code>sudo</code> permissions. To add Homebrew installed executables and Python scripts to your path you’ll want to add the following line to your <code>.profile</code> (or <code>.bash_profile</code>) file:</p>
+<pre> export PATH=/usr/local/bin:/usr/local/share/python:$PATH</pre>
+Normal executables go in `/usr/local/bin/` and Python scripts installed by Homebrew go in`/usr/local/share/python/`.
 
+See [https://github.com/mxcl/homebrew/wiki/The-brew-command](https://github.com/mxcl/homebrew/wiki/The-brew-command) or type `brew help` or `man brew`for more info on Homebrew.
+
+# Install [Python](http://www.python.org/)
+
+Now that you’ve got Homebrew installing Python is simple:
+<pre>brew install python</pre>
+Homebrew will install a couple of packages required by Python and then Python itself. Don’t be surprised if this takes a couple minutes.
+
+**Important: You should close your terminal and open a fresh one right now so that it has the updated PATH from the previous section. **Otherwise you run the risk of executing the wrong scripts during the rest of these instructions.
+
+At this point you should be able to get a fresh terminal and type
+<pre>which python</pre>
+and see
+<pre>/usr/local/bin/python</pre>
+Homebrew is for installing system packages and tools; for managing Python add-ons we want[pip](http://pypi.python.org/pypi/pip). Luckily easy_install, another Python package manager is installed by Homebrew and we can use it to install pip:
+<pre>easy_install pip</pre>
+
+<h1 id="Install-NumPy"><a href="#Install-NumPy" class="headerlink" title="Install NumPy"></a>Install <a href="http://www.scipy.org/" target="_blank" rel="noopener">NumPy</a></h1><p>Use pip to install NumPy:</p>
+<pre>pip install numpy</pre>
+This should install NumPy 1.6.1 (as of Feb. 2012).
+
+# Install [SciPy](http://www.scipy.org/)
+
+We need gfortran to compile SciPy but it is not included with the other Xcode tools. Luckily, Homebrew can help us out again:
+<pre>brew install gfortran</pre>
+When that’s done it’s a cinch to install SciPy:
+<pre>pip install scipy</pre>
+This should install SciPy 0.10.
+
+# Install [matplotlib](http://matplotlib.sourceforge.net/)
+
+To install matplotlib we need to revisit Homebrew one more time:
+<pre>brew install pkg-config</pre>
+And the usual pip command:
+<pre>pip install matplotlib</pre>
+This should install matplotlib 1.2.0\. If it doesn’t you can try installing from the matplotlib development repo:
+<pre>pip install git+git://github.com/matplotlib/matplotlib.git</pre>
+Congratulations! You should now have the basics of a scientific Python installation that’s easy to manage and upgrade using Homebrew and pip. Fire up Python and make sure things worked. The following should work in Python with no errors:
+<pre>import numpy
+import scipy
+import matplotlib</pre>
           
           <hr>
           <ul class="pager">
               
               <li class="previous">
-                  <a href="/blog/LSH那些事儿3/" data-toggle="tooltip" data-placement="left"
-                     title="LSH那些事儿 (III) - 理论基础">&larr; Previous Post</a>
+                  <a href="/blog/introduction-to-histcite/" data-toggle="tooltip" data-placement="left"
+                     title="Introduction to HistCite">&larr; Previous Post</a>
               </li>
               
               
               <li class="next">
-                  <a href="/blog/review-of-similarity-measurement/" data-toggle="tooltip" data-placement="top"
-                     title="Review of Similarity Measurement">Next Post&rarr;</a>
+                  <a href="/blog/LSH那些事儿4/" data-toggle="tooltip" data-placement="top"
+                     title="LSH那些事儿 (IV) - p-stable LSH">Next Post&rarr;</a>
               </li>
               
           </ul>
@@ -263,7 +287,7 @@
     <div class="toc-wrap">
         Table of Contents
         
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Locality-Sensitive-Hashing的定义"><span class="toc-number">1.</span> <span class="toc-text">Locality Sensitive Hashing的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于投影的LSH原理"><span class="toc-number">2.</span> <span class="toc-text">基于投影的LSH原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P1-P2-r-cr-sensitive-LSH的图解"><span class="toc-number">3.</span> <span class="toc-text">(P1,P2,r,cr)-sensitive LSH的图解</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Xcode"><span class="toc-number">1.</span> <span class="toc-text">Xcode</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Homebrew"><span class="toc-number">2.</span> <span class="toc-text">Homebrew</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Install-NumPy"><span class="toc-number">3.</span> <span class="toc-text">Install NumPy</span></a></li></ol>
         
     </div>
   </div>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- layout.ejs-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is the site where Steven post his thoughts, ideas and feelings">
+    <meta name="author" content="Huan Li">
+    <meta name="keyword" content="Computer Science, Travel Notes">
+    <link rel="canonical" href="https://longaspire.github.io/blog/blog/introduction-to-latex/">
+    <link rel="shortcut icon" href="/blog/img/rockrms.png">
+    <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <title>
+        
+        Introduction to LaTex｜Little Stone - Huan Li&#39;s Blog
+        
+    </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/blog/css/main.css">
+
+    
+      <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="/blog/css/highlight.css">
+    
+
+    
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    
+      <meta name="google-site-verification" content="wtCjI-zcpr2FYwWS3sI4OWzMK9e7VomDrZyxpVUUIng" />
+    
+
+    
+
+    
+
+
+    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-38355881-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+</head>
+
+<style>
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<header>
+  <nav class="navbar navbar-default header-navbar" id="nav-top" data-ispost = "true" data-istags="false" data-ishome = "false" >
+    <div class="container-fluid">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" aria-expanded="false"  data-target="#website_navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand animated pulse">
+          <a class="brand-logo" href="/blog/">
+                <img src="/blog/img/banner.png?h=350&amp;auto=compress&amp;cs=tinysrgb" />
+          </a>
+        </span>
+      </div>
+
+      <div class="collapse navbar-collapse" id="website_navbar">
+          <ul class="nav navbar-nav navbar-right">
+              
+                <li>
+                  <a href="/blog/">home</a>
+                </li>
+              
+                <li>
+                  <a href="/blog/archives/">archives</a>
+                </li>
+              
+                <li>
+                  <a href="/blog/tags/">tags</a>
+                </li>
+              
+                <li>
+                  <a href="/blog/categories/">categories</a>
+                </li>
+              
+          </ul>
+      </div>
+  </nav>
+
+
+  
+    <style>
+       .intro-header {
+          background-image: url('/blog/img/firenze.png?h=350&amp;auto=compress&amp;cs=tinysrgb');
+      }
+    </style>
+
+    <div class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                    <div class="site-heading">
+                        <h1>Introduction to LaTex</h1>
+                        
+                        
+                          <span class="meta">
+                               <span class="meta-item">Author: Huan Li</span>
+                               <span class="meta-item">Date: Apr 18, 2013</span>
+                               
+                                 <span class="meta-item">Updated On: May 8, 2018</span>
+                               
+                          </span>
+                          <div class="tags text-center">
+                              Categories: 
+                              <a class="tag" href="/blog/categories/#LaTex"
+                                 title="LaTex">LaTex</a>
+                              
+                          </div>
+                          <div class="tags text-center">
+                              Tags: 
+                              <a class="tag" href="/blog/tags/#introduction"
+                                 title="introduction">introduction</a>
+                              
+                              <a class="tag" href="/blog/tags/#LaTex"
+                                 title="LaTex">LaTex</a>
+                              
+                              <a class="tag" href="/blog/tags/#tutorial"
+                                 title="tutorial">tutorial</a>
+                              
+                          </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</header>
+
+
+<!-- Main Content -->
+<!-- post.ejs -->
+<article>
+    <div class="container">
+      <div class="col-lg-8 col-lg-offset-1 col-sm-9">
+          
+          
+          <h3 id="91-This-introduction-is-given-by-David-Reid-93"><a href="#91-This-introduction-is-given-by-David-Reid-93" class="headerlink" title="&#91;This introduction is given by David Reid&#93;"></a>&#91;This introduction is given by David Reid&#93;</h3><h3 id="Why-is-LATEX-great-for-technical-docs"><a href="#Why-is-LATEX-great-for-technical-docs" class="headerlink" title="Why is LATEX great for technical docs?"></a>Why is LATEX great for technical docs?</h3><ol>
+<li>Separate content from style.</li>
+<li>Good layout (usually).</li>
+<li>Excellent for managing references (including gure numbers)</li>
+</ol>
+<h3 id="LATEX-basics-Commands-and-Environments"><a href="#LATEX-basics-Commands-and-Environments" class="headerlink" title="LATEX basics: Commands and Environments"></a>LATEX basics: Commands and Environments</h3><p>Uses commands to do something special：</p>
+<blockquote>
+<p>format: \commandname[optional_args]{required_args}</p>
+</blockquote>
+<p>Uses environments to treat sections specially：</p>
+<blockquote>
+<p>format: \ begin{environment} … \ end{environment}</p>
+</blockquote>
+<h3 id="Structure-of-a-LATEX-document"><a href="#Structure-of-a-LATEX-document" class="headerlink" title="Structure of a LATEX document"></a>Structure of a LATEX document</h3><p>Preamble</p>
+<blockquote>
+<p>Collection of commands that specify global processing parameters</p>
+</blockquote>
+<p>Body</p>
+<blockquote>
+<p>Actual text mixed with LATEX commands.</p>
+</blockquote>
+<h3 id="What-goes-in-the-preamble"><a href="#What-goes-in-the-preamble" class="headerlink" title="What goes in the preamble?"></a>What goes in the preamble?</h3><p>The first is:</p>
+<blockquote>
+<p>\documentclass[options]{class}</p>
+<p>  its options:</p>
+<blockquote>
+<p>font size (10pt,12pt, etc.)</p>
+<pre><code>page format (onecolumn, twocolumn)
+</code></pre></blockquote>
+<p>  its class choices:</p>
+<blockquote>
+<p>book, article, letter (others: gatech-thesis, ieeetran)</p>
+</blockquote>
+</blockquote>
+<p>The second is:</p>
+<blockquote>
+<p>Title and Author information (these are like global variables)</p>
+</blockquote>
+<h3 id="Some-Notes-as-input-in-Body"><a href="#Some-Notes-as-input-in-Body" class="headerlink" title="Some Notes as input in Body"></a>Some Notes as input in Body</h3><ol>
+<li>paragraphs (need blank line between each paragraph)</li>
+<li>quotation marks (use tick mark for leading quote marks)</li>
+<li>percent sign - a reserved character (replace with \%)</li>
+</ol>
+<h3 id="Section-headers"><a href="#Section-headers" class="headerlink" title="Section headers"></a>Section headers</h3><p>\section{Section Title}</p>
+<p>\label{yourlabel}</p>
+<p>use the following conventions for labels:</p>
+<blockquote>
+<p>figures: fig:name<br>  tables: tab:name<br>  sections: sec:name</p>
+</blockquote>
+<p>And you can reference it in the text with</p>
+<blockquote>
+<p>\ref{sec:origins} .</p>
+</blockquote>
+<h3 id="Math-in-LATEX"><a href="#Math-in-LATEX" class="headerlink" title="Math in LATEX"></a>Math in LATEX</h3><p>The math engine in LATEX is extremely powerful</p>
+<p>Equations are build using a markup language</p>
+<p>Two ways to add math:</p>
+<p>1  Inline:</p>
+<blockquote>
+<p>$ type equation here $</p>
+</blockquote>
+<p>2  Equation environment:</p>
+<blockquote>
+<p>\begin{equation} type equation here<br>  \end{equation}</p>
+</blockquote>
+<p>You can use AMS-MATH LATEX package to for more symbols</p>
+<blockquote>
+<p>\usepackage{amsmath}</p>
+</blockquote>
+<h3 id="Important-things-to-know-as-using-math-in-LaTex"><a href="#Important-things-to-know-as-using-math-in-LaTex" class="headerlink" title="Important things to know as using math in LaTex"></a>Important things to know as using math in LaTex</h3><p>Subscripts:</p>
+<blockquote>
+<p>var_{subscript}</p>
+</blockquote>
+<p>Superscripts:</p>
+<blockquote>
+<p>var^{superscript}</p>
+</blockquote>
+<p>Fractions:</p>
+<blockquote>
+<p>\frac{num}{denom}</p>
+</blockquote>
+<p>Greek letters:</p>
+<blockquote>
+<p>\lettername or \Lettername</p>
+</blockquote>
+<p>Reference Book is <a href="ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf" target="_blank" rel="noopener">here</a></p>
+<h3 id="Adding-graphics-to-the-document"><a href="#Adding-graphics-to-the-document" class="headerlink" title="Adding graphics to the document"></a>Adding graphics to the document</h3><ol>
+<li>You can use a LATEX package to import graphics from external programs</li>
+<li>Called graphicx</li>
+<li>File types:<blockquote>
+<blockquote>
+<p>A. LATEX: .eps<br>B. PDFLATEX: .pdf, .png, .jpg</p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+<h3 id="Important-things-to-know-as-Adding-graphics-in-LaTex"><a href="#Important-things-to-know-as-Adding-graphics-in-LaTex" class="headerlink" title="Important things to know as Adding graphics in LaTex"></a>Important things to know as Adding graphics in LaTex</h3><ol>
+<li>Add the figure<br>A. Import the package in the preamble:<br>  \usepackage{graphicx}<br>B. Setup the gure environment:<br>  \begin{figure} …  end{figure}<br>C. Add the gure:      \includegraphics{buzz.jpg}<br>D. Compile</li>
+<li>Adjust the figure<br>A. Optional arguments: \includegraphics[key=value]{buzz.jpg}<br>  scale = number<br>  height = number, width = number<br>  angle = number<br>  plus more<br>B. Try one: \includegraphics[scale=0.5]{buzz.jpg}<br>C. Center Buzz: add the command \centering to the environment</li>
+<li>Place figure<br>A. Optional arguments: \begin{figure}[where]<br>   ht: here (as close to here as possible)<br>   t: top<br>   b: bottom<br>   p: on its own page or column<br>B. We can make the gure span two columns by changing    \ begin{figure} and \ end{figure} to    \ begin{figure_} and \ end{figure_}</li>
+<li>Captions<br>A. Simple: \caption{text}<br>B. You can use any LATEX commands in the caption.<br>C. Try it: \caption{This is buzz. Unlike Hairy Dawg, he knows $\pi \neq 3$.}</li>
+<li>Labeling<br>A. Works just like labeling sections<br>B. \label{yourlabel}<br>C. Try it: \label{fig:buzz}<br>D. And you can reference it in the text with \ ref{fig:buzz} .<br>E. And you can create a list of gures with \listoffigures !</li>
+<li>How to create figures<br>A. Vector or Raster?<br>B. Ways to generate vector images<br>Export .eps from Matlab, Mathematica, etc.<br>   Corel Draw<br>   Adobe Illustrator<br>   Inkscape (free)<br>   <a href="http://www.maa.org/editorial/mathgames/...mathgames_08_01_05.html" target="_blank" rel="noopener">maa</a><br>   Convert vector graphics to pdf with Acrobat</li>
+</ol>
+<h3 id="References-in-LATEX"><a href="#References-in-LATEX" class="headerlink" title="References in LATEX"></a>References in LATEX</h3><ol>
+<li>LATEX is great for documents with references</li>
+<li>We will use BibTeX to manage references</li>
+<li>BibTeX requires two things to work:<blockquote>
+<p>Commands in the source file<br>Bibliography (.bib) file</p>
+</blockquote>
+</li>
+<li>Commands in the source file<br>To the body, add: &gt; \bibliographystyle{plain}<br>Choices: plain, unsrt, abbrv<blockquote>
+<p>\bibliography{mybib}<br>mybib.bib is the bibliography file</p>
+</blockquote>
+</li>
+<li>Bibliography file<br>A. A database of all your references<br>B. Can be reused for other documents!<br>C. Open mybib.bib for examples<br>D. Open bibtextemplates.txt for examples</li>
+<li>Citing a reference<br>Similar to referencing a label<blockquote>
+<p>\cite{Clough:2004}</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="More-resources"><a href="#More-resources" class="headerlink" title="More resources"></a>More resources</h3><ol>
+<li><a href="www.prism.gatech.edu/_gte449i/latex/">www.prism.gatech.edu/_gte449i/latex/</a></li>
+<li>Tons of information on the web</li>
+<li>Many good books available<br>Kopka and Daly, “A Guide to LATEX”</li>
+</ol>
+
+          
+          <hr>
+          <ul class="pager">
+              
+              <li class="previous">
+                  <a href="/blog/LSH那些事儿1/" data-toggle="tooltip" data-placement="left"
+                     title="LSH那些事儿 (I) - 总览">&larr; Previous Post</a>
+              </li>
+              
+              
+              <li class="next">
+                  <a href="/blog/个性化移动搜索冲击下谷歌将分享人脑里的知识/" data-toggle="tooltip" data-placement="top"
+                     title="个性化移动搜索冲击下谷歌将分享人脑里的知识">Next Post&rarr;</a>
+              </li>
+              
+          </ul>
+        
+  <br>
+  
+
+  
+  </div>
+
+
+        
+  <div class="hidden-xs col-sm-3 toc-col">
+    <div class="toc-wrap">
+        Table of Contents
+        
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#91-This-introduction-is-given-by-David-Reid-93"><span class="toc-number">1.</span> <span class="toc-text">[This introduction is given by David Reid]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-is-LATEX-great-for-technical-docs"><span class="toc-number">2.</span> <span class="toc-text">Why is LATEX great for technical docs?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LATEX-basics-Commands-and-Environments"><span class="toc-number">3.</span> <span class="toc-text">LATEX basics: Commands and Environments</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Structure-of-a-LATEX-document"><span class="toc-number">4.</span> <span class="toc-text">Structure of a LATEX document</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-goes-in-the-preamble"><span class="toc-number">5.</span> <span class="toc-text">What goes in the preamble?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Some-Notes-as-input-in-Body"><span class="toc-number">6.</span> <span class="toc-text">Some Notes as input in Body</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Section-headers"><span class="toc-number">7.</span> <span class="toc-text">Section headers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Math-in-LATEX"><span class="toc-number">8.</span> <span class="toc-text">Math in LATEX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Important-things-to-know-as-using-math-in-LaTex"><span class="toc-number">9.</span> <span class="toc-text">Important things to know as using math in LaTex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adding-graphics-to-the-document"><span class="toc-number">10.</span> <span class="toc-text">Adding graphics to the document</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Important-things-to-know-as-Adding-graphics-in-LaTex"><span class="toc-number">11.</span> <span class="toc-text">Important things to know as Adding graphics in LaTex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#References-in-LATEX"><span class="toc-number">12.</span> <span class="toc-text">References in LATEX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#More-resources"><span class="toc-number">13.</span> <span class="toc-text">More resources</span></a></li></ol>
+        
+    </div>
+  </div>
+
+
+      </div>
+  </div>
+</article>
+
+<!-- Footer -->
+<!-- footer.ejs -->
+<footer>
+    <div class="text-center">
+      <ul class="list-inline">
+          
+          
+          
+
+          
+
+          
+              <li>
+                  <a target="_blank" href="https://www.facebook.com/stevenhuanlee">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+
+          
+              <li>
+                  <a target="_blank"  href="https://github.com/longaspire">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+
+          
+              <li>
+                  <a target="_blank"  href="https://www.linkedin.com/in/lihuancs">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+
+          
+              <li>
+                  <a href="mailto:lihuancs@zju.edu.cn" target="_blank">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+
+      </ul>
+     <div class="text-muted copyright">
+            &copy;
+            
+              2018
+            
+            -
+            Huan Li. All rights reserved.
+        <br>
+          
+              Powered by <a target="_blank" href="https://hexo.io">Hexo</a>
+          
+          
+          
+          | Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
+         <p>
+            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> PV</span> -
+            <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> UV
+        </span>
+      </div>
+    </div>
+</footer>
+
+<!-- Custom Theme JavaScript -->
+<script src="/blog/js/main.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+</body>
+
+</html>

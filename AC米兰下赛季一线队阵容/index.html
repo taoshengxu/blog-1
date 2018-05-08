@@ -9,7 +9,7 @@
     <meta name="description" content="This is the site where Steven post his thoughts, ideas and feelings">
     <meta name="author" content="Huan Li">
     <meta name="keyword" content="Computer Science, Travel Notes">
-    <link rel="canonical" href="https://longaspire.github.io/blog/blog/LSH那些事儿2/">
+    <link rel="canonical" href="https://longaspire.github.io/blog/blog/AC米兰下赛季一线队阵容/">
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -21,7 +21,7 @@
 
     <title>
         
-        LSH那些事儿 (II) - 图说｜Little Stone - Huan Li&#39;s Blog
+        AC米兰下赛季一线队阵容｜Little Stone - Huan Li&#39;s Blog
         
     </title>
 
@@ -150,38 +150,29 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                     <div class="site-heading">
-                        <h1>LSH那些事儿 (II) - 图说</h1>
+                        <h1>AC米兰下赛季一线队阵容</h1>
                         
                         
                           <span class="meta">
                                <span class="meta-item">Author: Huan Li</span>
-                               <span class="meta-item">Date: Apr 18, 2013</span>
+                               <span class="meta-item">Date: Jul 3, 2015</span>
                                
                                  <span class="meta-item">Updated On: May 8, 2018</span>
                                
                           </span>
                           <div class="tags text-center">
                               Categories: 
-                              <a class="tag" href="/blog/categories/#Data Mining"
-                                 title="Data Mining">Data Mining</a>
-                              
-                              <a class="tag" href="/blog/categories/#Index"
-                                 title="Index">Index</a>
+                              <a class="tag" href="/blog/categories/#Sports"
+                                 title="Sports">Sports</a>
                               
                           </div>
                           <div class="tags text-center">
                               Tags: 
-                              <a class="tag" href="/blog/tags/#Hashing"
-                                 title="Hashing">Hashing</a>
+                              <a class="tag" href="/blog/tags/#Football team"
+                                 title="Football team">Football team</a>
                               
-                              <a class="tag" href="/blog/tags/#indexing"
-                                 title="indexing">indexing</a>
-                              
-                              <a class="tag" href="/blog/tags/#LSH"
-                                 title="LSH">LSH</a>
-                              
-                              <a class="tag" href="/blog/tags/#Principles"
-                                 title="Principles">Principles</a>
+                              <a class="tag" href="/blog/tags/#AC milan"
+                                 title="AC milan">AC milan</a>
                               
                           </div>
                         
@@ -201,52 +192,20 @@
       <div class="col-lg-8 col-lg-offset-1 col-sm-9">
           
           
-          <h3 id="Locality-Sensitive-Hashing的定义"><a href="#Locality-Sensitive-Hashing的定义" class="headerlink" title="Locality Sensitive Hashing的定义"></a>Locality Sensitive Hashing的定义</h3><p>Locality Sensitive Hashing (LSH) 是构造一种Hash函数集 $ { D | R^d \rightarrow U}$，其中$ d $是点的维数，使得对任意的点$ p$，$ q$有</p>
-<ol>
-<li>如果$ || p - q || \leq r$, 那么$ Pr[D(p) = D(q)]$要很高</li>
-<li>如果$ || p - q || \geq cr$, 那么$ Pr[D(p) = D(q)] $要很低</li>
-</ol>
-<p>如下图：</p>
-<p><img src="http://longaspire.com/blog/wp-content/uploads/2013/04/201203141042366430.png" alt="figure 1" title="Figure 1"></p>
-<h3 id="基于投影的LSH原理"><a href="#基于投影的LSH原理" class="headerlink" title="基于投影的LSH原理"></a>基于投影的LSH原理</h3><p><img src="http://longaspire.com/blog/wp-content/uploads/2013/04/201203141042388707.png" alt="figure 2"></p>
-<p>如图有四个点：</p>
-<p>$ A(x_a, y_a), B(x_b, y_b), C(x_c, y_c), D(x_d, y_d)$</p>
-<p>如果取的Hash函数为</p>
-<p>$ H(A(x_a,y_a)) = x_a $</p>
-<p>即在X轴上的投影，那么就有$ A,<del>B,</del>C,<del>D$在X轴上的投影分别是：$ x_a,</del>x_b,<del>x_c,</del>x_d$</p>
-<p>重点来了，空间相近的点在X轴上的投影也是相近的，这样我们可以利用这个特性来做临近点的查询，基于投影的LSH的基本原理就是这样的。</p>
-<p>不过上面这种方法是能能保证挨得近的点hash后得到的一维值也挨的很近，但是一些本来不近的点在hash后，得到的也是很近的值，如A与D点。</p>
-<h3 id="P1-P2-r-cr-sensitive-LSH的图解"><a href="#P1-P2-r-cr-sensitive-LSH的图解" class="headerlink" title="(P1,P2,r,cr)-sensitive LSH的图解"></a>(P1,P2,r,cr)-sensitive LSH的图解</h3><p>先给出定义：</p>
-<blockquote>
-<p>A family $ H$ of functions $ D: R^d \rightarrow U $ is called $ (P_1,P_2,r,cr) $-sensitive, if for any $ p$，$ q$:</p>
-<ol>
-<li>if $ || p - q || \leq r$, then $ Pr[g(p) = g(q)] &gt; P_1$</li>
-<li>if $ || p - q || \geq cr$, then $ Pr[g(p) = g(q)] &lt; P_2$</li>
-</ol>
-</blockquote>
-<p>第2节构造的$ H(A(x_a,y_a)) = x_a $（即在X轴上的投影）是不能满足这个要求的， 解决的办法是：</p>
-<p><img src="http://longaspire.com/blog/wp-content/uploads/2013/04/201203141042424690.png" alt="201203141042424690"></p>
-<p>如图，基本想法也是很简单的，就是在空间多做几条线，这样本来很久的点，无论在哪条线上的映射都是很近的，而挨的不近点可能在某个方向的的投影很近，但在其它方向就可能很远，这样，把每个方向的投影结果都利用，也就是说可以对这些结果在进行hash：</p>
-<blockquote>
-<p>$ h_1(a_1,a_2,…,a_k) = ((\sum_{i=1}^{k}\hat{r}_i a_i) ~ mod ~ prime) ~ mod ~ tableSize$</p>
-</blockquote>
-<p>就可以达到定义的要求。 现在的问题是：空间线怎么取？到底要取多少条这样的线？</p>
-<p>空间的线怎样取，在$ E^2$LSH中，是根据标准正态分布取的，为什么是这样呢？</p>
-<p>我觉得是便于理论证明 可以满足$ (P_1,P_2,r,cr) $-sensitive LSH的定义。证明可以看看作者的论文和相关文档。</p>
-
+          <table><br><thead><br><tr><br>  <th>位置</th><br>  <th>姓名</th><br>  <th>英文名</th><br>  <th>号码</th><br>  <th>国籍</th><br></tr><br></thead><br><tbody><br><tr><br>  <td>GK</td><br>  <td>迭戈洛佩兹</td><br>  <td>Diego López</td><br>  <td>1</td><br>  <td>西班牙</td><br></tr><br><tr><br>  <td>GK</td><br>  <td>阿比亚蒂</td><br>  <td>Christian Abbiati</td><br>  <td>32</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>GK</td><br>  <td>多纳鲁马</td><br>  <td>Gianluigi Donnarumma</td><br>  <td>99</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>DR</td><br>  <td>阿巴特</td><br>  <td>Ignazio Abate</td><br>  <td>20</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>DR</td><br>  <td>卡拉布里亚</td><br>  <td>Davide Calabria</td><br>  <td>96</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>DL</td><br>  <td>安东内利</td><br>  <td>Luca Antonelli</td><br>  <td>31</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>DR,DL</td><br>  <td>德西利奥</td><br>  <td>Mattia De Sciglio</td><br>  <td>2</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>DC</td><br>  <td>梅克斯</td><br>  <td>Philippe Mexès</td><br>  <td>5</td><br>  <td>法国</td><br></tr><br><tr><br>  <td>DC</td><br>  <td>罗马尼奥利</td><br>  <td>Alessio Romagnoli</td><br>  <td>13</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>DC</td><br>  <td>阿莱士</td><br>  <td>Alex Rodrigo Dias da Costa</td><br>  <td>33</td><br>  <td>巴西</td><br></tr><br><tr><br>  <td>DC</td><br>  <td>萨帕塔</td><br>  <td>Cristian Zapata</td><br>  <td>17</td><br>  <td>哥伦比亚</td><br></tr><br><tr><br>  <td>DC</td><br>  <td>艾利</td><br>  <td>Rodrigo Ely</td><br>  <td>15</td><br>  <td>意大利/巴西</td><br></tr><br><tr><br>  <td>DMC,MC</td><br>  <td>德容</td><br>  <td>Nigel de Jong</td><br>  <td>34</td><br>  <td>荷兰</td><br></tr><br><tr><br>  <td>DMC,MC</td><br>  <td>库茨卡</td><br>  <td>Juraj Kucka</td><br>  <td>27</td><br>  <td>斯洛伐克</td><br></tr><br><tr><br>  <td>DMC,MC</td><br>  <td>何塞毛里</td><br>  <td>Jose Augustin Mauri</td><br>  <td>4</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>MC,DMC</td><br>  <td>蒙特利沃</td><br>  <td>Riccardo Montolivo</td><br>  <td>18</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>MC,AMC</td><br>  <td>贝尔托拉奇</td><br>  <td>Andrea Bertolacci</td><br>  <td>91</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>MC</td><br>  <td>波利</td><br>  <td>Andrea Poli</td><br>  <td>16</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>MC</td><br>  <td>诺切里诺</td><br>  <td>Antonio Nocerino</td><br>  <td>22</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>AMC,MC,AML</td><br>  <td>博纳文图拉</td><br>  <td>Giacomo Bonaventura</td><br>  <td>28</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>AMC,MC,AMR</td><br>  <td>本田圭佑</td><br>  <td>Keisuke Honda</td><br>  <td>10</td><br>  <td>日本</td><br></tr><br><tr><br>  <td>AMR,AMC</td><br>  <td>切尔奇</td><br>  <td>Alessio Cerci</td><br>  <td>11</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>AMR,AMC</td><br>  <td>苏索</td><br>  <td>Suso</td><br>  <td>8</td><br>  <td>西班牙</td><br></tr><br><tr><br>  <td>AMR,ST</td><br>  <td>尼昂</td><br>  <td>M’Baye Niang</td><br>  <td>78</td><br>  <td>法国</td><br></tr><br><tr><br>  <td>AML,ST,AMC</td><br>  <td>梅内</td><br>  <td>Jérémy Ménez</td><br>  <td>7</td><br>  <td>法国</td><br></tr><br><tr><br>  <td>ST</td><br>  <td>巴洛特利</td><br>  <td>Mario Balotelli</td><br>  <td>45</td><br>  <td>意大利</td><br></tr><br><tr><br>  <td>ST</td><br>  <td>路易斯阿德里亚诺</td><br>  <td>Luiz Adriano</td><br>  <td>9</td><br>  <td>巴西</td><br></tr><br><tr><br>  <td>ST</td><br>  <td>巴卡</td><br>  <td>Carlos Bacca</td><br>  <td>70</td><br>  <td>哥伦比亚</td><br></tr><br></tbody><br></table>
           
           <hr>
           <ul class="pager">
               
               <li class="previous">
-                  <a href="/blog/LSH那些事儿3/" data-toggle="tooltip" data-placement="left"
-                     title="LSH那些事儿 (III) - 理论基础">&larr; Previous Post</a>
+                  <a href="/blog/NFC&智能收纳/" data-toggle="tooltip" data-placement="left"
+                     title="NFC&智能收纳">&larr; Previous Post</a>
               </li>
               
               
               <li class="next">
-                  <a href="/blog/review-of-similarity-measurement/" data-toggle="tooltip" data-placement="top"
-                     title="Review of Similarity Measurement">Next Post&rarr;</a>
+                  <a href="/blog/谈谈Metric Learning4/" data-toggle="tooltip" data-placement="top"
+                     title="谈谈Metric Learning(IV) - ITML进阶">Next Post&rarr;</a>
               </li>
               
           </ul>
@@ -263,7 +222,7 @@
     <div class="toc-wrap">
         Table of Contents
         
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Locality-Sensitive-Hashing的定义"><span class="toc-number">1.</span> <span class="toc-text">Locality Sensitive Hashing的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于投影的LSH原理"><span class="toc-number">2.</span> <span class="toc-text">基于投影的LSH原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P1-P2-r-cr-sensitive-LSH的图解"><span class="toc-number">3.</span> <span class="toc-text">(P1,P2,r,cr)-sensitive LSH的图解</span></a></li></ol>
+          
         
     </div>
   </div>

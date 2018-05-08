@@ -9,7 +9,7 @@
     <meta name="description" content="This is the site where Steven post his thoughts, ideas and feelings">
     <meta name="author" content="Huan Li">
     <meta name="keyword" content="Computer Science, Travel Notes">
-    <link rel="canonical" href="https://longaspire.github.io/blog/blog/LSH那些事儿2/">
+    <link rel="canonical" href="https://longaspire.github.io/blog/blog/page/5/">
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -21,7 +21,7 @@
 
     <title>
         
-        LSH那些事儿 (II) - 图说｜Little Stone - Huan Li&#39;s Blog
+        Little Stone - Huan Li&#39;s Blog
         
     </title>
 
@@ -98,7 +98,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <header>
-  <nav class="navbar navbar-default header-navbar" id="nav-top" data-ispost = "true" data-istags="false" data-ishome = "false" >
+  <nav class="navbar navbar-default header-navbar" id="nav-top" data-ispost = "false" data-istags="false" data-ishome = "true" >
     <div class="container-fluid">
       <div class="navbar-header page-scroll">
         <button type="button" class="navbar-toggle" data-toggle="collapse" aria-expanded="false"  data-target="#website_navbar">
@@ -139,139 +139,143 @@
 
 
   
-    <style>
-       .intro-header {
-          background-image: url('/blog/img/firenze.png?h=350&amp;auto=compress&amp;cs=tinysrgb');
-      }
-    </style>
-
-    <div class="intro-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                    <div class="site-heading">
-                        <h1>LSH那些事儿 (II) - 图说</h1>
-                        
-                        
-                          <span class="meta">
-                               <span class="meta-item">Author: Huan Li</span>
-                               <span class="meta-item">Date: Apr 18, 2013</span>
-                               
-                                 <span class="meta-item">Updated On: May 8, 2018</span>
-                               
-                          </span>
-                          <div class="tags text-center">
-                              Categories: 
-                              <a class="tag" href="/blog/categories/#Data Mining"
-                                 title="Data Mining">Data Mining</a>
-                              
-                              <a class="tag" href="/blog/categories/#Index"
-                                 title="Index">Index</a>
-                              
-                          </div>
-                          <div class="tags text-center">
-                              Tags: 
-                              <a class="tag" href="/blog/tags/#Hashing"
-                                 title="Hashing">Hashing</a>
-                              
-                              <a class="tag" href="/blog/tags/#indexing"
-                                 title="indexing">indexing</a>
-                              
-                              <a class="tag" href="/blog/tags/#LSH"
-                                 title="LSH">LSH</a>
-                              
-                              <a class="tag" href="/blog/tags/#Principles"
-                                 title="Principles">Principles</a>
-                              
-                          </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  
 </header>
 
 
 <!-- Main Content -->
-<!-- post.ejs -->
-<article>
-    <div class="container">
-      <div class="col-lg-8 col-lg-offset-1 col-sm-9">
+<!-- index.ejs -->
+<!--<article class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">-->
+    <!---->
+<!--</article>-->
+
+<div class="container homepage">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 post-container">
           
+            <div class="post-preview "
+     style="background-image: url('/blog/img/firenze.png?h=350&auto=compress&cs=tinysrgb')">
+    <a href="/blog/个性化移动搜索冲击下谷歌将分享人脑里的知识/">
+        <h2 class="post-title">
+            个性化移动搜索冲击下谷歌将分享人脑里的知识
+        </h2>
+        
+        <div class="post-meta">
+          <span>Apr 16, 2013</span>
           
-          <h3 id="Locality-Sensitive-Hashing的定义"><a href="#Locality-Sensitive-Hashing的定义" class="headerlink" title="Locality Sensitive Hashing的定义"></a>Locality Sensitive Hashing的定义</h3><p>Locality Sensitive Hashing (LSH) 是构造一种Hash函数集 $ { D | R^d \rightarrow U}$，其中$ d $是点的维数，使得对任意的点$ p$，$ q$有</p>
-<ol>
-<li>如果$ || p - q || \leq r$, 那么$ Pr[D(p) = D(q)]$要很高</li>
-<li>如果$ || p - q || \geq cr$, 那么$ Pr[D(p) = D(q)] $要很低</li>
-</ol>
-<p>如下图：</p>
-<p><img src="http://longaspire.com/blog/wp-content/uploads/2013/04/201203141042366430.png" alt="figure 1" title="Figure 1"></p>
-<h3 id="基于投影的LSH原理"><a href="#基于投影的LSH原理" class="headerlink" title="基于投影的LSH原理"></a>基于投影的LSH原理</h3><p><img src="http://longaspire.com/blog/wp-content/uploads/2013/04/201203141042388707.png" alt="figure 2"></p>
-<p>如图有四个点：</p>
-<p>$ A(x_a, y_a), B(x_b, y_b), C(x_c, y_c), D(x_d, y_d)$</p>
-<p>如果取的Hash函数为</p>
-<p>$ H(A(x_a,y_a)) = x_a $</p>
-<p>即在X轴上的投影，那么就有$ A,<del>B,</del>C,<del>D$在X轴上的投影分别是：$ x_a,</del>x_b,<del>x_c,</del>x_d$</p>
-<p>重点来了，空间相近的点在X轴上的投影也是相近的，这样我们可以利用这个特性来做临近点的查询，基于投影的LSH的基本原理就是这样的。</p>
-<p>不过上面这种方法是能能保证挨得近的点hash后得到的一维值也挨的很近，但是一些本来不近的点在hash后，得到的也是很近的值，如A与D点。</p>
-<h3 id="P1-P2-r-cr-sensitive-LSH的图解"><a href="#P1-P2-r-cr-sensitive-LSH的图解" class="headerlink" title="(P1,P2,r,cr)-sensitive LSH的图解"></a>(P1,P2,r,cr)-sensitive LSH的图解</h3><p>先给出定义：</p>
-<blockquote>
-<p>A family $ H$ of functions $ D: R^d \rightarrow U $ is called $ (P_1,P_2,r,cr) $-sensitive, if for any $ p$，$ q$:</p>
-<ol>
-<li>if $ || p - q || \leq r$, then $ Pr[g(p) = g(q)] &gt; P_1$</li>
-<li>if $ || p - q || \geq cr$, then $ Pr[g(p) = g(q)] &lt; P_2$</li>
-</ol>
-</blockquote>
-<p>第2节构造的$ H(A(x_a,y_a)) = x_a $（即在X轴上的投影）是不能满足这个要求的， 解决的办法是：</p>
-<p><img src="http://longaspire.com/blog/wp-content/uploads/2013/04/201203141042424690.png" alt="201203141042424690"></p>
-<p>如图，基本想法也是很简单的，就是在空间多做几条线，这样本来很久的点，无论在哪条线上的映射都是很近的，而挨的不近点可能在某个方向的的投影很近，但在其它方向就可能很远，这样，把每个方向的投影结果都利用，也就是说可以对这些结果在进行hash：</p>
-<blockquote>
-<p>$ h_1(a_1,a_2,…,a_k) = ((\sum_{i=1}^{k}\hat{r}_i a_i) ~ mod ~ prime) ~ mod ~ tableSize$</p>
-</blockquote>
-<p>就可以达到定义的要求。 现在的问题是：空间线怎么取？到底要取多少条这样的线？</p>
-<p>空间的线怎样取，在$ E^2$LSH中，是根据标准正态分布取的，为什么是这样呢？</p>
-<p>我觉得是便于理论证明 可以满足$ (P_1,P_2,r,cr) $-sensitive LSH的定义。证明可以看看作者的论文和相关文档。</p>
+        </div>
+        <div class="post-content-preview">
+            <p>
+                本文来源NYtimes，原文链接。
+如果你想喝杯拿铁，你可能会掏出手机、打开Yelp的应用、搜索附近的咖啡馆。如果你想买一台意式浓缩咖啡(espresso)机，你很可能会打开亚马逊(Amazon.com)的网站。
+不管怎样，谷歌都会丢掉一个用户。
+谷歌在搜索领域，仍然是当之无愧的王者，占据着三分..
+            </p>
+        </div>
+    </a>
+</div>
+<hr>
 
           
-          <hr>
+            <div class="post-preview "
+     style="background-image: url('/blog/img/firenze.png?h=350&auto=compress&cs=tinysrgb')">
+    <a href="/blog/ar-aurasma-and-google-glass-maybe-iwatch/">
+        <h2 class="post-title">
+            AR, Aurasma and Google Glass, maybe iWatch
+        </h2>
+        
+        <div class="post-meta">
+          <span>Apr 15, 2013</span>
+          
+        </div>
+        <div class="post-content-preview">
+            <p>
+                ## 马特米尔斯 TED 引发增强现实的图像识别http://v.163.com/movie/2012/1/C/2/M8H1U3NBB_M8H21QOC2.html马特米尔斯及其助手演示的Aurasma的确是amazing，这款软件我也去download了并在手上玩了好几天，开始的时候摸不着头脑..
+            </p>
+        </div>
+    </a>
+</div>
+<hr>
+
+          
+            <div class="post-preview "
+     style="background-image: url('/blog/img/firenze.png?h=350&auto=compress&cs=tinysrgb')">
+    <a href="/blog/位置数据是如何真正助力移动广告的/">
+        <h2 class="post-title">
+            位置数据是如何真正助力移动广告的？
+        </h2>
+        
+        <div class="post-meta">
+          <span>Apr 15, 2013</span>
+          
+        </div>
+        <div class="post-content-preview">
+            <p>
+                全球12亿智能设备中，有7.7亿设备安装了GPS，地理位置数据已经开始渗透到移动的每一个空间。对于激活了地理定位的移动广告，它们已经感受到了它的有效性和诱人的价格，许多移动交易平台最进也报告了它们定位激活呈3位数的增长。
+BI近期的一个地理数据报告中，分析了为何激活地理数据使得移动广告一片光明，..
+            </p>
+        </div>
+    </a>
+</div>
+<hr>
+
+          
+            <div class="post-preview "
+     style="background-image: url('/blog/img/firenze.png?h=350&auto=compress&cs=tinysrgb')">
+    <a href="/blog/icdm-top-ten-algorithms-in-data-mining/">
+        <h2 class="post-title">
+            ICDM: Top Ten Algorithms in Data Mining
+        </h2>
+        
+        <div class="post-meta">
+          <span>Apr 15, 2013</span>
+          
+        </div>
+        <div class="post-content-preview">
+            <p>
+                2006年12月，国际权威的学术组织the IEEE International Conference on Data Mining (ICDM) 评选出了数据挖掘领域的十大经典算法：C4.5, k-Means, SVM, Apriori, EM, PageRank, AdaBoost, kNN..
+            </p>
+        </div>
+    </a>
+</div>
+<hr>
+
+          
+            <div class="post-preview "
+     style="background-image: url('/blog/img/firenze.png?h=350&auto=compress&cs=tinysrgb')">
+    <a href="/blog/useful-things-for-machine-learning/">
+        <h2 class="post-title">
+            Useful things for Machine Learning
+        </h2>
+        
+        <div class="post-meta">
+          <span>Apr 12, 2013</span>
+          
+        </div>
+        <div class="post-content-preview">
+            <p>
+                # 
+SVDSVD to handle Netflix Prize Model:  http://code.google.com/p/nprize/
+SVDLIBC: http://tedlab.mit.edu/~dr/SVDLIBC/
+&nbsp;
+SVDLIBCmeschach Librar..
+            </p>
+        </div>
+    </a>
+</div>
+<hr>
+
+          
           <ul class="pager">
-              
-              <li class="previous">
-                  <a href="/blog/LSH那些事儿3/" data-toggle="tooltip" data-placement="left"
-                     title="LSH那些事儿 (III) - 理论基础">&larr; Previous Post</a>
-              </li>
-              
-              
-              <li class="next">
-                  <a href="/blog/review-of-similarity-measurement/" data-toggle="tooltip" data-placement="top"
-                     title="Review of Similarity Measurement">Next Post&rarr;</a>
-              </li>
-              
-          </ul>
-        
-  <br>
-  
+    
+        <li class="previous"><a href="/blog/page/4/">&larr;  Newer Posts</a></li>
+    
+    
+</ul>
 
-  
-  </div>
-
-
-        
-  <div class="hidden-xs col-sm-3 toc-col">
-    <div class="toc-wrap">
-        Table of Contents
-        
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Locality-Sensitive-Hashing的定义"><span class="toc-number">1.</span> <span class="toc-text">Locality Sensitive Hashing的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于投影的LSH原理"><span class="toc-number">2.</span> <span class="toc-text">基于投影的LSH原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P1-P2-r-cr-sensitive-LSH的图解"><span class="toc-number">3.</span> <span class="toc-text">(P1,P2,r,cr)-sensitive LSH的图解</span></a></li></ol>
-        
+        </div>
+        <!-- partial('_partial/sidebar-profile') -->
     </div>
-  </div>
-
-
-      </div>
-  </div>
-</article>
+</div>
 
 <!-- Footer -->
 <!-- footer.ejs -->

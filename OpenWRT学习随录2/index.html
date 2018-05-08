@@ -9,7 +9,7 @@
     <meta name="description" content="This is the site where Steven post his thoughts, ideas and feelings">
     <meta name="author" content="Huan Li">
     <meta name="keyword" content="Computer Science, Travel Notes">
-    <link rel="canonical" href="https://longaspire.github.io/blog/blog/LSH那些事儿2/">
+    <link rel="canonical" href="https://longaspire.github.io/blog/blog/OpenWRT学习随录2/">
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -21,7 +21,7 @@
 
     <title>
         
-        LSH那些事儿 (II) - 图说｜Little Stone - Huan Li&#39;s Blog
+        OpenWRT学习随录 (II) – OpenWRT Buildroot｜Little Stone - Huan Li&#39;s Blog
         
     </title>
 
@@ -150,38 +150,32 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                     <div class="site-heading">
-                        <h1>LSH那些事儿 (II) - 图说</h1>
+                        <h1>OpenWRT学习随录 (II) – OpenWRT Buildroot</h1>
                         
                         
                           <span class="meta">
                                <span class="meta-item">Author: Huan Li</span>
-                               <span class="meta-item">Date: Apr 18, 2013</span>
+                               <span class="meta-item">Date: Jul 22, 2015</span>
                                
                                  <span class="meta-item">Updated On: May 8, 2018</span>
                                
                           </span>
                           <div class="tags text-center">
                               Categories: 
-                              <a class="tag" href="/blog/categories/#Data Mining"
-                                 title="Data Mining">Data Mining</a>
-                              
-                              <a class="tag" href="/blog/categories/#Index"
-                                 title="Index">Index</a>
+                              <a class="tag" href="/blog/categories/#Embedded"
+                                 title="Embedded">Embedded</a>
                               
                           </div>
                           <div class="tags text-center">
                               Tags: 
-                              <a class="tag" href="/blog/tags/#Hashing"
-                                 title="Hashing">Hashing</a>
+                              <a class="tag" href="/blog/tags/#Linux"
+                                 title="Linux">Linux</a>
                               
-                              <a class="tag" href="/blog/tags/#indexing"
-                                 title="indexing">indexing</a>
+                              <a class="tag" href="/blog/tags/#OpenWRT"
+                                 title="OpenWRT">OpenWRT</a>
                               
-                              <a class="tag" href="/blog/tags/#LSH"
-                                 title="LSH">LSH</a>
-                              
-                              <a class="tag" href="/blog/tags/#Principles"
-                                 title="Principles">Principles</a>
+                              <a class="tag" href="/blog/tags/#Buildroot"
+                                 title="Buildroot">Buildroot</a>
                               
                           </div>
                         
@@ -201,52 +195,53 @@
       <div class="col-lg-8 col-lg-offset-1 col-sm-9">
           
           
-          <h3 id="Locality-Sensitive-Hashing的定义"><a href="#Locality-Sensitive-Hashing的定义" class="headerlink" title="Locality Sensitive Hashing的定义"></a>Locality Sensitive Hashing的定义</h3><p>Locality Sensitive Hashing (LSH) 是构造一种Hash函数集 $ { D | R^d \rightarrow U}$，其中$ d $是点的维数，使得对任意的点$ p$，$ q$有</p>
-<ol>
-<li>如果$ || p - q || \leq r$, 那么$ Pr[D(p) = D(q)]$要很高</li>
-<li>如果$ || p - q || \geq cr$, 那么$ Pr[D(p) = D(q)] $要很低</li>
-</ol>
-<p>如下图：</p>
-<p><img src="http://longaspire.com/blog/wp-content/uploads/2013/04/201203141042366430.png" alt="figure 1" title="Figure 1"></p>
-<h3 id="基于投影的LSH原理"><a href="#基于投影的LSH原理" class="headerlink" title="基于投影的LSH原理"></a>基于投影的LSH原理</h3><p><img src="http://longaspire.com/blog/wp-content/uploads/2013/04/201203141042388707.png" alt="figure 2"></p>
-<p>如图有四个点：</p>
-<p>$ A(x_a, y_a), B(x_b, y_b), C(x_c, y_c), D(x_d, y_d)$</p>
-<p>如果取的Hash函数为</p>
-<p>$ H(A(x_a,y_a)) = x_a $</p>
-<p>即在X轴上的投影，那么就有$ A,<del>B,</del>C,<del>D$在X轴上的投影分别是：$ x_a,</del>x_b,<del>x_c,</del>x_d$</p>
-<p>重点来了，空间相近的点在X轴上的投影也是相近的，这样我们可以利用这个特性来做临近点的查询，基于投影的LSH的基本原理就是这样的。</p>
-<p>不过上面这种方法是能能保证挨得近的点hash后得到的一维值也挨的很近，但是一些本来不近的点在hash后，得到的也是很近的值，如A与D点。</p>
-<h3 id="P1-P2-r-cr-sensitive-LSH的图解"><a href="#P1-P2-r-cr-sensitive-LSH的图解" class="headerlink" title="(P1,P2,r,cr)-sensitive LSH的图解"></a>(P1,P2,r,cr)-sensitive LSH的图解</h3><p>先给出定义：</p>
+          <p>OpenWRT Buildroot是一个autotools，或者叫buildsystem，用于构建OpenWRT版本系统，这个工具可以运行在Linux，BSD和MacOSX之上。</p>
+<p>Buildroot对于字母大小写有着严格的要求，所以windows下的cygwin不能支持它。</p>
+<h3 id="1-关于OpenWRT-Buildroot"><a href="#1-关于OpenWRT-Buildroot" class="headerlink" title="1. 关于OpenWRT Buildroot"></a>1. 关于OpenWRT Buildroot</h3><p>OpenWRT Buildroot是由一系列Makefiles和patches文件组成的，它允许用户方便地生成一个交叉编译工具链<a href="https://en.wikipedia.org/wiki/Toolchain" target="_blank" rel="noopener">toochain</a>和根文件系统rfs。OpenWRT Buildroot是根据Buildroot修改二来的，其中，交叉编译工具链使用的是<a href="https://en.wikipedia.org/wiki/UClibc" target="_blank" rel="noopener">uClibc</a>，这是一个C标准库。</p>
+<p>交叉编译器的概念同传统的编译器的区别就在于主机和目标机的关系上</p>
 <blockquote>
-<p>A family $ H$ of functions $ D: R^d \rightarrow U $ is called $ (P_1,P_2,r,cr) $-sensitive, if for any $ p$，$ q$:</p>
-<ol>
-<li>if $ || p - q || \leq r$, then $ Pr[g(p) = g(q)] &gt; P_1$</li>
-<li>if $ || p - q || \geq cr$, then $ Pr[g(p) = g(q)] &lt; P_2$</li>
+<p>传统的编译器是运行在主机上，而生成代码也是可以跑在主机上的。例如，在一个x86架构的Linux上，编译工具链使用一个C标准库来编译代码，编译后的代码也是运行在x86的处理器上的。</p>
+<p>  那么交叉编译器可以这么认为，编译工具链是运行在host system上，然而生成的代码确实提供给target system使用，包括处理器的指令集也是target system的。例如，交叉编译器跑在x86的Linux系统上，编译后的文件是可以在MIPS32架构的某个嵌入式系统上运行的。</p>
+</blockquote>
+<p>另外，OpenWRT的Makefile有自己的特定语法，与Linux上的Makefile存在区别，OpenWRT Makefile定义package的meta infomation，去哪下载这个package，如何便利，把编译后的二进制文件放到哪儿等等。</p>
+<h3 id="2-OpenWRT-Buildroot特性"><a href="#2-OpenWRT-Buildroot特性" class="headerlink" title="2. OpenWRT Buildroot特性"></a>2. OpenWRT Buildroot特性</h3><ol>
+<li>安装软件非常简单</li>
+<li>使用Linux Kernel Menuconfig进行功能配置</li>
+<li>提供集成的交叉编译工具链，如gcc，ld等</li>
+<li>提供autotools（automake，autoconf），cmake，scons的抽象化</li>
+<li>处理标准化的下载，补丁，配置，编译等</li>
+<li>提供一定数量的坏包修复功能</li>
 </ol>
-</blockquote>
-<p>第2节构造的$ H(A(x_a,y_a)) = x_a $（即在X轴上的投影）是不能满足这个要求的， 解决的办法是：</p>
-<p><img src="http://longaspire.com/blog/wp-content/uploads/2013/04/201203141042424690.png" alt="201203141042424690"></p>
-<p>如图，基本想法也是很简单的，就是在空间多做几条线，这样本来很久的点，无论在哪条线上的映射都是很近的，而挨的不近点可能在某个方向的的投影很近，但在其它方向就可能很远，这样，把每个方向的投影结果都利用，也就是说可以对这些结果在进行hash：</p>
-<blockquote>
-<p>$ h_1(a_1,a_2,…,a_k) = ((\sum_{i=1}^{k}\hat{r}_i a_i) ~ mod ~ prime) ~ mod ~ tableSize$</p>
-</blockquote>
-<p>就可以达到定义的要求。 现在的问题是：空间线怎么取？到底要取多少条这样的线？</p>
-<p>空间的线怎样取，在$ E^2$LSH中，是根据标准正态分布取的，为什么是这样呢？</p>
-<p>我觉得是便于理论证明 可以满足$ (P_1,P_2,r,cr) $-sensitive LSH的定义。证明可以看看作者的论文和相关文档。</p>
+<h3 id="3-Buildroot的交叉编译工具链cross-compilation-toolchain"><a href="#3-Buildroot的交叉编译工具链cross-compilation-toolchain" class="headerlink" title="3. Buildroot的交叉编译工具链cross-compilation toolchain"></a>3. Buildroot的交叉编译工具链cross-compilation toolchain</h3><p>包括三个部分：</p>
+<ol>
+<li>一个编译器，gcc</li>
+<li>binary utils比如汇编器、连接器，binutils</li>
+<li>一个C标准库 uClibc or GNU Libc or dietilbc</li>
+</ol>
+<h3 id="4-Buildroot的build序列"><a href="#4-Buildroot的build序列" class="headerlink" title="4. Buildroot的build序列"></a>4. Buildroot的build序列</h3><ol>
+<li>tools – automake, autoconf, sed, cmake</li>
+<li>toolchain/binutils – as, ld, …</li>
+<li>toolchain/gcc – gcc, g++, cpp, …</li>
+<li>target/linux – kernel modules</li>
+<li>package – core and feed packages</li>
+<li>target/linux – kernel image</li>
+<li>target/linux/image – firmware image file generation</li>
+</ol>
+<h3 id="5-安装需要"><a href="#5-安装需要" class="headerlink" title="5. 安装需要"></a>5. 安装需要</h3><p>ca. 200 MB of hard disk space for OpenWrt Buildroot<br>ca. 300 MB of hard disk space for OpenWrt Buildroot + OpenWrt Feeds<br>ca. 2.1 GB of hard disk space for source packages downloaded during build from OpenWrt Feeds<br>ca. 3-4 GB of available hard disk space to build (i.e. cross-compile) OpenWrt and generate the firmware file<br>ca. 1-4 GB of RAM to build Openwrt.(build x86’s img need 4GB RAM)</p>
 
           
           <hr>
           <ul class="pager">
               
               <li class="previous">
-                  <a href="/blog/LSH那些事儿3/" data-toggle="tooltip" data-placement="left"
-                     title="LSH那些事儿 (III) - 理论基础">&larr; Previous Post</a>
+                  <a href="/blog/OpenWRT学习随录3/" data-toggle="tooltip" data-placement="left"
+                     title="OpenWRT学习随录 (III) – OpenWRT运行C">&larr; Previous Post</a>
               </li>
               
               
               <li class="next">
-                  <a href="/blog/review-of-similarity-measurement/" data-toggle="tooltip" data-placement="top"
-                     title="Review of Similarity Measurement">Next Post&rarr;</a>
+                  <a href="/blog/OpenWRT学习随录1/" data-toggle="tooltip" data-placement="top"
+                     title="OpenWRT学习随录 (I) - OpenWRT介绍">Next Post&rarr;</a>
               </li>
               
           </ul>
@@ -263,7 +258,7 @@
     <div class="toc-wrap">
         Table of Contents
         
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Locality-Sensitive-Hashing的定义"><span class="toc-number">1.</span> <span class="toc-text">Locality Sensitive Hashing的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于投影的LSH原理"><span class="toc-number">2.</span> <span class="toc-text">基于投影的LSH原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P1-P2-r-cr-sensitive-LSH的图解"><span class="toc-number">3.</span> <span class="toc-text">(P1,P2,r,cr)-sensitive LSH的图解</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-关于OpenWRT-Buildroot"><span class="toc-number">1.</span> <span class="toc-text">1. 关于OpenWRT Buildroot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-OpenWRT-Buildroot特性"><span class="toc-number">2.</span> <span class="toc-text">2. OpenWRT Buildroot特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Buildroot的交叉编译工具链cross-compilation-toolchain"><span class="toc-number">3.</span> <span class="toc-text">3. Buildroot的交叉编译工具链cross-compilation toolchain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Buildroot的build序列"><span class="toc-number">4.</span> <span class="toc-text">4. Buildroot的build序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-安装需要"><span class="toc-number">5.</span> <span class="toc-text">5. 安装需要</span></a></li></ol>
         
     </div>
   </div>
