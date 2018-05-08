@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- layout.ejs-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is the site where Steven post his thoughts, ideas and feelings">
+    <meta name="author" content="Huan Li">
+    <meta name="keyword" content="Computer Science, Travel Notes">
+    <link rel="canonical" href="https://longaspire.github.io/blog/blog/review-of-similarity-measurement/">
+    <link rel="shortcut icon" href="/blog/img/rockrms.png">
+    <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <title>
+        
+        Review of Similarity Measurement｜Little Stone - Huan Li&#39;s Blog
+        
+    </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/blog/css/main.css">
+
+    
+      <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="/blog/css/highlight.css">
+    
+
+    
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    
+      <meta name="google-site-verification" content="wtCjI-zcpr2FYwWS3sI4OWzMK9e7VomDrZyxpVUUIng" />
+    
+
+    
+
+    
+
+
+    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-38355881-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+</head>
+
+<style>
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<header>
+  <nav class="navbar navbar-default header-navbar" id="nav-top" data-ispost = "true" data-istags="false" data-ishome = "false" >
+    <div class="container-fluid">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" aria-expanded="false"  data-target="#website_navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand animated pulse">
+          <a class="brand-logo" href="/blog/">
+                <img src="/blog/img/banner.png?h=350&amp;auto=compress&amp;cs=tinysrgb" />
+          </a>
+        </span>
+      </div>
+
+      <div class="collapse navbar-collapse" id="website_navbar">
+          <ul class="nav navbar-nav navbar-right">
+              
+                <li>
+                  <a href="/blog/">home</a>
+                </li>
+              
+                <li>
+                  <a href="/blog/archives/">archives</a>
+                </li>
+              
+                <li>
+                  <a href="/blog/tags/">tags</a>
+                </li>
+              
+                <li>
+                  <a href="/blog/categories/">categories</a>
+                </li>
+              
+          </ul>
+      </div>
+  </nav>
+
+
+  
+    <style>
+       .intro-header {
+          background-image: url('/blog/img/firenze.png?h=350&amp;auto=compress&amp;cs=tinysrgb');
+      }
+    </style>
+
+    <div class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                    <div class="site-heading">
+                        <h1>Review of Similarity Measurement</h1>
+                        
+                        
+                          <span class="meta">
+                               <span class="meta-item">Author: Huan Li</span>
+                               <span class="meta-item">Date: Apr 18, 2013</span>
+                               
+                                 <span class="meta-item">Updated On: May 8, 2018</span>
+                               
+                          </span>
+                          <div class="tags text-center">
+                              Categories: 
+                              <a class="tag" href="/blog/categories/#Data Mining"
+                                 title="Data Mining">Data Mining</a>
+                              
+                              <a class="tag" href="/blog/categories/#Index"
+                                 title="Index">Index</a>
+                              
+                          </div>
+                          <div class="tags text-center">
+                              Tags: 
+                              <a class="tag" href="/blog/tags/#Hashing"
+                                 title="Hashing">Hashing</a>
+                              
+                              <a class="tag" href="/blog/tags/#indexing"
+                                 title="indexing">indexing</a>
+                              
+                              <a class="tag" href="/blog/tags/#similarity measurement"
+                                 title="similarity measurement">similarity measurement</a>
+                              
+                              <a class="tag" href="/blog/tags/#review"
+                                 title="review">review</a>
+                              
+                          </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</header>
+
+
+<!-- Main Content -->
+<!-- post.ejs -->
+<article>
+    <div class="container">
+      <div class="col-lg-8 col-lg-offset-1 col-sm-9">
+          
+          
+          <div></div><br><div><br><br># 1 引言<br><br><div></div><br><div>相似度计算用于衡量对象之间的相似程度，在数据挖掘、自然语言处理中是一个基础性计算。其中的关键技术主要是两个部分，对象的特征表示，特征集合之间的相似关系。在信息检索、网页判重、推荐系统等，都涉及到对象之间或者对象和对象集合的相似性的计算。而针对不同的应用场景，受限于数据规模、时空开销等的限制，相似度计算方法的选择又会有所区别和不同。下面章节会针对不同特点的应用，进行一些常用的相似度计算方法进行介绍。</div><br><div></div>
+
+<p># </p>
+<h1 id="2-向量空间模型"><a href="#2-向量空间模型" class="headerlink" title="2 向量空间模型"></a>2 向量空间模型</h1><div></div><br><div>向量空间模型（Vector space model）是应用最广泛的一个基础相似度计算模型，在该模型中，每个对象映射为一个特征向量</div><br><div>其中计算相似度的方法有欧氏距离和余弦相似度等</div><br><div>作为一个应用广泛的模型，向量空间模型在现有的很多应用中仍然起着至关重要的作用，也是很多扩展方法的基础。</div><br><div></div>
+
+<p># </p>
+<h1 id="3-基于hash方法的相似计算"><a href="#3-基于hash方法的相似计算" class="headerlink" title="3 基于hash方法的相似计算"></a>3 基于hash方法的相似计算</h1><div></div><br><div>基于hash的相似度计算方法，是一种基于概率的高维度数据的维度削减的方法，主要用于大规模数据的压缩与实时或者快速的计算场景下，基于hash方法的相似度计算经常用于高维度大数据量的情况下，将利用原始信息不可存储与计算的问题转化为映射空间的可存储计算问题，在海量文本重复性判断方面，近似文本查询方面有比较多的应用，google的网页去重[1]，google news的协同过滤[2,3]等都是采用hash方法进行近似相似度的计算，比较常见的应用场景Near-duplicate detection、Image similarity identification、nearest neighbor search，常用的一些方法包括I-match，Shingling、Locality-Sensitive Hashing族等方法，下面针对几种常见的hash方法进行介绍。</div><br><div></div>
+
+<h2 id="3-1-minhash方法介绍"><a href="#3-1-minhash方法介绍" class="headerlink" title="3.1 minhash方法介绍"></a>3.1 minhash方法介绍</h2><div></div><br><div>Minhash方法是Locality-sensitive hashing[4,5]算法族里的一个常用方法，基本的思想是，对于每一个对象的itemlist，将输入的item进行hash，这样相似的item具有很高的相似度被映射到相同的buckets里面，这样尽量保证了hash之后两个对象之间的相似程度和原来是高相似的，而buckets的数量是远远小于输入的item的，因此又达到降低复杂度的目的。</div><br><div>minhash方法用Jaccard进行相似度的计算方法。</div><br><div>当两个集合越相似，则该值越接近1，否则越接近0。用minhash方法，将一个集合映射到[0-R-1]之间的值，以相同的概率随机的抽取一个[0-R-1]的一个排列，依次排列查找第一次出现1的行。</div><br><div>设随机排列为43201(edcab)，对于C1列，第一次出现1的行是R4，所以h(C1) = 3，同理有h(C2)=2, h(C3)=4, h(C4)=3。<br>通过多次抽取随机排列得到n个minhash函数h1,h2,…,hn，依此对每一列都计算n个minhash值。对于两个集合，看看n个值里面对应相等的比例，即可估计出两集合的Jaccard相似度。可以把每个集合的n个minhash值列为一列，得到一个n行C列的签名矩阵。因为n可远小于R，这样在压缩了数据规模的同时，并且仍能近似计算出相似度。</div><br><div></div>
+
+<h2 id="3-2-simhash方法介绍"><a href="#3-2-simhash方法介绍" class="headerlink" title="3.2 simhash方法介绍"></a>3.2 simhash方法介绍</h2><div></div><br><div>simhash方法是在大文本重复识别常用的一个方法，该方法主要是通过将对象的原始特征集合映射为一个固定长度的签名，将对象之间的相似度的度量转化为签名的汉明距离，通过这样的方式，极大限度地进行了降低了计算和存储的消耗。</div>
+
+<p>### </p>
+<h3 id="3-2-1-签名计算过程"><a href="#3-2-1-签名计算过程" class="headerlink" title="3.2.1 签名计算过程"></a>3.2.1 签名计算过程</h3><div>该方法通过对输入特征集合的计算步骤可以描述如下：<br><br></div><br><div>将一个f维的向量V初始化为0；f位的二进制数S初始化为0；<br>对每一个特征：用传统的hash算法对该特征产生一个f位的签名b。对i=1到f：</div><br><div>     如果b的第i位为1，则V的第i个元素加上该特征的权重；<br>否则，V的第i个元素减去该特征的权重。<br>如果V的第i个元素大于0，则S的第i位为1，否则为0；<br>输出S作为签名。<br><br></div><br><div>通过上述步骤将输入的表示对象的特征集合转化为该对象的一个签名，在完成签名之后，度量两个对象的相似度的差异即变成了对量二者的指纹的K位的差异情况。</div><br><div></div>
+
+<h3 id="3-2-2-汉明距离查找优化"><a href="#3-2-2-汉明距离查找优化" class="headerlink" title="3.2.2 汉明距离查找优化"></a>3.2.2 汉明距离查找优化</h3><div>对于如何快速查找出某一个签名是否与其存在最大差异不超过K个bit的指纹，Detecting Near-Duplicates for Web Crawling这篇论文中进行了介绍。该查找方法的基本思想是利用空间换时间的方法，该方法的依据是需要查找的两个指纹的差异很小，这样可以通过将原始指纹进行分块索引，如果两个指纹的差异很小，则合理的分块后，根据鸽笼原理，其中存在一定数量的块是一致的，通过利用相同的块进行相似的指纹的召回，只需要比对召回的块中有差异的块的bit差异，这样减少了需要比对的数量，节省了比对的时间开销。</div><br><div></div>
+
+<h2 id="3-3-小结"><a href="#3-3-小结" class="headerlink" title="3.3 小结"></a>3.3 小结</h2><div></div><br><div>hash方法的相似度计算的主要应用场景，一般是针对大规模数据进行压缩，在保证效果损失可接受的情况下，节省存储空间，加快运算速度，针对该方法的应用，在目前的大规模的互联网处理中，很多相似度的计算都是基于这种近似性的计算，并取得了比较好的效果。<br>设随机排列为43201(edcab)，对于C1列，第一次出现1的行是R4，所以h(C1) = 3，同理有h(C2)=2, h(C3)=4, h(C4)=3。<br>通过多次抽取随机排列得到n个minhash函数h1,h2,…,hn，依此对每一列都计算n个minhash值。对于两个集合，看看n个值里面对应相等的比例，即可估计出两集合的Jaccard相似度。可以把每个集合的n个minhash值列为一列，得到一个n行C列的签名矩阵。因为n可远小于R，这样在压缩了数据规模的同时，并且仍能近似计算出相似度。</div><br><div></div>
+
+<p># </p>
+<h1 id="4-基于主题的相似度计算"><a href="#4-基于主题的相似度计算" class="headerlink" title="4 基于主题的相似度计算"></a>4 基于主题的相似度计算</h1><div></div><br><div>传统的BOW（bag-of_words）模型，一般都会建立在特征独立假设的基础上，按照特征向量的匹配情况来度量对象之间的相似度，但是在实际的应用中，很多时候特征之间存在着很多的关联关系，二者在传统的BOW模型中无法解决，在这个基础上，引入了主题的概念，通过主题的思想，建立起基本特征与对象的中间层的关联关系，主题的概念的引入，主要是在原有的基本特征粒度的基础上，引入了更为丰富的隐含层特征，提高了相似性计算的效果，常用的主题分析方法包括Latent Semantic Analysis (LSA) 、 Probabilitistic Latent Semantic Analysis (PLSA)、Latent Dirichlet Allocation ( LDA)。这些方法在分类，聚类、检索、推荐等领域都有着很多的应用，并取得了比较好的效果。下面就LSA及PLSA方法进行简要介绍。</div><br><div></div>
+
+<h2 id="4-1-LSA"><a href="#4-1-LSA" class="headerlink" title="4.1 LSA"></a>4.1 LSA</h2><div></div><br><div>LSA[6,7]模型认为特征之间存在某种潜在的关联结构，通过特征-对象矩阵进行统计计算，将高维空间映射到低纬的潜在语义结构上，构建出LSA空间模型，从而提取出潜在的语义结构，并用该结构表示特征和对象，消除了词汇之间的相关性影响，并降低了数据维度。增强了特征的鲁棒性<br>LSA利用奇异值分解来进行计算</div><br><div></div>
+
+<h2 id="4-2-plas"><a href="#4-2-plas" class="headerlink" title="4.2 plas"></a>4.2 plas</h2><div></div><br><div>PLSA[8,9]模型是由Hofmann提出的用于文本检索的概率生成模型，与相比较于LSA，PLSA是基于概率模型的，并直接引入了潜在class变量 ，下面的用文本处理语言来描述该模型。</div><br><div>PLSA和其相关的变形，在分类、聚类、检索等方面，特征相关性计算等方面，获得了广泛的应用，并取得了比较好的效果。</div><br><div></div>
+
+<h2 id="4-3-小结"><a href="#4-3-小结" class="headerlink" title="4.3 小结"></a>4.3 小结</h2><div></div><br><div>主题方法的引入，在一定程度上弥补了BOW的假设的独立性，在工业中，主题的方法也越来越多的应用到实际的机器学习中，包括在图像处理领域、传统的分类、聚类、检索等方面，都取得了比较好的效果。</div><br><div></div>
+
+<p># </p>
+<h1 id="5-结语"><a href="#5-结语" class="headerlink" title="5 结语"></a>5 结语</h1><div></div><br><div>相似度的计算在数据挖掘方面有着广泛的应用，根据不同的应用场景，各种方法各有其优劣特点，对于相似度效果的影响，除了方法本身之外，合理有效的特征的选择和使用也是至关重要的，同时，根据应用场景的不同，选择合理的方法，对于解决问题，有着重要的作用。</div><br><div></div>
+
+<p># </p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><div>1. G.S. Manku, A. Jain, A.D. Sarma. Detecting Near-Duplicates for Web Crawling. WWW2007, 2007<br>2. A. Das, M. Datar, A.Garg. Google News Personalization: Scalable Online Collaborative Filtering. WWW2007, 2007<br>3. <a href="http://en.wikipedia.org/wiki/MinHash" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/MinHash</a><br>4. M. S. Charikar. Similarity estimation techniques from rounding algorithms. STOC’02. 2002<br>5. <a href="http://en.wikipedia.org/wiki/Locality-sensitive_hashing" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/Locality-sensitive_hashing</a><br>6. K. Dave, S. Lawrence, and D. Pennock. Mining the peanut gallery: opinion extraction and semantic classification of product reviews. In Proceedings of the 22th International World Wide Web Conference, Budapest, Hungary, 2003<br>7. <a href="http://en.wikipedia.org/wiki/Latent_semantic_analysis" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/Latent_semantic_analysis</a><br>8. T. Hofmann. Probabilistic Latent Semantic Analysis. In Proceedings of the 15th Conference on Uncertainty in AI(1999).<br>9. Y. M kim, J. F. Pressiot M. R.Amini etc. An Extension of PLSA for Document Clustering. CIKM’08</div><br></div>
+          
+          <hr>
+          <ul class="pager">
+              
+              <li class="previous">
+                  <a href="/blog/LSH那些事儿2/" data-toggle="tooltip" data-placement="left"
+                     title="LSH那些事儿 (II) - 图说">&larr; Previous Post</a>
+              </li>
+              
+              
+              <li class="next">
+                  <a href="/blog/useful-things-for-machine-learning/" data-toggle="tooltip" data-placement="top"
+                     title="Useful things for Machine Learning">Next Post&rarr;</a>
+              </li>
+              
+          </ul>
+        
+  <br>
+  
+
+  
+  </div>
+
+
+        
+  <div class="hidden-xs col-sm-3 toc-col">
+    <div class="toc-wrap">
+        Table of Contents
+        
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-向量空间模型"><span class="toc-number">1.</span> <span class="toc-text">2 向量空间模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-基于hash方法的相似计算"><span class="toc-number">2.</span> <span class="toc-text">3 基于hash方法的相似计算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-minhash方法介绍"><span class="toc-number">2.1.</span> <span class="toc-text">3.1 minhash方法介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-simhash方法介绍"><span class="toc-number">2.2.</span> <span class="toc-text">3.2 simhash方法介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-签名计算过程"><span class="toc-number">2.2.1.</span> <span class="toc-text">3.2.1 签名计算过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-汉明距离查找优化"><span class="toc-number">2.2.2.</span> <span class="toc-text">3.2.2 汉明距离查找优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-小结"><span class="toc-number">2.3.</span> <span class="toc-text">3.3 小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-基于主题的相似度计算"><span class="toc-number">3.</span> <span class="toc-text">4 基于主题的相似度计算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-LSA"><span class="toc-number">3.1.</span> <span class="toc-text">4.1 LSA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-plas"><span class="toc-number">3.2.</span> <span class="toc-text">4.2 plas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-小结"><span class="toc-number">3.3.</span> <span class="toc-text">4.3 小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-结语"><span class="toc-number">4.</span> <span class="toc-text">5 结语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文献"><span class="toc-number">5.</span> <span class="toc-text">参考文献</span></a></li></ol>
+        
+    </div>
+  </div>
+
+
+      </div>
+  </div>
+</article>
+
+<!-- Footer -->
+<!-- footer.ejs -->
+<footer>
+    <div class="text-center">
+      <ul class="list-inline">
+          
+          
+          
+
+          
+
+          
+              <li>
+                  <a target="_blank" href="https://www.facebook.com/stevenhuanlee">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+
+          
+              <li>
+                  <a target="_blank"  href="https://github.com/longaspire">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+
+          
+              <li>
+                  <a target="_blank"  href="https://www.linkedin.com/in/lihuancs">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+
+          
+              <li>
+                  <a href="mailto:lihuancs@zju.edu.cn" target="_blank">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+
+      </ul>
+     <div class="text-muted copyright">
+            &copy;
+            
+              2018
+            
+            -
+            Huan Li. All rights reserved.
+        <br>
+          
+              Powered by <a target="_blank" href="https://hexo.io">Hexo</a>
+          
+          
+          
+          | Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
+         <p>
+            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> PV</span> -
+            <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> UV
+        </span>
+      </div>
+    </div>
+</footer>
+
+<!-- Custom Theme JavaScript -->
+<script src="/blog/js/main.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+</body>
+
+</html>

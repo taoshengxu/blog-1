@@ -6,7 +6,19 @@ body {
     font-size: 16px;
     color: #404040;
     overflow-x: hidden;
-    font-family: -apple-system,  "PingFang SC","Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    font-family: -apple-system, 'Biaodian Pro Sans GB', "Segoe UI",
+    "Lucida Grande",
+    Helvetica,
+    Arial,
+    "Microsoft YaHei",
+    FreeSans,
+    Arimo,
+    "Droid Sans",
+    "wenquanyi micro hei",
+    "Hiragino Sans GB",
+    "Hiragino Sans GB W3",
+    Arial,
+    sans-serif;
 }
 
 a,
@@ -171,7 +183,19 @@ legend {
 }
 
 .header-navbar .brand-logo {
-    font-family: Optima, Candara, Georgia, Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    font-family: -apple-system, 'Biaodian Pro Sans GB', "Segoe UI",
+    "Lucida Grande",
+    Helvetica,
+    Arial,
+    "Microsoft YaHei",
+    FreeSans,
+    Arimo,
+    "Droid Sans",
+    "wenquanyi micro hei",
+    "Hiragino Sans GB",
+    "Hiragino Sans GB W3",
+    Arial,
+    sans-serif;
     display: fixed;
     color: #68a6ea;
     margin-top: 5px;
@@ -378,7 +402,19 @@ footer .copyright {
 
 .pager li > a,
 .pager li > span {
-    font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    font-family: -apple-system, 'Biaodian Pro Sans GB', "Segoe UI",
+    "Lucida Grande",
+    Helvetica,
+    Arial,
+    "Microsoft YaHei",
+    FreeSans,
+    Arimo,
+    "Droid Sans",
+    "wenquanyi micro hei",
+    "Hiragino Sans GB",
+    "Hiragino Sans GB W3",
+    Arial,
+    sans-serif;
     line-height: 1.7;
     text-transform: uppercase;
     font-size: 13px;
@@ -515,7 +551,19 @@ footer .copyright {
 .one-tag-list .tag-text {
     font-size: 18px;
     font-weight: 500;
-    font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    font-family: -apple-system, 'Biaodian Pro Sans GB', "Segoe UI",
+    "Lucida Grande",
+    Helvetica,
+    Arial,
+    "Microsoft YaHei",
+    FreeSans,
+    Arimo,
+    "Droid Sans",
+    "wenquanyi micro hei",
+    "Hiragino Sans GB",
+    "Hiragino Sans GB W3",
+    Arial,
+    sans-serif;
     line-height: 1.6;
 }
 
@@ -875,7 +923,19 @@ footer .copyright {
 }
 
 .archive {
-  font-family: "Open Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Microsoft Jhenghei", sans-serif;
+  font-family: -apple-system, 'Biaodian Pro Sans GB', "Segoe UI",
+  "Lucida Grande",
+  Helvetica,
+  Arial,
+  "Microsoft YaHei",
+  FreeSans,
+  Arimo,
+  "Droid Sans",
+  "wenquanyi micro hei",
+  "Hiragino Sans GB",
+  "Hiragino Sans GB W3",
+  Arial,
+  sans-serif;
 }
 
 .archive-year {
