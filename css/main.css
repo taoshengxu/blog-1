@@ -25,7 +25,7 @@ a,
 a:hover,
 a:focus,
 a:active {
-    color: #D93600;
+    color: #ff7e79;
 }
 a, a:hover{
     text-decoration: none;
@@ -42,7 +42,7 @@ blockquote {
     color: #808080;
     font-size: 0.95em;
     margin: 20px 0 20px;
-    border-color: #D93600;
+    border-color: #ff7e79;
 }
 
 blockquote p {
@@ -83,24 +83,24 @@ hr{
 }
 
 td {
-  border: 1px solid #eee;
+    border: 1px solid #eee;
 }
 th {
-  font-weight: bolder;
-  font-size: 1.2em;
-  border: 1px solid #eee;
+    font-weight: bolder;
+    font-size: 1.2em;
+    border: 1px solid #eee;
 }
 
 ::-moz-selection {
     color: white;
     text-shadow: none;
-    background: #D93600;
+    background: #ff7e79;
 }
 
 ::selection {
     color: white;
     text-shadow: none;
-    background: #D93600;
+    background: #ff7e79;
 }
 
 img::selection {
@@ -114,12 +114,12 @@ img::-moz-selection {
 }
 
 fieldset {
-  border: 1px solid black;
-  padding: 0 10px 10px 20px;
+    border: 1px solid black;
+    padding: 0 10px 10px 20px;
 }
 legend {
-  width: auto;
-  border: none;
+    width: auto;
+    border: none;
 }
 
 /*****************************/
@@ -170,16 +170,16 @@ legend {
 }
 
 .header-navbar{
-  background-color: transparent;
-  box-shadow: 0 0 10px rgba(14, 14, 14, .26);
-  height: 55px;
-  border: none;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 6;
-  transition: background 1s;
-  line-height: 1.7;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(14, 14, 14, .26);
+    height: 55px;
+    border: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 6;
+    transition: background 1s;
+    line-height: 1.7;
 }
 
 .header-navbar .brand-logo {
@@ -221,7 +221,7 @@ legend {
 }
 
 .header-navbar .nav li a:hover {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 @media only screen and (min-width: 768px) {
@@ -266,7 +266,7 @@ legend {
     .header-navbar .nav li a:focus,
     .header-navbar .navbar-brand:hover,
     .header-navbar .navbar-brand:focus {
-        color: #D93600;
+        color: #ff7e79;
     }
 }
 
@@ -335,7 +335,7 @@ legend {
 }
 
 .meta-item {
-  margin: 20px;
+    margin: 20px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -440,8 +440,8 @@ footer .copyright {
 .pager li > a:hover,
 .pager li > a:focus {
     color: white;
-    background-color: #D93600;
-    border: 1px solid #D93600;
+    background-color: #ff7e79;
+    border: 1px solid #ff7e79;
 }
 
 .pager .disabled > a,
@@ -519,7 +519,7 @@ footer .copyright {
 #tag_cloud a:active,
 #tag_cloud .tag:active {
     color: white;
-    background-color: #D93600 !important;
+    background-color: #ff7e79 !important;
 }
 
 @media only screen and (min-width: 768px) {
@@ -530,7 +530,7 @@ footer .copyright {
 
 /* tag post listing */
 .tag-icon {
-    color: #D93600;
+    color: #ff7e79;
     font-size: 21px;
 }
 
@@ -546,7 +546,7 @@ footer .copyright {
 }
 
 .one-tag-list {
-  padding-top: 10px;
+    padding-top: 10px;
 }
 .one-tag-list .tag-text {
     font-size: 18px;
@@ -607,13 +607,13 @@ footer .copyright {
         font-size: 15px;
     }
 
-	.one-archive-list .post-preview {
-		margin-left: 40px;
-	}
+    .one-archive-list .post-preview {
+        margin-left: 40px;
+    }
 
-	.archive-month {
-		margin-left: 20px;
-	}
+    .archive-month {
+        margin-left: 20px;
+    }
 }
 
 
@@ -750,7 +750,7 @@ footer .copyright {
 }
 
 .container .toc-wrap .toc-level-2 > a {
-    color: #D93600;
+    color: #ff7e79;
     font-size: .9em;
 }
 
@@ -923,19 +923,19 @@ footer .copyright {
 }
 
 .archive {
-  font-family: -apple-system, 'Biaodian Pro Sans GB', "Segoe UI",
-  "Lucida Grande",
-  Helvetica,
-  Arial,
-  "Microsoft YaHei",
-  FreeSans,
-  Arimo,
-  "Droid Sans",
-  "wenquanyi micro hei",
-  "Hiragino Sans GB",
-  "Hiragino Sans GB W3",
-  Arial,
-  sans-serif;
+    font-family: -apple-system, 'Biaodian Pro Sans GB', "Segoe UI",
+    "Lucida Grande",
+    Helvetica,
+    Arial,
+    "Microsoft YaHei",
+    FreeSans,
+    Arimo,
+    "Droid Sans",
+    "wenquanyi micro hei",
+    "Hiragino Sans GB",
+    "Hiragino Sans GB W3",
+    Arial,
+    sans-serif;
 }
 
 .archive-year {
@@ -943,9 +943,9 @@ footer .copyright {
     font-size: 24px;
 }
 .archive-month {
-  margin-left: 80px;
-  font-size: 20px;
-  color: #aaa;
+    margin-left: 80px;
+    font-size: 20px;
+    color: #aaa;
 }
 .archive-post-time {
     margin-left: 120px;
@@ -963,14 +963,14 @@ footer .copyright {
     color: grey;
 }
 .achive-post-subtitle {
-  display: block;
-  font-size: 14px;
-  margin-left: 223px;
-  color: grey;
+    display: block;
+    font-size: 14px;
+    margin-left: 223px;
+    color: grey;
 }
 
 .poetry-comments {
-  width: 800px;
+    width: 800px;
 }
 
 /*****************************/
@@ -997,7 +997,7 @@ footer .copyright {
 
 .sidebar-container a:hover,
 .sidebar-container a:active {
-    color: #D93600 !important;
+    color: #ff7e79 !important;
 }
 
 .sidebar-container .tags a {
@@ -1006,7 +1006,7 @@ footer .copyright {
 
 .sidebar-container .tags a:hover,
 .sidebar-container .tags a:active {
-    border-color: #D93600;
+    border-color: #ff7e79;
 }
 
 .sidebar-container .short-about .avatar {
@@ -1046,16 +1046,16 @@ article .post-container h6 {
 
 article blockquote footer{
     padding: 5px 0px 0;
-	font-size: 100%;
+    font-size: 100%;
 }
 
 article blockquote footer:before{
-	content: "";
+    content: "";
 }
 
 article blockquote cite:before{
-	content: '\2014 \00A0';
-	padding: 0px 0.3em;
+    content: '\2014 \00A0';
+    padding: 0px 0.3em;
 }
 
 /* responsible images in the post */
@@ -1135,7 +1135,7 @@ article blockquote cite:before{
     font-size: 21px;
     line-height: 1.3;
     margin-top: 30px;
-     margin-bottom:0;
+    margin-bottom:0;
 }
 
 .post-preview > a > .post-subtitle {
@@ -1161,7 +1161,7 @@ article blockquote cite:before{
 
 .post-preview > .post-meta > a:hover,
 .post-preview > .post-meta > a:focus {
-    color: #D93600;
+    color: #ff7e79;
     text-decoration: underline;
 }
 
@@ -1187,5 +1187,5 @@ article blockquote cite:before{
 }
 
 .poetry-comments {
-  width: 800px;
+    width: 800px;
 }
