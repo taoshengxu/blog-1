@@ -25,7 +25,7 @@ a,
 a:hover,
 a:focus,
 a:active {
-    color: #ff7e79;
+    color: #D93600;
 }
 a, a:hover{
     text-decoration: none;
@@ -42,7 +42,7 @@ blockquote {
     color: #808080;
     font-size: 0.95em;
     margin: 20px 0 20px;
-    border-color: #ff7e79;
+    border-color: #D93600;
 }
 
 blockquote p {
@@ -94,13 +94,13 @@ th {
 ::-moz-selection {
     color: white;
     text-shadow: none;
-    background: #ff7e79;
+    background: #D93600;
 }
 
 ::selection {
     color: white;
     text-shadow: none;
-    background: #ff7e79;
+    background: #D93600;
 }
 
 img::selection {
@@ -266,7 +266,7 @@ legend {
     .header-navbar .nav li a:focus,
     .header-navbar .navbar-brand:hover,
     .header-navbar .navbar-brand:focus {
-        color: #ff7e79;
+        color: #D93600;
     }
 }
 
@@ -440,8 +440,8 @@ footer .copyright {
 .pager li > a:hover,
 .pager li > a:focus {
     color: white;
-    background-color: #ff7e79;
-    border: 1px solid #ff7e79;
+    background-color: #D93600;
+    border: 1px solid #D93600;
 }
 
 .pager .disabled > a,
@@ -519,7 +519,7 @@ footer .copyright {
 #tag_cloud a:active,
 #tag_cloud .tag:active {
     color: white;
-    background-color: #ff7e79 !important;
+    background-color: #D93600 !important;
 }
 
 @media only screen and (min-width: 768px) {
@@ -530,7 +530,7 @@ footer .copyright {
 
 /* tag post listing */
 .tag-icon {
-    color: #ff7e79;
+    color: #D93600;
     font-size: 21px;
 }
 
@@ -750,7 +750,7 @@ footer .copyright {
 }
 
 .container .toc-wrap .toc-level-2 > a {
-    color: #ff7e79;
+    color: #D93600;
     font-size: .9em;
 }
 
@@ -997,7 +997,7 @@ footer .copyright {
 
 .sidebar-container a:hover,
 .sidebar-container a:active {
-    color: #ff7e79 !important;
+    color: #D93600 !important;
 }
 
 .sidebar-container .tags a {
@@ -1006,7 +1006,7 @@ footer .copyright {
 
 .sidebar-container .tags a:hover,
 .sidebar-container .tags a:active {
-    border-color: #ff7e79;
+    border-color: #D93600;
 }
 
 .sidebar-container .short-about .avatar {
@@ -1161,7 +1161,7 @@ article blockquote cite:before{
 
 .post-preview > .post-meta > a:hover,
 .post-preview > .post-meta > a:focus {
-    color: #ff7e79;
+    color: #D93600;
     text-decoration: underline;
 }
 
