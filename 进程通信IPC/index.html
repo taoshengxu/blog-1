@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -161,7 +161,7 @@
                                <span class="meta-item">Author: Huan Li</span>
                                <span class="meta-item">Date: Dec 13, 2014</span>
                                
-                                 <span class="meta-item">Updated On: May 8, 2018</span>
+                                 <span class="meta-item">Updated On: May 9, 2018</span>
                                
                           </span>
                           <div class="tags text-center">
@@ -261,7 +261,7 @@ int main(){
 
 </unistd.h></stdio.h></pre>
 
-<h3 id="2-FIFO"><a href="#2-FIFO" class="headerlink" title="2. FIFO"></a>2. FIFO</h3><p><em>FIFO</em>，也称为命名管道，它是一种文件类型。</p>
+<h3 id="2-FIFO"><a href="#2-FIFO" class="headerlink" title="2. FIFO"></a>2. FIFO</h3><p>_FIFO_，也称为命名管道，它是一种文件类型。</p>
 <h4 id="2-1-特点"><a href="#2-1-特点" class="headerlink" title="2.1 特点"></a>2.1 特点</h4><ol>
 <li>FIFO可以在无关的进程之间交换数据，与无名管道不同；</li>
 <li>FIFO有路径名与之相关联，是一种特殊设备文件形式存在于文件系统中。</li>
@@ -360,7 +360,7 @@ int main()
 <p>可以在两个终端里用 gcc分别编译运行上面两个文件，查看结果。</p>
 <p>上述例子可以扩展成 客户进程-服务器进程 通信的实例，<code>write_fifo</code>的作用类似于客户端，可以打开多个客户端向一个服务器发送请求信息，<code>read_fifo</code>类似于服务器，实时监控着FIFO的读端，当有数据时，读取并进行处理，但是有一个关键问题是，每一个客户端必须预先知道服务器提供的FIFO接口，如下图所示：</p>
 <p><img src="http://img.blog.csdn.net/20150420131002360?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGlzb25nbGlzb25nbGlzb25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="fifo"><span class="image-caption-center">fifo</span></p>
-<h3 id="3-消息队列"><a href="#3-消息队列" class="headerlink" title="3. 消息队列"></a>3. 消息队列</h3><p><em>消息队列</em>，是消息的链接表，存放在内核中。一个消息队列由一个标识符（即队列ID）来标识。</p>
+<h3 id="3-消息队列"><a href="#3-消息队列" class="headerlink" title="3. 消息队列"></a>3. 消息队列</h3><p>_消息队列_，是消息的链接表，存放在内核中。一个消息队列由一个标识符（即队列ID）来标识。</p>
 <h4 id="3-1-特点"><a href="#3-1-特点" class="headerlink" title="3.1 特点"></a>3.1 特点</h4><ol>
 <li>消息队列是面向记录的，其中的消息具有特定的格式及特定的优先级；</li>
 <li>消息队列独立于发送与接收的进程。进程终止时，消息队列及其内容不会被删除；</li>
@@ -504,14 +504,14 @@ int main()
 
 </sys></stdlib.h></stdio.h></pre>
 
-<h3 id="4-信号量"><a href="#4-信号量" class="headerlink" title="4. 信号量"></a>4. 信号量</h3><p><em>信号量</em> (semaphore) 与已经介绍过的IPC结构不同，是一个计数器。信号量用于实现进程间的互斥和同步，而不用于存储进程间的通信数据。</p>
+<h3 id="4-信号量"><a href="#4-信号量" class="headerlink" title="4. 信号量"></a>4. 信号量</h3><p>_信号量_ (semaphore) 与已经介绍过的IPC结构不同，是一个计数器。信号量用于实现进程间的互斥和同步，而不用于存储进程间的通信数据。</p>
 <h4 id="4-1-特点"><a href="#4-1-特点" class="headerlink" title="4.1 特点"></a>4.1 特点</h4><ol>
-<li>信号量用于进程间同步，若要在进程间传递数据需要结合<em>共享内存</em>；</li>
+<li>信号量用于进程间同步，若要在进程间传递数据需要结合_共享内存_；</li>
 <li>信号量基于操作系统的PV操作[3]，程序对信号量的操作都是原子操作；</li>
 <li>每次对信号量的PV操作不仅限于对信号量+1或者-1，可以加减任意正整数；</li>
 <li>支持信号量组。</li>
 </ol>
-<h4 id="4-2-原型"><a href="#4-2-原型" class="headerlink" title="4.2 原型"></a>4.2 原型</h4><p>最简单的信号量只能取0和1的变量，这也是信号量最常见的一种形式，叫做<em>二值信号量</em> (Binary Semaphore)。而可以取多个正整数的信号量也被称为通用信号量。</p>
+<h4 id="4-2-原型"><a href="#4-2-原型" class="headerlink" title="4.2 原型"></a>4.2 原型</h4><p>最简单的信号量只能取0和1的变量，这也是信号量最常见的一种形式，叫做_二值信号量_ (Binary Semaphore)。而可以取多个正整数的信号量也被称为通用信号量。</p>
 <p>Linux下的信号量函数是在通用的信号量数组上进行操作，而不是在一个单一的二值信号量上进行操作。</p>
 <pre 1="" lang="c" line="">
 
@@ -547,7 +547,7 @@ struct sembuf
 <li>若<code>sem_op &amp;lt; 0</code>，请求 sem_op 的绝对值的资源。</li>
 <li>若<code>sem_op == 0</code>，进程阻塞直到信号量的相应值为0。</li>
 </ul>
-<h3 id="5-共享内存"><a href="#5-共享内存" class="headerlink" title="5. 共享内存"></a>5. 共享内存</h3><p><em>共享内存</em> (Shared Memory)，指两个或多个进程共享一个给定的存储区。</p>
+<h3 id="5-共享内存"><a href="#5-共享内存" class="headerlink" title="5. 共享内存"></a>5. 共享内存</h3><p>_共享内存_ (Shared Memory)，指两个或多个进程共享一个给定的存储区。</p>
 <h4 id="5-1-特点"><a href="#5-1-特点" class="headerlink" title="5.1 特点"></a>5.1 特点</h4><ol>
 <li>共享内存是最快的一种IPC，因为进程是直接对内存进行存取；</li>
 <li>因为多个进程可以同时操作，所以需要进行同步；</li>
@@ -897,11 +897,7 @@ int main()
 
 </string.h></sys></sys></sys></stdlib.h></stdio.h></pre>
 
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ol>
-<li><a href="http://songlee24.github.io/2015/04/21/linux-IPC/" target="_blank" rel="noopener">http://songlee24.github.io/2015/04/21/linux-IPC/</a></li>
-<li><a href="http://www.cnblogs.com/CheeseZH/p/5264465.html" target="_blank" rel="noopener">http://www.cnblogs.com/CheeseZH/p/5264465.html</a></li>
-<li><a href="http://blog.csdn.net/liushuijinger/article/details/7586656" target="_blank" rel="noopener">http://blog.csdn.net/liushuijinger/article/details/7586656</a></li>
-</ol>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>[1] <a href="http://songlee24.github.io/2015/04/21/linux-IPC/" target="_blank" rel="noopener">http://songlee24.github.io/2015/04/21/linux-IPC/</a><br>[2] <a href="http://www.cnblogs.com/CheeseZH/p/5264465.html" target="_blank" rel="noopener">http://www.cnblogs.com/CheeseZH/p/5264465.html</a><br>[3] <a href="http://blog.csdn.net/liushuijinger/article/details/7586656" target="_blank" rel="noopener">http://blog.csdn.net/liushuijinger/article/details/7586656</a></p>
 
           
           <hr>
@@ -923,6 +919,25 @@ int main()
   <br>
   
 
+  
+  <!-- livere begin-->
+  <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM1MC8xMjg4NQ">
+      <script type="text/javascript">
+          (function(d, s) {
+              var j, e = d.getElementsByTagName(s)[0];
+
+              if (typeof LivereTower === 'function') { return; }
+
+              j = d.createElement(s);
+              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+              j.async = true;
+
+              e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+      </script>
+      <noscript> To show LiveRe comment, please use JavaScript</noscript>
+  </div>
+  <!-- livere end -->
   
   </div>
 
@@ -948,6 +963,15 @@ int main()
     <div class="text-center">
       <ul class="list-inline">
           
+          
+              <li>
+                  <a target="_blank" href="https://twitter.com/LeeSte7en">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
           
           
 

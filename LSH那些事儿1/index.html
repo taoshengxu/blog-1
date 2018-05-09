@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -211,8 +211,8 @@
 <p>  The basic idea is to <a href="http://en.wikipedia.org/wiki/Hash_Function" target="_blank" rel="noopener">hash</a> the input items so that similar items are mapped to the same buckets with high probability (the number of buckets being much smaller than the universe of possible input items). This is different from the conventional hash functions, such as those used in <a href="http://en.wikipedia.org/wiki/Cryptography" target="_blank" rel="noopener">cryptography</a> as in this case the goal is to maximize probability of “collision” of similar items rather than avoid collisions.<a href="http://en.wikipedia.org/wiki/Locality-sensitive_hashing#cite_note-1" target="_blank" rel="noopener">&#91;1&#93;</a>.</p>
 <p>  Note how locality-sensitive hashing, in many ways, mirrors <a href="http://en.wikipedia.org/wiki/Cluster_analysis" target="_blank" rel="noopener">data clustering</a> and <a href="http://en.wikipedia.org/wiki/Nearest_neighbor_search" target="_blank" rel="noopener">Nearest neighbor search</a>.</p>
 </blockquote>
-<p><em>LSH(Location Sensitive Hash)</em>，即位置敏感哈希函数。与一般哈希函数不同的是位置敏感性，也就是散列前的相似点经过哈希之后，也能够在一定程度上相似，并且具有一定的概率保证。</p>
-<h3 id="2-给定义"><a href="#2-给定义" class="headerlink" title="2.给定义"></a>2.给定义</h3><p>对于任意$latex q$, $latex p$ 属于 $latex S$ ，若从集合 $latex S$ 到 $latex U$ 的函数族 $latex H={h_1,h_2…h_n}$ 对距离函数$latex D(\cdot)$，如欧式距离、曼哈顿距离等等，满足条件：</p>
+<p>_LSH(Location Sensitive Hash)_，即位置敏感哈希函数。与一般哈希函数不同的是位置敏感性，也就是散列前的相似点经过哈希之后，也能够在一定程度上相似，并且具有一定的概率保证。</p>
+<h3 id="2-给定义"><a href="#2-给定义" class="headerlink" title="2.给定义"></a>2.给定义</h3><p>对于任意$latex q$, $latex p$ 属于 $latex S$ ，若从集合 $latex S$ 到 $latex U$ 的函数族 $latex H=\{h_1,h_2…h_n\}$ 对距离函数$latex D(\cdot)$，如欧式距离、曼哈顿距离等等，满足条件：</p>
 <p>$latex D(p,q) \leq r<del>and</del>Pr(h(p) = h(q)) \geq p_1 $<br>$latex D(p,q) \leq r(1+\epsilon)<del>and</del>Pr(h(p) = h(q)) \leq p_1 $</p>
 <p>则称 $latex D(\cdot)$ 是位置敏感的。<br>如下图，空间上的点经位置敏感哈希函数散列之后，对于 $latex q$ ，其rNN有可能散列到同一个桶（如第一个桶）,即散列到第一个桶的概率较大，会大于某一个概率阈值 $latex p_1 $; 而其 $latex (1+\epsilon)rNN$ 之外的对象则不太可能散列到第一个桶，即散列到第一个桶的概率很小，会小于某个阈值$latex p_2$。</p>
 <p>[caption id=”” align=”aligncenter” width=”559”]<img src="http://www.jiahenglu.net/NSFC/lsh4.jpg" alt="LSH图例"><span class="image-caption-center">LSH图例</span> LSH图例[/caption]</p>
@@ -228,7 +228,7 @@
 <h3 id="3-3-数据压缩"><a href="#3-3-数据压缩" class="headerlink" title="3.3 数据压缩"></a>3.3 数据压缩</h3><p>如广泛地应用于信号处理及数据压缩等领域的Vector Quantization量子化技术。</p>
 <p>总而言之，哪儿需要近似kNN查询，哪儿都能用上LSH.</p>
 <blockquote>
-<p><strong><em>扩展1————图像检索和c-NN搜索</em></strong></p>
+<p><strong>_扩展1————图像检索和c-NN搜索_</strong></p>
 <p>  图像检索其基本定义为给定的一个包含n个图像数据集，每个图像可以用一个d维的特征向量来描述，因此整个图像数据集就映射为d维空间的n个点，在此d维空间中用一个相似度度量函数来测量两个图像点之间的距离，对于任意给定的查询点q，需要设计一个数据结构，来快速的返回距离q最近(Nearest Neighbor)的图像点(或者Ranking的多个点)。</p>
 <p>  当d较小时(10-20)，可采用如kd-tree的结构，但当d较大时(一个Discriminative的图像描述向量通常成百上千甚至万维)，其查询时间将随d指数级增长，这就是通常所说的维数灾难”the curse of dimensionality”，同时d较大时，其所需的存储空间也变的intolerable。因此降维和Approximation NN算法通常会用到当前的检索系统中，ANN搜索就是对于给定的查询点q，若数据集中存在点p距其小于距离R，允许系统返回点p，where $latex \Phi(q, p’) = cR$，则称为c-NN搜索。</p>
 <p>  当前图像检索要求快、准、同时可容易的扩展至大规模数据</p>
@@ -242,23 +242,23 @@
 </blockquote>
 <p>.</p>
 <blockquote>
-<p><strong><em>扩展2————Approximation Nearest Neighbors (ANN)搜索</em></strong></p>
-<p>  定义Hash函数集合$latex H = {h_i(i = 1,…,k): M^d  \rightarrow S^k} $.</p>
+<p><strong>_扩展2————Approximation Nearest Neighbors (ANN)搜索_</strong></p>
+<p>  定义Hash函数集合$latex H = \{h_i(i = 1,…,k): M^d  \rightarrow S^k\} $.</p>
 <p>  $latex M^d$ 是原始的 d 维特征空间，</p>
 <p>  $latex S^k$ 是经hash函数集F散列后的k维空间，根据哈希函数设计的不同，可将Hashing分为data-independent和data-dependent两大类:</p>
 <p>  1.data-independent hashing包括：Locality-Sensitive Hashing (LSH)，经Hash函数映射后，仍保留原始空间的距离相似度；<br>  2.data-dependent hashing包括：spectral hashing, semi-supervised hashing, Restricted Boltzmann Machine (RBM), Boosting SSC等，引入机器学习算法，基于数据分布设计Hash函数。</p>
-<p>  位置敏感哈希Locality-Sensitive Hashing (LSH)，其基本的思想就是通过哈希函数将输入的高维特征矢量散列至低维特征空间，并满足在原始空间中距离较近的点经过散列之后在低维空间依然距离较近，距离较近的点散列后碰撞的概率要大于距离较远的点碰撞的概率。<br>  </p>
+<p>  位置敏感哈希Locality-Sensitive Hashing (LSH)，其基本的思想就是通过哈希函数将输入的高维特征矢量散列至低维特征空间，并满足在原始空间中距离较近的点经过散列之后在低维空间依然距离较近，距离较近的点散列后碰撞的概率要大于距离较远的点碰撞的概率。<br>  &lt;/pre&gt;</p>
 </blockquote>
 <h3 id="4-方法"><a href="#4-方法" class="headerlink" title="4.方法"></a>4.方法</h3><h4 id="4-1-Bit-sampling-for-Hamming-distance"><a href="#4-1-Bit-sampling-for-Hamming-distance" class="headerlink" title="4.1 Bit sampling for Hamming distance"></a>4.1 Bit sampling for Hamming distance</h4><p>最简单的Hash函数，仅适用于原始特征空间是Binary的Hamming空间，即原始的特征向量每一维的取值为{0，1}的特征串，其Hash函数的基本思想就是随机选取d维特征向量中的某一维:</p>
 <blockquote>
-<p>$latex H = {h_i(i = i,…,k) | h(x) = x_i, i \in (1,…,d)}$</p>
+<p>$latex H = \{h_i(i = i,…,k) | h(x) = x_i, i \in (1,…,d)\}$</p>
 </blockquote>
 <h4 id="4-2-Random-projection"><a href="#4-2-Random-projection" class="headerlink" title="4.2 Random projection"></a>4.2 Random projection</h4><blockquote>
 <p>The random projection method of LSH is designed to approximate the cosine distance between vectors.</p>
 </blockquote>
 <p>其Hash函数设计的基本思想就是定义一个随机超平面$latex (w,b)$,$latex w,b$可看做分别是超平面的斜率和截距(参照二维平面直线的定义)，超平面将整个原始的特征空间划分为两部分(平面的两侧)，用{0, 1}表示，则Hash函数的映射过程为：</p>
 <blockquote>
-<p>$latex h(x) = \left{\begin{matrix}1, w\cdot x + b &gt; 0 \ 0, else\end{matrix}\right.$</p>
+<p>$latex h(x) = \left\{\begin{matrix}1, w\cdot x + b &gt; 0 \\ 0, else\end{matrix}\right.$</p>
 </blockquote>
 <p>$latex w$是d维的法向单位向量，即$latex ||w||_2 = 1$，每一个不同的w即定义一个超平面(可令$latex b = 0$).<br>可证明两个特征vector经Hash函数散列后碰撞的概率和其在原始空间的余弦距离成正比，即 $latex Pr(h(p)=h(q))=1-\frac{\theta(p,q)}{\pi}$ 是vector $latex p,q$的夹角，$latex 1-\frac{\theta(p,q)}{\pi}$和余弦距离成正比.</p>
 <h3 id="4-3-Stable-distributions"><a href="#4-3-Stable-distributions" class="headerlink" title="4.3 Stable distributions"></a>4.3 Stable distributions</h3><p>Hash函数设计的基本思想也是定义一个随机超平面，不同于4.2之处在于Hash函数将d维的特征矢量散列到[0,r]之间的一个整数而不是{0, 1}二值码，其Hash过程：</p>
@@ -277,9 +277,9 @@
 </blockquote>
 <p>由稳态分布的性质，我们可以看出基于稳态分布Hash函数设计的思想：</p>
 <p>[latex]w \cdot x[/latex]将d维的向量x映射到一条直线，将此直线划分为r大小等间隔的段，则哈希函数[latex]h(x)[/latex]将向量x映射到直线的某一段；</p>
-<p>w中每一维[latex]{w}<em>{i}[/latex]都是一个稳态分布的变量，因此[latex]w \cdot x[/latex]是稳态分布变量的线性组合，因此[latex]w \cdot x[/latex]的分布等价于[latex]{|x|}</em>{p} \cdot {w}_{i}[/latex]的分布；</p>
-<p>由此，可得出对于两个原始空间的向量[latex]{x}<em>{1},{x}</em>{2}[/latex]，其映射后的距离为<a href="{x}_{1}-{x}_{2}">latex</a> \cdot w[/latex]，其分布等价于[latex]{|{x}<em>{1}-{x}</em>{2}|}<em>{p} \cdot w[/latex]的分布，[latex]{|{x}</em>{1}-{x}<em>{2}|}</em>{p}[/latex]是原始空间向量[latex]{x}<em>{1},{x}</em>{2}[/latex]之间的距离，只需证明[latex]Pr(h({x}<em>{1})=h({x}</em>{2})) \propto 1/{|{x}<em>{1}-{x}</em>{2}|}_{p}[/latex]，即两个向量经Hash函数映射后碰撞的概率反比于两个向量之间的[latex]L_p[/latex]距离。</p>
-<p>令[latex]c={|{x}<em>{1}-{x}</em>{2}|}<em>{p}[/latex]，[latex]p(c)={Pr}(h({x}</em>{1})=h({x}_{2}))[/latex]，则对于上述两个稳态分布，可得出：</p>
+<p>w中每一维[latex]{w}_{i}[/latex]都是一个稳态分布的变量，因此[latex]w \cdot x[/latex]是稳态分布变量的线性组合，因此[latex]w \cdot x[/latex]的分布等价于[latex]{|x|}_{p} \cdot {w}_{i}[/latex]的分布；</p>
+<p>由此，可得出对于两个原始空间的向量[latex]{x}_{1},{x}_{2}[/latex]，其映射后的距离为<a href="{x}_{1}-{x}_{2}">latex</a> \cdot w[/latex]，其分布等价于[latex]{|{x}_{1}-{x}_{2}|}_{p} \cdot w[/latex]的分布，[latex]{|{x}_{1}-{x}_{2}|}_{p}[/latex]是原始空间向量[latex]{x}_{1},{x}_{2}[/latex]之间的距离，只需证明[latex]Pr(h({x}_{1})=h({x}_{2})) \propto 1/{|{x}_{1}-{x}_{2}|}_{p}[/latex]，即两个向量经Hash函数映射后碰撞的概率反比于两个向量之间的[latex]L_p[/latex]距离。</p>
+<p>令[latex]c={|{x}_{1}-{x}_{2}|}_{p}[/latex]，[latex]p(c)={Pr}(h({x}_{1})=h({x}_{2}))[/latex]，则对于上述两个稳态分布，可得出：</p>
 <p>1.Cauchy distribution:<br>  [latex]p(c)=2\frac{\tan^{-1} (r/c)}{\pi}-\frac{1}{\pi (r/c)}\ln (1+(r/c)^2)[/latex]<br>2.Gaussian distribution:<br>  [latex]p(c)=1-2norm(-r/c)-\frac{2}{\sqrt{2\pi}r/c}(1-e^{-(r^2/2c^2)})[/latex]</p>
 <p>[latex]norm(\cdot)[/latex]是正态分布[latex]N(0,1)[/latex]随机变量的累积分布。</p>
 
@@ -303,6 +303,25 @@
   <br>
   
 
+  
+  <!-- livere begin-->
+  <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM1MC8xMjg4NQ">
+      <script type="text/javascript">
+          (function(d, s) {
+              var j, e = d.getElementsByTagName(s)[0];
+
+              if (typeof LivereTower === 'function') { return; }
+
+              j = d.createElement(s);
+              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+              j.async = true;
+
+              e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+      </script>
+      <noscript> To show LiveRe comment, please use JavaScript</noscript>
+  </div>
+  <!-- livere end -->
   
   </div>
 
@@ -328,6 +347,15 @@
     <div class="text-center">
       <ul class="list-inline">
           
+          
+              <li>
+                  <a target="_blank" href="https://twitter.com/LeeSte7en">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
           
           
 

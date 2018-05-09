@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -205,39 +205,91 @@
       <div class="col-lg-8 col-lg-offset-1 col-sm-9">
           
           
-          <div></div><br><div><br><br># 1 引言<br><br><div></div><br><div>相似度计算用于衡量对象之间的相似程度，在数据挖掘、自然语言处理中是一个基础性计算。其中的关键技术主要是两个部分，对象的特征表示，特征集合之间的相似关系。在信息检索、网页判重、推荐系统等，都涉及到对象之间或者对象和对象集合的相似性的计算。而针对不同的应用场景，受限于数据规模、时空开销等的限制，相似度计算方法的选择又会有所区别和不同。下面章节会针对不同特点的应用，进行一些常用的相似度计算方法进行介绍。</div><br><div></div>
+          <div></div>
+<div>
 
-<p># </p>
-<h1 id="2-向量空间模型"><a href="#2-向量空间模型" class="headerlink" title="2 向量空间模型"></a>2 向量空间模型</h1><div></div><br><div>向量空间模型（Vector space model）是应用最广泛的一个基础相似度计算模型，在该模型中，每个对象映射为一个特征向量</div><br><div>其中计算相似度的方法有欧氏距离和余弦相似度等</div><br><div>作为一个应用广泛的模型，向量空间模型在现有的很多应用中仍然起着至关重要的作用，也是很多扩展方法的基础。</div><br><div></div>
+# 1 引言
 
-<p># </p>
-<h1 id="3-基于hash方法的相似计算"><a href="#3-基于hash方法的相似计算" class="headerlink" title="3 基于hash方法的相似计算"></a>3 基于hash方法的相似计算</h1><div></div><br><div>基于hash的相似度计算方法，是一种基于概率的高维度数据的维度削减的方法，主要用于大规模数据的压缩与实时或者快速的计算场景下，基于hash方法的相似度计算经常用于高维度大数据量的情况下，将利用原始信息不可存储与计算的问题转化为映射空间的可存储计算问题，在海量文本重复性判断方面，近似文本查询方面有比较多的应用，google的网页去重[1]，google news的协同过滤[2,3]等都是采用hash方法进行近似相似度的计算，比较常见的应用场景Near-duplicate detection、Image similarity identification、nearest neighbor search，常用的一些方法包括I-match，Shingling、Locality-Sensitive Hashing族等方法，下面针对几种常见的hash方法进行介绍。</div><br><div></div>
+<div></div>
+<div>相似度计算用于衡量对象之间的相似程度，在数据挖掘、自然语言处理中是一个基础性计算。其中的关键技术主要是两个部分，对象的特征表示，特征集合之间的相似关系。在信息检索、网页判重、推荐系统等，都涉及到对象之间或者对象和对象集合的相似性的计算。而针对不同的应用场景，受限于数据规模、时空开销等的限制，相似度计算方法的选择又会有所区别和不同。下面章节会针对不同特点的应用，进行一些常用的相似度计算方法进行介绍。</div>
+<div></div>
 
-<h2 id="3-1-minhash方法介绍"><a href="#3-1-minhash方法介绍" class="headerlink" title="3.1 minhash方法介绍"></a>3.1 minhash方法介绍</h2><div></div><br><div>Minhash方法是Locality-sensitive hashing[4,5]算法族里的一个常用方法，基本的思想是，对于每一个对象的itemlist，将输入的item进行hash，这样相似的item具有很高的相似度被映射到相同的buckets里面，这样尽量保证了hash之后两个对象之间的相似程度和原来是高相似的，而buckets的数量是远远小于输入的item的，因此又达到降低复杂度的目的。</div><br><div>minhash方法用Jaccard进行相似度的计算方法。</div><br><div>当两个集合越相似，则该值越接近1，否则越接近0。用minhash方法，将一个集合映射到[0-R-1]之间的值，以相同的概率随机的抽取一个[0-R-1]的一个排列，依次排列查找第一次出现1的行。</div><br><div>设随机排列为43201(edcab)，对于C1列，第一次出现1的行是R4，所以h(C1) = 3，同理有h(C2)=2, h(C3)=4, h(C4)=3。<br>通过多次抽取随机排列得到n个minhash函数h1,h2,…,hn，依此对每一列都计算n个minhash值。对于两个集合，看看n个值里面对应相等的比例，即可估计出两集合的Jaccard相似度。可以把每个集合的n个minhash值列为一列，得到一个n行C列的签名矩阵。因为n可远小于R，这样在压缩了数据规模的同时，并且仍能近似计算出相似度。</div><br><div></div>
+<h1 id=""><a href="#" class="headerlink" title=" "></a> </h1><h1 id="2-向量空间模型"><a href="#2-向量空间模型" class="headerlink" title="2 向量空间模型"></a>2 向量空间模型</h1><div></div>
+<div>向量空间模型（Vector space model）是应用最广泛的一个基础相似度计算模型，在该模型中，每个对象映射为一个特征向量</div>
+<div>其中计算相似度的方法有欧氏距离和余弦相似度等</div>
+<div>作为一个应用广泛的模型，向量空间模型在现有的很多应用中仍然起着至关重要的作用，也是很多扩展方法的基础。</div>
+<div></div>
 
-<h2 id="3-2-simhash方法介绍"><a href="#3-2-simhash方法介绍" class="headerlink" title="3.2 simhash方法介绍"></a>3.2 simhash方法介绍</h2><div></div><br><div>simhash方法是在大文本重复识别常用的一个方法，该方法主要是通过将对象的原始特征集合映射为一个固定长度的签名，将对象之间的相似度的度量转化为签名的汉明距离，通过这样的方式，极大限度地进行了降低了计算和存储的消耗。</div>
+<h1 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h1><h1 id="3-基于hash方法的相似计算"><a href="#3-基于hash方法的相似计算" class="headerlink" title="3 基于hash方法的相似计算"></a>3 基于hash方法的相似计算</h1><div></div>
+<div>基于hash的相似度计算方法，是一种基于概率的高维度数据的维度削减的方法，主要用于大规模数据的压缩与实时或者快速的计算场景下，基于hash方法的相似度计算经常用于高维度大数据量的情况下，将利用原始信息不可存储与计算的问题转化为映射空间的可存储计算问题，在海量文本重复性判断方面，近似文本查询方面有比较多的应用，google的网页去重[1]，google news的协同过滤[2,3]等都是采用hash方法进行近似相似度的计算，比较常见的应用场景Near-duplicate detection、Image similarity identification、nearest neighbor search，常用的一些方法包括I-match，Shingling、Locality-Sensitive Hashing族等方法，下面针对几种常见的hash方法进行介绍。</div>
+<div></div>
 
-<p>### </p>
-<h3 id="3-2-1-签名计算过程"><a href="#3-2-1-签名计算过程" class="headerlink" title="3.2.1 签名计算过程"></a>3.2.1 签名计算过程</h3><div>该方法通过对输入特征集合的计算步骤可以描述如下：<br><br></div><br><div>将一个f维的向量V初始化为0；f位的二进制数S初始化为0；<br>对每一个特征：用传统的hash算法对该特征产生一个f位的签名b。对i=1到f：</div><br><div>     如果b的第i位为1，则V的第i个元素加上该特征的权重；<br>否则，V的第i个元素减去该特征的权重。<br>如果V的第i个元素大于0，则S的第i位为1，否则为0；<br>输出S作为签名。<br><br></div><br><div>通过上述步骤将输入的表示对象的特征集合转化为该对象的一个签名，在完成签名之后，度量两个对象的相似度的差异即变成了对量二者的指纹的K位的差异情况。</div><br><div></div>
+<h2 id="3-1-minhash方法介绍"><a href="#3-1-minhash方法介绍" class="headerlink" title="3.1 minhash方法介绍"></a>3.1 minhash方法介绍</h2><div></div>
+<div>Minhash方法是Locality-sensitive hashing[4,5]算法族里的一个常用方法，基本的思想是，对于每一个对象的itemlist，将输入的item进行hash，这样相似的item具有很高的相似度被映射到相同的buckets里面，这样尽量保证了hash之后两个对象之间的相似程度和原来是高相似的，而buckets的数量是远远小于输入的item的，因此又达到降低复杂度的目的。</div>
+<div>minhash方法用Jaccard进行相似度的计算方法。</div>
+<div>当两个集合越相似，则该值越接近1，否则越接近0。用minhash方法，将一个集合映射到[0-R-1]之间的值，以相同的概率随机的抽取一个[0-R-1]的一个排列，依次排列查找第一次出现1的行。</div>
+<div>设随机排列为43201(edcab)，对于C1列，第一次出现1的行是R4，所以h(C1) = 3，同理有h(C2)=2, h(C3)=4, h(C4)=3。
+通过多次抽取随机排列得到n个minhash函数h1,h2,…,hn，依此对每一列都计算n个minhash值。对于两个集合，看看n个值里面对应相等的比例，即可估计出两集合的Jaccard相似度。可以把每个集合的n个minhash值列为一列，得到一个n行C列的签名矩阵。因为n可远小于R，这样在压缩了数据规模的同时，并且仍能近似计算出相似度。</div>
+<div></div>
 
-<h3 id="3-2-2-汉明距离查找优化"><a href="#3-2-2-汉明距离查找优化" class="headerlink" title="3.2.2 汉明距离查找优化"></a>3.2.2 汉明距离查找优化</h3><div>对于如何快速查找出某一个签名是否与其存在最大差异不超过K个bit的指纹，Detecting Near-Duplicates for Web Crawling这篇论文中进行了介绍。该查找方法的基本思想是利用空间换时间的方法，该方法的依据是需要查找的两个指纹的差异很小，这样可以通过将原始指纹进行分块索引，如果两个指纹的差异很小，则合理的分块后，根据鸽笼原理，其中存在一定数量的块是一致的，通过利用相同的块进行相似的指纹的召回，只需要比对召回的块中有差异的块的bit差异，这样减少了需要比对的数量，节省了比对的时间开销。</div><br><div></div>
+<h2 id="3-2-simhash方法介绍"><a href="#3-2-simhash方法介绍" class="headerlink" title="3.2 simhash方法介绍"></a>3.2 simhash方法介绍</h2><div></div>
+<div>simhash方法是在大文本重复识别常用的一个方法，该方法主要是通过将对象的原始特征集合映射为一个固定长度的签名，将对象之间的相似度的度量转化为签名的汉明距离，通过这样的方式，极大限度地进行了降低了计算和存储的消耗。</div>
 
-<h2 id="3-3-小结"><a href="#3-3-小结" class="headerlink" title="3.3 小结"></a>3.3 小结</h2><div></div><br><div>hash方法的相似度计算的主要应用场景，一般是针对大规模数据进行压缩，在保证效果损失可接受的情况下，节省存储空间，加快运算速度，针对该方法的应用，在目前的大规模的互联网处理中，很多相似度的计算都是基于这种近似性的计算，并取得了比较好的效果。<br>设随机排列为43201(edcab)，对于C1列，第一次出现1的行是R4，所以h(C1) = 3，同理有h(C2)=2, h(C3)=4, h(C4)=3。<br>通过多次抽取随机排列得到n个minhash函数h1,h2,…,hn，依此对每一列都计算n个minhash值。对于两个集合，看看n个值里面对应相等的比例，即可估计出两集合的Jaccard相似度。可以把每个集合的n个minhash值列为一列，得到一个n行C列的签名矩阵。因为n可远小于R，这样在压缩了数据规模的同时，并且仍能近似计算出相似度。</div><br><div></div>
+<h3 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h3><h3 id="3-2-1-签名计算过程"><a href="#3-2-1-签名计算过程" class="headerlink" title="3.2.1 签名计算过程"></a>3.2.1 签名计算过程</h3><div>该方法通过对输入特征集合的计算步骤可以描述如下：
 
-<p># </p>
-<h1 id="4-基于主题的相似度计算"><a href="#4-基于主题的相似度计算" class="headerlink" title="4 基于主题的相似度计算"></a>4 基于主题的相似度计算</h1><div></div><br><div>传统的BOW（bag-of_words）模型，一般都会建立在特征独立假设的基础上，按照特征向量的匹配情况来度量对象之间的相似度，但是在实际的应用中，很多时候特征之间存在着很多的关联关系，二者在传统的BOW模型中无法解决，在这个基础上，引入了主题的概念，通过主题的思想，建立起基本特征与对象的中间层的关联关系，主题的概念的引入，主要是在原有的基本特征粒度的基础上，引入了更为丰富的隐含层特征，提高了相似性计算的效果，常用的主题分析方法包括Latent Semantic Analysis (LSA) 、 Probabilitistic Latent Semantic Analysis (PLSA)、Latent Dirichlet Allocation ( LDA)。这些方法在分类，聚类、检索、推荐等领域都有着很多的应用，并取得了比较好的效果。下面就LSA及PLSA方法进行简要介绍。</div><br><div></div>
+</div>
+<div>将一个f维的向量V初始化为0；f位的二进制数S初始化为0；
+对每一个特征：用传统的hash算法对该特征产生一个f位的签名b。对i=1到f：</div>
+<div>     如果b的第i位为1，则V的第i个元素加上该特征的权重；
+否则，V的第i个元素减去该特征的权重。
+如果V的第i个元素大于0，则S的第i位为1，否则为0；
+输出S作为签名。
 
-<h2 id="4-1-LSA"><a href="#4-1-LSA" class="headerlink" title="4.1 LSA"></a>4.1 LSA</h2><div></div><br><div>LSA[6,7]模型认为特征之间存在某种潜在的关联结构，通过特征-对象矩阵进行统计计算，将高维空间映射到低纬的潜在语义结构上，构建出LSA空间模型，从而提取出潜在的语义结构，并用该结构表示特征和对象，消除了词汇之间的相关性影响，并降低了数据维度。增强了特征的鲁棒性<br>LSA利用奇异值分解来进行计算</div><br><div></div>
+</div>
+<div>通过上述步骤将输入的表示对象的特征集合转化为该对象的一个签名，在完成签名之后，度量两个对象的相似度的差异即变成了对量二者的指纹的K位的差异情况。</div>
+<div></div>
 
-<h2 id="4-2-plas"><a href="#4-2-plas" class="headerlink" title="4.2 plas"></a>4.2 plas</h2><div></div><br><div>PLSA[8,9]模型是由Hofmann提出的用于文本检索的概率生成模型，与相比较于LSA，PLSA是基于概率模型的，并直接引入了潜在class变量 ，下面的用文本处理语言来描述该模型。</div><br><div>PLSA和其相关的变形，在分类、聚类、检索等方面，特征相关性计算等方面，获得了广泛的应用，并取得了比较好的效果。</div><br><div></div>
+<h3 id="3-2-2-汉明距离查找优化"><a href="#3-2-2-汉明距离查找优化" class="headerlink" title="3.2.2 汉明距离查找优化"></a>3.2.2 汉明距离查找优化</h3><div>对于如何快速查找出某一个签名是否与其存在最大差异不超过K个bit的指纹，Detecting Near-Duplicates for Web Crawling这篇论文中进行了介绍。该查找方法的基本思想是利用空间换时间的方法，该方法的依据是需要查找的两个指纹的差异很小，这样可以通过将原始指纹进行分块索引，如果两个指纹的差异很小，则合理的分块后，根据鸽笼原理，其中存在一定数量的块是一致的，通过利用相同的块进行相似的指纹的召回，只需要比对召回的块中有差异的块的bit差异，这样减少了需要比对的数量，节省了比对的时间开销。</div>
+<div></div>
 
-<h2 id="4-3-小结"><a href="#4-3-小结" class="headerlink" title="4.3 小结"></a>4.3 小结</h2><div></div><br><div>主题方法的引入，在一定程度上弥补了BOW的假设的独立性，在工业中，主题的方法也越来越多的应用到实际的机器学习中，包括在图像处理领域、传统的分类、聚类、检索等方面，都取得了比较好的效果。</div><br><div></div>
+<h2 id="3-3-小结"><a href="#3-3-小结" class="headerlink" title="3.3 小结"></a>3.3 小结</h2><div></div>
+<div>hash方法的相似度计算的主要应用场景，一般是针对大规模数据进行压缩，在保证效果损失可接受的情况下，节省存储空间，加快运算速度，针对该方法的应用，在目前的大规模的互联网处理中，很多相似度的计算都是基于这种近似性的计算，并取得了比较好的效果。
+设随机排列为43201(edcab)，对于C1列，第一次出现1的行是R4，所以h(C1) = 3，同理有h(C2)=2, h(C3)=4, h(C4)=3。
+通过多次抽取随机排列得到n个minhash函数h1,h2,…,hn，依此对每一列都计算n个minhash值。对于两个集合，看看n个值里面对应相等的比例，即可估计出两集合的Jaccard相似度。可以把每个集合的n个minhash值列为一列，得到一个n行C列的签名矩阵。因为n可远小于R，这样在压缩了数据规模的同时，并且仍能近似计算出相似度。</div>
+<div></div>
 
-<p># </p>
-<h1 id="5-结语"><a href="#5-结语" class="headerlink" title="5 结语"></a>5 结语</h1><div></div><br><div>相似度的计算在数据挖掘方面有着广泛的应用，根据不同的应用场景，各种方法各有其优劣特点，对于相似度效果的影响，除了方法本身之外，合理有效的特征的选择和使用也是至关重要的，同时，根据应用场景的不同，选择合理的方法，对于解决问题，有着重要的作用。</div><br><div></div>
+<h1 id="-3"><a href="#-3" class="headerlink" title=" "></a> </h1><h1 id="4-基于主题的相似度计算"><a href="#4-基于主题的相似度计算" class="headerlink" title="4 基于主题的相似度计算"></a>4 基于主题的相似度计算</h1><div></div>
+<div>传统的BOW（bag-of_words）模型，一般都会建立在特征独立假设的基础上，按照特征向量的匹配情况来度量对象之间的相似度，但是在实际的应用中，很多时候特征之间存在着很多的关联关系，二者在传统的BOW模型中无法解决，在这个基础上，引入了主题的概念，通过主题的思想，建立起基本特征与对象的中间层的关联关系，主题的概念的引入，主要是在原有的基本特征粒度的基础上，引入了更为丰富的隐含层特征，提高了相似性计算的效果，常用的主题分析方法包括Latent Semantic Analysis (LSA) 、 Probabilitistic Latent Semantic Analysis (PLSA)、Latent Dirichlet Allocation ( LDA)。这些方法在分类，聚类、检索、推荐等领域都有着很多的应用，并取得了比较好的效果。下面就LSA及PLSA方法进行简要介绍。</div>
+<div></div>
 
-<p># </p>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><div>1. G.S. Manku, A. Jain, A.D. Sarma. Detecting Near-Duplicates for Web Crawling. WWW2007, 2007<br>2. A. Das, M. Datar, A.Garg. Google News Personalization: Scalable Online Collaborative Filtering. WWW2007, 2007<br>3. <a href="http://en.wikipedia.org/wiki/MinHash" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/MinHash</a><br>4. M. S. Charikar. Similarity estimation techniques from rounding algorithms. STOC’02. 2002<br>5. <a href="http://en.wikipedia.org/wiki/Locality-sensitive_hashing" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/Locality-sensitive_hashing</a><br>6. K. Dave, S. Lawrence, and D. Pennock. Mining the peanut gallery: opinion extraction and semantic classification of product reviews. In Proceedings of the 22th International World Wide Web Conference, Budapest, Hungary, 2003<br>7. <a href="http://en.wikipedia.org/wiki/Latent_semantic_analysis" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/Latent_semantic_analysis</a><br>8. T. Hofmann. Probabilistic Latent Semantic Analysis. In Proceedings of the 15th Conference on Uncertainty in AI(1999).<br>9. Y. M kim, J. F. Pressiot M. R.Amini etc. An Extension of PLSA for Document Clustering. CIKM’08</div><br></div>
+<h2 id="4-1-LSA"><a href="#4-1-LSA" class="headerlink" title="4.1 LSA"></a>4.1 LSA</h2><div></div>
+<div>LSA[6,7]模型认为特征之间存在某种潜在的关联结构，通过特征-对象矩阵进行统计计算，将高维空间映射到低纬的潜在语义结构上，构建出LSA空间模型，从而提取出潜在的语义结构，并用该结构表示特征和对象，消除了词汇之间的相关性影响，并降低了数据维度。增强了特征的鲁棒性
+LSA利用奇异值分解来进行计算</div>
+<div></div>
+
+<h2 id="4-2-plas"><a href="#4-2-plas" class="headerlink" title="4.2 plas"></a>4.2 plas</h2><div></div>
+<div>PLSA[8,9]模型是由Hofmann提出的用于文本检索的概率生成模型，与相比较于LSA，PLSA是基于概率模型的，并直接引入了潜在class变量 ，下面的用文本处理语言来描述该模型。</div>
+<div>PLSA和其相关的变形，在分类、聚类、检索等方面，特征相关性计算等方面，获得了广泛的应用，并取得了比较好的效果。</div>
+<div></div>
+
+<h2 id="4-3-小结"><a href="#4-3-小结" class="headerlink" title="4.3 小结"></a>4.3 小结</h2><div></div>
+<div>主题方法的引入，在一定程度上弥补了BOW的假设的独立性，在工业中，主题的方法也越来越多的应用到实际的机器学习中，包括在图像处理领域、传统的分类、聚类、检索等方面，都取得了比较好的效果。</div>
+<div></div>
+
+<h1 id="-4"><a href="#-4" class="headerlink" title=" "></a> </h1><h1 id="5-结语"><a href="#5-结语" class="headerlink" title="5 结语"></a>5 结语</h1><div></div>
+<div>相似度的计算在数据挖掘方面有着广泛的应用，根据不同的应用场景，各种方法各有其优劣特点，对于相似度效果的影响，除了方法本身之外，合理有效的特征的选择和使用也是至关重要的，同时，根据应用场景的不同，选择合理的方法，对于解决问题，有着重要的作用。</div>
+<div></div>
+
+<h1 id="-5"><a href="#-5" class="headerlink" title=" "></a> </h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><div>1\. G.S. Manku, A. Jain, A.D. Sarma. Detecting Near-Duplicates for Web Crawling. WWW2007, 2007
+2\. A. Das, M. Datar, A.Garg. Google News Personalization: Scalable Online Collaborative Filtering. WWW2007, 2007
+3\. http://en.wikipedia.org/wiki/MinHash
+4\. M. S. Charikar. Similarity estimation techniques from rounding algorithms. STOC’02\. 2002
+5\. http://en.wikipedia.org/wiki/Locality-sensitive_hashing
+6\. K. Dave, S. Lawrence, and D. Pennock. Mining the peanut gallery: opinion extraction and semantic classification of product reviews. In Proceedings of the 22th International World Wide Web Conference, Budapest, Hungary, 2003
+7\. http://en.wikipedia.org/wiki/Latent_semantic_analysis
+8\. T. Hofmann. Probabilistic Latent Semantic Analysis. In Proceedings of the 15th Conference on Uncertainty in AI(1999).
+9\. Y. M kim, J. F. Pressiot M. R.Amini etc. An Extension of PLSA for Document Clustering. CIKM’08</div>
+</div>
           
           <hr>
           <ul class="pager">
@@ -259,6 +311,25 @@
   
 
   
+  <!-- livere begin-->
+  <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM1MC8xMjg4NQ">
+      <script type="text/javascript">
+          (function(d, s) {
+              var j, e = d.getElementsByTagName(s)[0];
+
+              if (typeof LivereTower === 'function') { return; }
+
+              j = d.createElement(s);
+              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+              j.async = true;
+
+              e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+      </script>
+      <noscript> To show LiveRe comment, please use JavaScript</noscript>
+  </div>
+  <!-- livere end -->
+  
   </div>
 
 
@@ -267,7 +338,7 @@
     <div class="toc-wrap">
         Table of Contents
         
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-向量空间模型"><span class="toc-number">1.</span> <span class="toc-text">2 向量空间模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-基于hash方法的相似计算"><span class="toc-number">2.</span> <span class="toc-text">3 基于hash方法的相似计算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-minhash方法介绍"><span class="toc-number">2.1.</span> <span class="toc-text">3.1 minhash方法介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-simhash方法介绍"><span class="toc-number">2.2.</span> <span class="toc-text">3.2 simhash方法介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-签名计算过程"><span class="toc-number">2.2.1.</span> <span class="toc-text">3.2.1 签名计算过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-汉明距离查找优化"><span class="toc-number">2.2.2.</span> <span class="toc-text">3.2.2 汉明距离查找优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-小结"><span class="toc-number">2.3.</span> <span class="toc-text">3.3 小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-基于主题的相似度计算"><span class="toc-number">3.</span> <span class="toc-text">4 基于主题的相似度计算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-LSA"><span class="toc-number">3.1.</span> <span class="toc-text">4.1 LSA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-plas"><span class="toc-number">3.2.</span> <span class="toc-text">4.2 plas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-小结"><span class="toc-number">3.3.</span> <span class="toc-text">4.3 小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-结语"><span class="toc-number">4.</span> <span class="toc-text">5 结语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文献"><span class="toc-number">5.</span> <span class="toc-text">参考文献</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-向量空间模型"><span class="toc-number">2.</span> <span class="toc-text">2 向量空间模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-1"><span class="toc-number">3.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-基于hash方法的相似计算"><span class="toc-number">4.</span> <span class="toc-text">3 基于hash方法的相似计算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-minhash方法介绍"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 minhash方法介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-simhash方法介绍"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 simhash方法介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#-2"><span class="toc-number">4.2.1.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-签名计算过程"><span class="toc-number">4.2.2.</span> <span class="toc-text">3.2.1 签名计算过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-汉明距离查找优化"><span class="toc-number">4.2.3.</span> <span class="toc-text">3.2.2 汉明距离查找优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-小结"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-3"><span class="toc-number">5.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-基于主题的相似度计算"><span class="toc-number">6.</span> <span class="toc-text">4 基于主题的相似度计算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-LSA"><span class="toc-number">6.1.</span> <span class="toc-text">4.1 LSA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-plas"><span class="toc-number">6.2.</span> <span class="toc-text">4.2 plas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-小结"><span class="toc-number">6.3.</span> <span class="toc-text">4.3 小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-4"><span class="toc-number">7.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-结语"><span class="toc-number">8.</span> <span class="toc-text">5 结语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-5"><span class="toc-number">9.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文献"><span class="toc-number">10.</span> <span class="toc-text">参考文献</span></a></li></ol>
         
     </div>
   </div>
@@ -283,6 +354,15 @@
     <div class="text-center">
       <ul class="list-inline">
           
+          
+              <li>
+                  <a target="_blank" href="https://twitter.com/LeeSte7en">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
           
           
 

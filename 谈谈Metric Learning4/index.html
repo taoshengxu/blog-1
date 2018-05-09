@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -208,39 +208,39 @@
 <p>对于low-rank kernel learning的输入，是一个specified kernel $latex K_0$, 我们的目标是使得我们需要的kernel $latex K$ 无限接近 $latex K_0$ ,而这种“接近”自然是由我们的LogDet divergence来衡量的，好了，那么对于这个问题。</p>
 <p>首先，我们知道给定的$latex A_0$是如下形式的， $latex K_0 = X^TA_0X$，它是一个$latex n \times n$的方阵，优化问题如下：</p>
 <blockquote>
-<p><strong><em>Equation.1</em></strong></p>
-<p>  $latex \min\limits_K<del>D_{ld}(K, K_0)$<br>  s.t. $latex K_{ii} + K_{jj} - 2K_{ij} \leq v ~</del>~~ (i,j) \in S\</p>
-<pre><code>K_{ii} + K_{jj} - 2K_{ij} \geq l ~~~~~ (i,j) \in D\\
+<p><strong>_Equation.1_</strong></p>
+<p>  $latex \min\limits_K<del>D_{ld}(K, K_0)$<br>  s.t. $latex K_{ii} + K_{jj} - 2K_{ij} \leq v ~</del>~~ (i,j) \in S\\</p>
+<pre><code>         K_{ii} + K_{jj} - 2K_{ij} \geq l ~~~~~ (i,j) \in D\\
 </code></pre><p>K \succeq 0$</p>
 </blockquote>
 <h3 id="2-Kernel-Learning和ITML的联系"><a href="#2-Kernel-Learning和ITML的联系" class="headerlink" title="2. Kernel Learning和ITML的联系"></a>2. Kernel Learning和ITML的联系</h3><p>现在已经看出一点端倪了，实际上这两个问题的关联在于如何证明$latex K$和$latex A$存在着“强关联”。回想下我们在<a href="http://wp.me/p61l9A-68" target="_blank" rel="noopener">上一篇</a>中介绍的关于$latex A$和$latex A_0$的LogDet优化：</p>
 <blockquote>
-<p><strong><em>Equation.2</em></strong></p>
-<p>  $latex \min\limits_{A \succeq 0}<del>D_{ld}(A,A_0)$<br>  s.t. $latex tr(A(x_i - x_j)(x_i - x_j)^T) \leq v ~</del>~ (i,j) \in S \</p>
-<pre><code>tr(A(x_i - x_j)(x_i - x_j)^T) \geq l ~~~~ (i,j) \in D $
+<p><strong>_Equation.2_</strong></p>
+<p>  $latex \min\limits_{A \succeq 0}<del>D_{ld}(A,A_0)$<br>  s.t. $latex tr(A(x_i - x_j)(x_i - x_j)^T) \leq v ~</del>~ (i,j) \in S \\</p>
+<pre><code>         tr(A(x_i - x_j)(x_i - x_j)^T) \geq l ~~~~ (i,j) \in D $
 </code></pre></blockquote>
 <p>为了证明它们之间的关联，我们给出一个引理及其证明，如下：</p>
 <blockquote>
-<p><strong><em>LEMMA 1.</em></strong></p>
+<p><strong>_LEMMA 1._</strong></p>
 <p>  给定$latex K = X^TAX$， 当且仅当$latex K$是Equation.1的可行解的情况下，$latex A$是Equation.2的可行解。</p>
-<p>  <em>证明:</em><br>  $latex K_{ii} + K_{jj} - 2K_{ij}$可写成$latex (e_i - e_j)^TK(e_i - e_j) = (x_i - x_j)^TA(x_i - x_j)$。因此，对于similar constraint，$latex K_{ii} + K_{jj} - 2K_{ij} \leq v$等价于$latex tr(A(x_i - x_j)(x_i-x_j)^T) \leq v$。同理，适用于dissimilar constraint。</p>
+<p>  _证明:_<br>  $latex K_{ii} + K_{jj} - 2K_{ij}$可写成$latex (e_i - e_j)^TK(e_i - e_j) = (x_i - x_j)^TA(x_i - x_j)$。因此，对于similar constraint，$latex K_{ii} + K_{jj} - 2K_{ij} \leq v$等价于$latex tr(A(x_i - x_j)(x_i-x_j)^T) \leq v$。同理，适用于dissimilar constraint。</p>
 </blockquote>
 <p>由上，我们可以给出一个定理及其证明：</p>
 <blockquote>
-<p><strong><em>THEOREM 1.</em></strong></p>
+<p><strong>_THEOREM 1._</strong></p>
 <p>  给定Equation.1的最优解$latex K^<em>$及Equation.2的最优解$latex A^</em>$，必有$latex K^<em> = X^TA^</em>X$。</p>
-<p>  <em>证明:</em></p>
+<p>  _证明:_</p>
 <p>  对于Equation.1的Bregman projection update 可写为：</p>
 <p>  $latex A_{t+1} = A_{t} + \beta A_{t}(x_i - x_j)(x_i - x_j)^TA_{t}$</p>
 <p>  对于Equation.2的Bregman projection update 则可写为：</p>
 <p>  $latex K_{t+1} = K_{t} + \beta K_{t}(e_i - e_j)(e_i - e_j)^TK_{t}$</p>
 <p>  优化的算法可以得出，两者当中使用的$latex \beta$是一致的，接下来可以归纳证明，在每一次迭代的过程中，都满足关系$latex K_t = X^TA_{t}X$（给定初始条件：$latex K_0 = X^TA_{0}X$）</p>
 <p>  假设$latex K_t = X^TA_{t}X$则:</p>
-<p>  $latex K_{t+1}\</p>
-<p> = K_{t} + \beta K_{t}(e_i - e_j)(e_i - e_j)^TK_{t}\</p>
-<p> = X^TA_{t}X + \beta X^TA_{t}X(e_i - e_j)(e_i - e_j)^TX^TA_{t}X\</p>
-<p> = X^TA_{t}X + \beta X^TA_{t}(x_i - x_j)(x_i - x_j)^TA_{t}X\</p>
-<p> = X^T(A_{t} + A_{t}(x_i - x_j)(x_i - x_j)^TA_{t})X\</p>
+<p>  $latex K_{t+1}\\</p>
+<p> = K_{t} + \beta K_{t}(e_i - e_j)(e_i - e_j)^TK_{t}\\</p>
+<p> = X^TA_{t}X + \beta X^TA_{t}X(e_i - e_j)(e_i - e_j)^TX^TA_{t}X\\</p>
+<p> = X^TA_{t}X + \beta X^TA_{t}(x_i - x_j)(x_i - x_j)^TA_{t}X\\</p>
+<p> = X^T(A_{t} + A_{t}(x_i - x_j)(x_i - x_j)^TA_{t})X\\</p>
 <p> = X^TA_{t+1}X$</p>
 <p>  如果$latex K$能收敛到$latex K^<em>$，那么$latex A$也能收敛到$latex A^</em>$。则两个问题等价，定理得证。</p>
 </blockquote>
@@ -254,7 +254,7 @@
 <p>其中$latex \phi()$理解为对于变量的非线性转换函数。转换到核空间后，我们是否还能通过估量来学习到一个合适的metric呢？</p>
 <p>实际上，我们的metric 定义变成了：</p>
 <blockquote>
-<p>$latex d_A(\phi(x), \phi(y)) = (\phi(x) - \phi(y))^TA(\phi(x) - \phi(y))\</p>
+<p>$latex d_A(\phi(x), \phi(y)) = (\phi(x) - \phi(y))^TA(\phi(x) - \phi(y))\\</p>
 <p>= \phi(x)^TA\phi(x) - 2\phi(x)^TA\phi(y) + \phi(y)^TA\phi(y)$</p>
 </blockquote>
 <p>随后，我们定义一个新的核公式：</p>
@@ -267,8 +267,8 @@
 </blockquote>
 <p>这是核化之后的$latex A$，它依然希望能够尽量逼近$latex I$，这里我们引入了一些系数coefficient $latex \sigma_{ij}$。这样，就可以写出新的核公式的表达形式：</p>
 <blockquote>
-<p>$latex \widetilde{k}(x,y) = \phi(x)^TA\phi(y) = \phi(x)^T(I + \sum\limits_{i,j}\sigma_{ij}\phi(x_i)\phi(x_j)^T)\phi(y) \</p>
-<p>= \phi(x)^T\phi(y) + \sum\limits_{i,j}\sigma_{ij}\phi(x)^T\phi(x_i)\phi(x_j)^T\phi(y) \</p>
+<p>$latex \widetilde{k}(x,y) = \phi(x)^TA\phi(y) = \phi(x)^T(I + \sum\limits_{i,j}\sigma_{ij}\phi(x_i)\phi(x_j)^T)\phi(y) \\</p>
+<p>= \phi(x)^T\phi(y) + \sum\limits_{i,j}\sigma_{ij}\phi(x)^T\phi(x_i)\phi(x_j)^T\phi(y) \\</p>
 <p>= k(x,y) + \sum\limits_{i,j}\sigma_{ij}k(x,x_i)k(x_i,y)$</p>
 </blockquote>
 <p>到这里，我们看到，新的核公式是老的核公式和一系列系数的组合，通过优化Equation.2当中的问题，我们可以得到一系列系数$latex \sigma_{ij} $来估量新的核函数$latex \widetilde{k}()$。</p>
@@ -277,7 +277,7 @@
 <p>那么这个prediction的loss可以表达为$latex l_t(A_t) = (d_t - \widetilde{d_t})^2 $。其中，$latex d_t$我们称之为$latex x_t$和$latex y_t$之间的”true/target” distance。</p>
 <p>那么通过一次prediction，算法将 $latex A_t$ 修改为 $latex A_{t+1}$，并且用新的model进行接下来的预测，我们于是得到predicitons的 total loss 为 $latex \sum_tl_t(A_t)$。</p>
 <p>对于这样一个total loss，由于输入数据和他们的target distance是没有关联的，我们找不到它的bound，一个可行的方案就是将其和离线阶段中的最佳可能（best possible）方案进行对比。</p>
-<p>对于最佳可能方案，可以这样得到，假设给出一个T-trail sequence $latex S = {(x_1,y_1,d_1),…,(x_T,y_T,d_T)}$, best possible方案满足：</p>
+<p>对于最佳可能方案，可以这样得到，假设给出一个T-trail sequence $latex S = \{(x_1,y_1,d_1),…,(x_T,y_T,d_T)\}$, best possible方案满足：</p>
 <blockquote>
 <p>$latex A^* = \arg\min\limits_{A \succeq 0} \sum\limits_{t = 1}^{T}l_t(A)$</p>
 </blockquote>
@@ -317,6 +317,25 @@
   
 
   
+  <!-- livere begin-->
+  <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM1MC8xMjg4NQ">
+      <script type="text/javascript">
+          (function(d, s) {
+              var j, e = d.getElementsByTagName(s)[0];
+
+              if (typeof LivereTower === 'function') { return; }
+
+              j = d.createElement(s);
+              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+              j.async = true;
+
+              e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+      </script>
+      <noscript> To show LiveRe comment, please use JavaScript</noscript>
+  </div>
+  <!-- livere end -->
+  
   </div>
 
 
@@ -341,6 +360,15 @@
     <div class="text-center">
       <ul class="list-inline">
           
+          
+              <li>
+                  <a target="_blank" href="https://twitter.com/LeeSte7en">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
           
           
 

@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -210,10 +210,10 @@
 <p>Augmented reality (AR) is a technique that allows to seamlessly composite virtual objects or information into real scene.</p>
 <p>  Simultaneous localization and mapping (SLAM) is a key fundamental technique for augmented reality, which provides the ability of self-localization in an unknown environment and mapping the 3D environment simultaneously. The localization and mapping enables fusion of virtual objects and real scenes in a geometrically consistent way.</p>
 </blockquote>
-<p><em>注意现在在AR当中多使用的是Visual SLAM，即V-SLAM的技术</em></p>
+<p>_注意现在在AR当中多使用的是Visual SLAM，即V-SLAM的技术_</p>
 <p>两段简短的话，直接从文献[12]里抽出来的，实话来讲，AR里头可以借助多种多样的技术，例如</p>
 <ol>
-<li>采用marker (QR code / 激光栅格)，通过识别marker在图像中的位置来恢复相机三维运动，缺点是场景扩展差，要求marker始终在图像之中；<p></p></li>
+<li>采用marker (QR code / 激光栅格)，通过识别marker在图像中的位置来恢复相机三维运动，缺点是场景扩展差，要求marker始终在图像之中；&lt;/p&gt;</li>
 <li><p>采用IMU (Inertial Measurement Unit)结合定位技术（如GPS和wireless技术），由于通常局部精度不够，会出现虚拟物体跳跃和偏移现象，且高精度的仪器目前还比较昂贵；</p>
 </li>
 <li><p>采用场景布置方式，在场景中布置无线信号发射，通过信号交换的方式进行自身位置的确定，多使用在机器人领域中，不适合移动端进行AR</p>
@@ -235,7 +235,7 @@
 <li><p><a href="https://ocw.mit.edu/courses/aeronautics-and-astronautics/16-412j-cognitive-robotics-spring-2005/projects/1aslam_blas_repo.pdf" target="_blank" rel="noopener">SLAM for dummies</a>， A Tutorial Approach to Simultaneous Localization and Mapping，主要还是讲EKF的东西.</p>
 </li>
 </ol>
-<h3 id="3-经典论文和框架系统"><a href="#3-经典论文和框架系统" class="headerlink" title="3. 经典论文和框架系统"></a>3. 经典论文和框架系统</h3><p>———————–介绍SLAM算法框架的一些文献———————–</p>
+<h3 id="3-经典论文和框架系统"><a href="#3-经典论文和框架系统" class="headerlink" title="3. 经典论文和框架系统"></a>3. 经典论文和框架系统</h3><p>———————————-介绍SLAM算法框架的一些文献———————————-</p>
 <ol>
 <li><p>MonoSLAM. 基于滤波器的V-SLAM 主要的参考为文献[1]，是一个基于单目摄像头的SLAM系统，MonoSLAM中每个时刻的系统状态是由当前的运动参数 [latex] C_t [/latex] 和所有的三维点 [latex] \mathbf{X_1}, \ldots, \mathbf{X_n} [/latex] 构成的，而当前状态的概率偏差由滤波器来控制和进行更新，选用的是扩展卡尔曼滤波器（Extended Kalman Filter，EKF），预测阶段(prediction)利用 [latex] C_{t-1} [/latex] 和线性、旋转加速度和时间差对 [latex] C_t [/latex]进行确认，随后在更新阶段(update)则将观测到的图像点投影到三维场景中，得到新的三维点位置。注意每一时刻参与计算的系统状态只有 [latex] C_t [/latex] 和所有的三维点 [latex] \mathbf{X_1}, \ldots, \mathbf{X_n} [/latex] ，而不考虑 [latex] C_1, \ldots, C_{t-1} [/latex] 的影响。</p>
 </li>
@@ -252,10 +252,10 @@
 <li><p>SVO. 查看文献[15]，基于半稠密法的直接跟踪框架。特征跟踪采用SVO方法，对场景的要求不是特别敏感，而且效率较高，目前SVO的SLAM部分依然很难用，原因在于选择关键帧做优化，特别是地图构建方面做得还不够优。用在三维场景构建中的鲁棒性很强。</p>
 </li>
 </ol>
-<p><em>基本上SLAM可以分为前端的tracking和后端的mapping两大块。</em></p>
-<p><em>在tracking方面，基本上现在都采用的是图像和RGBD这两种，图像的配准分为基于稀疏(sparse)特征和稠密(dense)两种。例如MonoSLAM、MSCKF、PTAM、ORB-SLAM这些都是基于提取的特征，如FAST\ORB等等，的方法；而DTAM、LSD、SVO都是基于稠密或者半稠密进行直接跟踪的方法。</em></p>
-<p><em>在后端的mapping方面，主要是将前端tracking中计算的累积误差的校正的基础上构建关键三维场景，主流有基于概率学的贝叶斯滤波器EKF\PF做优化的，还有基于稀疏的图进行优化的方法。例如MonoSLAM、MSCKF都是基于滤波进行的，PTAM和DTAM都考虑在关键帧的基础上进行BA，而LSD-SLAM和ORB-SLAM都是基于方位图进行全局优化的。</em></p>
-<p>———————–介绍SLAM基础或关键技术的一些文献———————–</p>
+<p>_基本上SLAM可以分为前端的tracking和后端的mapping两大块。_</p>
+<p>_在tracking方面，基本上现在都采用的是图像和RGBD这两种，图像的配准分为基于稀疏(sparse)特征和稠密(dense)两种。例如MonoSLAM、MSCKF、PTAM、ORB-SLAM这些都是基于提取的特征，如FAST\ORB等等，的方法；而DTAM、LSD、SVO都是基于稠密或者半稠密进行直接跟踪的方法。_</p>
+<p>_在后端的mapping方面，主要是将前端tracking中计算的累积误差的校正的基础上构建关键三维场景，主流有基于概率学的贝叶斯滤波器EKF\PF做优化的，还有基于稀疏的图进行优化的方法。例如MonoSLAM、MSCKF都是基于滤波进行的，PTAM和DTAM都考虑在关键帧的基础上进行BA，而LSD-SLAM和ORB-SLAM都是基于方位图进行全局优化的。_</p>
+<p>———————————-介绍SLAM基础或关键技术的一些文献———————————-</p>
 <ol>
 <li><p>Graph-based SLAM，图优化方法. Davison在文献[13]中介绍了图优化方法Graph-based SLAM来取代传统的EKF方法的SLAM. 相关的g2o可以查看文献[11].</p>
 </li>
@@ -354,6 +354,25 @@
   
 
   
+  <!-- livere begin-->
+  <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM1MC8xMjg4NQ">
+      <script type="text/javascript">
+          (function(d, s) {
+              var j, e = d.getElementsByTagName(s)[0];
+
+              if (typeof LivereTower === 'function') { return; }
+
+              j = d.createElement(s);
+              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+              j.async = true;
+
+              e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+      </script>
+      <noscript> To show LiveRe comment, please use JavaScript</noscript>
+  </div>
+  <!-- livere end -->
+  
   </div>
 
 
@@ -378,6 +397,15 @@
     <div class="text-center">
       <ul class="list-inline">
           
+          
+              <li>
+                  <a target="_blank" href="https://twitter.com/LeeSte7en">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
           
           
 

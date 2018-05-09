@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -247,14 +247,14 @@
 <p><img src="http://longaspire.com/blog/wp-content/uploads/2013/04/15144243_L3JA.png" alt="15144243_L3JA"><span class="image-caption-center">15144243_L3JA</span></p>
 <h3 id="3-两种哈希函数操作"><a href="#3-两种哈希函数操作" class="headerlink" title="3. 两种哈希函数操作"></a>3. 两种哈希函数操作</h3><p>定义两种哈希函数的操作：AND和OR。</p>
 <blockquote>
-<p><strong><em>AND 操作</em></strong></p>
+<p><strong>_AND 操作_</strong></p>
 <p>  在局部敏感哈希家族$latex H$中选出$latex r$个哈希哈数，构成哈希家族$latex H’$。</p>
 <p>  对于$latex H’$家族中的$latex h = [h_1, …, h_r] $，$latex h(x) = h(y)$当且仅当对所有的$latex i$都满足$latex h_i(x)=h_i(y)$。这样得到的$latex H’$同样也是一个局部敏感哈希家族。</p>
 <p>  并且若源哈希家族是$latex (d_1,d_2,p_1,p_2)$-sensitive，新哈希家族$latex H’$也是$latex (d_1,d_2,{p_1}^r,{p_2}^r)$-sensitive的。</p>
 </blockquote>
 <p>.</p>
 <blockquote>
-<p><strong><em>OR 操作</em></strong></p>
+<p><strong>_OR 操作_</strong></p>
 <p>  在局部敏感哈希家族$latex H$中选出$latex b$个哈希哈数，构成哈希家族$latex H’$。</p>
 <p>  对于$latex H’$家族中的$latex h = [h_1, …, h_b] $，$latex h(x) = h(y)$当且仅当存在一个$latex i$满足$latex h_i(x)=h_i(y)$。这样得到的$latex H’$同样也是一个局部敏感哈希家族。</p>
 <p>  并且若源哈希家族是$latex (d_1,d_2,p_1,p_2)$-sensitive，新哈希家族$latex H’$也是$latex (d_1,d_2,1-(1-p_1)^b,1-(1-p_2)^b)$-sensitive的。</p>
@@ -264,7 +264,48 @@
 <p>AND-OR，$latex 1-(1-p^r)^b$</p>
 <p>OR-AND，$latex (1-(1-p)^b)^r$</p>
 <h3 id="4-调参"><a href="#4-调参" class="headerlink" title="4. 调参"></a>4. 调参</h3><p>现在我们选定$latex r = b = 4$，那么概率函数可以这么写</p>
-<table><br><thead><br><tr><br>  <th>p</th><br>  <th>1-(1-p^4)^4</th><br></tr><br></thead><br><tbody><br><tr><br>  <td>0.2</td><br>  <td> .0064</td><br></tr><br><tr><br>  <td>0.3</td><br>  <td> .0320</td><br></tr><br><tr><br>  <td>0.4</td><br>  <td> .0985</td><br></tr><br><tr><br>  <td>0.5</td><br>  <td> .2275</td><br></tr><br><tr><br>  <td>0.6</td><br>  <td> .4260</td><br></tr><br><tr><br>  <td>0.7</td><br>  <td> .6666</td><br></tr><br><tr><br>  <td>0.8</td><br>  <td> .8785</td><br></tr><br><tr><br>  <td>0.9</td><br>  <td> .9860</td><br></tr><br></tbody><br></table>
+<table>
+<thead>
+<tr>
+  <th>p</th>
+  <th>1-(1-p^4)^4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>0.2</td>
+  <td> .0064</td>
+</tr>
+<tr>
+  <td>0.3</td>
+  <td> .0320</td>
+</tr>
+<tr>
+  <td>0.4</td>
+  <td> .0985</td>
+</tr>
+<tr>
+  <td>0.5</td>
+  <td> .2275</td>
+</tr>
+<tr>
+  <td>0.6</td>
+  <td> .4260</td>
+</tr>
+<tr>
+  <td>0.7</td>
+  <td> .6666</td>
+</tr>
+<tr>
+  <td>0.8</td>
+  <td> .8785</td>
+</tr>
+<tr>
+  <td>0.9</td>
+  <td> .9860</td>
+</tr>
+</tbody>
+</table>
 
 <p>得到这样的S曲线之后，可以找到一个点t，满足$latex 1-(1-t^r)^b = t$。在t点之后，概率快速上升，在t点之前，概率快速下降。根据需要的灵敏度，可以选择合适的上限概率和下限概率来满足应用需求。</p>
 
@@ -288,6 +329,25 @@
   <br>
   
 
+  
+  <!-- livere begin-->
+  <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM1MC8xMjg4NQ">
+      <script type="text/javascript">
+          (function(d, s) {
+              var j, e = d.getElementsByTagName(s)[0];
+
+              if (typeof LivereTower === 'function') { return; }
+
+              j = d.createElement(s);
+              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+              j.async = true;
+
+              e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+      </script>
+      <noscript> To show LiveRe comment, please use JavaScript</noscript>
+  </div>
+  <!-- livere end -->
   
   </div>
 
@@ -313,6 +373,15 @@
     <div class="text-center">
       <ul class="list-inline">
           
+          
+              <li>
+                  <a target="_blank" href="https://twitter.com/LeeSte7en">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
           
           
 

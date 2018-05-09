@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -217,7 +217,7 @@
 <p>p-stable LSH使用的$latex (r,cr,p_1,p_2)$-sensetive哈希中，$latex c=1+e$，并且不失一般性，设$latex R=1$。下面的工作主要是确定在1（即$latex r$）和 c（即$latex cr$）下的$latex p_1$与$latex p_2$。</p>
 <h3 id="2-概念解释"><a href="#2-概念解释" class="headerlink" title="2. 概念解释"></a>2. 概念解释</h3><p>p-stable LSH之所以会叫这个名字，是因为该算法应用到p-stable distribution（p-稳定分布）的概念。下面给出的就是p-稳定分布的概念：</p>
 <blockquote>
-<p><strong><em>Definition 1</em></strong></p>
+<p><strong>_Definition 1_</strong></p>
 <p>  一个分布$latex D$如果称为p-稳定分布，则对于任意n个实数$latex v_1, v_2, …, v_n$和符合$latex D$分布的n个独立同分布随机变量$latex X_1, X_2, …, X_n$，都存在一个$latex p \geq 0$，使得变量$latex \sum_i v_i X_i$和$latex \sum_{i} (|v_i|^p)^{1/p}X$ (i.e., $latex ||v||_p X$) 具有相同的分布，此处$latex X$是一个符合$latex D$分布的随机变量。</p>
 </blockquote>
 <p>p-稳定分布不是具体的分布，而是满足某条件的分布族。</p>
@@ -248,7 +248,7 @@
 <p>设点$latex a \cdot v_1$在点M处，点$latex a \cdot v_2$在点N处，此处设N点在靠近Q的位置。</p>
 <h4 id="4-1-b对映射后点的影响"><a href="#4-1-b对映射后点的影响" class="headerlink" title="4.1 b对映射后点的影响"></a>4.1 b对映射后点的影响</h4><p>在加b后，因为$latex b \geq 0$，因此加b后点会后移。不失一般性，设$latex r=1$，则有以下两种情况：</p>
 <ol>
-<li>若映射到同一条线段上，不妨设为线段PQ（P为前端点，Q为后端点），设|MN|=t，|NQ|=m，则若要保证加b后点M和点N仍在同一条线段中，则要满足$latex 0 \leq b \leq m$（此时加b后M,N仍在线段PQ中），或者$latex t+m \leq b &lt; r$（此时加b后点M,N落入下一条线段中）。<p></p></li>
+<li>若映射到同一条线段上，不妨设为线段PQ（P为前端点，Q为后端点），设|MN|=t，|NQ|=m，则若要保证加b后点M和点N仍在同一条线段中，则要满足$latex 0 \leq b \leq m$（此时加b后M,N仍在线段PQ中），或者$latex t+m \leq b &lt; r$（此时加b后点M,N落入下一条线段中）。&lt;/p&gt;</li>
 <li>若映射到不同线段上，但|MN| &lt; r（此时必在相邻线段中），不妨设相邻两条线段为PQ和QR，设|MQ|=m，则|QN|=t-m，则若要保证加b后点M和点N仍在同一条线段中，则要满足$latex m &lt; b &lt; r-(t-m)$。</li>
 </ol>
 <p></p><p>可以看到，不管是那种情况，b的取值范围都是r-t，而b是(0,r)内的随机数，因此取得满足条件b的概率是$latex (r-t)/r=1-t/r$。现在只需讨论向量$latex v_1$和$latex v_2$经过$latex a$的点积映射后的距离为t的概率（因为讨论b是设|MN|=t，即b是在向量映射后距离为t的情况下讨论的），即求$latex | a \cdot v_1 - a \cdot v_2 | = || v_1 - v_2||_p |X| = c|X| = t$的概率。</p>
@@ -291,6 +291,25 @@
   
 
   
+  <!-- livere begin-->
+  <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM1MC8xMjg4NQ">
+      <script type="text/javascript">
+          (function(d, s) {
+              var j, e = d.getElementsByTagName(s)[0];
+
+              if (typeof LivereTower === 'function') { return; }
+
+              j = d.createElement(s);
+              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+              j.async = true;
+
+              e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+      </script>
+      <noscript> To show LiveRe comment, please use JavaScript</noscript>
+  </div>
+  <!-- livere end -->
+  
   </div>
 
 
@@ -315,6 +334,15 @@
     <div class="text-center">
       <ul class="list-inline">
           
+          
+              <li>
+                  <a target="_blank" href="https://twitter.com/LeeSte7en">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
           
           
 

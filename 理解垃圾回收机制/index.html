@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -224,7 +224,7 @@
 </ul>
 <p>大多数垃圾回收算法使用了<strong>根集</strong> (root set) 这个概念；所谓根集就是正在执行的Java程序可以访问的引用变量的集合(包括局部变量、参数、类变量)，程序可以使用引用变量访问对象的属性和调用对象的方法。垃圾回收首先需要确定从根开始哪些是可达的和哪些是不可达的，从根集可达的对象都是活动对象，它们不能作为垃圾被回收，这也包括从根集间接可达的对象。而根集通过任意路径不可达的对象符合垃圾收集的条件，应该被回收。下面介绍几个常用算法：</p>
 <h4 id="2-1-引用计数法-Reference-Counting-Collector"><a href="#2-1-引用计数法-Reference-Counting-Collector" class="headerlink" title="2.1 引用计数法 Reference Counting Collector"></a>2.1 引用计数法 <code>Reference Counting Collector</code></h4><p>引用计数法是<strong>唯一没有使用根集的垃圾回收的方法</strong>，该算法使用引用计数器来区分存活对象和不再使用的对象。一般来说，堆中的每个对象对应一个引用计数器。当每一次创建一个对象并赋给一个变量时，引用计数器置为1。当对象被赋给任意变量时，引用计数器每次加1当对象出了作用域后(该对象丢弃不再使用)，引用计数器减1，一旦引用计数器为0，对象就满足了垃圾收集的条件。</p>
-<p>基于引用计数器的垃圾收集器运行较快，不会长时间中断程序执行，适宜地必须实时运行的程序。<em>但引用计数器增加了程序执行的开销，因为每次对象赋给新的变量，计数器加1，而每次现有对象出了作用域生，计数器减1。</em></p>
+<p>基于引用计数器的垃圾收集器运行较快，不会长时间中断程序执行，适宜地必须实时运行的程序。_但引用计数器增加了程序执行的开销，因为每次对象赋给新的变量，计数器加1，而每次现有对象出了作用域生，计数器减1。_</p>
 <h4 id="2-2-Tracing算法-Tracing-Collector"><a href="#2-2-Tracing算法-Tracing-Collector" class="headerlink" title="2.2 Tracing算法 Tracing Collector"></a>2.2 Tracing算法 <code>Tracing Collector</code></h4><p>tracing算法是为了解决引用计数法的问题而提出，它使用了根集的概念。基于tracing算法的垃圾收集器从根集开始扫描，识别出哪些对象可达，哪些对象不可达，并用某种方式标记可达对象，例如对每个可达对象设置一个或多个位。</p>
 <p>在扫描识别过程中，基于tracing算法的垃圾收集也称为标记和清除(<code>mark-and-sweep</code>)垃圾收集器。</p>
 <h4 id="2-3-Compacting算法-Compacting-Collector"><a href="#2-3-Compacting算法-Compacting-Collector" class="headerlink" title="2.3 Compacting算法 Compacting Collector"></a>2.3 Compacting算法 <code>Compacting Collector</code></h4><p>为了解决堆碎片问题，基于tracing的垃圾回收吸收了Compacting算法的思想，在清除的过程中，算法将所有的对象移到堆的一端，堆的另一端就变成了一个相邻的空闲内存区，收集器会对它移动的所有对象的所有引用进行更新，使得这些引用在新的位置能识别原来的对象。</p>
@@ -268,14 +268,14 @@ class TestGC{
 <p>在finalize()方法返回之后，对象消失，垃圾收集开始执行。原型中的throws Throwable表示它可以抛出任何类型的异常。之所以要使用finalize()，是存在着垃圾回收器不能处理的特殊情况。*假定你的对象（并非使用new方法）获得了一块“特殊”的内存区域，由于垃圾回收器只知道那些显示地经由new分配的内存空间，所以它不知道该如何释放这块“特殊”的内存区域，那么这个时候java允许在类中定义一个由finalize()方法。</p>
 <p>特殊的区域例如：</p>
 <ul>
-<li>由于在分配内存的时候可能采用了类似 C语言的做法，而非JAVA的通常new做法。这种情况主要发生在native method中，比如native method调用了C/C++方法malloc()函数系列来分配存储空间，但是除非调用free()函数，否则这些内存空间将不会得到释放，那么这个时候就可能造成内存泄漏。但是由于free()方法是在C/C++中的函数，所以finalize()中可以用本地方法来调用它。以释放这些“特殊”的内存空间。<p></p></li>
+<li>由于在分配内存的时候可能采用了类似 C语言的做法，而非JAVA的通常new做法。这种情况主要发生在native method中，比如native method调用了C/C++方法malloc()函数系列来分配存储空间，但是除非调用free()函数，否则这些内存空间将不会得到释放，那么这个时候就可能造成内存泄漏。但是由于free()方法是在C/C++中的函数，所以finalize()中可以用本地方法来调用它。以释放这些“特殊”的内存空间。&lt;/p&gt;</li>
 <li>又或者打开的文件资源，这些资源不属于垃圾回收器的回收范围。</li>
 </ul>
 <p>换言之，finalize()的主要用途是释放一些其他做法开辟的内存空间，以及做一些清理工作。因为在JAVA中并没有提够像“析构”函数或者类似概念的函数，要做一些类似清理工作的时候，必须自己动手创建一个执行清理工作的普通方法，也就是override Object这个类中的finalize()方法。</p>
 <p>例如，假设某一个对象在创建过程中会将自己绘制到屏幕上，如果不是明确地从屏幕上将其擦出，它可能永远都不会被清理。如果在finalize()加入某一种擦除功能，当GC工作时，finalize()得到了调用，图像就会被擦除。要是GC没有发生，那么这个图像就会一直保存下去。</p>
 <p>一旦垃圾回收器准备好释放对象占用的存储空间，首先会去调用finalize()方法进行一些必要的清理工作。<strong>只有到下一次再进行垃圾回收动作的时候，才会真正释放这个对象所占用的内存空间。</strong></p>
 <p>在普通的清除工作中，为清除一个对象，那个对象的用户必须在希望进行清除的地点调用一个清除方法。这与C++”析构函数”的概念稍有抵触。在C++中，所有对象都会破坏（清除）。或者换句话说，所有对象都”应该”破坏。若将C++对象创建成一个本地对象，比如在堆栈中创建（在Java中是不可能的，Java都在堆中），那么清除或破坏工作就会在”结束花括号”所代表的、创建这个对象的作用域的末尾进行。若对象是用new创建的（类似于Java），那么当程序员调用C++的 delete命令时（Java没有这个命令），就会调用相应的析构函数。若程序员忘记了，那么永远不会调用析构函数，我们最终得到的将是一个内存”漏洞”，另外还包括对象的其他部分永远不会得到清除。</p>
-<p>相反，Java不允许我们创建本地（局部）对象–无论如何都要使用new。但在Java中，没有”delete”命令来释放对象，因为垃圾回收器会帮助我们自动释放存储空间。</p>
+<p>相反，Java不允许我们创建本地（局部）对象—无论如何都要使用new。但在Java中，没有”delete”命令来释放对象，因为垃圾回收器会帮助我们自动释放存储空间。</p>
 <p>所以如果站在比较简化的立场，我们可以说正是由于存在垃圾回收机制，所以Java没有析构函数。然而，随着以后学习的深入，就会知道垃圾收集器的存在并不能完全消除对析构函数的需要，或者说不能消除对析构函数代表的那种机制的需要（原因见下一段。另外finalize()函数是在垃圾回收器准备释放对象占用的存储空间的时候被调用的，绝对不能直接调用finalize()，所以应尽量避免用它）。若希望执行除释放存储空间之外的其他某种形式的清除工作，仍然必须调用Java中的一个方法。它等价于C++的析构函数，只是没后者方便。</p>
 <p>在C++中所有的对象运用delete()一定会被销毁，而JAVA里的对象并非总会被垃圾回收器回收：</p>
 <ul>
@@ -286,13 +286,13 @@ class TestGC{
 <p>也就是说，并不是如果一个对象不再被使用，是不是要在finalize()中释放这个对象中含有的其它对象呢？不是的。因为无论对象是如何创建的，垃圾回收器都会负责释放那些对象占有的内存。</p>
 <h3 id="5-触发主GC的条件"><a href="#5-触发主GC的条件" class="headerlink" title="5. 触发主GC的条件"></a>5. 触发主GC的条件</h3><p>JVM进行次GC的频率很高，但因为这种GC占用时间极短,所以对系统产生的影响不大。更值得关注的是主GC的触发条件，因为它对系统影响很明显。总的来说，有两个条件会触发主GC：</p>
 <ul>
-<li><p>当<strong>应用程序空闲时</strong>，即没有应用线程在运行时，GC会被调用。<em>因为GC在优先级最低的线程中进行，所以当应用忙时，GC线程不会被调用，但以下条件除外</em>；</p>
+<li><p>当<strong>应用程序空闲时</strong>，即没有应用线程在运行时，GC会被调用。_因为GC在优先级最低的线程中进行，所以当应用忙时，GC线程不会被调用，但以下条件除外_；</p>
 </li>
 <li><p><strong>JAVA堆内存不存时，GC会被调用</strong>。当应用线程在运行，并在运行过程中创建新对象，若这时内存空间不足，JVM就会强制调用GC线程，以便回收内存用于行的分配。若GC一次后仍不能满足内存分配的要求，JVM会再次进行两次GC作进一步的尝试，若仍无法满足要求，则JVM将报<code>out of memory</code>的错误，JAVA应用将停止。</p>
 </li>
 </ul>
 <p>由于是否进行主GC由JVM根据系统环境决定，而系统环境在不断的变化当中，所以主GC的运行具有不确定性，无法预计它何时必然出现，但可以确定的是对于一个长期运行的应用来说，其主GC是反复进行的。</p>
-<h3 id="6-减少GC开销的措施"><a href="#6-减少GC开销的措施" class="headerlink" title="6. 减少GC开销的措施"></a>6. 减少GC开销的措施</h3><p>根据上述GC的机制，程序的运行会直接影响系统环境的变化，从而影响GC的触发。若不针对GC的特点进行设计和编码，就会出现内存驻留等一系列负面影响。为了避免这些影响，<em>基本的原则就是尽可能地减少垃圾和减少GC过程中的开销</em>，包括：</p>
+<h3 id="6-减少GC开销的措施"><a href="#6-减少GC开销的措施" class="headerlink" title="6. 减少GC开销的措施"></a>6. 减少GC开销的措施</h3><p>根据上述GC的机制，程序的运行会直接影响系统环境的变化，从而影响GC的触发。若不针对GC的特点进行设计和编码，就会出现内存驻留等一系列负面影响。为了避免这些影响，_基本的原则就是尽可能地减少垃圾和减少GC过程中的开销_，包括：</p>
 <ul>
 <li>不要显式调用<code>System.gc()</code></li>
 </ul>
@@ -356,7 +356,7 @@ class TestGC{
 <ul>
 <li><p></p><p>不要试图去假定垃圾收集发生的时间，这一切都是未知的。比如，方法中的一个临时对象在方法调用完毕后就变成了无用对象，这个时候它的内存就可以被释放。</p>
 </li>
-<li><p>Java中提供了一些和垃圾收集打交道的类，而且提供了一种强行执行垃圾收集的方法–调用System.gc()，但这同样是个不确定的方法。Java 中并不保证每次调用该方法就一定能够启动垃圾收集，它只不过会向JVM发出这样一个申请，到底是否真正执行垃圾收集，一切都是个未知数。</p>
+<li><p>Java中提供了一些和垃圾收集打交道的类，而且提供了一种强行执行垃圾收集的方法—调用System.gc()，但这同样是个不确定的方法。Java 中并不保证每次调用该方法就一定能够启动垃圾收集，它只不过会向JVM发出这样一个申请，到底是否真正执行垃圾收集，一切都是个未知数。</p>
 </li>
 <li><p>挑选适合自己的垃圾收集器。一般来说，如果系统没有特殊和苛刻的性能要求，可以采用JVM的缺省选项。否则可以考虑使用有针对性的垃圾收集器，比如增量收集器就比较适合实时性要求较高的系统之中。系统具有较高的配置，有比较多的闲置资源，可以考虑使用并行标记/清除收集器。</p>
 </li>
@@ -391,6 +391,25 @@ class TestGC{
   
 
   
+  <!-- livere begin-->
+  <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM1MC8xMjg4NQ">
+      <script type="text/javascript">
+          (function(d, s) {
+              var j, e = d.getElementsByTagName(s)[0];
+
+              if (typeof LivereTower === 'function') { return; }
+
+              j = d.createElement(s);
+              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+              j.async = true;
+
+              e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+      </script>
+      <noscript> To show LiveRe comment, please use JavaScript</noscript>
+  </div>
+  <!-- livere end -->
+  
   </div>
 
 
@@ -415,6 +434,15 @@ class TestGC{
     <div class="text-center">
       <ul class="list-inline">
           
+          
+              <li>
+                  <a target="_blank" href="https://twitter.com/LeeSte7en">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
           
           
 

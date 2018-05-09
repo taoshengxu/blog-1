@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -205,10 +205,10 @@
 <p>这些“手工”的方式不能一直行之有效，往往在新问题上，不可能快速地准确找到问题的症结去改变特征提取的过程，而Metric Learning的出现，就是依靠一些问题提供的真实的额外信息（side information），来对距离和特征进行学习，到达解决特定问题自动化的一个研究问题。</p>
 <h3 id="2-定义"><a href="#2-定义" class="headerlink" title="2. 定义"></a>2. 定义</h3><p>说了这么多，我们来对这个问题进行一番形式化的定义，首先我们来说一下数据提供的“先验知识”，即side information。分为两种：</p>
 <h4 id="1-Must-link-Cannot-link-Constraints"><a href="#1-Must-link-Cannot-link-Constraints" class="headerlink" title="(1) Must-link / Cannot-link Constraints"></a>(1) Must-link / Cannot-link Constraints</h4><blockquote>
-<p>$latex S = { (x_i, x_j) : x_i~\text{and}~x_j~\text{should be similar} } $<br>  $latex D = { (x_i, x_j) : x_i~\text{and}~x_j~\text{should be dissimilar} } $</p>
+<p>$latex S = \{ (x_i, x_j) : x_i~\text{and}~x_j~\text{should be similar} \} $<br>  $latex D = \{ (x_i, x_j) : x_i~\text{and}~x_j~\text{should be dissimilar} \} $</p>
 </blockquote>
 <h4 id="2-Relative-constraints"><a href="#2-Relative-constraints" class="headerlink" title="(2) Relative constraints"></a>(2) Relative constraints</h4><blockquote>
-<p>$latex R = { (x_i,x_j,x_k) : x_i~\text{should be more similar to}~x_j~\text{than to}~x_k } $</p>
+<p>$latex R = \{ (x_i,x_j,x_k) : x_i~\text{should be more similar to}~x_j~\text{than to}~x_k \} $</p>
 </blockquote>
 <p>给定$latex n$个$latex m$维的feature vector， 满足$latex X \in \mathbb{R}^{n \times m}$，Metric Learning 的目标是找到一个$latex m \times r$的矩阵 $latex M $使得变换后的投影子空间能够更好地满足上述side information。具体而言，可以认为是一个参数优化的loss最小化问题。</p>
 <p>接下来利用公式来定义一下：</p>
@@ -218,7 +218,7 @@
 </blockquote>
 <p>其中，$latex l(M,S,D,R) $是一个loss function，用于惩罚那些不满足constraint的数据，$latex R(M)$是对于$latex M$的正则子，$latex \lambda$是一个正则化参数。</p>
 <h3 id="3-分类"><a href="#3-分类" class="headerlink" title="3. 分类"></a>3. 分类</h3><ol>
-<li>Learning paradigm : fully supervised; weakly supervised; semi supervised;<p></p></li>
+<li>Learning paradigm : fully supervised; weakly supervised; semi supervised;&lt;/p&gt;</li>
 <li><p>Form of metric : linear; nonlinear; local;</p>
 </li>
 <li><p>Scalability : number of examples; dimension;</p>
@@ -228,7 +228,7 @@
 <li><p>Dimensionality reduction : yes; no;</p>
 </li>
 </ol>
-<p></p><p>—————–分割线—————–</p>
+<p></p><p>————————-分割线————————-</p>
 <p>通过以上，对于Metric Learning的问题已经窥其一角，接下来我们将具体列举一些经典的算法和文章，来剖析一下Metric Learning的核心思想。</p>
 
           
@@ -251,6 +251,25 @@
   <br>
   
 
+  
+  <!-- livere begin-->
+  <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM1MC8xMjg4NQ">
+      <script type="text/javascript">
+          (function(d, s) {
+              var j, e = d.getElementsByTagName(s)[0];
+
+              if (typeof LivereTower === 'function') { return; }
+
+              j = d.createElement(s);
+              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+              j.async = true;
+
+              e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+      </script>
+      <noscript> To show LiveRe comment, please use JavaScript</noscript>
+  </div>
+  <!-- livere end -->
   
   </div>
 
@@ -276,6 +295,15 @@
     <div class="text-center">
       <ul class="list-inline">
           
+          
+              <li>
+                  <a target="_blank" href="https://twitter.com/LeeSte7en">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
           
           
 
