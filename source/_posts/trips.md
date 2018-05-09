@@ -2,7 +2,7 @@
 layout: page
 title: 'TRIPS: Translating Raw Indoor Positioning Data into Visual Mobility Semantics'
 categories:
-  - Research
+  - 研究工作
 tags:
   - database
   - demo
@@ -10,11 +10,12 @@ tags:
 draft: false
 id: 735
 date: 2018-03-02 11:16:57
+toc_number_disable: true
+mathjax: false
+comments: false
 permalink:
 description:
 cover_img:
-toc-disable: true
-comments:
 ---
 
 <p><p><p><p>
@@ -24,4 +25,4 @@ comments:
 
 >This demo has been submitted to VLDB 2018 (accepted May 2018).
 
->See more details in the [project website](https://longaspire.github.io/trips/)
+>See more details at the [project website](https://longaspire.github.io/trips/).

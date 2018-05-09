@@ -1,8 +1,8 @@
 ---
 layout: post
-title: LSH那些事儿 (III) - 理论基础
+title: "LSH那些事儿 (III): 理论基础"
 categories:
-  - Index
+  - "LSH那些事儿"
 tags:
   - Hashing
   - indexing
@@ -11,21 +11,21 @@ tags:
 draft: false
 id: 126
 date: 2013-04-26 13:00:43
+toc_number_disable: true
 permalink:
 description:
 cover_img:
-toc-disable:
 comments:
 ---
 
-### 1\. 关于距离
+### 1. 关于距离
 
 两点之间的距离可以用两种方式来衡量，一是几何距离，二是非几何距离。很显然几何距离的定义满足下面的条件：
 
-1.  $latex d(x,y) \geq 0 $
-2.  $latex d(x,y) = 0~~iff~~x = y $
-3.  $latex d(x,y) = d(y,x) $
-4.  $latex d(x,y) \leq d(x,z) + d(z,y) $
+1.  $ d(x,y) \geq 0 $
+2.  $ d(x,y) = 0~~iff~~x = y $
+3.  $ d(x,y) = d(y,x) $
+4.  $ d(x,y) \leq d(x,z) + d(z,y) $
 
 几何距离包括各类Norm等等。
 
@@ -36,72 +36,72 @@ comments:
 3.  编辑距离（Edit distance）：将一个串变为另一个串需要的插入或删除次数
 4.  海明距离（Hamming Distance）：Bit向量中不同位置的个数
 
-> 这里有一个重要的公理：三角形公理（Triangle Inequality），也就是距离的第四个性质。编辑距离 $latex d(x,y) = |x| + |y| - 2|LCS(x,y)|$，其中LCS是longest common subsequence，称为最长公共子序列。
+> 这里有一个重要的公理：三角形公理（Triangle Inequality），也就是距离的第四个性质。编辑距离 $ d(x,y) = |x| + |y| - 2|LCS(x,y)|$，其中LCS是longest common subsequence，称为最长公共子序列。
 
-### 2\. LSH的核心思想
+### 2. LSH的核心思想
 
 LSH的一个核心思想就是两个元素哈希值相等的概率等于两个元素之间的相似度。
 
 下面介绍一个重要概念：Hash Family，哈希家族？不管怎么翻译，它指的是能够判断两个元素是否相等的Hash函数集合
 
-> $latex h(x) = h(y)$
+> $ h(x) = h(y)$
 
 LS Hash Family，局部敏感哈希家族的定义是满足下面两个条件的哈希函数家族：
 
-1.  如果$latex d(x,y) < d_1$，那么哈希家族$latex H $中的哈希函数$latex h$满足$latex h(x) = h(y)$的概率至少是$latex p_1$.
-2.  如果$latex d(x,y) > d_2$，那么哈希家族$latex H $中的哈希函数$latex h$满足$latex h(x) = h(y)$的概率至多是$latex p_2$.
+1.  如果$ d(x,y) < d_1$，那么哈希家族$ H $中的哈希函数$ h$满足$ h(x) = h(y)$的概率至少是$ p_1$.
+2.  如果$ d(x,y) > d_2$，那么哈希家族$ H $中的哈希函数$ h$满足$ h(x) = h(y)$的概率至多是$ p_2$.
 
-通俗来解释，就是如果$latex x$和$latex y$离得越近，$latex Pr[h(p)=h(q)]$就越大。如果$latex x$和$latex y$离得越远，$latex Pr[h(p)=h(q)]$就越小。我们把局部敏感哈希家族记为$latex (d_1,d_2,p_1,p_2)$-sensitive。
+通俗来解释，就是如果$ x$和$ y$离得越近，$ Pr[h(p)=h(q)]$就越大。如果$ x$和$ y$离得越远，$ Pr[h(p)=h(q)]$就越小。我们把局部敏感哈希家族记为$ (d_1,d_2,p_1,p_2)$-sensitive。
 
-那什么样的函数满足呢？Jaccard就是。我们令$latex S$为一个集合，$latex d$是Jaccard距离，有$latex Prob[h(x)=h(y)] = 1-d(x,y)$，我们就可以得到一个局部敏感哈希家族：
+那什么样的函数满足呢？Jaccard就是。我们令$ S$为一个集合，$ d$是Jaccard距离，有$ Prob[h(x)=h(y)] = 1-d(x,y)$，我们就可以得到一个局部敏感哈希家族：
 
-> $latex (1/3, 2/3, 2/3, 1/3)$-sensitive
+> $ (1/3, 2/3, 2/3, 1/3)$-sensitive
 
-事实上，只要满足$latex d_1 < d_2 $, 就可以得到一个局部敏感的哈希家族：
+事实上，只要满足$ d_1 < d_2 $, 就可以得到一个局部敏感的哈希家族：
 
-> $latex (d_1,d_2,(1-d_1),(1-d_2))$-sensitive
+> $ (d_1,d_2,(1-d_1),(1-d_2))$-sensitive
 
-$latex (d_1,d_2,p_1,p_2)$-sensitive将整个概率空间分成了三部分：
+$ (d_1,d_2,p_1,p_2)$-sensitive将整个概率空间分成了三部分：
 
-> $latex \leftarrow p_1$，$latex p_1 \rightarrow p_2 $ ，$latex \rightarrow p_2$
+> $ \leftarrow p_1$，$ p_1 \rightarrow p_2 $ ，$ \rightarrow p_2$
 
-为了有更好的区分度，我们想让$latex p_1 \rightarrow p_2 $的空间尽可能小，让$latex d_2-d_1$尽可能大。选择合适的参数，有类似于下面的S曲线：
+为了有更好的区分度，我们想让$ p_1 \rightarrow p_2 $的空间尽可能小，让$ d_2-d_1$尽可能大。选择合适的参数，有类似于下面的S曲线：
 
-![15144243_L3JA](http://longaspire.com/blog/wp-content/uploads/2013/04/15144243_L3JA.png)
+![](15144243_L3JA.png)
 
-### 3\. 两种哈希函数操作
+### 3. 两种哈希函数操作
 
 定义两种哈希函数的操作：AND和OR。
 
 > **_AND 操作_**
 > 
->   在局部敏感哈希家族$latex H$中选出$latex r$个哈希哈数，构成哈希家族$latex H'$。
+>   在局部敏感哈希家族$ H$中选出$ r$个哈希哈数，构成哈希家族$ H'$。
 > 
->   对于$latex H'$家族中的$latex h = [h_1, ..., h_r] $，$latex h(x) = h(y)$当且仅当对所有的$latex i$都满足$latex h_i(x)=h_i(y)$。这样得到的$latex H'$同样也是一个局部敏感哈希家族。
+>   对于$ H'$家族中的$ h = [h_1, ..., h_r] $，$ h(x) = h(y)$当且仅当对所有的$ i$都满足$ h_i(x)=h_i(y)$。这样得到的$ H'$同样也是一个局部敏感哈希家族。
 > 
->   并且若源哈希家族是$latex (d_1,d_2,p_1,p_2)$-sensitive，新哈希家族$latex H'$也是$latex (d_1,d_2,{p_1}^r,{p_2}^r)$-sensitive的。
+>   并且若源哈希家族是$ (d_1,d_2,p_1,p_2)$-sensitive，新哈希家族$ H'$也是$ (d_1,d_2,{p_1}^r,{p_2}^r)$-sensitive的。
 
 .
 
 > **_OR 操作_**
 > 
->   在局部敏感哈希家族$latex H$中选出$latex b$个哈希哈数，构成哈希家族$latex H'$。
+>   在局部敏感哈希家族$ H$中选出$ b$个哈希哈数，构成哈希家族$ H'$。
 > 
->   对于$latex H'$家族中的$latex h = [h_1, ..., h_b] $，$latex h(x) = h(y)$当且仅当存在一个$latex i$满足$latex h_i(x)=h_i(y)$。这样得到的$latex H'$同样也是一个局部敏感哈希家族。
+>   对于$ H'$家族中的$ h = [h_1, ..., h_b] $，$ h(x) = h(y)$当且仅当存在一个$ i$满足$ h_i(x)=h_i(y)$。这样得到的$ H'$同样也是一个局部敏感哈希家族。
 > 
->   并且若源哈希家族是$latex (d_1,d_2,p_1,p_2)$-sensitive，新哈希家族$latex H'$也是$latex (d_1,d_2,1-(1-p_1)^b,1-(1-p_2)^b)$-sensitive的。
+>   并且若源哈希家族是$ (d_1,d_2,p_1,p_2)$-sensitive，新哈希家族$ H'$也是$ (d_1,d_2,1-(1-p_1)^b,1-(1-p_2)^b)$-sensitive的。
 
-可以看出AND操作是降低了概率，但如果选取一个合适的$latex r$，可以使下限概率接近0，而上限概率没有多大影响。类似的，OR操作是增加了概率，但如果选择一个合适的$latex b$，可以使上限概率接近1，而下限概率没有多大影响。
+可以看出AND操作是降低了概率，但如果选取一个合适的$ r$，可以使下限概率接近0，而上限概率没有多大影响。类似的，OR操作是增加了概率，但如果选择一个合适的$ b$，可以使上限概率接近1，而下限概率没有多大影响。
 
 我们对AND操作和OR操作做级联：
 
-AND-OR，$latex 1-(1-p^r)^b$
+AND-OR，$ 1-(1-p^r)^b$
 
-OR-AND，$latex (1-(1-p)^b)^r$
+OR-AND，$ (1-(1-p)^b)^r$
 
-### 4\. 调参
+### 4. 调参
 
-现在我们选定$latex r = b = 4$，那么概率函数可以这么写
+现在我们选定$ r = b = 4$，那么概率函数可以这么写
 
 <table>
 <thead>
@@ -146,4 +146,4 @@ OR-AND，$latex (1-(1-p)^b)^r$
 </tbody>
 </table>
 
-得到这样的S曲线之后，可以找到一个点t，满足$latex 1-(1-t^r)^b = t$。在t点之后，概率快速上升，在t点之前，概率快速下降。根据需要的灵敏度，可以选择合适的上限概率和下限概率来满足应用需求。
+得到这样的S曲线之后，可以找到一个点t，满足$ 1-(1-t^r)^b = t$。在t点之后，概率快速上升，在t点之前，概率快速下降。根据需要的灵敏度，可以选择合适的上限概率和下限概率来满足应用需求。

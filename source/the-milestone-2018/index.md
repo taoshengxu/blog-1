@@ -1,6 +1,12 @@
 ---
 title: The Milestone 2018
 date: 2018-05-09 09:19:45
+toc_number_disable: true
+mathjax: false
+comments: false
+description: 'Hexo版Little Stone，带来我的改变'
+cover_img:
+permalink:
 ---
 
 2018年，可谓经历了许多，等到了一些工作成果的接收、完成了博士论文的撰写，也即将踏上一段未知的旅途。所以，这一年我称之为`The Milestone`。

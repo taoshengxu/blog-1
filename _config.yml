@@ -52,12 +52,9 @@ footer:
 menu:
   home: /
   about: /the-milestone-2018/
-#  links: /links/
-#  LeetCode-tag: /leetcode-tag/
   categories: /categories/
   archives: /archives/
   tags: /tags/
-#  support: /support/
 #  RSS: /atom.xml
 
 # ---------------------------------------------------------------
@@ -78,7 +75,7 @@ archive_generator:
 # Set url to specific value if you have burned your feed already.
 rss:
   enable: false
-  url:                    # if empty, use default url, root_path/atom.xml
+#  url:                    # if empty, use default url, root_path/atom.xml
 
 email: lihuancs@zju.edu.cn
 # weibo_username:
@@ -92,8 +89,8 @@ linkedin_username: lihuancs
 # Sidebar settings
 # ---------------------------------------------------------------
 sidebar: false
-sidebar-about-description: # data scientist
-sidebar-avatar-url: # http://longaspire.com/avator.jpg
+#sidebar-about-description: # data scientist
+#sidebar-avatar-url: # http://longaspire.com/avator.jpg
 
 # ---------------------------------------------------------------
 # Hexo official settings
@@ -123,12 +120,12 @@ highlight:
   enable: true
   line_number: true
   auto_detect: true
-  tab_replace:
+#  tab_replace:
 
 # Category & Tag
 default_category: uncategorized
-category_map:
-tag_map:
+#category_map:
+#tag_map:
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -182,7 +179,7 @@ brand_logo_img: /blog/img/banner.png?h=350&auto=compress&cs=tinysrgb
 toc:
   enable: true
   # Automatically add list number to toc.
-  number: false
+  number: true
 
 # ---------------------------------------------------------------
 # Layout settings: page layout
@@ -250,13 +247,13 @@ google_analytics: UA-118875263-1            # Format: UA-xxxxxx-xx
 # <meta name="google-site-verification" content="xxxxxx" />
 # Input xxxxxx below
 google_site_verification: Q9_p57DiEwLUAkG7RSWhWgytI3usFEsDzkR3UMn-RW8
-bing_site_verification:
-yandex_site_verification:
+#bing_site_verification:
+#yandex_site_verification:
 
 # ---------------------------------------------------------------
 # Share
 # ---------------------------------------------------------------
-add_this_id: # ra-5272bc2a7b3c1ddc
+#add_this_id: # ra-5272bc2a7b3c1ddc
 # Enable/Disable Update date
 
 # ---------------------------------------------------------------
@@ -280,6 +277,21 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+
+# ---------------------------------------------------------------
+# Code Highlight
+# ---------------------------------------------------------------
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'solarizedlight'  #default, coy, dark, funky, okaidia, solarizedlight, tomorrow, twilight
+  line_number: true     # default false
+#  custom_css:        # optional
+
+## ---------------------------------------------------------------
+## Reference
+## ---------------------------------------------------------------
+#plugins:
+#  - hexo-reference
 
 # Theme version
 version: 0.1.0

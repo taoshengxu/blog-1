@@ -6,16 +6,16 @@ categories:
 tags:
   - IPC
   - Linux
-  - os
+  - OS
   - 进程
   - 通信
 draft: false
 id: 673
 date: 2014-12-13 13:27:09
+toc_number_disable: true
 permalink:
 description:
 cover_img:
-toc-disable: true
 comments:
 ---
 
@@ -25,9 +25,9 @@ comments:
 
 IPC的方式通常由管道（包括无名管道和命名管道）、消息队列、信号量、共享存储、Socket、Streams等。其中Socket和Streams支持在不同主机上进行IPC。
 
-### 1\. 管道
+### 1. 管道
 
-_管道_，通常指无名管道，是UNIX系统IPC中最古老的形式。
+管道，通常指无名管道，是UNIX系统IPC中最古老的形式。
 
 #### 1.1 特点
 
@@ -37,16 +37,15 @@ _管道_，通常指无名管道，是UNIX系统IPC中最古老的形式。
 
 #### 1.2 原型
 
-<pre lang="c" line="1">
-
+```C
 #include<unistd.h>
 int pipe(int fd[2]); // 返回值：若成功返回0，失败返回-1
 
-</pre>
+```
 
 当一个管道建立时，会创建两个文件描述符：fd[0]为读而打开，fd[1]为写而打开，如下图
 
-![pipe例子](http://img.blog.csdn.net/20150419222058628?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGlzb25nbGlzb25nbGlzb25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+![pipe例子](pipe.png)
 
 要关闭管道只需要将这两个文件描述符关闭即可。
 
@@ -54,12 +53,11 @@ int pipe(int fd[2]); // 返回值：若成功返回0，失败返回-1
 
 单个进程中的管道几乎没有任何用处。通常调用pipe的进程接着调用fork，这样就创建了父进程与子进程之间的IPC通道，如下图：
 
-![pipe+fork](http://img.blog.csdn.net/20150419223853807?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGlzb25nbGlzb25nbGlzb25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![pipe+fork](pipe-fork.png)
 
 如果要数据流从父进程流向子进程，则关闭父进程的读端 (`fd[0]`) 与子进程的写端 (`fd[0]`)；反之，这可以使得数据流从子进程流向父进程。
 
-<pre lang="c" line="1">
-
+```C
 #include<stdio.h>
 #include<unistd.h>
 
@@ -88,11 +86,11 @@ int main(){
     return 0;
 }
 
-</pre>
+```
 
-### 2\. FIFO
+### 2. FIFO
 
-_FIFO_，也称为命名管道，它是一种文件类型。
+FIFO，也称为命名管道，它是一种文件类型。
 
 #### 2.1 特点
 
@@ -101,13 +99,12 @@ _FIFO_，也称为命名管道，它是一种文件类型。
 
 #### 2.2 原型
 
-<pre lang="c" line="1">
-
+```C
 #include<sys/stat.h>
 // 返回值： 成功返回0，出错返回-1
 int mkfifo(const char *pathname, mode_t mode)
 
-</pre>
+```
 
 其中的mode参数与`open`函数中的mode相同，一旦创建了一个FIFO，就可以用一般的文件I/O函数操作它。
 
@@ -122,8 +119,7 @@ FIFO的通信方式类似于在进程中使用文件来传输数据，只不过F
 
 `write_fifo.c`
 
-<pre lang="c" line="1">
-
+```C
 #include<stdio.h>
 #include<stdlib.h>   // exit
 #include<fcntl.h>    // O_WRONLY
@@ -162,12 +158,11 @@ int main()
     return 0;
 }
 
-</pre>
+```
 
 `read_fifo.c`
 
-<pre lang="c" line="1">
-
+```C
 #include<stdio.h>
 #include<stdlib.h>
 #include<errno.h>
@@ -196,17 +191,17 @@ int main()
     return 0;
 }
 
-</pre>
+```
 
 可以在两个终端里用 gcc分别编译运行上面两个文件，查看结果。
 
 上述例子可以扩展成 客户进程-服务器进程 通信的实例，`write_fifo`的作用类似于客户端，可以打开多个客户端向一个服务器发送请求信息，`read_fifo`类似于服务器，实时监控着FIFO的读端，当有数据时，读取并进行处理，但是有一个关键问题是，每一个客户端必须预先知道服务器提供的FIFO接口，如下图所示：
 
-![fifo](http://img.blog.csdn.net/20150420131002360?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGlzb25nbGlzb25nbGlzb25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+![fifo](fifo.png)
 
-### 3\. 消息队列
+### 3. 消息队列
 
-_消息队列_，是消息的链接表，存放在内核中。一个消息队列由一个标识符（即队列ID）来标识。
+消息队列，是消息的链接表，存放在内核中。一个消息队列由一个标识符（即队列ID）来标识。
 
 #### 3.1 特点
 
@@ -216,8 +211,7 @@ _消息队列_，是消息的链接表，存放在内核中。一个消息队列
 
 #### 3.2 原型
 
-<pre lang="c" line="1">
-
+```C
 #include<sys/msg.h>
 
 // 创建或打开消息队列：成功返回队列ID，失败返回-1
@@ -232,7 +226,7 @@ int msgrcv(int msqid, void *ptr, size_t size, long type, int flag);
 // 控制消息队列：成功返回0，失败返回-1
 int msgctl(int msqid, int cmd, struct msqid_ds *buf);
 
-</pre>
+```
 
 在以下两种情况下，`msgget`将创建一个新的消息队列：
 1\. 如果没有与键值key相对应的消息队列，并且flag中包含了`IPC_CREAT`标志位；
@@ -251,8 +245,7 @@ int msgctl(int msqid, int cmd, struct msqid_ds *buf);
 
 `msg_server.c`
 
-<pre lang="c" line="1">
-
+```C
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/msg.h>
@@ -307,12 +300,11 @@ int main()
     return 0;
 }
 
-</pre>
+```
 
 `msg_client.c`
 
-<pre lang="c" line="1">
-
+```C
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/msg.h>
@@ -365,11 +357,11 @@ int main()
     return 0;
 }
 
-</pre>
+```
 
-### 4\. 信号量
+### 4. 信号量
 
-_信号量_ (semaphore) 与已经介绍过的IPC结构不同，是一个计数器。信号量用于实现进程间的互斥和同步，而不用于存储进程间的通信数据。
+信号量 (semaphore) 与已经介绍过的IPC结构不同，是一个计数器。信号量用于实现进程间的互斥和同步，而不用于存储进程间的通信数据。
 
 #### 4.1 特点
 
@@ -384,8 +376,7 @@ _信号量_ (semaphore) 与已经介绍过的IPC结构不同，是一个计数�
 
 Linux下的信号量函数是在通用的信号量数组上进行操作，而不是在一个单一的二值信号量上进行操作。
 
-<pre lang="c" line=""1>
-
+```C
 #include<sys/sem.h>
 
 // 创建或获取一个信号量组：若成功返回信号量集ID，失败返回-1
@@ -397,13 +388,13 @@ int semop(int semid, struct sembuf semoparray[], size_t numops);
 // 控制信号量的相关信息
 int semctl(int semid, int sem_num, int cmd, ...);
 
-</pre>
+```
 
 当`semget`创建新的信号量集合时，必须指定集合中信号量的个数 (即`num_sems`)，通常为1；如果是引用一个现有的集合，则将`num_sems`指定为0。
 
 在`semop`函数中，`sembuf`结构的定义如下：
 
-<pre lang="c" line="1">
+```C
 
 struct sembuf
 {
@@ -412,7 +403,7 @@ struct sembuf
     short sem_flag; // IPC_NOWAIT, SEM_UNDO
 }
 
-</pre>
+```
 
 其中`sem_op`是一次操作中的信号量的改变量：
 
@@ -420,9 +411,9 @@ struct sembuf
 *   若`sem_op &lt; 0`，请求 sem_op 的绝对值的资源。
 *   若`sem_op == 0`，进程阻塞直到信号量的相应值为0。
 
-### 5\. 共享内存
+### 5. 共享内存
 
-_共享内存_ (Shared Memory)，指两个或多个进程共享一个给定的存储区。
+共享内存 (Shared Memory)，指两个或多个进程共享一个给定的存储区。
 
 #### 5.1 特点
 
@@ -432,8 +423,7 @@ _共享内存_ (Shared Memory)，指两个或多个进程共享一个给定的�
 
 #### 5.2 原型
 
-<pre lang="c" line="1">
-
+```C
 #include<sys/sem.h>
 
 // 创建或获取一个共享内存：成功返回共享内存ID，失败返回-1
@@ -448,7 +438,7 @@ int shmdt(void addr*);
 // 控制共享内存的相关信息：成功返回0，失败返回-1
 int shmctl(int shm_id, int cmd, struct shmid_ds *buf);
 
-</pre>
+```
 
 当用`shmget`函数创建一段共享内存时，必须指定其size；而如果引用一个已存在的共享内存，则将size指定为0。
 
@@ -458,7 +448,7 @@ int shmctl(int shm_id, int cmd, struct shmid_ds *buf);
 
 `shmctl`函数可以对共享内存执行多种操作，根据参数cmd执行相应的操作。常见的是`IPC_RMID` (从系统中删除该共享内存)。
 
-#### 5.3例子
+#### 5.3 例子
 
 下面这个例子，使用了【共享内存+信号量+消息队列】的组合来实现服务器进程与客户进程间的通信。
 
@@ -468,8 +458,7 @@ int shmctl(int shm_id, int cmd, struct shmid_ds *buf);
 
 `Server.c`
 
-<pre lang="c" line="1">
-
+```C
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/shm.h>  // shared memory
@@ -631,12 +620,11 @@ int main()
     return 0;
 }
 
-</pre>
+```
 
 `Client.c`
 
-<pre lang="c" line="1">
-
+```C
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/shm.h>  // shared memory
@@ -782,7 +770,7 @@ int main()
     return 0;
 }
 
-</pre>
+```
 
 ### 引用
 

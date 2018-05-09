@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 谈谈Metric Learning(II)
+title: '谈谈Metric Learning (II)'
 categories:
-  - Machine Learning
+  - "谈谈Metric Learning"
 tags:
   - introduction
   - metric learning
@@ -33,32 +33,29 @@ comments:
 
 #### (1) Must-link / Cannot-link Constraints
 
-> $latex S = \{ (x_i, x_j) : x_i~\text{and}~x_j~\text{should be similar} \} $
->   $latex D = \{ (x_i, x_j) : x_i~\text{and}~x_j~\text{should be dissimilar} \} $
+> $ S = \{ (x_i, x_j) : x_i~\text{and}~x_j~\text{should be similar} \} $
+>   $ D = \{ (x_i, x_j) : x_i~\text{and}~x_j~\text{should be dissimilar} \} $
 
 #### (2) Relative constraints
 
-> $latex R = \{ (x_i,x_j,x_k) : x_i~\text{should be more similar to}~x_j~\text{than to}~x_k \} $
+> $ R = \{ (x_i,x_j,x_k) : x_i~\text{should be more similar to}~x_j~\text{than to}~x_k \} $
 
-给定$latex n$个$latex m$维的feature vector， 满足$latex X \in \mathbb{R}^{n \times m}$，Metric Learning 的目标是找到一个$latex m \times r$的矩阵 $latex M $使得变换后的投影子空间能够更好地满足上述side information。具体而言，可以认为是一个参数优化的loss最小化问题。
+给定$ n$个$ m$维的feature vector， 满足$ X \in \mathbb{R}^{n \times m}$，Metric Learning 的目标是找到一个$ m \times r$的矩阵 $ M $使得变换后的投影子空间能够更好地满足上述side information。具体而言，可以认为是一个参数优化的loss最小化问题。
 
 接下来利用公式来定义一下：
 
 给定一个metric，metric learning试图找到以下解
 
-> $latex M^{*} = \arg\min\limits_{M}[l(M,S,D,R) + \lambda R(M)] $
+> $ M^{*} = \arg\min\limits_{M}[l(M,S,D,R) + \lambda R(M)] $
 
-其中，$latex l(M,S,D,R) $是一个loss function，用于惩罚那些不满足constraint的数据，$latex R(M)$是对于$latex M$的正则子，$latex \lambda$是一个正则化参数。
+其中，$ l(M,S,D,R) $是一个loss function，用于惩罚那些不满足constraint的数据，$ R(M)$是对于$ M$的正则子，$ \lambda$是一个正则化参数。
 
 ### 3\. 分类
 
-1.  Learning paradigm : fully supervised; weakly supervised; semi supervised;</p>
+1.  Learning paradigm : fully supervised; weakly supervised; semi supervised;
 2.  Form of metric : linear; nonlinear; local;
-
 3.  Scalability : number of examples; dimension;
-
 4.  Optimality of the solution : local; global;
-
 5.  Dimensionality reduction : yes; no;
 
 <p>-----------------分割线-----------------

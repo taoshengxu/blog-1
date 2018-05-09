@@ -1,8 +1,8 @@
 ---
 layout: post
-title: OpenWRT学习随录 (II) – OpenWRT Buildroot
+title: "OpenWRT学习随录 (II): OpenWRT Buildroot"
 categories:
-  - Embedded
+  - "OpenWRT学习随录"
 tags:
   - Buildroot
   - Linux
@@ -10,18 +10,17 @@ tags:
 draft: false
 id: 511
 date: 2015-07-22 12:13:07
+toc_number_disable: true
 permalink:
 description:
 cover_img:
-toc-disable:
 comments:
 ---
 
-OpenWRT Buildroot是一个autotools，或者叫buildsystem，用于构建OpenWRT版本系统，这个工具可以运行在Linux，BSD和MacOSX之上。
+> OpenWRT Buildroot是一个autotools，或者叫buildsystem，用于构建OpenWRT版本系统，这个工具可以运行在Linux，BSD和MacOSX之上。
+> Buildroot对于字母大小写有着严格的要求，所以windows下的cygwin不能支持它。
 
-Buildroot对于字母大小写有着严格的要求，所以windows下的cygwin不能支持它。
-
-### 1\. 关于OpenWRT Buildroot
+### 1. 关于OpenWRT Buildroot
 
 OpenWRT Buildroot是由一系列Makefiles和patches文件组成的，它允许用户方便地生成一个交叉编译工具链[toochain](https://en.wikipedia.org/wiki/Toolchain)和根文件系统rfs。OpenWRT Buildroot是根据Buildroot修改二来的，其中，交叉编译工具链使用的是[uClibc](https://en.wikipedia.org/wiki/UClibc)，这是一个C标准库。
 
@@ -33,7 +32,7 @@ OpenWRT Buildroot是由一系列Makefiles和patches文件组成的，它允许�
 
 另外，OpenWRT的Makefile有自己的特定语法，与Linux上的Makefile存在区别，OpenWRT Makefile定义package的meta infomation，去哪下载这个package，如何便利，把编译后的二进制文件放到哪儿等等。
 
-### 2\. OpenWRT Buildroot特性
+### 2. OpenWRT Buildroot特性
 
 1.  安装软件非常简单
 2.  使用Linux Kernel Menuconfig进行功能配置
@@ -42,7 +41,7 @@ OpenWRT Buildroot是由一系列Makefiles和patches文件组成的，它允许�
 5.  处理标准化的下载，补丁，配置，编译等
 6.  提供一定数量的坏包修复功能
 
-### 3\. Buildroot的交叉编译工具链cross-compilation toolchain
+### 3. Buildroot的交叉编译工具链cross-compilation toolchain
 
 包括三个部分：
 
@@ -50,7 +49,7 @@ OpenWRT Buildroot是由一系列Makefiles和patches文件组成的，它允许�
 2.  binary utils比如汇编器、连接器，binutils
 3.  一个C标准库 uClibc or GNU Libc or dietilbc
 
-### 4\. Buildroot的build序列
+### 4. Buildroot的build序列
 
 1.  tools – automake, autoconf, sed, cmake
 2.  toolchain/binutils – as, ld, …
@@ -60,7 +59,7 @@ OpenWRT Buildroot是由一系列Makefiles和patches文件组成的，它允许�
 6.  target/linux – kernel image
 7.  target/linux/image – firmware image file generation
 
-### 5\. 安装需要
+### 5. 安装需要
 
 ca. 200 MB of hard disk space for OpenWrt Buildroot
 ca. 300 MB of hard disk space for OpenWrt Buildroot + OpenWrt Feeds

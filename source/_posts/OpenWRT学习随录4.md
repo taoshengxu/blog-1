@@ -1,8 +1,8 @@
 ---
 layout: post
-title: OPENWRT学习随录 (IV) – iw
+title: "OpenWRT学习随录 (IV): iw"
 categories:
-  - Embedded
+  - "OpenWRT学习随录"
 tags:
   - '802.11'
   - iw
@@ -12,18 +12,17 @@ tags:
 draft: false
 id: 526
 date: 2015-07-24 09:43:00
+toc_number_disable: true
 permalink:
 description:
 cover_img:
-toc-disable:
 comments:
 ---
 
-iw是一个linuxwireless支持的package，之前在android开发中为了加快扫描速度而在root的设备上使用，这一次，我们要将其利用在OpenWRT上，索性写一个完整的介绍。
+> iw是一个linuxwireless支持的package，之前在android开发中为了加快扫描速度而在root的设备上使用，这一次，我们要将其利用在OpenWRT上，索性写一个完整的介绍。
+> 具体的文档信息都可以从linuxwireless的[网站](http://linuxwireless.org/en/users/Documentation/iw/)上查询到。
 
-具体的文档信息都可以从linuxwireless的[网站](http://linuxwireless.org/en/users/Documentation/iw/)上查询到。
-
-### 1\. 关于iw
+### 1. 关于iw
 
 iw是一个新的为无线网络设备配置工具，基于[nl80211](http://linuxwireless.org/en/developers/Documentation/nl80211/)命令行配置工具集。
 
@@ -31,7 +30,7 @@ iw是一个新的为无线网络设备配置工具，基于[nl80211](http://linu
 
 iwconfig使用Wireless Extensions Interface，如今已经过时，linuxwirelss组织推荐使用iw和nl80211来取代它。
 
-### 2\. 获取iw
+### 2. 获取iw
 
 使用git
 
@@ -39,11 +38,11 @@ iwconfig使用Wireless Extensions Interface，如今已经过时，linuxwirelss�
 
 或者前往linuxwireless.org下载[发布版](https://www.kernel.org/pub/software/network/iw/)。
 
-### 3\. 依赖
+### 3. 依赖
 
 使用iw需要有libnl，大多数操作系统预装1.1，如果版本不对，请重新[下载](http://www.infradead.org/~tgr/libnl/)编译。libnl中引入了genl，Generic Netlink，是nl80211所依赖的。
 
-### 4\. command
+### 4. command
 
 #### help指令
 
