@@ -219,7 +219,7 @@
     <div class="container">
       <div class="col-lg-8 col-lg-offset-1 col-sm-9">
           
-          <span class="post-count">5,649 words in total, 20 minutes required.</span>
+          <span class="post-count">5,648 words in total, 20 minutes required.</span>
           <hr>
           
           <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>&lt; 本文转自引用[1] &gt;</p>
@@ -271,7 +271,7 @@
 <p>在finalize()方法返回之后，对象消失，垃圾收集开始执行。原型中的throws Throwable表示它可以抛出任何类型的异常。之所以要使用finalize()，是存在着垃圾回收器不能处理的特殊情况。*假定你的对象（并非使用new方法）获得了一块“特殊”的内存区域，由于垃圾回收器只知道那些显示地经由new分配的内存空间，所以它不知道该如何释放这块“特殊”的内存区域，那么这个时候java允许在类中定义一个由finalize()方法。</p>
 <p>特殊的区域例如：</p>
 <ul>
-<li>由于在分配内存的时候可能采用了类似 C语言的做法，而非JAVA的通常new做法。这种情况主要发生在native method中，比如native method调用了C/C++方法malloc()函数系列来分配存储空间，但是除非调用free()函数，否则这些内存空间将不会得到释放，那么这个时候就可能造成内存泄漏。但是由于free()方法是在C/C++中的函数，所以finalize()中可以用本地方法来调用它。以释放这些“特殊”的内存空间。&lt;/p&gt;</li>
+<li>由于在分配内存的时候可能采用了类似 C语言的做法，而非JAVA的通常new做法。这种情况主要发生在native method中，比如native method调用了C/C++方法malloc()函数系列来分配存储空间，但是除非调用free()函数，否则这些内存空间将不会得到释放，那么这个时候就可能造成内存泄漏。但是由于free()方法是在C/C++中的函数，所以finalize()中可以用本地方法来调用它。以释放这些“特殊”的内存空间。</li>
 <li>又或者打开的文件资源，这些资源不属于垃圾回收器的回收范围。</li>
 </ul>
 <p>换言之，finalize()的主要用途是释放一些其他做法开辟的内存空间，以及做一些清理工作。因为在JAVA中并没有提够像“析构”函数或者类似概念的函数，要做一些类似清理工作的时候，必须自己动手创建一个执行清理工作的普通方法，也就是override Object这个类中的finalize()方法。</p>

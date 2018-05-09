@@ -206,24 +206,24 @@ legend {
 }
 
 .header-navbar .brand-logo {
-    font-family: -apple-system, 'Biaodian Pro Sans GB', "Segoe UI",
-    "Lucida Grande",
-    Helvetica,
-    Arial,
-    "Microsoft YaHei",
-    FreeSans,
-    Arimo,
-    "Droid Sans",
-    "wenquanyi micro hei",
-    "Hiragino Sans GB",
-    "Hiragino Sans GB W3",
-    Arial,
-    sans-serif;
-    display: fixed;
-    color: #68a6ea;
+    /*font-family: -apple-system, 'Biaodian Pro Sans GB', "Segoe UI",*/
+    /*"Lucida Grande",*/
+    /*Helvetica,*/
+    /*Arial,*/
+    /*"Microsoft YaHei",*/
+    /*FreeSans,*/
+    /*Arimo,*/
+    /*"Droid Sans",*/
+    /*"wenquanyi micro hei",*/
+    /*"Hiragino Sans GB",*/
+    /*"Hiragino Sans GB W3",*/
+    /*Arial,*/
+    /*sans-serif;*/
+    /*display: fixed;*/
+    /*color: #68a6ea;*/
     margin-top: 5px;
     padding-left: 5px;
-    font-size: 55px;
+    /*font-size: 55px;*/
 }
 
 .header-navbar .nav li a {
@@ -1092,7 +1092,7 @@ article blockquote cite:before{
 /* responsible images in the post */
 .post-container img {
     display: block;
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     margin: 1.5em auto 1.6em auto;
 }

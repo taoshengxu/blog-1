@@ -4,6 +4,114 @@
 
     
   <url>
+    <loc>https://longaspire.github.io/blog/blog/%E8%B0%88%E8%B0%88Metric%20Learning2/</loc>
+    <lastmod>2018-05-09T12:20:50.830Z</lastmod>
+    <data>
+        <display>
+        <title>谈谈Metric Learning (II)</title>
+        <pubTime>2015-06-03T04:04:04.000Z</pubTime>
+        
+        <tag>introduction</tag>
+         
+        <tag>similarity measurement</tag>
+         
+        <tag>metric learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="谈谈Metric Learning" url="https://longaspire.github.io/blog/blog/categories/%E8%B0%88%E8%B0%88Metric-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/%E7%90%86%E8%A7%A3%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</loc>
+    <lastmod>2018-05-09T12:20:27.355Z</lastmod>
+    <data>
+        <display>
+        <title>理解垃圾回收机制</title>
+        <pubTime>2014-12-19T11:22:14.000Z</pubTime>
+        
+        <tag>GC</tag>
+         
+        <tag>java</tag>
+         
+        <tag>内存</tag>
+         
+        <tag>垃圾回收</tag>
+         
+        <tag>调度</tag>
+         
+         
+           
+             
+              <breadCrumb title="OS" url="https://longaspire.github.io/blog/blog/categories/OS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/AR+V-SLAM%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E6%B1%87%E6%80%BB/</loc>
+    <lastmod>2018-05-09T12:20:13.569Z</lastmod>
+    <data>
+        <display>
+        <title>AR + V-SLAM的学习资料汇总</title>
+        <pubTime>2015-10-13T01:21:59.000Z</pubTime>
+        
+        <tag>Augmented Reality</tag>
+         
+        <tag>Kalman Filtering</tag>
+         
+        <tag>Localization</tag>
+         
+        <tag>SLAM</tag>
+         
+         
+           
+             
+              <breadCrumb title="科研笔记" url="https://longaspire.github.io/blog/blog/categories/%E7%A7%91%E7%A0%94%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/LSH%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF4/</loc>
+    <lastmod>2018-05-09T12:19:52.934Z</lastmod>
+    <data>
+        <display>
+        <title>LSH那些事儿 (IV): p-stable LSH</title>
+        <pubTime>2013-05-06T03:41:46.000Z</pubTime>
+        
+        <tag>Hashing</tag>
+         
+        <tag>indexing</tag>
+         
+        <tag>LSH</tag>
+         
+        <tag>Principles</tag>
+         
+        <tag>Algorithms</tag>
+         
+        <tag>similarity measurement</tag>
+         
+         
+           
+             
+              <breadCrumb title="LSH那些事儿" url="https://longaspire.github.io/blog/blog/categories/LSH%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://longaspire.github.io/blog/blog/review-of-similarity-measurement/</loc>
     <lastmod>2018-05-09T12:05:09.122Z</lastmod>
     <data>
@@ -98,32 +206,6 @@
         <tag>PageRank</tag>
          
         <tag>SVM</tag>
-         
-         
-           
-             
-              <breadCrumb title="科研笔记" url="https://longaspire.github.io/blog/blog/categories/%E7%A7%91%E7%A0%94%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/AR+V-SLAM%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E6%B1%87%E6%80%BB/</loc>
-    <lastmod>2018-05-09T11:56:40.245Z</lastmod>
-    <data>
-        <display>
-        <title>AR + V-SLAM的学习资料汇总</title>
-        <pubTime>2015-10-13T01:21:59.000Z</pubTime>
-        
-        <tag>Augmented Reality</tag>
-         
-        <tag>Kalman Filtering</tag>
-         
-        <tag>Localization</tag>
-         
-        <tag>SLAM</tag>
          
          
            
@@ -290,34 +372,6 @@
 
     
   <url>
-    <loc>https://longaspire.github.io/blog/blog/%E7%90%86%E8%A7%A3%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</loc>
-    <lastmod>2018-05-09T11:10:12.352Z</lastmod>
-    <data>
-        <display>
-        <title>理解垃圾回收机制</title>
-        <pubTime>2014-12-19T11:22:14.000Z</pubTime>
-        
-        <tag>GC</tag>
-         
-        <tag>java</tag>
-         
-        <tag>内存</tag>
-         
-        <tag>垃圾回收</tag>
-         
-        <tag>调度</tag>
-         
-         
-           
-             
-              <breadCrumb title="OS" url="https://longaspire.github.io/blog/blog/categories/OS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://longaspire.github.io/blog/blog/introduction-to-histcite/</loc>
     <lastmod>2018-05-09T11:02:35.890Z</lastmod>
     <data>
@@ -356,36 +410,6 @@
         <tag>LSH</tag>
          
         <tag>Principles</tag>
-         
-         
-           
-             
-              <breadCrumb title="LSH那些事儿" url="https://longaspire.github.io/blog/blog/categories/LSH%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/LSH%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF4/</loc>
-    <lastmod>2018-05-09T10:53:44.154Z</lastmod>
-    <data>
-        <display>
-        <title>LSH那些事儿 (IV): p-stable LSH</title>
-        <pubTime>2013-05-06T03:41:46.000Z</pubTime>
-        
-        <tag>Hashing</tag>
-         
-        <tag>indexing</tag>
-         
-        <tag>LSH</tag>
-         
-        <tag>Principles</tag>
-         
-        <tag>Algorithms</tag>
-         
-        <tag>similarity measurement</tag>
          
          
            
@@ -746,30 +770,6 @@
         <tag>LMNN</tag>
          
         <tag>metric</tag>
-         
-        <tag>metric learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="谈谈Metric Learning" url="https://longaspire.github.io/blog/blog/categories/%E8%B0%88%E8%B0%88Metric-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/%E8%B0%88%E8%B0%88Metric%20Learning2/</loc>
-    <lastmod>2018-05-09T09:01:07.051Z</lastmod>
-    <data>
-        <display>
-        <title>谈谈Metric Learning (II)</title>
-        <pubTime>2015-06-03T04:04:04.000Z</pubTime>
-        
-        <tag>introduction</tag>
-         
-        <tag>similarity measurement</tag>
          
         <tag>metric learning</tag>
          
