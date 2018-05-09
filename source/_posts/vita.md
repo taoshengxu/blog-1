@@ -13,8 +13,9 @@ date: 2016-05-18 13:10:16
 permalink:
 description:
 cover_img:
-toc_number_disable: true
+toc_disable: true
 comments:
+mathjax: false
 ---
 
 <p><p><p><p>

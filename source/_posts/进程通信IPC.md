@@ -15,7 +15,7 @@ date: 2014-12-13 13:27:09
 permalink:
 description:
 cover_img:
-toc-disable:
+toc-disable: true
 comments:
 ---
 
@@ -786,6 +786,6 @@ int main()
 
 ### 引用
 
-1.  [http://songlee24.github.io/2015/04/21/linux-IPC/](http://songlee24.github.io/2015/04/21/linux-IPC/)
-2.  [http://www.cnblogs.com/CheeseZH/p/5264465.html](http://www.cnblogs.com/CheeseZH/p/5264465.html)
-3.  [http://blog.csdn.net/liushuijinger/article/details/7586656](http://blog.csdn.net/liushuijinger/article/details/7586656)
+[1] [http://songlee24.github.io/2015/04/21/linux-IPC/](http://songlee24.github.io/2015/04/21/linux-IPC/)
+[2] [http://www.cnblogs.com/CheeseZH/p/5264465.html](http://www.cnblogs.com/CheeseZH/p/5264465.html)
+[3] [http://blog.csdn.net/liushuijinger/article/details/7586656](http://blog.csdn.net/liushuijinger/article/details/7586656)

@@ -10,7 +10,7 @@ timezone: Asia/Shanghai
 
 # custom Site settings
 SEOTitle: Little Stone - Huan Li's Blog
-keyword: "Computer Science, Travel Notes" # seo key words
+keyword: "Computer Science, Travel Notes, Ideas and Thoughts" # seo key words
 
 # your favicon png
 favicon: /blog/img/rockrms.png
@@ -51,14 +51,24 @@ footer:
 # ---------------------------------------------------------------
 menu:
   home: /
-#  about: /about/
+  about: /the-milestone-2018/
 #  links: /links/
 #  LeetCode-tag: /leetcode-tag/
+  categories: /categories/
   archives: /archives/
   tags: /tags/
-  categories: /categories/
 #  support: /support/
 #  RSS: /atom.xml
+
+# ---------------------------------------------------------------
+# Archive Generator
+# ---------------------------------------------------------------
+archive_generator:
+  per_page: 6
+  yearly: true
+  monthly: false
+  daily: false
+  order_by: -date
 
 # ---------------------------------------------------------------
 # SNS settings
@@ -74,14 +84,14 @@ email: lihuancs@zju.edu.cn
 # weibo_username:
 # zhihu_username:
 github_username: longaspire
-# twitter_username: 
+twitter_username: LeeSte7en
 facebook_username: stevenhuanlee
 linkedin_username: lihuancs
 
 # ---------------------------------------------------------------
 # Sidebar settings
 # ---------------------------------------------------------------
-sidebar: true
+sidebar: false
 sidebar-about-description: # data scientist
 sidebar-avatar-url: # http://longaspire.com/avator.jpg
 
@@ -97,6 +107,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - 'unreleased/**'
 
 # Writing: Defined by Hexo
 new_post_name: :title.md                  # File name of new posts
@@ -111,7 +122,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
 
 # Category & Tag
@@ -146,7 +157,7 @@ deploy:
 # Layout settings: homepage
 # ---------------------------------------------------------------
 # If enable, update date will show on the cover photo.
-index_update_date_enable: false
+index_update_date_enable: true
 
 # ---------------------------------------------------------------
 # Layout settings: post layout & leetcode layout
@@ -171,14 +182,14 @@ brand_logo_img: /blog/img/banner.png?h=350&auto=compress&cs=tinysrgb
 toc:
   enable: true
   # Automatically add list number to toc.
-  number: true
+  number: false
 
 # ---------------------------------------------------------------
 # Layout settings: page layout
 # ---------------------------------------------------------------
 
 # ---------------------------------------------------------------
-# Layout settings: arhive layout
+# Layout settings: archive layout
 # ---------------------------------------------------------------
 # archive page title
 archive:
@@ -194,10 +205,6 @@ archive:
 # ---------------------------------------------------------------
 
 # ---------------------------------------------------------------
-# Layout settings: archive layout
-# ---------------------------------------------------------------
-
-# ---------------------------------------------------------------
 # Layout settings: 404 layout
 # ---------------------------------------------------------------
 
@@ -207,10 +214,6 @@ archive:
 
 # ---------------------------------------------------------------
 # Layout settings: list-tag-leetcode layout
-# ---------------------------------------------------------------
-
-# ---------------------------------------------------------------
-# Layout settings: 404 layout
 # ---------------------------------------------------------------
 
 #################################################################
@@ -231,23 +234,22 @@ mathjax:
 # disqus_shortname: hexo-a-rsnippet
 
 # Use livere
-# use_livere: false
-# livere_uid: MTAyMC8zMz
+use_livere: true
+livere_uid: MTAyMC8zNjM1MC8xMjg4NQ
 
 # ---------------------------------------------------------------
 # Analytics settings
 # ---------------------------------------------------------------
 # Baidu Analytics
-baidu_analytics:
+baidu_analytics: 13438f8a61802b465894989427ee4725
 # Google Analytics
-google_analytics: UA-38355881-1            # Format: UA-xxxxxx-xx
+google_analytics: UA-118875263-1            # Format: UA-xxxxxx-xx
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
 # Click "Alternative methods" => Select "HTML tag" => copy the string in the "content" property of "meta" element
 # <meta name="google-site-verification" content="xxxxxx" />
 # Input xxxxxx below
-google_site_verification: wtCjI-zcpr2FYwWS3sI4OWzMK9e7VomDrZyxpVUUIng
-
+google_site_verification: Q9_p57DiEwLUAkG7RSWhWgytI3usFEsDzkR3UMn-RW8
 bing_site_verification:
 yandex_site_verification:
 
@@ -263,6 +265,21 @@ add_this_id: # ra-5272bc2a7b3c1ddc
 # search api , set your custom key
 # It is not working now. It is a feature in the future.
 # swiftype_key:
+
+# ---------------------------------------------------------------
+# hexo-image-caption add caption for iamges
+# ---------------------------------------------------------------
+image_caption:
+  enable: true #false to disable
+  class_name: 'image-caption-center' #if you wanna customize the style for the caption,you can assign a class name, default is 'image-caption'
+
+# ---------------------------------------------------------------
+# Site Map
+# ---------------------------------------------------------------
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
 
 # Theme version
 version: 0.1.0
