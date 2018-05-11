@@ -407,7 +407,7 @@ legend {
 .post-count {
     color: #808080;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     font-style: italic;
     border-color: #ff7e79;
 }
@@ -1062,6 +1062,16 @@ footer .copyright {
     padding-left: 0;
 }
 
+article h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+article h4{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 article .post-container {
     padding: 40px;
 }
@@ -1092,7 +1102,7 @@ article blockquote cite:before{
 /* responsible images in the post */
 .post-container img {
     display: block;
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
     margin: 1.5em auto 1.6em auto;
 }
