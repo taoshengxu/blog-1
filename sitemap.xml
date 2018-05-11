@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://longaspire.github.io/blog/%E5%9B%A0%E5%AD%90%E5%9B%BE%E4%BB%8B%E7%BB%8D/</loc>
+    
+    <lastmod>2018-05-11T11:43:35.618Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://longaspire.github.io/blog/%E6%BB%A4%E6%B3%A2%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B02/</loc>
+    
+    <lastmod>2018-05-11T11:43:29.755Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://longaspire.github.io/blog/%E8%B0%88%E8%B0%88Metric%20Learning4/</loc>
     
     <lastmod>2018-05-11T11:37:49.352Z</lastmod>
@@ -135,13 +149,6 @@
   </url>
   
   <url>
-    <loc>https://longaspire.github.io/blog/%E5%9B%A0%E5%AD%90%E5%9B%BE%E4%BB%8B%E7%BB%8D/</loc>
-    
-    <lastmod>2018-05-11T10:49:25.136Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://longaspire.github.io/blog/categories/index.html</loc>
     
     <lastmod>2018-05-11T10:45:45.171Z</lastmod>
@@ -180,13 +187,6 @@
     <loc>https://longaspire.github.io/blog/%E6%BB%A4%E6%B3%A2%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B01/</loc>
     
     <lastmod>2018-05-11T09:38:18.895Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://longaspire.github.io/blog/%E6%BB%A4%E6%B3%A2%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B02/</loc>
-    
-    <lastmod>2018-05-11T09:38:03.525Z</lastmod>
     
   </url>
   

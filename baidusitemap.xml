@@ -4,6 +4,60 @@
 
     
   <url>
+    <loc>https://longaspire.github.io/blog/blog/%E5%9B%A0%E5%AD%90%E5%9B%BE%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2018-05-11T11:43:35.618Z</lastmod>
+    <data>
+        <display>
+        <title>因子图介绍</title>
+        <pubTime>2016-05-11T06:11:56.000Z</pubTime>
+        
+        <tag>因子图</tag>
+         
+        <tag>无向图</tag>
+         
+        <tag>贝叶斯网络</tag>
+         
+        <tag>条件随机场</tag>
+         
+        <tag>马尔科夫随机场</tag>
+         
+        <tag>边缘化</tag>
+         
+        <tag>Sum-product</tag>
+         
+         
+           
+             
+              <breadCrumb title="概率图模型" url="https://longaspire.github.io/blog/blog/categories/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/%E6%BB%A4%E6%B3%A2%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B02/</loc>
+    <lastmod>2018-05-11T11:43:29.755Z</lastmod>
+    <data>
+        <display>
+        <title>滤波技术笔记 (II): Kalman Filter实例</title>
+        <pubTime>2014-05-18T02:43:15.000Z</pubTime>
+        
+        <tag>Kalman Filter</tag>
+         
+        <tag>卡尔曼增益</tag>
+         
+         
+           
+             
+              <breadCrumb title="滤波技术笔记" url="https://longaspire.github.io/blog/blog/categories/%E6%BB%A4%E6%B3%A2%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://longaspire.github.io/blog/blog/%E8%B0%88%E8%B0%88Metric%20Learning4/</loc>
     <lastmod>2018-05-11T11:37:49.352Z</lastmod>
     <data>
@@ -381,9 +435,9 @@
         <title>AR + V-SLAM的学习资料汇总</title>
         <pubTime>2015-10-13T01:21:59.000Z</pubTime>
         
-        <tag>Augmented Reality</tag>
-         
         <tag>Kalman Filter</tag>
+         
+        <tag>Augmented Reality</tag>
          
         <tag>Localization</tag>
          
@@ -471,38 +525,6 @@
     </url>
 
     
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/%E5%9B%A0%E5%AD%90%E5%9B%BE%E4%BB%8B%E7%BB%8D/</loc>
-    <lastmod>2018-05-11T10:49:25.136Z</lastmod>
-    <data>
-        <display>
-        <title>因子图介绍</title>
-        <pubTime>2016-05-11T06:11:56.000Z</pubTime>
-        
-        <tag>因子图</tag>
-         
-        <tag>无向图</tag>
-         
-        <tag>贝叶斯网络</tag>
-         
-        <tag>条件随机场</tag>
-         
-        <tag>马尔科夫随机场</tag>
-         
-        <tag>边缘化</tag>
-         
-        <tag>Sum-product</tag>
-         
-         
-           
-             
-              <breadCrumb title="概率图模型" url="https://longaspire.github.io/blog/blog/categories/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
     
     
@@ -540,28 +562,6 @@
         <tag>Kalman Filter</tag>
          
         <tag>动态系统</tag>
-         
-         
-           
-             
-              <breadCrumb title="滤波技术笔记" url="https://longaspire.github.io/blog/blog/categories/%E6%BB%A4%E6%B3%A2%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/%E6%BB%A4%E6%B3%A2%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B02/</loc>
-    <lastmod>2018-05-11T09:38:03.525Z</lastmod>
-    <data>
-        <display>
-        <title>滤波技术笔记 (II): Kalman Filter实例</title>
-        <pubTime>2014-05-18T02:43:15.000Z</pubTime>
-        
-        <tag>Kalman Filter</tag>
-         
-        <tag>卡尔曼增益</tag>
          
          
            
