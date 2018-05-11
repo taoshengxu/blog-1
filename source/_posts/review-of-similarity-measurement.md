@@ -5,17 +5,16 @@ categories:
   - 科研笔记
 tags:
   - Hashing
-  - indexing
-  - review
-  - similarity measurement
+  - Index
+  - "距离度量"
 draft: false
 id: 104
 date: 2013-04-18 16:12:10
 toc_number_disable: true
+cover_img: /blog/post_cover_images/firenze.png
+cover_img_from_root: true
 permalink:
 description:
-cover_img:
-toc-disable:
 comments:
 ---
 

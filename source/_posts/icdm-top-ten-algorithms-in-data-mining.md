@@ -5,19 +5,17 @@ categories:
   - "科研笔记"
 tags:
   - AdaBoost
-  - Algorithms
-  - Data Mining
+  - "关联分析"
   - EM
-  - ICDM
-  - kNN
   - PageRank
   - SVM
 draft: false
 id: 25
 date: 2013-04-15 11:16:29
+cover_img: /blog/post_cover_images/firenze.png
+cover_img_from_root: true
 permalink:
 description:
-cover_img:
 comments:
 ---
 

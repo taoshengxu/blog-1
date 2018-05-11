@@ -4,11 +4,8 @@ title: 进程通信IPC
 categories:
   - OS
 tags:
-  - IPC
   - Linux
-  - OS
-  - 进程
-  - 通信
+  - 进程通信
 draft: false
 id: 673
 date: 2014-12-13 13:27:09
@@ -135,7 +132,7 @@ int main()
 
     printf("I am %d process.\n", getpid()); // 说明进程ID
 
-    if((fd = open("fifo1", O_WRONLY)) < 0) // 以写打开一个FIFO 
+    if((fd = open("fifo1", O_WRONLY)) < 0) // 以写打开一个FIFO
     {
         perror("Open FIFO Failed");
         exit(1);
@@ -287,7 +284,7 @@ int main()
     printf("My pid is: %d.\n", getpid());
 
     // 循环读取消息
-    for(;;) 
+    for(;;)
     {
         msgrcv(msqid, &msg, 256, 888, 0);// 返回类型为888的第一个消息
         printf("Server: receive msg.mtext is: %s.\n", msg.mtext);
@@ -325,7 +322,7 @@ int main()
     struct msg_form msg;
 
     // 获取key值
-    if ((key = ftok(MSG_FILE, 'z')) < 0) 
+    if ((key = ftok(MSG_FILE, 'z')) < 0)
     {
         perror("ftok error");
         exit(1);
@@ -335,7 +332,7 @@ int main()
     printf("Message Queue - Client key is: %d.\n", key);
 
     // 打开消息队列
-    if ((msqid = msgget(key, IPC_CREAT|0777)) == -1) 
+    if ((msqid = msgget(key, IPC_CREAT|0777)) == -1)
     {
         perror("msgget error");
         exit(1);
@@ -494,7 +491,7 @@ int init_sem(int sem_id, int value)
 }
 
 // P操作:
-//  若信号量值为1，获取资源并将信号量值-1 
+//  若信号量值为1，获取资源并将信号量值-1
 //  若信号量值为0，进程挂起等待
 int sem_p(int sem_id)
 {
@@ -600,7 +597,7 @@ int main()
     while(1)
     {
         msgrcv(msqid, &msg, 1, 888, 0); /*读取类型为888的消息*/
-        if(msg.mtext == 'q')  /*quit - 跳出循环*/ 
+        if(msg.mtext == 'q')  /*quit - 跳出循环*/
             break;
         if(msg.mtext == 'r')  /*read - 读共享内存*/
         {
@@ -647,7 +644,7 @@ union semun
 };
 
 // P操作:
-//  若信号量值为1，获取资源并将信号量值-1 
+//  若信号量值为1，获取资源并将信号量值-1
 //  若信号量值为0，进程挂起等待
 int sem_p(int sem_id)
 {

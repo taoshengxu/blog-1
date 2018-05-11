@@ -4,10 +4,9 @@ title: "LSH那些事儿 (II): 图说"
 categories:
   - "LSH那些事儿"
 tags:
-  - Hashing
-  - indexing
+  - Hash
+  - Idex
   - LSH
-  - Principles
 draft: false
 id: 108
 date: 2013-04-18 17:04:31
@@ -48,7 +47,7 @@ Locality Sensitive Hashing (LSH) 是构造一种Hash函数集 $ \{ D | R^d \righ
 先给出定义：
 
 > A family $ H$ of functions $ D: R^d \rightarrow U $ is called $ (P_1,P_2,r,cr) $-sensitive, if for any $ p$，$ q$:
-> 
+>
 > 1.  if $ || p - q || \leq r$, then $ Pr[g(p) = g(q)] > P_1$
 > 2.  if $ || p - q || \geq cr$, then $ Pr[g(p) = g(q)] < P_2$
 

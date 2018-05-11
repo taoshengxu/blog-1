@@ -6,9 +6,8 @@ categories:
 tags:
   - ITML
   - LMNN
-  - metric
   - metric learning
-  - similarity measurement
+  - "距离度量"
 draft: false
 id: 347
 date: 2015-06-03 10:41:01
@@ -41,7 +40,7 @@ comments:
 #### 2.2 相似函数(similarity function)定义
 
 > a (dis)similarity function is a pairwise function $\mathit{K}: \mathit{X} \times \mathit{X} \rightarrow \mathbb{R}$.
-> 
+>
 >   $\mathit{K}$ is symmetric if $\forall x,x' \in \mathit{X}, \mathit{K}(x,x') = \mathit{K}(x',x)$.
 
 #### 2.3 Minkowski distances

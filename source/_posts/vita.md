@@ -2,10 +2,9 @@
 layout: page
 title: 'Vita: A Versatile Toolkit for Generating Indoor Mobility Data for Real-World Buildings'
 categories:
-  - 研究工作
+  - "研究工作"
 tags:
-  - database
-  - demo
+  - Demo
   - VLDB
 draft: false
 id: 626

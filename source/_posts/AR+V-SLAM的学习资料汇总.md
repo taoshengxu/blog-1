@@ -5,16 +5,18 @@ categories:
   - "科研笔记"
 tags:
   - Augmented Reality
-  - Kalman Filtering
+  - Kalman Filter
   - Localization
   - SLAM
+  - SfM
 draft: false
 id: 638
 date: 2015-10-13 09:21:59
 toc_number_disable: true
+cover_img: /blog/post_cover_images/firenze.png
+cover_img_from_root: true
 permalink:
 description:
-cover_img:
 comments:
 ---
 
@@ -23,7 +25,7 @@ comments:
 说到AR，现在往往要说起来SLAM (Simultaneous Localization and Mapping)，这两者之间是什么关系呢，可能会困扰很多的初学者。且先看点定义~
 
 > Augmented reality (AR) is a technique that allows to seamlessly composite virtual objects or information into real scene.
-> 
+>
 >   Simultaneous localization and mapping (SLAM) is a key fundamental technique for augmented reality, which provides the ability of self-localization in an unknown environment and mapping the 3D environment simultaneously. The localization and mapping enables fusion of virtual objects and real scenes in a geometrically consistent way.
 
 *注意现在在AR当中多使用的是Visual SLAM，即V-SLAM的技术。*

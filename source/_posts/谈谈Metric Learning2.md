@@ -6,7 +6,7 @@ categories:
 tags:
   - introduction
   - metric learning
-  - similarity measurement
+  - "距离度量"
 draft: false
 id: 443
 date: 2015-06-03 12:04:04

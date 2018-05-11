@@ -125,7 +125,8 @@ highlight:
 # Category & Tag
 default_category: uncategorized
 #category_map:
-#tag_map:
+# tag_map:
+
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -171,7 +172,7 @@ post_update_date_enable: true
 
 # default cover image
 # example: animated gif as header
-cover_default_img: /blog/img/firenze.png?h=350&auto=compress&cs=tinysrgb
+cover_default_img: /blog/img/northernlights-sisimiut-lake.jpg
 brand_logo_img: /blog/img/banner.png?h=350&auto=compress&cs=tinysrgb
 
 

@@ -1,18 +1,18 @@
 ---
 layout: post
-title: Introduction to LaTex
+title: Introduction to Latex
 categories:
   - "科研笔记"
 tags:
-  - LaTex
-  - Tutorial
+  - "LaTex"
+  - "教程"
 draft: false
 id: 94
 date: 2013-04-18 10:37:00
+cover_img: /blog/post_cover_images/firenze.png
+cover_img_from_root: true
 permalink:
 description:
-cover_img:
-toc-disable:
 comments:
 ---
 
@@ -22,7 +22,7 @@ comments:
 
 * Separate content from style.
 * Good layout (usually).
-* Excellent for managing references (including gure numbers)
+* Excellent for managing references (including gure numbers).
 
 ### LATEX basics: Commands and Environments
 

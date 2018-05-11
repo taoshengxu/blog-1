@@ -2,12 +2,12 @@
 layout: post
 title: {{ title }}
 date: {{ date }}
+toc_number_disable: true
+draft: false
+comments: true
 categories:
 tags:
-permalink: 
-description: 
-draft: false
-cover_img: 
-toc-disable:
-comments:
+permalink:
+description:
+cover_img:
 ---

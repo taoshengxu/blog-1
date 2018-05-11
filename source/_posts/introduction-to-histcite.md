@@ -4,16 +4,15 @@ title: Introduction to HistCite
 categories:
   - "科研笔记"
 tags:
-  - HistCite
-  - introduction
-  - research
+  - "工具"
+  - "文献管理"
 draft: false
 id: 200
 date: 2013-09-16 10:53:16
+cover_img: /blog/post_cover_images/firenze.png
+cover_img_from_root: true
 permalink:
 description:
-cover_img:
-toc-disable:
 comments:
 ---
 

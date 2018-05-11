@@ -2,11 +2,15 @@
 layout: poem
 title: 博士论文 | 致谢
 date: 2018-05-08 15:26:07
-category: 文字
+category: "文字"
 tag:
-  - 致谢
+  - "致谢"
 mathjax: false
 comments: false
+cover_img: /blog/post_cover_images/moon.jpg
+cover_img_from_root: true
+permalink:
+description:
 ---
 
 <p>
@@ -27,5 +31,3 @@ comments: false
 <p><p><p><p><p><p><p><p>
 **门下生 李环**
 **如月夜疾书于陋居沉风斋**
-
-

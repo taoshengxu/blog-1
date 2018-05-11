@@ -9,7 +9,7 @@ tags:
   - KL Divergence
   - LogDet
   - metric learning
-  - similarity measurement
+  - "距离度量"
 draft: false
 id: 380
 date: 2015-06-03 15:41:19
@@ -126,7 +126,7 @@ $ u $($ l $)是一个值很小(大)的upper（lower） bound。
 
 ```C
 
-Input:  X: input d*n matrix; 
+Input:  X: input d*n matrix;
         S: set of similar pairs;
         D: set of dissimilar pairs;
         u,l: distance thresholds;
@@ -138,8 +138,8 @@ Output: A: output Mahalanobis matrix
 
 //initialization
 A = A_0;
-forall i,j: 
-   lambda_ij = 0; 
+forall i,j:
+   lambda_ij = 0;
 forall i,j:
    idx = c(i,j);
    if (i,j) is in S:

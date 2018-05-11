@@ -2,10 +2,9 @@
 layout: page
 title: 'TRIPS: Translating Raw Indoor Positioning Data into Visual Mobility Semantics'
 categories:
-  - 研究工作
+  - "研究工作"
 tags:
-  - database
-  - demo
+  - Demo
   - VLDB
 draft: false
 id: 735

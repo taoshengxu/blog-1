@@ -31,12 +31,12 @@ comments:
 首先，我们知道给定的$ A_0$是如下形式的， $ K_0 = X^TA_0X$，它是一个$ n \times n$的方阵，优化问题如下：
 
 > **_Equation.1_**
-> 
+>
 >   $ \min\limits_K~~D_{ld}(K, K_0)$
 >   s.t. $ K_{ii} + K_{jj} - 2K_{ij} \leq v ~~~~~ (i,j) \in S\\
-> 
+>
 >              K_{ii} + K_{jj} - 2K_{ij} \geq l ~~~~~ (i,j) \in D\\
-> 
+>
 > K \succeq 0$
 
 ### 2\. Kernel Learning和ITML的联系
@@ -44,53 +44,53 @@ comments:
 现在已经看出一点端倪了，实际上这两个问题的关联在于如何证明$ K$和$ A$存在着“强关联”。回想下我们在[上一篇](http://wp.me/p61l9A-68)中介绍的关于$ A$和$ A_0$的LogDet优化：
 
 > **_Equation.2_**
-> 
+>
 >   $ \min\limits_{A \succeq 0}~~D_{ld}(A,A_0)$
 >   s.t. $ tr(A(x_i - x_j)(x_i - x_j)^T) \leq v ~~~~ (i,j) \in S \\
-> 
+>
 >              tr(A(x_i - x_j)(x_i - x_j)^T) \geq l ~~~~ (i,j) \in D $
 
 为了证明它们之间的关联，我们给出一个引理及其证明，如下：
 
 > **_LEMMA 1._**
-> 
+>
 >   给定$ K = X^TAX$， 当且仅当$ K$是Equation.1的可行解的情况下，$ A$是Equation.2的可行解。
-> 
+>
 >   _证明:_
 >   $ K_{ii} + K_{jj} - 2K_{ij}$可写成$ (e_i - e_j)^TK(e_i - e_j) = (x_i - x_j)^TA(x_i - x_j)$。因此，对于similar constraint，$ K_{ii} + K_{jj} - 2K_{ij} \leq v$等价于$ tr(A(x_i - x_j)(x_i-x_j)^T) \leq v$。同理，适用于dissimilar constraint。
 
 由上，我们可以给出一个定理及其证明：
 
 > **_THEOREM 1._**
-> 
+>
 >   给定Equation.1的最优解$ K^*$及Equation.2的最优解$ A^*$，必有$ K^* = X^TA^*X$。
-> 
+>
 >   _证明:_
-> 
+>
 >   对于Equation.1的Bregman projection update 可写为：
-> 
+>
 >   $ A_{t+1} = A_{t} + \beta A_{t}(x_i - x_j)(x_i - x_j)^TA_{t}$
-> 
+>
 >   对于Equation.2的Bregman projection update 则可写为：
-> 
+>
 >   $ K_{t+1} = K_{t} + \beta K_{t}(e_i - e_j)(e_i - e_j)^TK_{t}$
-> 
+>
 >   优化的算法可以得出，两者当中使用的$ \beta$是一致的，接下来可以归纳证明，在每一次迭代的过程中，都满足关系$ K_t = X^TA_{t}X$（给定初始条件：$ K_0 = X^TA_{0}X$）
-> 
+>
 >   假设$ K_t = X^TA_{t}X$则:
-> 
+>
 >   $ K_{t+1}\\
-> 
+>
 >  = K_{t} + \beta K_{t}(e_i - e_j)(e_i - e_j)^TK_{t}\\
-> 
+>
 >  = X^TA_{t}X + \beta X^TA_{t}X(e_i - e_j)(e_i - e_j)^TX^TA_{t}X\\
-> 
+>
 >  = X^TA_{t}X + \beta X^TA_{t}(x_i - x_j)(x_i - x_j)^TA_{t}X\\
-> 
+>
 >  = X^T(A_{t} + A_{t}(x_i - x_j)(x_i - x_j)^TA_{t})X\\
-> 
+>
 >  = X^TA_{t+1}X$
-> 
+>
 >   如果$ K$能收敛到$ K^*$，那么$ A$也能收敛到$ A^*$。则两个问题等价，定理得证。
 
 那么，通过这么多的推论和证明，我们终于可以认为ITML算法实际上与low-rank kernel learning的问题是一致的，因此，我们可以将ITML算法的输入由一个初始矩阵$ A_0$置换成$ K_0$，将限制条件更改为$ K_{ii} + K_{jj} - 2K_{ij}$，而相应的输出也变成了一个$ K^*$。
@@ -110,7 +110,7 @@ comments:
 实际上，我们的metric 定义变成了：
 
 > $ d_A(\phi(x), \phi(y)) = (\phi(x) - \phi(y))^TA(\phi(x) - \phi(y))\\
-> 
+>
 > = \phi(x)^TA\phi(x) - 2\phi(x)^TA\phi(y) + \phi(y)^TA\phi(y)$
 
 随后，我们定义一个新的核公式：
@@ -124,9 +124,9 @@ comments:
 这是核化之后的$ A$，它依然希望能够尽量逼近$ I$，这里我们引入了一些系数coefficient $ \sigma_{ij}$。这样，就可以写出新的核公式的表达形式：
 
 > $ \widetilde{k}(x,y) = \phi(x)^TA\phi(y) = \phi(x)^T(I + \sum\limits_{i,j}\sigma_{ij}\phi(x_i)\phi(x_j)^T)\phi(y) \\
-> 
+>
 > = \phi(x)^T\phi(y) + \sum\limits_{i,j}\sigma_{ij}\phi(x)^T\phi(x_i)\phi(x_j)^T\phi(y) \\
-> 
+>
 > = k(x,y) + \sum\limits_{i,j}\sigma_{ij}k(x,x_i)k(x_i,y)$
 
 到这里，我们看到，新的核公式是老的核公式和一系列系数的组合，通过优化Equation.2当中的问题，我们可以得到一系列系数$ \sigma_{ij} $来估量新的核函数$ \widetilde{k}()$。

@@ -4,10 +4,9 @@ title: "LSH那些事儿 (I): 总览"
 categories:
   - "LSH那些事儿"
 tags:
-  - distribution
-  - Hashing
-  - indexing
-  - introduction
+  - "概率"
+  - Hash
+  - Idex
   - LSH
 draft: false
 id: 99
@@ -24,9 +23,9 @@ comments:
 先从wiki上头截取一段话:
 
 > Locality-sensitive hashing (LSH) is a method of performing probabilistic [dimension reduction](http://en.wikipedia.org/wiki/Dimension_reduction) of high-dimensional data.
-> 
+>
 >   The basic idea is to [hash](http://en.wikipedia.org/wiki/Hash_Function) the input items so that similar items are mapped to the same buckets with high probability (the number of buckets being much smaller than the universe of possible input items). This is different from the conventional hash functions, such as those used in [cryptography](http://en.wikipedia.org/wiki/Cryptography) as in this case the goal is to maximize probability of "collision" of similar items rather than avoid collisions.[&#91;1&#93;](http://en.wikipedia.org/wiki/Locality-sensitive_hashing#cite_note-1).
-> 
+>
 >   Note how locality-sensitive hashing, in many ways, mirrors [data clustering](http://en.wikipedia.org/wiki/Cluster_analysis) and [Nearest neighbor search](http://en.wikipedia.org/wiki/Nearest_neighbor_search).
 
 _LSH(Location Sensitive Hash)_，即位置敏感哈希函数。与一般哈希函数不同的是位置敏感性，也就是散列前的相似点经过哈希之后，也能够在一定程度上相似，并且具有一定的概率保证。
@@ -67,32 +66,32 @@ $ D(p,q) \leq r(1+\epsilon)~~and~~Pr(h(p) = h(q)) \leq p_1 $
 总而言之，哪儿需要近似kNN查询，哪儿都能用上LSH.
 
 > **_扩展1————图像检索和c-NN搜索_**
-> 
+>
 >   图像检索其基本定义为给定的一个包含n个图像数据集，每个图像可以用一个d维的特征向量来描述，因此整个图像数据集就映射为d维空间的n个点，在此d维空间中用一个相似度度量函数来测量两个图像点之间的距离，对于任意给定的查询点q，需要设计一个数据结构，来快速的返回距离q最近(Nearest Neighbor)的图像点(或者Ranking的多个点)。
-> 
+>
 >   当d较小时(10-20)，可采用如kd-tree的结构，但当d较大时(一个Discriminative的图像描述向量通常成百上千甚至万维)，其查询时间将随d指数级增长，这就是通常所说的维数灾难"the curse of dimensionality"，同时d较大时，其所需的存储空间也变的intolerable。因此降维和Approximation NN算法通常会用到当前的检索系统中，ANN搜索就是对于给定的查询点q，若数据集中存在点p距其小于距离R，允许系统返回点p，where $ \Phi(q, p') = cR$，则称为c-NN搜索。
-> 
+>
 >   当前图像检索要求快、准、同时可容易的扩展至大规模数据
-> 
+>
 > 1.  Fast：hashing structure，small code， ANN;
 > 2.  Accurate: discriminative feature fingerprint;
 > 3.  Scalable: very little memroy.
-> 
+>
 >   由此可见，紧凑的fingerprint和有效的hash结构对整个检索系统至关重要,目前的图像检索系统中，常采用Hashing技术将高维的图像特征编码为低维的特征，在映射后的$ S^k$ 空间中采用一定的距离度量进行
 
 .
 
 > **_扩展2————Approximation Nearest Neighbors (ANN)搜索_**
-> 
+>
 >   定义Hash函数集合$ H = \{h_i(i = 1,...,k): M^d  \rightarrow S^k\} $.
-> 
+>
 >   $ M^d$ 是原始的 d 维特征空间，
-> 
+>
 >   $ S^k$ 是经hash函数集F散列后的k维空间，根据哈希函数设计的不同，可将Hashing分为data-independent和data-dependent两大类:
-> 
+>
 >   1.data-independent hashing包括：Locality-Sensitive Hashing (LSH)，经Hash函数映射后，仍保留原始空间的距离相似度；
 >   2.data-dependent hashing包括：spectral hashing, semi-supervised hashing, Restricted Boltzmann Machine (RBM), Boosting SSC等，引入机器学习算法，基于数据分布设计Hash函数。
-> 
+>
 >   位置敏感哈希Locality-Sensitive Hashing (LSH)，其基本的思想就是通过哈希函数将输入的高维特征矢量散列至低维特征空间，并满足在原始空间中距离较近的点经过散列之后在低维空间依然距离较近，距离较近的点散列后碰撞的概率要大于距离较远的点碰撞的概率。
 
 ## 4. 方法
@@ -123,11 +122,11 @@ Hash函数设计的基本思想也是定义一个随机超平面，不同于4.2�
 w是d维向量，每一维都是一个随机变量，各维之间独立同分布，服从一个Stable Distribution，b是一个[0,r]间均匀分布的随机变量。
 
 > 稳态分布的定义：
-> 
+>
 >   A distribution $ D$ over $ \mathbb{R} $ is called p-stable, if there exists such that for any $ n $ real number $ v_1,...,v_n $ and i.i.d. variables $ X_1,...,X_n $ with $ D $ distribution, the random variable $ \sum_iv_iX_i $ has the same distribution as the variable $ (\sum_i|v_i|^p)^{\frac{1}{p}}X $ where $ X $ is a random variable with distribution $ D $.
-> 
+>
 >   简而言之就是若随机变量线性组合的分布与随机变量乘一个$L_p$归一化系数服从同一分布，则此分布即为稳态分布，对于$ p \in (0,2] $，都存在一个稳态分布, 两个常用的Stable Distribution：
-> 
+>
 > 1.  Cauchy distribution: 1-stable即L1稳态，其概率密度函数为$c(x) = \frac{1}{\pi}\frac{1}{1+{x}^{2}} $
 > 2.  Gaussian distribution: 2-stable即L2稳态，概率密度函数为:$g(x)=\frac{1}{\sqrt{2\pi}}{e}^{-{x}^{2}/2} $
 
