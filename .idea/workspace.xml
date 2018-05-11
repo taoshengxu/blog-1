@@ -4,7 +4,167 @@
     <bookmark url="file://$PROJECT_DIR$/source/_posts/icdm-top-ten-algorithms-in-data-mining.md" line="43" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4941c04-132f-4073-ab9a-80ed7bd21abc" name="Default" comment="" />
+    <list default="true" id="a4941c04-132f-4073-ab9a-80ed7bd21abc" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/README.md.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/_config.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/scaffolds/draft.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/scaffolds/leetcode.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/scaffolds/portfolio-slim.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/scaffolds/post.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/404/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/chinese-poem-test.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/chinese-simplified-test.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/chinese-traditional-test.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/elements.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/elements/copyright-free-images.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/japanese-poem-test.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/japanese-test.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/leetcode/000-Two-Sum.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/leetcode/005-Longest-Palindromic-Substring.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/leetcode/049-Group-Anagrams.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/long-title.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/poem-background-img-test.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/poem-background-img-test/background-img.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/portfolio-slim.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/portfolio-slim/Awesome-Checklist-Checklist.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/portfolio-slim/random-quote-machine.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/tutorial.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/tutorial/A-RSnippet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/tutorial/candle-animation.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/_posts/tutorial/exampleSite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/archives/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/css/arsnippet.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/img/discord.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/img/forum.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/img/patreon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/img/post-header-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/img/sky-clouds-moon-horizon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/js/arsnippet.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/leetcode-category/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/leetcode-tag/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/support/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/support/index/bike-cycle.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/exampleSite/source/tags/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/languages/en.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/languages/zh-Hans.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/404.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_partial/comments.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_partial/footer.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_partial/head.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_partial/header.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_partial/index-post-list.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_partial/nav.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_partial/pagination.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_partial/sidebar-profile.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_partial/toc.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_third-party/analytics/baidu-analytics.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_third-party/analytics/google-analytics.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_third-party/analytics/index.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_third-party/mathjax.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/_third-party/share/add-this.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/archive.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/category.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/index.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/layout.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/leetcode.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/list-category-leetcode.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/list-tag-leetcode.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/page.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/poem.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/portfolio-slim.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/post.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/layout/tag.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/package.json.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/source/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/source/css/highlight.styl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/source/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/source/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/source/js/jquery.tagcloud.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/source/js/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/a-rsnippet/source/js/totop.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/README.md.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/_config.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/scaffolds/draft.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/scaffolds/leetcode.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/scaffolds/portfolio-slim.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/scaffolds/post.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/404/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/chinese-poem-test.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/chinese-simplified-test.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/chinese-traditional-test.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/elements.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/elements/copyright-free-images.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/japanese-poem-test.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/japanese-test.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/leetcode/000-Two-Sum.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/leetcode/005-Longest-Palindromic-Substring.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/leetcode/049-Group-Anagrams.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/long-title.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/poem-background-img-test.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/poem-background-img-test/background-img.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/portfolio-slim.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/portfolio-slim/Awesome-Checklist-Checklist.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/portfolio-slim/random-quote-machine.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/tutorial.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/tutorial/A-RSnippet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/tutorial/candle-animation.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/_posts/tutorial/exampleSite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/archives/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/css/arsnippet.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/img/discord.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/img/forum.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/img/patreon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/img/post-header-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/img/sky-clouds-moon-horizon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/js/arsnippet.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/leetcode-category/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/leetcode-tag/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/support/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/support/index/bike-cycle.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/exampleSite/source/tags/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/languages/en.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/languages/zh-Hans.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/404.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_partial/comments.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_partial/footer.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_partial/head.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_partial/header.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_partial/index-post-list.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_partial/nav.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_partial/pagination.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_partial/sidebar-profile.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_partial/toc.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_third-party/analytics/baidu-analytics.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_third-party/analytics/google-analytics.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_third-party/analytics/index.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_third-party/mathjax.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/_third-party/share/add-this.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/archive.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/category.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/index.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/layout.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/leetcode.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/list-category-leetcode.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/list-tag-leetcode.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/page.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/poem.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/portfolio-slim.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/post.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/layout/tag.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/package.json.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/source/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/source/css/highlight.styl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/source/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/source/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/source/js/jquery.tagcloud.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/source/js/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/themes_old/huan/source/js/totop.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/huan/source/css/main.css" afterPath="$PROJECT_DIR$/themes/huan/source/css/main.css" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -15,22 +175,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="blog" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/source/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="408" column="23" lean-forward="false" selection-start-line="408" selection-start-column="23" selection-end-line="408" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/the-milestone-2018/index.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="120">
               <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding />
             </state>
@@ -40,7 +197,7 @@
       <file leaf-file-name="大嘴李和童话镇1.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/大嘴李和童话镇1.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="180">
               <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
               <folding />
             </state>
@@ -50,7 +207,7 @@
       <file leaf-file-name="index.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/tags/index.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
+            <state relative-caret-position="45">
               <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
               <folding />
             </state>
@@ -60,7 +217,7 @@
       <file leaf-file-name="AR+V-SLAM的学习资料汇总.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/AR+V-SLAM的学习资料汇总.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
+            <state relative-caret-position="225">
               <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
@@ -70,18 +227,28 @@
       <file leaf-file-name="icdm-top-ten-algorithms-in-data-mining.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/icdm-top-ten-algorithms-in-data-mining.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="270">
               <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="install-python-numpy-scipy-and-matplotlib-on-mac-os-x.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="install-python-numpy-scipy-and-matplotlib-on-mac-os-x.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/install-python-numpy-scipy-and-matplotlib-on-mac-os-x.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="255">
               <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/themes/huan/source/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="428" column="24" lean-forward="true" selection-start-line="428" selection-start-column="24" selection-end-line="428" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -90,7 +257,7 @@
       <file leaf-file-name="introduction-to-histcite.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/introduction-to-histcite.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
+            <state relative-caret-position="225">
               <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
               <folding />
             </state>
@@ -100,18 +267,8 @@
       <file leaf-file-name="introduction-to-latex.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/introduction-to-latex.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="225">
               <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="review-of-similarity-measurement.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/review-of-similarity-measurement.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -121,10 +278,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>[3</find>
-      <find>#</find>
-      <find>git</find>
-      <find>type</find>
       <find>&lt;/p&gt;</find>
       <find>navbar-brand</find>
       <find>100</find>
@@ -151,6 +304,10 @@
       <find>firen</find>
       <find>post-count</find>
       <find>background-image:</find>
+      <find>font-family</find>
+      <find>&quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;,</find>
+      <find>&quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;,</find>
+      <find>-10</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -162,7 +319,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/themes/a-rsnippet/_config.yml" />
         <option value="$PROJECT_DIR$/themes/a-rsnippet/source/js/main.js" />
         <option value="$PROJECT_DIR$/node_modules/kramed/lib/rules/inline.js" />
         <option value="$PROJECT_DIR$/themes/a-rsnippet/layout/_partial/head.ejs" />
@@ -213,6 +369,7 @@
         <option value="$PROJECT_DIR$/source/_posts/introduction-to-latex.md" />
         <option value="$PROJECT_DIR$/source/_posts/review-of-similarity-measurement.md" />
         <option value="$PROJECT_DIR$/source/_posts/install-python-numpy-scipy-and-matplotlib-on-mac-os-x.md" />
+        <option value="$PROJECT_DIR$/themes/huan/source/css/main.css" />
       </list>
     </option>
   </component>
@@ -225,11 +382,9 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="50" />
-    <option name="y" value="-8" />
-    <option name="width" value="1291" />
-    <option name="height" value="998" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -248,106 +403,109 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <expand>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="backup" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="archives" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="categories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="tags" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="unreleased" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="unreleased" type="462c0819:PsiDirectoryNode" />
-              <item name="about-me" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="a-rsnippet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="a-rsnippet" type="462c0819:PsiDirectoryNode" />
-              <item name="exampleSite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="a-rsnippet" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="a-rsnippet" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="a-rsnippet" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="huan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -357,6 +515,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="SearchEverywhereHistoryKey" value="find in path&#9;ACTION&#9;FindInPath&#10;find inpat&#9;ACTION&#9;FindInPath&#10;findinpath&#9;ACTION&#9;FindInPath&#10;main.&#9;FILE&#9;file://C:/DATA/Git/steven-blog/themes/a-rsnippet/source/css/main.css&#10;main.cs&#9;FILE&#9;file://C:/DATA/Git/steven-blog/themes/a-rsnippet/source/css/main.css&#10;banner.p&#9;FILE&#9;file://C:/DATA/Git/steven-blog/source/img/banner.png&#10;index.e&#9;FILE&#9;file://C:/DATA/Git/steven-blog/themes/a-rsnippet/layout/index.ejs" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -396,11 +555,12 @@
       <workItem from="1525917140146" duration="777000" />
       <workItem from="1526008137327" duration="3165000" />
       <workItem from="1526022976843" duration="5534000" />
+      <workItem from="1526055096865" duration="461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72808000" />
+    <option name="totallyTimeSpent" value="73269000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -412,29 +572,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22361112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916266" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29162657" sideWeight="0.20179136" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43022138" sideWeight="0.4880763" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42907387" sideWeight="0.4880763" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916266" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29162657" sideWeight="0.79820865" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27549824" sideWeight="0.79820865" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -449,13 +610,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/大嘴李和童话镇5.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/大嘴李和童话镇6.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -573,17 +727,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="23" column="3" lean-forward="false" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="20" column="115" lean-forward="false" selection-start-line="20" selection-start-column="115" selection-end-line="20" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/README.md" />
     <entry file="file://$PROJECT_DIR$/source/_posts/ackownledgement-for-my-doc-thesis.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -595,7 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1870">
           <caret line="85" column="153" lean-forward="false" selection-start-line="85" selection-start-column="153" selection-end-line="85" selection-end-column="153" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -603,7 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2662">
           <caret line="121" column="224" lean-forward="false" selection-start-line="121" selection-start-column="224" selection-end-line="121" selection-end-column="224" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,87 +756,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
           <caret line="60" column="40" lean-forward="false" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="47" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/_partial/nav.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1254">
-          <caret line="57" column="5" lean-forward="false" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/_partial/footer.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2046">
-          <caret line="93" column="69" lean-forward="false" selection-start-line="93" selection-start-column="69" selection-end-line="93" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/_partial/index-post-list.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/index.ejs" />
+    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/_partial/nav.ejs" />
+    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/_partial/footer.ejs" />
+    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/_partial/index-post-list.ejs" />
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3762">
           <caret line="172" column="21" lean-forward="false" selection-start-line="172" selection-start-column="21" selection-end-line="172" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/post.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/post.ejs" />
     <entry file="file://$PROJECT_DIR$/source/_posts/大嘴李和童话镇4.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="536">
           <caret line="74" column="28" lean-forward="true" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/archive.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/_partial/header.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="75" column="9" lean-forward="true" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/archive.ejs" />
+    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/_partial/header.ejs" />
     <entry file="file://$PROJECT_DIR$/source/_posts/大嘴李和童话镇2.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -699,7 +791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -707,7 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -721,7 +811,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/the-milestone-2018/index.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="120">
           <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding />
         </state>
@@ -731,37 +821,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/source/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="408" column="23" lean-forward="false" selection-start-line="408" selection-start-column="23" selection-end-line="408" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/category.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="51" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/tag.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/source/css/main.css" />
+    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/category.ejs" />
+    <entry file="file://$PROJECT_DIR$/themes/a-rsnippet/layout/tag.ejs" />
     <entry file="file://$PROJECT_DIR$/source/tags/index.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
+        <state relative-caret-position="45">
           <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
           <folding />
         </state>
@@ -771,13 +839,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/大嘴李和童话镇1.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="180">
           <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
           <folding />
         </state>
@@ -785,7 +852,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/AR+V-SLAM的学习资料汇总.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
+        <state relative-caret-position="225">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
@@ -793,7 +860,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/icdm-top-ten-algorithms-in-data-mining.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="270">
           <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
           <folding />
         </state>
@@ -801,7 +868,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/introduction-to-histcite.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
+        <state relative-caret-position="225">
           <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
           <folding />
         </state>
@@ -809,7 +876,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/introduction-to-latex.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="225">
           <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
           <folding />
         </state>
@@ -819,14 +886,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/install-python-numpy-scipy-and-matplotlib-on-mac-os-x.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="255">
           <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/huan/source/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="428" column="24" lean-forward="true" selection-start-line="428" selection-start-column="24" selection-end-line="428" selection-end-column="24" />
           <folding />
         </state>
       </provider>
