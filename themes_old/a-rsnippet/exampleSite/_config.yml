@@ -2,24 +2,23 @@
 # Site Information Settings
 # ---------------------------------------------------------------
 # title can include HTML code.
-title: Little Stone
-description: This is the site where Steven post his thoughts, ideas and feelings
-author: Huan Li
+title: A-RSnippet<br><a href="https://github.com/huyingjie/hexo-theme-A-RSnippet" target="_blank"><img src="https://img.shields.io/badge/Release-v0.1.0-red.svg"></a>
+description: A website for A-RSnippet Hexo Theme
+author: Yingjie Hu
 language: en
-timezone: Asia/Shanghai
+timezone:
 
 # custom Site settings
-SEOTitle: Little Stone - Huan Li's Blog
-keyword: "Computer Science, Travel Notes, Ideas and Thoughts" # seo key words
+SEOTitle: An A-RSnippet Hexo Theme
+keyword: "hexo, hexo theme, A-RSnippet, responsive, bootstrap" # seo key words
 
-# your favicon png
-favicon: /blog/img/rockrms.png
+favicon: # your favicon png
 # custom end
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://longaspire.github.io/blog
-root: /blog/
+url: http://yoursite.com
+root: /
 # :year/:month/:day/:title/
 permalink: :title/
 permalink_defaults:
@@ -27,45 +26,38 @@ permalink_defaults:
 footer:
 # Specify the date when the site was setup.
 # If not defined, current year will be used.
-  since: 2018
+  since: 2015
 
   # Icon between year and copyright info.
   # From: http://fontawesome.io/
   # Example: user
-  icon: user
+  icon: heart
 
   # If not defined, will be used `author` from Hexo main config.
-  copyright: Huan Li. All rights reserved.
+  copyright:
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
   powered: true
   # Theme & scheme info link (Theme - A-RSnippet).
-  theme: false
+  theme: true
 
   # -------------------------------------------------------------
   # Any custom text can be defined here.
-  custom_text: Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
+  # custom_text: Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
 
 # ---------------------------------------------------------------
 # Menu Settings
 # ---------------------------------------------------------------
 menu:
   home: /
-  about: /the-milestone-2018/
-  categories: /categories/
+  Tutorial: /tutorial/
+  LeetCode-category: /leetcode-category/
+  LeetCode-tag: /leetcode-tag/
   archives: /archives/
   tags: /tags/
-#  RSS: /atom.xml
-
-# ---------------------------------------------------------------
-# Archive Generator
-# ---------------------------------------------------------------
-archive_generator:
-  per_page: 6
-  yearly: true
-  monthly: false
-  daily: false
-  order_by: -date
+  projects: /portfolio-slim/
+  support: /support/
+  RSS: /atom.xml
 
 # ---------------------------------------------------------------
 # SNS settings
@@ -74,23 +66,24 @@ archive_generator:
 # Leave url as empty to use site's feed link.
 # Set url to specific value if you have burned your feed already.
 rss:
-  enable: false
-#  url:                    # if empty, use default url, root_path/atom.xml
+  enable: true
+  url:                    # if empty, use default url, root_path/atom.xml
 
-email: lihuancs@zju.edu.cn
+# email: xxx@gmail.com
 # weibo_username:
 # zhihu_username:
-github_username: longaspire
-twitter_username: LeeSte7en
-facebook_username: stevenhuanlee
-linkedin_username: lihuancs
+github_username: huyingjie
+twitter_username: yingjieYJH
+# facebook_username:
+# linkedin_username:
 
 # ---------------------------------------------------------------
 # Sidebar settings
 # ---------------------------------------------------------------
-sidebar: false
-#sidebar-about-description: # data scientist
-#sidebar-avatar-url: # http://longaspire.com/avator.jpg
+sidebar: true
+sidebar-about-description: data scientist
+sidebar-avatar-url: https://avatars3.githubusercontent.com/u/4664280?s=460&v=4
+sidebar-description-after-icons: <a href="https://www.patreon.com/arsnippet" target="_blank"><img src="/img/patreon.png" alt="support my work at patron"></a><br><br><a href="https://arsnippet.freeflarum.com/" target="_blank"><img src="/img/forum.jpg" alt="support my work at patron"></a><br><br><a href="https://discord.gg/CB6CPzq" target="_blank"><img src="/img/discord.png" alt="Join the Discord"></a>
 
 # ---------------------------------------------------------------
 # Hexo official settings
@@ -104,7 +97,6 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-  - 'unreleased/**'
 
 # Writing: Defined by Hexo
 new_post_name: :title.md                  # File name of new posts
@@ -119,14 +111,13 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: true
-#  tab_replace:
+  auto_detect: false
+  tab_replace:
 
 # Category & Tag
 default_category: uncategorized
-#category_map:
-# tag_map:
-
+category_map:
+tag_map:
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -141,21 +132,21 @@ per_page: 8
 pagination_dir: page
 
 ## Themes: https://hexo.io/themes/
-theme: huan
+theme: a-rsnippet
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: https://github.com/longaspire/blog.git
-  branch: master
+  type:
+  repo:
+  branch:
 
 
 # ---------------------------------------------------------------
 # Layout settings: homepage
 # ---------------------------------------------------------------
 # If enable, update date will show on the cover photo.
-index_update_date_enable: true
+index_update_date_enable: false
 
 # ---------------------------------------------------------------
 # Layout settings: post layout & leetcode layout
@@ -165,15 +156,14 @@ post_update_date_enable: true
 
 # Can contain HTML
 # Appear at the begginning of the post
-# content_before_post: <div class="subscribe"><a href="http://eepurl.com/dh6iCD" target="_blank">Get Updated for Each Release!</a></div><p>
+content_before_post: <div class="subscribe"><a href="http://eepurl.com/dh6iCD" target="_blank">Get Updated for Each Release!</a></div><p>
 # Can contain HTML
 # Appear at the end of the post
-# content_after_post: <a href="https://www.patreon.com/arsnippet" target="_blank"><img src="/img/patreon.png" alt="support my work at patron"></a> <a href="https://arsnippet.freeflarum.com/" target="_blank"><img src="/img/forum.jpg" alt="support my work at patron"></a> <a href="https://discord.gg/CB6CPzq" target="_blank"><img src="/img/discord.png" alt="Join the Discord"></a>
+content_after_post: <a href="https://www.patreon.com/arsnippet" target="_blank"><img src="/img/patreon.png" alt="support my work at patron"> <a href="https://discord.gg/CB6CPzq" target="_blank"><img src="/img/discord.png" alt="Join the Discord"></a> <br><br><a href="https://arsnippet.freeflarum.com/" target="_blank"><img src="/img/forum.jpg" alt="support my work at patron"></a>
 
 # default cover image
 # example: animated gif as header
-cover_default_img: /blog/img/northernlights-sisimiut-lake.jpg
-brand_logo_img: /blog/img/banner.png?h=350&auto=compress&cs=tinysrgb
+cover_default_img: /img/sky-clouds-moon-horizon.jpg?h=350&auto=compress&cs=tinysrgb
 
 
 # Table Of Contents in the Sidebar
@@ -187,12 +177,12 @@ toc:
 # ---------------------------------------------------------------
 
 # ---------------------------------------------------------------
-# Layout settings: archive layout
+# Layout settings: arhive layout
 # ---------------------------------------------------------------
 # archive page title
 archive:
     title: Archives
-    # subtitle: Cool?
+    subtitle: Cool?
 
 # ---------------------------------------------------------------
 # Layout settings: poem layout
@@ -200,6 +190,10 @@ archive:
 
 # ---------------------------------------------------------------
 # Layout settings: portfolio-slim layout
+# ---------------------------------------------------------------
+
+# ---------------------------------------------------------------
+# Layout settings: archive layout
 # ---------------------------------------------------------------
 
 # ---------------------------------------------------------------
@@ -212,6 +206,10 @@ archive:
 
 # ---------------------------------------------------------------
 # Layout settings: list-tag-leetcode layout
+# ---------------------------------------------------------------
+
+# ---------------------------------------------------------------
+# Layout settings: 404 layout
 # ---------------------------------------------------------------
 
 #################################################################
@@ -229,32 +227,33 @@ mathjax:
 # Comment settings
 # ---------------------------------------------------------------
 # Disqus settings
-# disqus_shortname: hexo-a-rsnippet
+disqus_shortname: hexo-a-rsnippet
 
 # Use livere
-use_livere: true
-livere_uid: MTAyMC8zNjM1MC8xMjg4NQ
+# use_livere: false
+# livere_uid: MTAyMC8zMz
 
 # ---------------------------------------------------------------
 # Analytics settings
 # ---------------------------------------------------------------
 # Baidu Analytics
-baidu_analytics: 13438f8a61802b465894989427ee4725
+baidu_analytics:
 # Google Analytics
-google_analytics: UA-118875263-1            # Format: UA-xxxxxx-xx
+google_analytics: UA-38355881-1            # Format: UA-xxxxxx-xx
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
 # Click "Alternative methods" => Select "HTML tag" => copy the string in the "content" property of "meta" element
 # <meta name="google-site-verification" content="xxxxxx" />
 # Input xxxxxx below
-google_site_verification: Q9_p57DiEwLUAkG7RSWhWgytI3usFEsDzkR3UMn-RW8
-#bing_site_verification:
-#yandex_site_verification:
+google_site_verification: g5BseDGQ1hWwdbBPJLKNfbC6xNOaM3X4LnKEMAvx_tI
+
+bing_site_verification:
+yandex_site_verification:
 
 # ---------------------------------------------------------------
 # Share
 # ---------------------------------------------------------------
-#add_this_id: # ra-5272bc2a7b3c1ddc
+add_this_id: ra-5272bc2a7b3c1ddc
 # Enable/Disable Update date
 
 # ---------------------------------------------------------------
@@ -263,36 +262,6 @@ google_site_verification: Q9_p57DiEwLUAkG7RSWhWgytI3usFEsDzkR3UMn-RW8
 # search api , set your custom key
 # It is not working now. It is a feature in the future.
 # swiftype_key:
-
-# ---------------------------------------------------------------
-# hexo-image-caption add caption for iamges
-# ---------------------------------------------------------------
-image_caption:
-  enable: true #false to disable
-  class_name: 'image-caption-center' #if you wanna customize the style for the caption,you can assign a class name, default is 'image-caption'
-
-# ---------------------------------------------------------------
-# Site Map
-# ---------------------------------------------------------------
-sitemap:
-  path: sitemap.xml
-baidusitemap:
-  path: baidusitemap.xml
-
-# ---------------------------------------------------------------
-# Code Highlight
-# ---------------------------------------------------------------
-prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'solarizedlight'  #default, coy, dark, funky, okaidia, solarizedlight, tomorrow, twilight
-  line_number: true     # default false
-#  custom_css:        # optional
-
-## ---------------------------------------------------------------
-## Reference
-## ---------------------------------------------------------------
-#plugins:
-#  - hexo-reference
 
 # Theme version
 version: 0.1.0
