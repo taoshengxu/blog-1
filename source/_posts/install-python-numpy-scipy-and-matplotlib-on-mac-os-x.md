@@ -5,7 +5,7 @@ categories:
   - "操作备忘"
 tags:
   - Mac OS
-  - matplotlib
+  - Matplotlib
   - Python
   - "工具"
 draft: false

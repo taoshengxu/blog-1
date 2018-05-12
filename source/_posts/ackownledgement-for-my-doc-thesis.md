@@ -1,6 +1,6 @@
 ---
 layout: poem
-title: 博士论文 | 致谢
+title: "博士论文 | 致谢"
 date: 2018-05-08 15:26:07
 category: "文字"
 tag:

@@ -2,9 +2,9 @@
 layout: layout
 ---
 <style>
-  <!-- header.intro-header {
-      background-image: url('<%= page["cover_img"] || config["cover_default_img"]%>');
-  } -->
+    <!--header.intro-header {-->
+      <!--background-image: url('<%= page["cover_img"] || config["cover_default_img"]%>');-->
+    <!--}-->
 </style>
 
 
@@ -28,7 +28,7 @@ layout: layout
 
 <article class="container archive">
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
           <% site.posts.sort('date', 'desc').each(function(post){ %>
                 <% var year = post.date.year(); %>
                 <% var month = post.date.format('MM'); %>

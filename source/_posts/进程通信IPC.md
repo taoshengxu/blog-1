@@ -2,21 +2,22 @@
 layout: post
 title: 进程通信IPC
 categories:
-  - OS
+  - "OS"
 tags:
-  - Linux
-  - 进程通信
+  - "Linux"
+  - "进程通信"
 draft: false
 id: 673
 date: 2014-12-13 13:27:09
 toc_number_disable: true
+cover_img: /blog/post_cover_images/drops.jpg
+cover_img_from_root: true
 permalink:
 description:
-cover_img:
 comments:
 ---
 
-&lt; 本文转载自引用[1] >
+> 本文转载自引用[^1]
 
 > 进程间通信 (IPC, InterProcess Communication) 是指在不同进程之间传播或交换信息。
 
@@ -363,7 +364,7 @@ int main()
 #### 4.1 特点
 
 1.  信号量用于进程间同步，若要在进程间传递数据需要结合_共享内存_；
-2.  信号量基于操作系统的PV操作[3]，程序对信号量的操作都是原子操作；
+2.  信号量基于操作系统的PV操作[^3]，程序对信号量的操作都是原子操作；
 3.  每次对信号量的PV操作不仅限于对信号量+1或者-1，可以加减任意正整数；
 4.  支持信号量组。
 
@@ -771,6 +772,6 @@ int main()
 
 ### 引用
 
-[1] [http://songlee24.github.io/2015/04/21/linux-IPC/](http://songlee24.github.io/2015/04/21/linux-IPC/)
-[2] [http://www.cnblogs.com/CheeseZH/p/5264465.html](http://www.cnblogs.com/CheeseZH/p/5264465.html)
-[3] [http://blog.csdn.net/liushuijinger/article/details/7586656](http://blog.csdn.net/liushuijinger/article/details/7586656)
+[^1]: [http://songlee24.github.io/2015/04/21/linux-IPC/](http://songlee24.github.io/2015/04/21/linux-IPC/)
+[^2]: [http://www.cnblogs.com/CheeseZH/p/5264465.html](http://www.cnblogs.com/CheeseZH/p/5264465.html)
+[^3]: [http://blog.csdn.net/liushuijinger/article/details/7586656](http://blog.csdn.net/liushuijinger/article/details/7586656)

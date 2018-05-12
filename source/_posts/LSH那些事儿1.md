@@ -5,9 +5,9 @@ categories:
   - "LSH那些事儿"
 tags:
   - "概率"
-  - Hash
-  - Idex
-  - LSH
+  - "Hash"
+  - "Index"
+  - "LSH"
 draft: false
 id: 99
 date: 2013-04-18 15:35:47

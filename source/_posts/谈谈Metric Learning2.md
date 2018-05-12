@@ -4,8 +4,7 @@ title: '谈谈Metric Learning (II)'
 categories:
   - "谈谈Metric Learning"
 tags:
-  - introduction
-  - metric learning
+  - "Metric Learning"
   - "距离度量"
 draft: false
 id: 443

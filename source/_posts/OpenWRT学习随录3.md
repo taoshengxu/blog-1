@@ -5,9 +5,7 @@ categories:
   - "OpenWRT学习随录"
 tags:
   - Linux
-  - OpenWRT
-  - Wireless
-  - WRT SDK
+  - "无线"
 draft: false
 id: 505
 date: 2015-07-22 13:00:36

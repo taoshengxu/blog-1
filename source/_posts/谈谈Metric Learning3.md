@@ -4,11 +4,11 @@ title: '谈谈Metric Learning (III): ITML'
 categories:
   - "谈谈Metric Learning"
 tags:
-  - Information Theoretic
+  - "信息论"
   - ITML
-  - KL Divergence
+  - "KL散度"
   - LogDet
-  - metric learning
+  - "Metric Learning"
   - "距离度量"
 draft: false
 id: 380

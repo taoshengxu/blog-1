@@ -6,7 +6,7 @@ categories:
 tags:
   - ITML
   - LMNN
-  - metric learning
+  - "Metric Learning"
   - "距离度量"
 draft: false
 id: 347

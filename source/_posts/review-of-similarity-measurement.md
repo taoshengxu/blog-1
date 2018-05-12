@@ -4,7 +4,7 @@ title: Review of Similarity Measurement
 categories:
   - 科研笔记
 tags:
-  - Hashing
+  - Hash
   - Index
   - "距离度量"
 draft: false

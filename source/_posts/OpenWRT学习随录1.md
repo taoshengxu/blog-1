@@ -5,10 +5,9 @@ categories:
   - "OpenWRT学习随录"
 tags:
   - Linux
-  - embedded
-  - OpenWRT
-  - Router
-  - Wireless
+  - "嵌入式"
+  - "路由器"
+  - "无线"
 draft: false
 id: 501
 date: 2015-07-22 10:21:27

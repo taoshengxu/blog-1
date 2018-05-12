@@ -4,10 +4,10 @@ title: "LSH那些事儿 (III): 理论基础"
 categories:
   - "LSH那些事儿"
 tags:
-    - Hash
-    - Idex
-    - LSH
-    - "距离度量"
+  - "Hash"
+  - "Index"
+  - "LSH"
+  - "距离度量"
 draft: false
 id: 126
 date: 2013-04-26 13:00:43

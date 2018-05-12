@@ -4,10 +4,10 @@ title: "LSH那些事儿 (IV): p-stable LSH"
 categories:
   - "LSH那些事儿"
 tags:
-    - Hash
-    - Idex
-    - LSH
-    - "距离度量"
+  - "Hash"
+  - "Index"
+  - "LSH"
+  - "距离度量"
 draft: false
 id: 172
 date: 2013-05-06 11:41:46

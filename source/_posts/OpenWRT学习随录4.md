@@ -7,8 +7,7 @@ tags:
   - '802.11'
   - iw
   - Linux
-  - OpenWRT
-  - Wireless
+  - "无线"
 draft: false
 id: 526
 date: 2015-07-24 09:43:00

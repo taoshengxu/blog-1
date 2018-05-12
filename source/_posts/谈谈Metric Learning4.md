@@ -4,10 +4,9 @@ title: '谈谈Metric Learning (IV): ITML进阶'
 categories:
   - "谈谈Metric Learning"
 tags:
-  - kernel function
-  - kernelization
-  - metric learning
-  - optimization
+  - "Kernelization"
+  - "Metric Learning"
+  - "优化"
 draft: false
 id: 423
 date: 2015-06-10 19:00:23

@@ -4,9 +4,9 @@ title: "OpenWRT学习随录 (II): OpenWRT Buildroot"
 categories:
   - "OpenWRT学习随录"
 tags:
-  - Buildroot
   - Linux
-  - OpenWRT
+  - "嵌入式"
+  - "无线"
 draft: false
 id: 511
 date: 2015-07-22 12:13:07
@@ -27,7 +27,7 @@ OpenWRT Buildroot是由一系列Makefiles和patches文件组成的，它允许�
 交叉编译器的概念同传统的编译器的区别就在于主机和目标机的关系上
 
 > 传统的编译器是运行在主机上，而生成代码也是可以跑在主机上的。例如，在一个x86架构的Linux上，编译工具链使用一个C标准库来编译代码，编译后的代码也是运行在x86的处理器上的。
-> 
+>
 >   那么交叉编译器可以这么认为，编译工具链是运行在host system上，然而生成的代码确实提供给target system使用，包括处理器的指令集也是target system的。例如，交叉编译器跑在x86的Linux系统上，编译后的文件是可以在MIPS32架构的某个嵌入式系统上运行的。
 
 另外，OpenWRT的Makefile有自己的特定语法，与Linux上的Makefile存在区别，OpenWRT Makefile定义package的meta infomation，去哪下载这个package，如何便利，把编译后的二进制文件放到哪儿等等。

@@ -5,7 +5,7 @@
 <%- partial('_partial/head') %>
 <style>
     header.intro-header {
-        background-image: url('<%= config["cover_img"]%>')
+        background-image: url('<%= config["cover_img"]  || config["cover_default_img"] %>')
     }
 </style>
 <!-- hack iOS CSS :active style -->
