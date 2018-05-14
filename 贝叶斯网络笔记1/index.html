@@ -105,7 +105,7 @@
 
 <style>
     header.intro-header {
-        background-image: url('')
+        background-image: url('/blog/img/northernlights-sisimiut-lake.jpg')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -176,7 +176,7 @@
                                <span class="meta-item">Author: Huan Li</span>
                                <span class="meta-item">Date: May 2, 2016</span>
                                
-                                 <span class="meta-item">Updated On: May 11, 2018</span>
+                                 <span class="meta-item">Updated On: May 14, 2018</span>
                                
                           </span>
                           <div class="tags text-center">
@@ -193,11 +193,17 @@
                               <a class="tag" href="/blog/tags/#有向无环图"
                                  title="有向无环图">有向无环图</a>
                               
-                              <a class="tag" href="/blog/tags/#概率推理"
-                                 title="概率推理">概率推理</a>
+                              <a class="tag" href="/blog/tags/#概率推断"
+                                 title="概率推断">概率推断</a>
                               
                               <a class="tag" href="/blog/tags/#结构学习"
                                  title="结构学习">结构学习</a>
+                              
+                              <a class="tag" href="/blog/tags/#吉布斯采样"
+                                 title="吉布斯采样">吉布斯采样</a>
+                              
+                              <a class="tag" href="/blog/tags/#马尔科夫链"
+                                 title="马尔科夫链">马尔科夫链</a>
                               
                           </div>
                         
@@ -216,13 +222,13 @@
     <div class="container">
       <div class="col-lg-8 col-lg-offset-1 col-sm-9">
           
-          <span class="post-count">3,211 words in total, 12 minutes required.</span>
+          <span class="post-count">5,653 words in total, 21 minutes required.</span>
           <hr>
           
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="1-贝叶斯定理和贝叶斯网络模型"><a href="#1-贝叶斯定理和贝叶斯网络模型" class="headerlink" title="1. 贝叶斯定理和贝叶斯网络模型"></a>1. 贝叶斯定理和贝叶斯网络模型</h3><blockquote>
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="1-贝叶斯定理"><a href="#1-贝叶斯定理" class="headerlink" title="1. 贝叶斯定理"></a>1. 贝叶斯定理</h2><blockquote>
 <p>贝叶斯定理，其描述了看到新证据后对某个假设置信度（先验）的改变：如果证据与假设一致，该假设成立的概率则提高；如果不一致，则会降低。<br>与概率（频率）学派认为概率是事件发生的频繁程度不同，贝叶斯学派认为概率是一种主观的置信程度，他们认为应该在新证据出现后，更新你所相信的假设。</p>
 </blockquote>
-<h4 id="1-1-频率派和贝叶斯派的思考"><a href="#1-1-频率派和贝叶斯派的思考" class="headerlink" title="1.1 频率派和贝叶斯派的思考"></a>1.1 频率派和贝叶斯派的思考</h4><ul>
+<h3 id="1-1-频率派和贝叶斯派的思考"><a href="#1-1-频率派和贝叶斯派的思考" class="headerlink" title="1.1 频率派和贝叶斯派的思考"></a>1.1 频率派和贝叶斯派的思考</h3><ul>
 <li>频率派： 需要推断的参数$\theta$是一个未知常数；同时，样本是随机的，因此重点研究对象为样本空间，大部分概率计算都是针对样本集$X$的分布进行的</li>
 <li>贝叶斯派： 参数$\theta$是随机变量，样本$X$是固定的，由于样本是固定的，需要重点研究的对象为参数$\theta$的分布</li>
 </ul>
@@ -237,32 +243,72 @@
 <p>好比是人类刚开始时对大自然只有少得可怜的先验知识，但随着不断观察、实验获得更多的样本、结果，使得人们对自然界的规律摸得越来越透彻。所以，贝叶斯方法既符合人们日常生活的思考方式，也符合人们认识自然的规律。<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[从贝叶斯方法谈到贝叶斯网络](https://blog.csdn.net/v_july_v/article/details/40984699).
 ">[2]</span></a></sup></p>
 </blockquote>
-<p>鼎鼎大名的贝叶斯公式</p>
+<h3 id="1-2-贝叶斯公式"><a href="#1-2-贝叶斯公式" class="headerlink" title="1.2 贝叶斯公式"></a>1.2 贝叶斯公式</h3><p>鼎鼎大名的贝叶斯公式（乘法定理）</p>
 <blockquote>
 <p>$P(A \cap B) = P(B|A)P(A) = P(A|B)P(B)$</p>
 </blockquote>
+<p>也可以写为（全概率公式）</p>
+<blockquote>
+<p>$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$</p>
+</blockquote>
+<p>即表述为：后验概率 = (相似度 * 先验概率) / 标准化常量</p>
+<p>假设事件$A_i$是事件集合中的部分集合，则存在下列关系</p>
+<blockquote>
+<p>$P(A_i|B) = \frac{P(B|A_i)P(A_i)}{P(B)} = \frac{P(B|A_i)P(A_i)}{\sum_{j}P(B|A_j)P(A_j)}$</p>
+</blockquote>
 <p><sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[从贝叶斯方法谈到贝叶斯网络](https://blog.csdn.net/v_july_v/article/details/40984699).
-">[2]</span></a></sup>中还给出了一个利于理解的拼写检查的实例。</p>
-<h4 id="1-2-贝叶斯网络模型"><a href="#1-2-贝叶斯网络模型" class="headerlink" title="1.2 贝叶斯网络模型"></a>1.2 贝叶斯网络模型</h4><p>那么贝叶斯网络和贝叶斯定理的关系是如何构建的呢？我们可以认为贝叶斯网络是一种基于概率推理的图形化网络模型，而贝叶斯公式（定理）则是这个概率网络的基础。</p>
-<p><strong>贝叶斯网络</strong> 是基于概率推理的数学模型,所谓概率推理就是通过一些变量的信息来获取其他的概率信息的过程，基于概率推理的贝叶斯网络（Bayesian network）是为了解决不定性和不完整性问题而提出的。其在1988年由Judea Pearl提出，也称为信度网络（Belief Network）。</p>
+">[2]</span></a></sup>中还给出了一个利用贝叶斯原理，进行搜索拼写检查的实例。</p>
+<h2 id="2-贝叶斯网络模型"><a href="#2-贝叶斯网络模型" class="headerlink" title="2. 贝叶斯网络模型"></a>2. 贝叶斯网络模型</h2><p>那么贝叶斯网络和贝叶斯定理的关系是如何构建的呢？我们可以认为贝叶斯网络是一种基于概率推断的图形化网络模型，而贝叶斯公式（定理）则是这个概率网络的基础。</p>
+<p><strong>贝叶斯网络</strong> 是基于概率推断的数学模型,所谓概率推断就是通过一些变量的信息来获取其他的概率信息的过程，基于概率推断的贝叶斯网络（Bayesian network）是为了解决不定性和不完整性问题而提出的。其在1988年由Judea Pearl提出，也称为信度网络（Belief Network）。</p>
 <ul>
 <li>一个贝叶斯网络是一个有向无环图（Directed Acyclic Graph, DAG），由代表变量结点及连接这些结点的有向边构成。</li>
 <li>结点代表随机变量，结点间的有向边代表了结点间的互相关系（由父结点指向其后代结点），即条件依赖（conditional dependencies），用条件概率进行表达关系强度，没有父结点的用先验概率进行信息表达。</li>
-<li>结点变量可以是任何问题的抽象，如：测试值，观测现象，意见征询等。适用于表达和分析不确定性和概率性的事件，应用于有条件地依赖多种控制因素的决策，可以从不完全、不精确或不确定的知识或信息中做出推理。</li>
+<li>结点变量可以是任何问题的抽象，如：测试值，观测现象，意见征询等。适用于表达和分析不确定性和概率性的事件，应用于有条件地依赖多种控制因素的决策，可以从不完全、不精确或不确定的知识或信息中做出推断。</li>
 <li>因果关系不能循环，即结果不能推回原因。</li>
-<li>因此推理是图中的一条路径</li>
+<li>因此推断是图中的一条路径</li>
 <li>朴素贝叶斯、马尔可夫链和隐马尔可夫模型都是贝叶斯网络的几种特例。</li>
 </ul>
 <p>实际上，直接通过边连接的两个结点（如观测变量、隐变量等），描述了一种因果（或果因）关系。若父结点为$E$，子结点为$H$，则二者间的边的权值可以用条件概率$P(H|E)$。总之，把某个系统中涉及的随机变量，根据是否条件独立的情况构建在一个有向图中，就成为了一个贝叶斯网络。</p>
-<h3 id="2-贝叶斯网络中的独立性"><a href="#2-贝叶斯网络中的独立性" class="headerlink" title="2. 贝叶斯网络中的独立性"></a>2. 贝叶斯网络中的独立性</h3><blockquote>
+<h3 id="2-1-贝叶斯网络与马尔科夫链的比较"><a href="#2-1-贝叶斯网络与马尔科夫链的比较" class="headerlink" title="2.1 贝叶斯网络与马尔科夫链的比较"></a>2.1 贝叶斯网络与马尔科夫链的比较</h3><ul>
+<li><p>马尔科夫链描述的是状态序列，很多时候事物之间的相互关系并不能用一条链串起来，比如研究疾病和成因之间的关系便是错综复杂的。这个时候就要用到贝叶斯网络：每个状态只跟与之直接相连的状态有关，而跟与它间接相连的状态没直接关系。但是只要在这个有向图上，有通路连接两个状态，就说明这两个状态是有关的，可能是间接相关。状态之间弧用转移概率来表示，构成了信念网络。</p>
+</li>
+<li><p>叶斯网络的拓扑结构比马尔可夫链灵活，不受马尔科夫链的链状结构的约束，更准确的描述事件之间的相关性。马尔科夫链是贝叶斯网络的一个特例，而贝叶斯网络是马尔科夫链的推广。</p>
+</li>
+<li><p>拓扑结构和状态之间的相关概率，对应结构训练和参数训练。贝叶斯网络的训练比较复杂，从理论上讲是一个NP完备问题，对于现在计算机是不可计算的，但对于某些具体应用可以进行简化并在计算机上实现。</p>
+</li>
+</ul>
+<blockquote>
+<p>以上总结自引用<sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[贝叶斯网络](https://blog.csdn.net/lg1259156776/article/details/48738701)
+">[5]</span></a></sup>。</p>
+</blockquote>
+<h3 id="2-2-贝叶斯网络与神经网络的比较"><a href="#2-2-贝叶斯网络与神经网络的比较" class="headerlink" title="2.2 贝叶斯网络与神经网络的比较"></a>2.2 贝叶斯网络与神经网络的比较</h3><p>二者的不同点：</p>
+<ul>
+<li>贝叶斯是生成模型（联合概率），神经网络是判别模型（已知模型，训练参数）</li>
+<li>人工神经网络在结构上是完全标准化的，而贝叶斯网络更灵活</li>
+<li>虽然神经元函数为非线性函数，但是各个变量只能先进行线性组合，最后对一个变量（即前面组合出来的结果）进行非线性变换，因此用计算机实现起来比较容易。而在贝叶斯网络中，变量可以组合成任意的函数，毫无限制，在获得灵活性的同时，也增加了复杂性</li>
+<li>贝叶斯网络更容易上下文前后的相关性，因此可以解码一个输入的序列，比如将一段语音识别成文字，或者将一个英语句子翻译成中文。而人工神经网络的输出是独立，它可以识别一个个字，但很难处理一个序列，因此它主要的应用常常是估计一个概率模型的参数，比如语音识别中声学模型参数的训练、机器翻译中语音模型参数的训练等等，而不是作为解码器</li>
+<li>贝叶斯网络是白盒，神经网络是黑盒</li>
+</ul>
+<p>二者的共同点：</p>
+<ul>
+<li>都是有向图，每一个节点的取值只取决于前一级的节点，而与更前面的节点无关，即遵从马尔科夫假设</li>
+<li>训练方式相似，都是统计模型</li>
+<li>训练过程的计算量都特别的大</li>
+</ul>
+<blockquote>
+<p>以上总结自引用<sup id="fnref:7"><a href="#fn:7" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[神经网络和贝叶斯网络关系](https://blog.csdn.net/Touch_Dream/article/details/69053453).
+">[7]</span></a></sup>。</p>
+</blockquote>
+<h2 id="3-贝叶斯网络中的独立性"><a href="#3-贝叶斯网络中的独立性" class="headerlink" title="3. 贝叶斯网络中的独立性"></a>3. 贝叶斯网络中的独立性</h2><blockquote>
 <p>以下引用自<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[从贝叶斯定理到贝叶斯网络](https://cs.nju.edu.cn/gaoyang/ai2016/5.pdf).
 ">[1]</span></a></sup>。</p>
 </blockquote>
-<h4 id="2-1-图的结构"><a href="#2-1-图的结构" class="headerlink" title="2.1 图的结构"></a>2.1 图的结构</h4><p><img src="Page14.png" alt="顺序（Serial）连接 head-to-tail"><span class="image-caption-center">顺序（Serial）连接 head-to-tail</span></p>
+<h3 id="3-1-图的结构"><a href="#3-1-图的结构" class="headerlink" title="3.1 图的结构"></a>3.1 图的结构</h3><p><img src="Page14.png" alt="顺序（Serial）连接 head-to-tail"><span class="image-caption-center">顺序（Serial）连接 head-to-tail</span></p>
 <p><img src="Page15.png" alt="分支（Diverging）连接 tail-to-tail"><span class="image-caption-center">分支（Diverging）连接 tail-to-tail</span></p>
 <p><img src="Page16.png" alt="汇合（Converging）连接 head-to-head"><span class="image-caption-center">汇合（Converging）连接 head-to-head</span></p>
 <p><img src="Page17.png" alt="分支和汇合"><span class="image-caption-center">分支和汇合</span></p>
-<h4 id="2-2-d-可分（-d-separation）"><a href="#2-2-d-可分（-d-separation）" class="headerlink" title="2.2 $d$-可分（$d$-separation）"></a>2.2 $d$-可分（$d$-separation）</h4><p>如何判定贝叶斯网络中任意两个结点间是否独立，先给出$d$-可分的定义：</p>
+<h3 id="3-2-d-可分（-d-separation）"><a href="#3-2-d-可分（-d-separation）" class="headerlink" title="3.2 $d$-可分（$d$-separation）"></a>3.2 $d$-可分（$d$-separation）</h3><p>如何判定贝叶斯网络中任意两个结点间是否独立，先给出$d$-可分（d表示directed，$d$-可分即有向可分。参考自<sup id="fnref:6"><a href="#fn:6" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="《机器学习》，周志华著，清华大学出版社.
+">[6]</span></a></sup>）的定义：</p>
 <blockquote>
 <p>$A$和$B$被一组随机变量$E$ $d$-可分，当且仅当它们间的所有路径都是堵塞的。</p>
 </blockquote>
@@ -279,7 +325,12 @@
 <p><img src="d-separation.png" alt="左边部分是head-to-tail，给定T时，A和X独立；右上角是tail-to-tail，给定S时，L和B独立；右下角是head-to-head，未给定D和/或M时，L和B独立"><span class="image-caption-center">左边部分是head-to-tail，给定T时，A和X独立；右上角是tail-to-tail，给定S时，L和B独立；右下角是head-to-head，未给定D和/或M时，L和B独立</span></p>
 <p>在有了$d$-可分关系后，我们可以对原本复杂的贝叶斯公司进行化简，如下：</p>
 <p><img src="Page23.png" alt="一个公式化简的例子"><span class="image-caption-center">一个公式化简的例子</span></p>
-<h3 id="3-贝叶斯网络中的构建"><a href="#3-贝叶斯网络中的构建" class="headerlink" title="3. 贝叶斯网络中的构建"></a>3. 贝叶斯网络中的构建</h3><ul>
+<h2 id="4-贝叶斯网络的结构"><a href="#4-贝叶斯网络的结构" class="headerlink" title="4. 贝叶斯网络的结构"></a>4. 贝叶斯网络的结构</h2><p>构造与训练贝叶斯网络分为以下两步：</p>
+<ul>
+<li>确定随机变量间的拓扑关系，形成DAG。这一步通常需要领域专家完成，而想要建立一个好的拓扑结构，通常需要不断迭代和改进才可以，需要用到机器学习得到。</li>
+<li>训练贝叶斯网络。即完成条件概率表的构造，如果每个随机变量的值都是可以直接观察的，那么这一步的训练是直观的，方法类似于朴素贝叶斯分类。但是通常贝叶斯网络的中存在隐藏变量节点，那么训练方法就是比较复杂，例如使用梯度下降法。</li>
+</ul>
+<h3 id="4-1-贝叶斯网络的构建"><a href="#4-1-贝叶斯网络的构建" class="headerlink" title="4.1 贝叶斯网络的构建"></a>4.1 贝叶斯网络的构建</h3><ul>
 <li>定义变量<ul>
 <li>在领域知识下选择合适变量，或选择重要因子</li>
 </ul>
@@ -306,19 +357,58 @@
 </ul>
 </li>
 </ol>
-<h3 id="4-贝叶斯网络的结构学习"><a href="#4-贝叶斯网络的结构学习" class="headerlink" title="4. 贝叶斯网络的结构学习"></a>4. 贝叶斯网络的结构学习</h3><blockquote>
+<h3 id="4-2-贝叶斯网络的结构学习"><a href="#4-2-贝叶斯网络的结构学习" class="headerlink" title="4.2 贝叶斯网络的结构学习"></a>4.2 贝叶斯网络的结构学习</h3><blockquote>
 <p>结构学习：在数据中推断变量之间的依赖关系，在可能的结构空间中搜索最优结构（基于专家的结构学习 vs. 基于数据的结构学习）</p>
 </blockquote>
 <ul>
-<li>利用训练样本集，尽可能结合<em>先验知识</em>，确定和训练样本集合匹配最好的贝叶斯网络结构。</li>
+<li>利用训练样本集，尽可能结合<em>先验知识</em>，确定和训练样本集合匹配最好的贝叶斯网络结构</li>
 <li>对于$n$个变量，可能的结构数目有以下关系 $f(n) = \sum_{i=1}^n (-1)^{i+1} \frac{n!}{i!(n-i)!} 2^{2(n-1)} f(n-i)$</li>
 <li>结构学习是一个典型的NP-Hard问题</li>
 </ul>
-<h4 id="基于搜索和评分的方法"><a href="#基于搜索和评分的方法" class="headerlink" title="基于搜索和评分的方法"></a>基于搜索和评分的方法</h4><ul>
-<li><p>利用评分函数，寻找与训练样本匹配最好的贝叶斯网络结构</p>
+<h4 id="4-2-1-基于评分和搜索的方法"><a href="#4-2-1-基于评分和搜索的方法" class="headerlink" title="4.2.1 基于评分和搜索的方法"></a>4.2.1 基于评分和搜索的方法</h4><ul>
+<li><p>利用评分函数（score function），寻找与训练样本匹配最好（且结构最优）的贝叶斯网络结构：</p>
 <blockquote>
-<p>$G^{*} = \arg\max\limits_{G \subseteq \xi} g(G:D)$</p>
+<p>$G^{\star} = \arg\max\limits_{G \subseteq \xi} g(G:D)$</p>
 </blockquote>
+</li>
+<li><p>评分函数</p>
+<ul>
+<li>1992年由Cooper and Herskovits首先提出K2评分函数，假设观测到的数据是完备的，且符合多项式分布</li>
+<li>基于K2评分，Heckerman等人在1995年提出了BD评分函数，假设观测数据服从Dirichlet分布</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-2-2-评分函数的信息论准则"><a href="#4-2-2-评分函数的信息论准则" class="headerlink" title="4.2.2 评分函数的信息论准则"></a>4.2.2 评分函数的信息论准则</h4><blockquote>
+<p>常用的评分函数通常基于信息论准则，即将学习问题看成数据压缩任务，学习目标是找到“最小描述长度”（minimal description length, MDL）的编码模型，而综合编码的长度包括两个部分：包括描述<code>模型自身</code>和描述<code>数据</code>所需要的字节长度。</p>
+</blockquote>
+<p>给定训练集$\mathbf{D}$，贝叶斯网络$B = \langle G, \Theta \rangle$在$\mathbf{D}$上的评分函数可以写为：</p>
+<blockquote>
+<p>$s(B | \mathbf{D}) = f(\theta)|B| + (- LL(B | \mathbf{D}) )$</p>
+</blockquote>
+<p>上述公式中，$|B|$为贝叶斯网的参数个数，$f(\theta)$表示每个参数$\theta$需要的字节数；而LL表示对数似然，可以写为：</p>
+<blockquote>
+<p>$LL(B | \mathbf{D}) = \sum\limits_{\mathbf{x_i} \in \mathbf{D}} \log P_B(\mathbf{x_i})$</p>
+</blockquote>
+<p>因此，第一项为编码整个网络$B$需要的字节数，第二项则表示$B$对应的概率分布$P_B$需要多少直接来描述数据集$\mathbf{D}$。</p>
+<ul>
+<li>若$f(\theta) = 1$，每个参数用1个字节描述，则得到AIC（Akaike Information Criterion）评分函数<blockquote>
+<p>$\text{AIC}(B|\mathbf{D}) = |B| + (- LL(B | \mathbf{D}) )$</p>
+</blockquote>
+</li>
+<li>若$f(\theta) = \frac{1}{2} \log |\mathbf{D}|$，则得到BIC（Bayesian Information Criterion）评分函数<blockquote>
+<p>$\text{BIC}(B|\mathbf{D}) = \frac{1}{2} \log |\mathbf{D}| \cdot |B| + (- LL(B | \mathbf{D}) )$</p>
+</blockquote>
+</li>
+<li>若$f(\theta) = 0$，则得评分函数退化为负对数似然，学习任务直接退化为极大似然估计</li>
+</ul>
+<p>在网络结构确定的情况下，我们只需要考虑对第二项的优化，即最小化评分函数等价位对网络参数$\Theta$的极大似然估计。</p>
+<p>对于特定的网络结构，网络参数可以直接在训练数据上通过经验估计获得。因此，如果要最小化上述的评分函数，只需要对网络结构进行搜索，并利用训练集上的极大似然估计来找到候选结构的最优参数。</p>
+<h4 id="4-2-3-搜索策略"><a href="#4-2-3-搜索策略" class="headerlink" title="4.2.3 搜索策略"></a>4.2.3 搜索策略</h4><p>正如以上所说，虽然可以对网络结构进行搜索，但是最优结构的求解是一个NP难问题，因此一些搜索策略被用于在有限时间内得到近似解。</p>
+<ul>
+<li><p>搜索策略</p>
+<ul>
+<li>贪婪搜索、模拟退火、禁忌搜索、遗传算法 等</li>
+</ul>
 </li>
 <li><p>贪婪算法</p>
 <ul>
@@ -328,36 +418,34 @@
 <li>检查新的网络结构是否优于旧的，如是，则继续</li>
 </ul>
 </li>
-<li><p>评分函数</p>
+<li><p>除贪婪算法外，还可以通过给网络结构施加约束来削减搜索空间</p>
 <ul>
-<li>1992年由Cooper and Herskovits首先提出K2评分函数，假设观测到的数据是完备的，且符合多项式分布</li>
-<li>基于K2评分，Heckerman等人在1995年提出了BD评分函数，假设观测数据服从Dirichlet分布</li>
+<li>例如，将网络结构限定为树形结构等</li>
 </ul>
 </li>
-<li><p>搜索策略</p>
+</ul>
+<h2 id="5-贝叶斯网络的推断"><a href="#5-贝叶斯网络的推断" class="headerlink" title="5. 贝叶斯网络的推断"></a>5. 贝叶斯网络的推断</h2><p>贝叶斯网络训练好后，我们可以通过一些属性变量的观测值来推测其他属性变量的取值。</p>
+<blockquote>
+<p>通过已知变量观测值来推测待查询变量的过程称为“推断”（inference），已知变量观测值称为“证据”（evidence）。</p>
+</blockquote>
 <ul>
-<li>贪婪搜索、模拟退火、禁忌搜索、遗传算法 等</li>
+<li>因果推断（自顶向下）<ul>
+<li>由原因推出结论，即根据一定原因，推断出在该原因下结果发生的概率</li>
 </ul>
 </li>
-</ul>
-<h3 id="5-贝叶斯网络的推理"><a href="#5-贝叶斯网络的推理" class="headerlink" title="5. 贝叶斯网络的推理"></a>5. 贝叶斯网络的推理</h3><ul>
-<li>因果推理（自顶向下）<ul>
-<li>由原因退出结论，即根据一定原因，推理出在该原因下结果发生的概率</li>
+<li>诊断推断（自底向上）<ul>
+<li>由结论推出原因，即根据产生结果，利用贝叶斯网推断算法，得出导致结果的原因的概率</li>
 </ul>
 </li>
-<li>诊断推理（自底向上）<ul>
-<li>由结论推出原因，即根据产生结果，利用贝叶斯网推理算法，得出导致结果的原因的概率</li>
-</ul>
-</li>
-<li>支持推理<ul>
+<li>支持推断<ul>
 <li>对发生的现象提供解释，目的是分析原因间的相互影响</li>
 </ul>
 </li>
 </ul>
-<p><img src="Page41.png" alt="贝叶斯网络推理分类"><span class="image-caption-center">贝叶斯网络推理分类</span></p>
-<p>结合下图给出的实例，我们对不同的推理过程进行举例</p>
+<p><img src="Page41.png" alt="贝叶斯网络推断分类"><span class="image-caption-center">贝叶斯网络推断分类</span></p>
+<p>结合下图给出的实例，我们对不同的推断过程进行举例</p>
 <p><img src="Page42.png" alt="一个实例"><span class="image-caption-center">一个实例</span></p>
-<h4 id="5-1-因果推理"><a href="#5-1-因果推理" class="headerlink" title="5.1 因果推理"></a>5.1 因果推理</h4><ul>
+<h3 id="5-1-精确推断"><a href="#5-1-精确推断" class="headerlink" title="5.1 精确推断"></a>5.1 精确推断</h3><h4 id="5-1-1-因果推断"><a href="#5-1-1-因果推断" class="headerlink" title="5.1.1 因果推断"></a>5.1.1 因果推断</h4><ul>
 <li>已知网络中的祖先结点而计算后代结点的条件概率</li>
 <li>假设已知某人吸烟$(S)$，计算其患气管炎$(T)$的概率$P(T|S)$</li>
 <li><p>由于$T$还有另一个因结点感冒$(C)$，对概率$P(T|S)$进行扩展</p>
@@ -380,7 +468,7 @@
 <p>$P(T|S) = 0.35 \cdot 0.8 + 0.1 \cdot 0.2 = 0.3$</p>
 </blockquote>
 </li>
-<li><p>因果推理解题方法</p>
+<li><p>因果推断解题方法</p>
 <ol>
 <li>对于所求的询问结点的条件概率，用所给证据结点和询问结点的所有因结点的联合概率进行重新表达。</li>
 <li>对所得表达式进行适当变形, 直到其中的所有概率值都可以从问题贝叶斯网络的条件概率表（CPT, Conditional Probability Table）中得到。</li>
@@ -388,19 +476,19 @@
 </ol>
 </li>
 </ul>
-<h4 id="5-2-诊断推理"><a href="#5-2-诊断推理" class="headerlink" title="5.2 诊断推理"></a>5.2 诊断推理</h4><ul>
+<h4 id="5-1-2-诊断推断"><a href="#5-1-2-诊断推断" class="headerlink" title="5.1.2 诊断推断"></a>5.1.2 诊断推断</h4><ul>
 <li>已知网络中的后代结点而计算祖先结点的条件概率</li>
 <li><p>假设已知某人患了气管炎$(T)$，计算其吸烟$(S)$的概率$P(S|T)$</p>
 <blockquote>
 <p>$P(S|T) = \frac{P(T|S)P(S)}{P(T)}$</p>
 </blockquote>
 </li>
-<li><p>根据上述因果推理，可以得到$P(T|S) = 0.3$。由于条件概率表中$P(S) = 0.4$，可得</p>
+<li><p>根据上述因果推断，可以得到$P(T|S) = 0.3$。由于条件概率表中$P(S) = 0.4$，可得</p>
 <blockquote>
 <p>$P(S|T) = \frac{0.3 \cdot 0.4}{P(T)} = \frac{0.12}{P(T)}$</p>
 </blockquote>
 </li>
-<li><p>根据因果推理，我们还需要得到$P(T|\lnot S)$，如下</p>
+<li><p>根据因果推断，我们还需要得到$P(T|\lnot S)$，如下</p>
 <blockquote>
 <p>$P(T|\lnot S)$<br>$= P(T,C|\lnot S) + P(T, \lnot C|\lnot S)$<br>$= P(T|C, \lnot S)P(C) + P(T|\lnot C, \lnot S)P(\lnot C)$<br>$= 0.25 \cdot 0.8 + 0.05 \cdot 0.2 = 0.21$  </p>
 </blockquote>
@@ -420,19 +508,43 @@
 <p>$P(S|T) = \frac{0.12}{P(T)} = \frac{0.12}{0.246} = 0.4878$</p>
 </blockquote>
 </li>
-<li><p>诊断推理解题方法</p>
+<li><p>诊断推断解题方法</p>
 <ol>
-<li>利用贝叶斯公式将诊断推理问题转化为因果推理问题</li>
-<li>利用因果推理结果，导出诊断推理的结果</li>
+<li>利用贝叶斯公式将诊断推断问题转化为因果推断问题</li>
+<li>利用因果推断结果，导出诊断推断的结果</li>
 </ol>
 </li>
 </ul>
-<h4 id="5-3-小结"><a href="#5-3-小结" class="headerlink" title="5.3 小结"></a>5.3 小结</h4><p>所有类型的贝叶斯网络都可以用精确算法来进行概率推理。但Cooper指出，贝叶斯网络中的精确概率推理是一个N－P难题。对于一个特定拓扑结构的网络，其复杂性取决于结点数。所以，精确算法一般用于结构较为简单的单联网络（Single connected）。对于解决一般性的问题，我们不希望它是多项式次复杂。因而，许多情况下都采用近似算法。它可以大大简化计算和推理过程，虽然它不能够提供每个结点的精确概率值<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[什么是贝叶斯网络？](http://blog.sciencenet.cn/home.php?mod=space&uid=227347&do=blog&id=219725)
+<h3 id="5-2-近似推断"><a href="#5-2-近似推断" class="headerlink" title="5.2 近似推断"></a>5.2 近似推断</h3><p>所有类型的贝叶斯网络都可以用精确算法来进行概率推断。但Cooper指出，贝叶斯网络中的精确概率推断是一个NP难问题。对于一个特定拓扑结构的网络，其复杂性取决于结点数。所以，精确算法一般用于结构较为简单的单联网络（Single connected）。对于解决一般性的问题，我们不希望它是多项式次复杂。因而，许多情况下都采用近似算法。它可以大大简化计算和推断过程，虽然它不能够提供每个结点的精确概率值<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[什么是贝叶斯网络？](http://blog.sciencenet.cn/home.php?mod=space&uid=227347&do=blog&id=219725)
 ">[4]</span></a></sup>。</p>
-<h3 id="6-先验概率的确定"><a href="#6-先验概率的确定" class="headerlink" title="6. 先验概率的确定"></a>6. 先验概率的确定</h3><p>有了条件独立性假设就可以大大简化网络的推理计算。但是，与其他形式的不确定性推理方法一样，贝叶斯网络推理仍然需要给出许多先验概率，它们是根结点的概率值和所有子结点在其母结点给定下的条件概率值。</p>
+<p>贝叶斯网的近似推断常常采用吉布斯采样（Gibbs sampling）或者变分推断来完成。以下介绍一些随机采样方法吉布斯采样。</p>
+<p>给定$\mathbf{Q} = \{ Q_1, \ldots, Q_n \}$表示待查询变量，$\mathbf{E} = \{ E_1, \ldots, E_k \}$为证据变量。两者的取值分别为$\mathbf{q} = \{ q_1, \ldots, q_n \}$和$\mathbf{e} = \{ e_1, \ldots, e_k \}$。目标是计算后验概率$P(\mathbf{Q} = \mathbf{q} | \mathbf{E} = \mathbf{e})$。下图来自于<sup id="fnref:6"><a href="#fn:6" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="《机器学习》，周志华著，清华大学出版社.
+">[6]</span></a></sup>中的算法代码。</p>
+<p><img src="watermelon_fig_7.5.png" alt="吉布斯采样算法"><span class="image-caption-center">吉布斯采样算法</span></p>
+<p>对上述代码进行解释：</p>
+<ul>
+<li>行2，随机产生一个对应于证据$\mathbf{E} = \mathbf{e}$的样本$\mathbf{q}^{0}$</li>
+<li>行3-14，从当前的样本出发，经过$T$次采样，看一共能够得到多少和$\mathbf{q}$一致的采样样本，保存在变量$n_q$中<ul>
+<li>每一步从上一个样本出发，即$\mathbf{q}^{t}$首先取值为$\mathbf{q}^{t-1}$</li>
+<li>如行4-6所示，对非证据变量$\mathbf{Z}$进行逐一采样，改变其取值</li>
+<li>如行7所示，取值改变应该参照其采样概率，采样概率可以通过贝叶斯网络$B$和当前其他变量的当前取值$\mathbf{Z} = \mathbf{z}$来获得</li>
+<li>如行11-13，当采样得到的$\mathbf{q}^{t}$等同于$\mathbf{q}$时，$n_q$计数加1。意味着，我们可以近似地估算出后验概率<blockquote>
+<p>$P(\mathbf{Q} = \mathbf{q} | \mathbf{E} = \mathbf{e}) \simeq \frac{n_q}{T}$</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>从本质上讲，吉布斯采样是在贝叶斯网络所有变量的联合状态空间与证据$\mathbf{E} = \mathbf{e}$一致的子空间中进行随机游走（random walk）。每一步仅依赖于前一步状态，这符合一个马尔科夫链。</p>
+<blockquote>
+<p>在一定条件下，无论从什么初始状态开始，马尔科夫链第$t$步的状态分布在$t \to \infty$时必收敛于一个平稳分布（stationary distribution）。</p>
+</blockquote>
+<p>而对于吉布斯采样而言，上述分布恰好为$P(\mathbf{Q}| \mathbf{E} = \mathbf{e})$。因此，在$T$很大时，相当于根据$P(\mathbf{Q}| \mathbf{E} = \mathbf{e})$进行采样，能够保证最终得到的$n_q$能符合$\mathbf{Q} = \mathbf{q} | \mathbf{E} = \mathbf{e}$的条件。</p>
+<p>但需要注意，由于马尔科夫链需要很长时间才能趋于平稳分布。因此，吉布斯采样的收敛速度较慢。同时，如果贝叶斯网络中存在极端概率如0或者1，也不能保证马尔科夫链存在平稳分布，此时吉布斯采样会给出错误的估计结果。</p>
+<h2 id="6-先验概率的确定"><a href="#6-先验概率的确定" class="headerlink" title="6. 先验概率的确定"></a>6. 先验概率的确定</h2><p>有了条件独立性假设就可以大大简化网络的推断计算。但是，与其他形式的不确定性推断方法一样，贝叶斯网络推断仍然需要给出许多先验概率，它们是根结点的概率值和所有子结点在其母结点给定下的条件概率值。</p>
 <p>这些先验概率，可以是由大量历史的样本数据统计分析得到的，也可由领域专家长期的知识或经验总结主观给出的，或者根据具体情况事先假设给定。</p>
 <p>如何根据联合概率分布求出先验分布，我们可以使用因子图和sum-product算法进行求解，请移步<a href="/blog/因子图介绍">因子图介绍</a>。</p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://cs.nju.edu.cn/gaoyang/ai2016/5.pdf" target="_blank" rel="noopener">从贝叶斯定理到贝叶斯网络</a>.<a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://blog.csdn.net/v_july_v/article/details/40984699" target="_blank" rel="noopener">从贝叶斯方法谈到贝叶斯网络</a>.<a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://blog.csdn.net/laobai1015/article/details/78062767" target="_blank" rel="noopener">最大似然估计与最大后验概率的区别与联系</a>.<a href="#fnref:3" rev="footnote"> ↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="http://blog.sciencenet.cn/home.php?mod=space&amp;uid=227347&amp;do=blog&amp;id=219725" target="_blank" rel="noopener">什么是贝叶斯网络？</a><a href="#fnref:4" rev="footnote"> ↩</a></span></li></ol></div></div>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://cs.nju.edu.cn/gaoyang/ai2016/5.pdf" target="_blank" rel="noopener">从贝叶斯定理到贝叶斯网络</a>.<a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://blog.csdn.net/v_july_v/article/details/40984699" target="_blank" rel="noopener">从贝叶斯方法谈到贝叶斯网络</a>.<a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://blog.csdn.net/laobai1015/article/details/78062767" target="_blank" rel="noopener">最大似然估计与最大后验概率的区别与联系</a>.<a href="#fnref:3" rev="footnote"> ↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="http://blog.sciencenet.cn/home.php?mod=space&amp;uid=227347&amp;do=blog&amp;id=219725" target="_blank" rel="noopener">什么是贝叶斯网络？</a><a href="#fnref:4" rev="footnote"> ↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://blog.csdn.net/lg1259156776/article/details/48738701" target="_blank" rel="noopener">贝叶斯网络</a><a href="#fnref:5" rev="footnote"> ↩</a></span></li><li id="fn:6"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">6.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">《机器学习》，周志华著，清华大学出版社.<a href="#fnref:6" rev="footnote"> ↩</a></span></li><li id="fn:7"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">7.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://blog.csdn.net/Touch_Dream/article/details/69053453" target="_blank" rel="noopener">神经网络和贝叶斯网络关系</a>.<a href="#fnref:7" rev="footnote"> ↩</a></span></li></ol></div></div>
           
           <hr>
           <ul class="pager">
@@ -449,46 +561,21 @@
               </li>
               
           </ul>
-        
-  <br>
-  
+          
 
-  
-  <!-- livere begin-->
-  <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM1MC8xMjg4NQ">
-      <script type="text/javascript">
-          (function(d, s) {
-              var j, e = d.getElementsByTagName(s)[0];
-
-              if (typeof LivereTower === 'function') { return; }
-
-              j = d.createElement(s);
-              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-              j.async = true;
-
-              e.parentNode.insertBefore(j, e);
-          })(document, 'script');
-      </script>
-      <noscript> To show LiveRe comment, please use JavaScript</noscript>
-  </div>
-  <!-- livere end -->
-  
-  </div>
-
-
-        
+      </div>
+      
   <div class="hidden-xs col-sm-3 toc-col">
     <div class="toc-wrap">
         Table of Contents
         
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-贝叶斯定理和贝叶斯网络模型"><span class="toc-text">1. 贝叶斯定理和贝叶斯网络模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-频率派和贝叶斯派的思考"><span class="toc-text">1.1 频率派和贝叶斯派的思考</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-贝叶斯网络模型"><span class="toc-text">1.2 贝叶斯网络模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-贝叶斯网络中的独立性"><span class="toc-text">2. 贝叶斯网络中的独立性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-图的结构"><span class="toc-text">2.1 图的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-d-可分（-d-separation）"><span class="toc-text">2.2 $d$-可分（$d$-separation）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-贝叶斯网络中的构建"><span class="toc-text">3. 贝叶斯网络中的构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-贝叶斯网络的结构学习"><span class="toc-text">4. 贝叶斯网络的结构学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基于搜索和评分的方法"><span class="toc-text">基于搜索和评分的方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-贝叶斯网络的推理"><span class="toc-text">5. 贝叶斯网络的推理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-因果推理"><span class="toc-text">5.1 因果推理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-诊断推理"><span class="toc-text">5.2 诊断推理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-小结"><span class="toc-text">5.3 小结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-先验概率的确定"><span class="toc-text">6. 先验概率的确定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用"><span class="toc-text">引用</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-贝叶斯定理"><span class="toc-text">1. 贝叶斯定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-频率派和贝叶斯派的思考"><span class="toc-text">1.1 频率派和贝叶斯派的思考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-贝叶斯公式"><span class="toc-text">1.2 贝叶斯公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-贝叶斯网络模型"><span class="toc-text">2. 贝叶斯网络模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-贝叶斯网络与马尔科夫链的比较"><span class="toc-text">2.1 贝叶斯网络与马尔科夫链的比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-贝叶斯网络与神经网络的比较"><span class="toc-text">2.2 贝叶斯网络与神经网络的比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-贝叶斯网络中的独立性"><span class="toc-text">3. 贝叶斯网络中的独立性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-图的结构"><span class="toc-text">3.1 图的结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-d-可分（-d-separation）"><span class="toc-text">3.2 $d$-可分（$d$-separation）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-贝叶斯网络的结构"><span class="toc-text">4. 贝叶斯网络的结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-贝叶斯网络的构建"><span class="toc-text">4.1 贝叶斯网络的构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-贝叶斯网络的结构学习"><span class="toc-text">4.2 贝叶斯网络的结构学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1-基于评分和搜索的方法"><span class="toc-text">4.2.1 基于评分和搜索的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-2-评分函数的信息论准则"><span class="toc-text">4.2.2 评分函数的信息论准则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3-搜索策略"><span class="toc-text">4.2.3 搜索策略</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-贝叶斯网络的推断"><span class="toc-text">5. 贝叶斯网络的推断</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-精确推断"><span class="toc-text">5.1 精确推断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-1-因果推断"><span class="toc-text">5.1.1 因果推断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-2-诊断推断"><span class="toc-text">5.1.2 诊断推断</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-近似推断"><span class="toc-text">5.2 近似推断</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-先验概率的确定"><span class="toc-text">6. 先验概率的确定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引用"><span class="toc-text">引用</span></a></li></ol></li></ol>
         
     </div>
   </div>
 
 
-      </div>
-  </div>
+    </div>
 </article>
 
 <!-- Footer -->
@@ -573,7 +660,7 @@
          <p>
              <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> <b>PV</b></span> -
              <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> <b>UV</b></span> -
-             67.4k <b>Words</b>
+             72.7k <b>Words</b>
       </div>
     </div>
 </footer>

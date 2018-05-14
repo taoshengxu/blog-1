@@ -9,7 +9,7 @@
     <meta name="description" content="This is the site where Steven post his thoughts, ideas and feelings">
     <meta name="author" content="Huan Li">
     <meta name="keyword" content="Computer Science, Travel Notes, Ideas and Thoughts">
-    <link rel="canonical" href="https://longaspire.github.io/blog/blog/page/5/">
+    <link rel="canonical" href="https://longaspire.github.io/blog/blog/游青城山记/">
     <link rel="shortcut icon" href="/blog/img/rockrms.png">
     <link rel="alternate" type="application/atom+xml" title="Little Stone" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -21,7 +21,7 @@
 
     <title>
         
-        Little Stone - Huan Li&#39;s Blog
+        游青城山记｜Little Stone - Huan Li&#39;s Blog
         
     </title>
 
@@ -111,7 +111,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <header>
-  <nav class="navbar navbar-default header-navbar" id="nav-top" data-ispost = "false" data-istags="false" data-ishome = "true" >
+  <nav class="navbar navbar-default header-navbar" id="nav-top" data-ispost = "true" data-istags="false" data-ishome = "false" >
     <div class="container-fluid">
       <div class="navbar-header page-scroll">
         <button type="button" class="navbar-toggle" data-toggle="collapse" aria-expanded="false"  data-target="#website_navbar">
@@ -160,163 +160,133 @@
 
 
 <!-- Main Content -->
-<!-- index.ejs -->
-<!--<article class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">-->
-    <!---->
-<!--</article>-->
+<style>
+    .poetry-container {
+        /*background-color: rgba(136, 255, 21, 0.5);*/
+        /*padding-top: 43px;*/
+        /*margin-top: -43px;*/
+        text-align: center;
+    }
 
-<div class="container homepage">
-    <div class="row">
-        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-          
-            <div class="post-preview "
-     style="background-image: url('/blog/img/northernlights-sisimiut-lake.jpg')">
-    <a href="/blog/LSH那些事儿2/">
-        <h2 class="post-title">
-            LSH那些事儿 (II): 图说
-        </h2>
-        
-        <div class="post-meta">
-          <span>Apr 18, 2013</span>
-          <span class="meta-item">Updated On May 14, 2018</span>
-        </div>
-        <div class="post-content-preview">
-            <p>
-                1. Locality Sensitive Hashing的定义Locality Sensitive Hashing (LSH) 是构造一种Hash函数集 $ \{ D | R^d \rightarrow U\}$，其中$ d $是点的维数，使得对任意的点$ p$，$ q$有
+    .poetry-container .poetry-content {
+        writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+        margin: 100px auto 0px;
+        overflow: auto;
+        max-width: 90%;
+        max-height: 700px;
+        display: inline-block;
+        text-align: left;
+        padding: 20px 15px 25px;
+    }
 
-如果$ || p..
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
+    .poetry-head {
+        width: 100%;
+        height: 56px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*background-color: black;*/
+    }
 
-          
-            <div class="post-preview "
-     style="background-image: url('/blog/post_cover_images/firenze.png')">
-    <a href="/blog/review-of-similarity-measurement/">
-        <h2 class="post-title">
-            Review of Similarity Measurement
-        </h2>
-        
-        <div class="post-meta">
-          <span>Apr 18, 2013</span>
-          <span class="meta-item">Updated On May 14, 2018</span>
-        </div>
-        <div class="post-content-preview">
-            <p>
-                1. 引言相似度计算用于衡量对象之间的相似程度，在数据挖掘、自然语言处理中是一个基础性计算。其中的关键技术主要是两个部分，对象的特征表示，特征集合之间的相似关系。在信息检索、网页判重、推荐系统等，都涉及到对象之间或者对象和对象集合的相似性的计算。而针对不同的应用场景，受限于数据规模、时空开销等的..
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
+    .poetry-container .poetry-content h2 {
+        color: #fff;
+        font-family: STkaiti;
+        font-size: 24px;
+        text-indent: 65px;
+        float: left;
+        margin-top: 0;
+    }
 
-          
-            <div class="post-preview "
-     style="background-image: url('/blog/img/northernlights-sisimiut-lake.jpg')">
-    <a href="/blog/LSH那些事儿1/">
-        <h2 class="post-title">
-            LSH那些事儿 (I): 总览
-        </h2>
-        
-        <div class="post-meta">
-          <span>Apr 18, 2013</span>
-          <span class="meta-item">Updated On May 14, 2018</span>
-        </div>
-        <div class="post-content-preview">
-            <p>
-                1. 一开始先从wiki上头截取一段话:
+    .poetry-container .poetry-content h2 span {
+        background-color: black;
+        padding: 20px 8px;
+        border-radius: 3px;
+    }
 
-Locality-sensitive hashing (LSH) is a method of performing probabilistic dimension reduction of high-dimensional data.
-  The b..
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
+    .poem-subtitle{
+      padding: 80px 5px 0px 40px;
+      background: black;
+      color: white;
+      margin: 80px 5px 0 10px;
+      padding: 10px 3px;
+    }
 
-          
-            <div class="post-preview "
-     style="background-image: url('/blog/post_cover_images/firenze.png')">
-    <a href="/blog/introduction-to-latex/">
-        <h2 class="post-title">
-            Introduction to Latex
-        </h2>
-        
-        <div class="post-meta">
-          <span>Apr 18, 2013</span>
-          <span class="meta-item">Updated On May 11, 2018</span>
-        </div>
-        <div class="post-content-preview">
-            <p>
-                
-This introduction is given by David Reid
+    .poetry-container .poetry-content p {
+        clear: both;
+        font-size: 20px;
+        font-family: FangSong;
+        letter-spacing: 8px;
+        text-shadow: 0 0 1px rgba(15, 15, 15, .3);
+        text-indent: 63px;
+        line-height: 40px;
+        margin: 0;
+    }
 
-Why is LATEX great for technical docs?
-Separate content from style.
-Good layout (usually).
-Excellent for ..
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
+    /* ipad */
+    @media screen and (max-width: 768px) {
+        .poetry-container .poetry-content {
+            max-height: 480px;
+            max-width: 100%;
+            margin: 80px auto 0;
+            padding-bottom: 10px;
+        }
 
-          
-            <div class="post-preview "
-     style="background-image: url('/blog/post_cover_images/firenze.png')">
-    <a href="/blog/icdm-top-ten-algorithms-in-data-mining/">
-        <h2 class="post-title">
-            ICDM: Top Ten Algorithms in Data Mining
-        </h2>
-        
-        <div class="post-meta">
-          <span>Apr 15, 2013</span>
-          <span class="meta-item">Updated On May 11, 2018</span>
-        </div>
-        <div class="post-content-preview">
-            <p>
-                
-2006年12月，国际权威的学术组织the IEEE International Conference on Data Mining (ICDM) 评选出了数据挖掘领域的十大经典算法：C4.5, k-Means, SVM, Apriori, EM, PageRank, AdaBoost, kN..
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
+        .poetry-container .poetry-content p {
+            font-size: 16px;
+            text-indent: 46px;
+            line-height: 33px;
+            letter-spacing: 6px;
+            font-family: unset;
+        }
 
-          
-            <div class="post-preview "
-     style="background-image: url('/blog/post_cover_images/moon.jpg')">
-    <a href="/blog/游青城山记/">
-        <h2 class="post-title">
+        .poetry-container .poetry-content h2 {
+            margin-right: 6px;
+            font-size: 22px;
+            text-indent: 24px;
+            font-family: unset;
+        }
+
+        .poetry-container .poetry-content h2 span {
+            padding: 8px 5px;
+        }
+
+        .poem-subtitle {
+
+        }
+    }
+
+    /*mobile*/
+    @media screen and (max-width: 400px) {
+        .poetry-container .poetry-content {
+            max-height: 410px;
+            padding-bottom: 20px;
+        }
+
+        .poetry-container .poetry-content p {
+            line-height: 30px;
+            letter-spacing: 3px;
+        }
+
+    }
+
+
+</style>
+<div class="poetry-container">
+    <div class="poetry-content" style="background-repeat:no-repeat; background-image:url(); max-width: ">
+        <div class="poetry-head"></div>
+        <h2>
+          <span>
             游青城山记
+          </span>
         </h2>
         
-        <div class="post-meta">
-          <span>Oct 5, 2009</span>
-          <span class="meta-item">Updated On May 14, 2018</span>
-        </div>
-        <div class="post-content-preview">
-            <p>
-                青城，古谓之曰丈人，邛崃余脉焉。依岷川雪岭，面天府袤野，木林青翠，四季常青，诸峰环峙，状若城廓，故名之。丹梯千级，曲径通幽，至者皆惊叹，无不挥毫放歌，故誉天下以此。余居成都数月有余，甚慕其名，奈何术业繁忙，未有隙，寻，终得云游之机，携同游者并十数人，驱车而至，阴雾缭绕，风凝寒袭，虽为申时，仙观奇..
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p></p><p><br>青城，古谓之曰丈人，邛崃余脉焉。依岷川雪岭，面天府袤野，木林青翠，四季常青，诸峰环峙，状若城廓，故名之。丹梯千级，曲径通幽，至者皆惊叹，无不挥毫放歌，故誉天下以此。<br>余居成都数月有余，甚慕其名，奈何术业繁忙，未有隙，寻，终得云游之机，携同游者并十数人，驱车而至，阴雾缭绕，风凝寒袭，虽为申时，仙观奇景，旷人心魄，亦生恣情山野不可不攀顶而尽览山小之意。众人皆兴怀，豪迈倍溢，行步激荡，前山之景、之气、之神化若丝垂，俯仰谈笑，坠落心脾。<br>山行百余步，渐涌寒意，跌宕暗泽，终晓天幽之名为实。石阶通苍穹，阴翳遮千里，蔽竹齐松，交互参差，势若狂澜，颇有次第。再行百步，汗渗沾衣，更显崎陡之态。<br>古好游者云，未至上清宫，莫言青城山。今逡巡山麓，鲜有英雄之气，同游者皆诩人杰，当直捣云顶，裕华仙灵。唐李太白诗云“蜀道之难”亦莫过于此，蜷体而行，半晌有余，终现豁然，远观焉，如盘龙卧啸，雄图升腾，忘返其间，未觉天色已暗，尚无居所，乃决意下青城而憩。虽路遥道危，亦为际遇，人生得此，殊无悔意。<br>山气阴潮，青阶附苔，天光暗蔽，蓬木当道。是时，众人形串链之阵，举灯亢歌，山间虫杂呜鸣，相生相映，此景此境，毕生难忘焉。<br>翌日，至后山，更觉崎陡之势，怎奈土石崩落，栈道几毁，山封人待不可行也。绕道诸僻途，寻野径而上，泥石沾履亦难行，山行者数人，皆悔而退焉，询诸山人，皆告之前路漫漫，劝余归麓，歧意渐生，停待途中。僵项远观，蔚然深秀，层峦叠嶂，近则见奇石遍布，佳木竞秀，赏此美景，虽退亦无憾。然今至此，怎可效阮籍穷途之哭？放翁有感“山重水复疑无路，柳暗花明又一村”，寻古圣贤之成事，无不逆难而上，乃流芳于世。故柱棍攀石，虽霪雨纷纷，浸衣湿冷，探幽意尤正浓也。<br>至于归途，余另辟曲径以归，其间草木迥异与它山，不可辩其种属。行愈远则林愈茂，树干直指、枝柯蔽天，水汽泽腾，若雾若霭，人行其间，飘飘然、悠悠然，神与躯离，物我为一，其感不可胜言。隔岸阴森者，尽溪，平望如荠。至一谷，习风阵阵，可闻柏浪松涛，叹自然之神工。登高长啸，弃俗世心耕之犁，忘尘间缤纷海市，云锁极峰、雾隐野境，任风雨肆于体外，而独得心之归宿，终得庄周逍遥之境。<br>嗟乎！余于是有叹焉，昔有山行者，不得前路而退，不知它途，乃辩诸众人，岂非误人焉？探寻问道，于心于志，不因惘而惑，不因惑而弃。同行皆少年同窗，共破桎梏，实平生之幸也。<br>归舍，孑然一人，思余之父母，渐生苍凉之意，何时当栖身月下，何日当围坐笑谈？故撰文以勉，己丑年八月望日临川李某惊弦记。</p>
 
-          
-          <ul class="pager">
-    
-        <li class="previous"><a href="/blog/page/4/">&larr;  Newer Posts</a></li>
-    
-    
-</ul>
-
-        </div>
-        <!-- partial('_partial/sidebar-profile') -->
     </div>
+</div>
+
+
 </div>
 
 <!-- Footer -->
