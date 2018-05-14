@@ -2,7 +2,7 @@
 layout: post
 title: Review of Similarity Measurement
 categories:
-  - 科研笔记
+  - "科研笔记"
 tags:
   - Hash
   - Index

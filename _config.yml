@@ -222,7 +222,7 @@ archive:
 # MathJax Support
 mathjax:
   enable: true
-  #per_page: true
+  # per_page: true
   cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 # ---------------------------------------------------------------
