@@ -12,9 +12,9 @@ date: 2014-12-13 13:27:09
 toc_number_disable: true
 cover_img: /blog/post_cover_images/drops.jpg
 cover_img_from_root: true
+comments: false
 permalink:
 description:
-comments:
 ---
 
 > 本文转载自引用[^1]
