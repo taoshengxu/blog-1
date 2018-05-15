@@ -9,12 +9,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/review-of-similarity-measurement.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/review-of-similarity-measurement.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Latex书写误区.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Latex书写误区.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/introduction-to-latex.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/introduction-to-latex.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/终极算法读书笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/终极算法读书笔记.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/_posts/贝叶斯网络笔记1.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/贝叶斯网络笔记1.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/post_cover_images/Aalborg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/source/post_cover_images/Aalborg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/post_cover_images/kalman.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/post_cover_images/kalman.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/huan/layout/_partial/comments.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/huan/layout/_partial/comments.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/huan/layout/post.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/huan/layout/post.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,20 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comments.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="comments.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/huan/layout/_partial/comments.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
               <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="贝叶斯网络笔记1.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/贝叶斯网络笔记1.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1401">
-              <caret line="164" column="94" selection-start-line="164" selection-start-column="94" selection-end-line="164" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -338,10 +328,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49951783" visible="true" weight="0.2990127" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49951783" visible="true" weight="0.22339304" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32916266" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.20179136" side_tool="true" weight="0.29162657" />
@@ -658,13 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/huan/layout/_partial/comments.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/huan/layout/post.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -674,8 +657,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/贝叶斯网络笔记1.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1401">
-          <caret line="164" column="94" selection-start-line="164" selection-start-column="94" selection-end-line="164" selection-end-column="94" />
+        <state relative-caret-position="-7">
+          <caret line="174" column="94" selection-start-line="174" selection-start-column="94" selection-end-line="174" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/huan/layout/_partial/comments.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

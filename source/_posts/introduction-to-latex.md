@@ -4,7 +4,7 @@ title: Introduction to Latex
 categories:
   - "科研笔记"
 tags:
-  - "LaTex"
+  - "Latex"
   - "教程"
 draft: false
 id: 94
