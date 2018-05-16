@@ -4,20 +4,20 @@
 
     
   <url>
-    <loc>https://longaspire.github.io/blog/blog/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%E6%80%BB%E8%A7%88/</loc>
-    <lastmod>2018-05-15T12:37:43.739Z</lastmod>
+    <loc>https://longaspire.github.io/blog/blog/%E5%8F%98%E5%88%86%E6%8E%A8%E6%96%AD%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2018-05-16T11:01:43.744Z</lastmod>
     <data>
         <display>
-        <title>概率图模型总览</title>
-        <pubTime>2016-05-15T07:03:17.000Z</pubTime>
+        <title>变分推断介绍</title>
+        <pubTime>2018-05-16T08:48:01.000Z</pubTime>
         
-        <tag>无向图</tag>
-         
-        <tag>有向无环图</tag>
+        <tag>EM算法</tag>
          
         <tag>概率推断</tag>
          
-        <tag>概率参数估计</tag>
+        <tag>变分推断</tag>
+         
+        <tag>KL散度</tag>
          
          
            
@@ -30,29 +30,153 @@
 
     
   <url>
-    <loc>https://longaspire.github.io/blog/blog/%E9%9D%99%E6%80%81%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2018-05-15T07:27:04.651Z</lastmod>
+    <loc>https://longaspire.github.io/blog/blog/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%E6%80%BB%E8%A7%88/</loc>
+    <lastmod>2018-05-16T11:00:48.975Z</lastmod>
     <data>
         <display>
-        <title>静态贝叶斯网络</title>
-        <pubTime>2016-05-02T11:02:39.000Z</pubTime>
+        <title>概率图模型总览</title>
+        <pubTime>2016-05-15T07:03:17.000Z</pubTime>
         
-        <tag>贝叶斯定理</tag>
+        <tag>概率推断</tag>
+         
+        <tag>变分推断</tag>
+         
+        <tag>无向图</tag>
          
         <tag>有向无环图</tag>
          
-        <tag>马尔科夫链</tag>
+        <tag>概率参数估计</tag>
          
-        <tag>概率推断</tag>
-         
-        <tag>结构学习</tag>
-         
-        <tag>吉布斯采样</tag>
+        <tag>MCMC采样</tag>
          
          
            
              
               <breadCrumb title="概率图模型" url="https://longaspire.github.io/blog/blog/categories/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/icdm-top-ten-algorithms-in-data-mining/</loc>
+    <lastmod>2018-05-16T08:52:55.241Z</lastmod>
+    <data>
+        <display>
+        <title>ICDM: Top Ten Algorithms in Data Mining</title>
+        <pubTime>2013-04-15T03:16:29.000Z</pubTime>
+        
+        <tag>AdaBoost</tag>
+         
+        <tag>关联分析</tag>
+         
+        <tag>EM算法</tag>
+         
+        <tag>PageRank</tag>
+         
+        <tag>SVM算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="科研笔记" url="https://longaspire.github.io/blog/blog/categories/%E7%A7%91%E7%A0%94%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/%E9%9D%99%E6%80%81%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2018-05-16T08:44:13.782Z</lastmod>
+    <data>
+        <display>
+        <title>静态贝叶斯网络</title>
+        <pubTime>2016-05-02T11:02:39.000Z</pubTime>
+        
+        <tag>概率推断</tag>
+         
+        <tag>有向无环图</tag>
+         
+        <tag>贝叶斯定理</tag>
+         
+        <tag>结构学习</tag>
+         
+        <tag>吉布斯采样</tag>
+         
+        <tag>马尔科夫链</tag>
+         
+         
+           
+             
+              <breadCrumb title="概率图模型" url="https://longaspire.github.io/blog/blog/categories/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/Latex%E4%B9%A6%E5%86%99%E8%AF%AF%E5%8C%BA/</loc>
+    <lastmod>2018-05-16T06:46:00.966Z</lastmod>
+    <data>
+        <display>
+        <title>Latex书写误区</title>
+        <pubTime>2018-05-14T11:29:49.000Z</pubTime>
+        
+        <tag>Latex</tag>
+         
+         
+           
+             
+              <breadCrumb title="操作备忘" url="https://longaspire.github.io/blog/blog/categories/%E6%93%8D%E4%BD%9C%E5%A4%87%E5%BF%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1IPC/</loc>
+    <lastmod>2018-05-15T14:45:52.923Z</lastmod>
+    <data>
+        <display>
+        <title>进程通信IPC</title>
+        <pubTime>2014-12-13T05:27:09.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>进程通信</tag>
+         
+         
+           
+             
+              <breadCrumb title="OS" url="https://longaspire.github.io/blog/blog/categories/OS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/%E7%90%86%E8%A7%A3%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</loc>
+    <lastmod>2018-05-15T14:45:52.916Z</lastmod>
+    <data>
+        <display>
+        <title>理解垃圾回收机制</title>
+        <pubTime>2014-12-19T11:22:14.000Z</pubTime>
+        
+        <tag>垃圾回收</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>调度算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="OS" url="https://longaspire.github.io/blog/blog/categories/OS/"/>
           
         </display>
     </data>
@@ -134,26 +258,6 @@
 
     
   <url>
-    <loc>https://longaspire.github.io/blog/blog/Latex%E4%B9%A6%E5%86%99%E8%AF%AF%E5%8C%BA/</loc>
-    <lastmod>2018-05-15T02:49:01.307Z</lastmod>
-    <data>
-        <display>
-        <title>Latex书写误区</title>
-        <pubTime>2018-05-14T11:29:49.000Z</pubTime>
-        
-        <tag>Latex</tag>
-         
-         
-           
-             
-              <breadCrumb title="操作备忘" url="https://longaspire.github.io/blog/blog/categories/%E6%93%8D%E4%BD%9C%E5%A4%87%E5%BF%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://longaspire.github.io/blog/blog/review-of-similarity-measurement/</loc>
     <lastmod>2018-05-14T12:21:21.722Z</lastmod>
     <data>
@@ -171,28 +275,6 @@
            
              
               <breadCrumb title="科研笔记" url="https://longaspire.github.io/blog/blog/categories/%E7%A7%91%E7%A0%94%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1IPC/</loc>
-    <lastmod>2018-05-14T07:02:36.782Z</lastmod>
-    <data>
-        <display>
-        <title>进程通信IPC</title>
-        <pubTime>2014-12-13T05:27:09.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>进程通信</tag>
-         
-         
-           
-             
-              <breadCrumb title="OS" url="https://longaspire.github.io/blog/blog/categories/OS/"/>
           
         </display>
     </data>
@@ -233,13 +315,13 @@
         
         <tag>距离度量</tag>
          
-        <tag>Metric Learning</tag>
+        <tag>KL散度</tag>
          
         <tag>ITML</tag>
          
-        <tag>信息论</tag>
+        <tag>Metric Learning</tag>
          
-        <tag>KL散度</tag>
+        <tag>信息论</tag>
          
         <tag>LogDet</tag>
          
@@ -285,11 +367,11 @@
         
         <tag>距离度量</tag>
          
-        <tag>Metric Learning</tag>
-         
         <tag>ITML</tag>
          
         <tag>LMNN</tag>
+         
+        <tag>Metric Learning</tag>
          
          
            
@@ -335,30 +417,6 @@
            
              
               <breadCrumb title="文字" url="https://longaspire.github.io/blog/blog/categories/%E6%96%87%E5%AD%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/%E7%90%86%E8%A7%A3%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</loc>
-    <lastmod>2018-05-14T07:02:36.760Z</lastmod>
-    <data>
-        <display>
-        <title>理解垃圾回收机制</title>
-        <pubTime>2014-12-19T11:22:14.000Z</pubTime>
-        
-        <tag>垃圾回收</tag>
-         
-        <tag>Java</tag>
-         
-        <tag>调度算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="OS" url="https://longaspire.github.io/blog/blog/categories/OS/"/>
           
         </display>
     </data>
@@ -738,34 +796,6 @@
         <tag>工具</tag>
          
         <tag>文献管理</tag>
-         
-         
-           
-             
-              <breadCrumb title="科研笔记" url="https://longaspire.github.io/blog/blog/categories/%E7%A7%91%E7%A0%94%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/icdm-top-ten-algorithms-in-data-mining/</loc>
-    <lastmod>2018-05-11T11:32:31.802Z</lastmod>
-    <data>
-        <display>
-        <title>ICDM: Top Ten Algorithms in Data Mining</title>
-        <pubTime>2013-04-15T03:16:29.000Z</pubTime>
-        
-        <tag>AdaBoost</tag>
-         
-        <tag>关联分析</tag>
-         
-        <tag>EM</tag>
-         
-        <tag>PageRank</tag>
-         
-        <tag>SVM</tag>
          
          
            
