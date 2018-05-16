@@ -69,6 +69,18 @@ x_1, \ldots, x_n
 
 例如，在条件概率中，`|`应该写为`\mid`。
 
+而 `||` 也应该写为`\parallel`。
+
+### 6. 积分符号
+
+积分符号过短，如
+
+> $\int_a^b f(x)\,\mathrm{d}x$
+
+这种情况下，在`int`前面加上`\displaystyle`即可变成很长的积分符号，如
+
+> $\displaystyle\int_a^b f(x)\,\mathrm{d}x$
+
 ### 引用
 
 [^1]: [Top four LaTeX mistakes](https://www.johndcook.com/blog/2010/02/15/top-latex-mistakes/)

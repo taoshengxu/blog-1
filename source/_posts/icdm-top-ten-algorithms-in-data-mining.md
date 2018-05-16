@@ -4,11 +4,11 @@ title: 'ICDM: Top Ten Algorithms in Data Mining'
 categories:
   - "科研笔记"
 tags:
-  - AdaBoost
+  - "AdaBoost"
   - "关联分析"
-  - EM
+  - "EM算法"
   - PageRank
-  - SVM
+  - "SVM算法"
 draft: false
 id: 25
 date: 2013-04-15 11:16:29
