@@ -6,8 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4941c04-132f-4073-ab9a-80ed7bd21abc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/source/_posts/Latex书写误区.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Latex书写误区.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/_posts/概率图模型总览.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/概率图模型总览.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/静态贝叶斯网络.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/静态贝叶斯网络.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/themes/huan/layout/_partial/comments.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
-              <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -57,8 +57,8 @@
       <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="114" column="20" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="20" />
+            <state relative-caret-position="374">
+              <caret line="121" column="19" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -97,7 +97,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.h4</find>
       <find>page.content</find>
       <find>h</find>
       <find>artic</find>
@@ -109,24 +108,25 @@
       <find>post-count</find>
       <find>background-image:</find>
       <find>font-family</find>
-      <find />
-      <find />
+      <find>&quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;,</find>
+      <find>&quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;,</find>
       <find>-10</find>
       <find>col-sm</find>
       <find>background-image</find>
       <find>helvetica</find>
-      <find />
-      <find />
-      <find />
-      <find />
+      <find>&quot;Microsoft YaHei&quot;,</find>
+      <find>&quot;Helvetica Neue&quot;, helvetica,</find>
+      <find>&quot;Helvetica Neue&quot;</find>
+      <find>&quot;lucida grande&quot;, &quot;lucida sans unicode&quot;, lucida, helvetica, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif;</find>
       <find>xs</find>
       <find>贝叶斯</find>
       <find>toc-col</find>
       <find>mathja</find>
       <find>个变量，可能的结构数目有以下关系</find>
-      <find />
+      <find>mean field</find>
       <find>draft</find>
       <find>render_draft</find>
+      <find>一下</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -206,7 +206,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1920" />
     <option name="height" value="1200" />
   </component>
@@ -288,12 +288,12 @@
       <workItem from="1526022976843" duration="5534000" />
       <workItem from="1526055096865" duration="3019000" />
       <workItem from="1526283355086" duration="524000" />
-      <workItem from="1526294774612" duration="2294000" />
+      <workItem from="1526294774612" duration="2938000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78645000" />
+    <option name="totallyTimeSpent" value="79289000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -635,14 +635,14 @@
     <entry file="file://$PROJECT_DIR$/themes/huan/layout/_partial/comments.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="114" column="20" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="20" />
+        <state relative-caret-position="374">
+          <caret line="121" column="19" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
         </state>
       </provider>
     </entry>
