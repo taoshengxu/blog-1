@@ -176,7 +176,7 @@
                                <span class="meta-item">Author: Huan Li</span>
                                <span class="meta-item">Date: May 15, 2016</span>
                                
-                                 <span class="meta-item">Updated On: May 16, 2018</span>
+                                 <span class="meta-item">Updated On: May 17, 2018</span>
                                
                           </span>
                           <div class="tags text-center">
@@ -187,6 +187,9 @@
                           </div>
                           <div class="tags text-center">
                               Tags: 
+                              <a class="tag" href="/blog/tags/#有向无环图"
+                                 title="有向无环图">有向无环图</a>
+                              
                               <a class="tag" href="/blog/tags/#概率推断"
                                  title="概率推断">概率推断</a>
                               
@@ -195,9 +198,6 @@
                               
                               <a class="tag" href="/blog/tags/#无向图"
                                  title="无向图">无向图</a>
-                              
-                              <a class="tag" href="/blog/tags/#有向无环图"
-                                 title="有向无环图">有向无环图</a>
                               
                               <a class="tag" href="/blog/tags/#概率参数估计"
                                  title="概率参数估计">概率参数估计</a>
@@ -222,7 +222,7 @@
     <div class="container">
       <div class="col-lg-8 col-lg-offset-1 col-sm-9">
           
-          <span class="post-count">5,984 words in total, 23 minutes required.</span>
+          <span class="post-count">6,056 words in total, 23 minutes required.</span>
           <hr>
           
           <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h2><p>机器学习中最重要的任务，可以看做根据已观测的数据证据（如训练样本）来对感兴趣的未知变量（如分类标签）进行估计和推测。概率图模型（probabilistic graphical model, PGM），是一种学习任务的框架描述，它将学习任务归结为计算变量的概率分布<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="《机器学习》，周志华著，清华大学出版社.
@@ -295,7 +295,8 @@
 <li>从图论的角度，PGM是一个图，包含结点与边。结点可以分为两类：隐含结点和观测结点。边可以是有向的或者是无向的。</li>
 <li>从概率论的角度，PGM是一个概率分布，图中的结点对应于随机变量，边对应于随机变量的dependency或者correlation关系。<br>给定一个实际问题，我们通常会观测到一些数据，并且希望能够挖掘出隐含在数据中的知识。怎么用PGM实现呢？我们构建一个图，用观测结点表示观测到的数据，用隐含结点表示潜在的知识，用边来描述知识与数据的相互关系，最后获得一个概率分布。给定概率分布之后，通过进行两个任务：inference（给定观测结点，推断隐含结点的后验分布）和learning（学习这个概率分布的参数），来获取知识。PGM的强大之处在于，不管数据和知识多复杂，我们的处理手段是一样的：建一个图，定义一个概率分布，进行推断和学习。</li>
 </ul>
-<h2 id="4-概率图模型的参数估计和推理算法"><a href="#4-概率图模型的参数估计和推理算法" class="headerlink" title="4. 概率图模型的参数估计和推理算法"></a>4. 概率图模型的参数估计和推理算法</h2><h3 id="4-1-参数估计"><a href="#4-1-参数估计" class="headerlink" title="4.1 参数估计"></a>4.1 参数估计</h3><ul>
+<h2 id="4-概率图模型的参数估计和推理算法"><a href="#4-概率图模型的参数估计和推理算法" class="headerlink" title="4. 概率图模型的参数估计和推理算法"></a>4. 概率图模型的参数估计和推理算法</h2><h3 id="4-1-参数估计"><a href="#4-1-参数估计" class="headerlink" title="4.1 参数估计"></a>4.1 参数估计</h3><p>参数学习的目的，是在给定贝叶斯网络结构的情况下，根据已有的观测数据，对网络参数进行调整来最好地对观测数据进行描述的过程。</p>
+<ul>
 <li>对于贝叶斯网络中某个结点的条件概率分布（即条件概率表），可以通过计算训练数据中时间发生的次数来统计，这样获得的参数能够最大化被观测到的数据的可能性。</li>
 <li>对于马尔科夫网络，上述计数方法没有统计学上的支持因而会得到次优的参数。一般而言，对于马尔科夫网络的参数估计，其指导思想为梯度下降，即定义一些描述分布的参数，然后使用梯度下降来寻找能最大化被观测数据可能性的参数值。</li>
 </ul>
@@ -391,7 +392,8 @@
 </blockquote>
 <p>则$p(\mathbf{x})$是该马尔科夫链的平稳分布，马尔科夫链在满足该条件时已经收敛到平稳状态。</p>
 <p>也就是说，MCMC方法首先构造一条马尔科夫链，使其收敛至平稳分布恰好是<strong>待估计参数的后验分布</strong>。然后，可以通过该马尔科夫链产生符合后验分布的样本，利用这些样本可以用来估计分布参数。</p>
-<p>MH（Metropolis-Hastings）算法是MCMC采样的重要代表，吉布斯采样可以认为是MH采样的一种特例。关于采样的内容，今后会系统地谈一谈。</p>
+<p>MH（Metropolis-Hastings）算法是MCMC采样的重要代表，吉布斯采样可以认为是MH采样的一种特例。关于采样的内容，今后会系统地谈一谈。以下给出MH采样的算法解释。</p>
+<p><img src="MH-sampling.png" alt="Metropolis-Hastings算法"><span class="image-caption-center">Metropolis-Hastings算法</span></p>
 <h4 id="4-2-4-变分推断（Variational-Inference）"><a href="#4-2-4-变分推断（Variational-Inference）" class="headerlink" title="4.2.4 变分推断（Variational Inference）"></a>4.2.4 变分推断（Variational Inference）</h4><blockquote>
 <p>关于变分推断的理解和讨论，可见引用<sup id="fnref:7"><a href="#fn:7" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[如何简单易懂地理解变分推断](https://www.zhihu.com/question/41765860).
 ">[7]</span></a></sup>。</p>
@@ -579,7 +581,7 @@
          <p>
              <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> <b>PV</b></span> -
              <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> <b>UV</b></span> -
-             81.8k <b>Words</b>
+             84.9k <b>Words</b>
       </div>
     </div>
 </footer>
