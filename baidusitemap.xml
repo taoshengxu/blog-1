@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://longaspire.github.io/blog/blog/%E5%8A%A8%E6%80%81%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2018-05-17T12:19:50.361Z</lastmod>
+    <lastmod>2018-05-18T02:50:53.917Z</lastmod>
     <data>
         <display>
         <title>动态贝叶斯网络</title>
@@ -30,6 +30,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>https://longaspire.github.io/blog/blog/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%E6%80%BB%E8%A7%88/</loc>
@@ -479,13 +480,13 @@
         <title>Install Python, NumPy, SciPy, and Matplotlib on Mac OS X</title>
         <pubTime>2013-05-30T11:26:41.000Z</pubTime>
         
-        <tag>工具</tag>
-         
         <tag>Mac OS</tag>
          
         <tag>Matplotlib</tag>
          
         <tag>Python</tag>
+         
+        <tag>工具</tag>
          
          
            
@@ -601,9 +602,9 @@
          
         <tag>嵌入式</tag>
          
-        <tag>路由器</tag>
-         
         <tag>无线</tag>
+         
+        <tag>路由器</tag>
          
          
            
@@ -832,7 +833,6 @@
     </data>
     </url>
 
-    
     
     
     

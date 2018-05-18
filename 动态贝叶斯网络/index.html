@@ -176,7 +176,7 @@
                                <span class="meta-item">Author: Huan Li</span>
                                <span class="meta-item">Date: May 17, 2018</span>
                                
-                                 <span class="meta-item">Updated On: May 17, 2018</span>
+                                 <span class="meta-item">Updated On: May 18, 2018</span>
                                
                           </span>
                           <div class="tags text-center">
@@ -219,12 +219,12 @@
     <div class="container">
       <div class="col-lg-8 col-lg-offset-1 col-sm-9">
           
-          <span class="post-count">3,033 words in total, 13 minutes required.</span>
+          <span class="post-count">3,515 words in total, 15 minutes required.</span>
           <hr>
           
           <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h2><p>动态贝叶斯网络（Dynamic Bayesian Network, DBN）是一种暂态模型（transient state model），能够学习变量间的概率依存关系及其随时间变化的规律。其主要用于时序数据建模（如语音识别、自然语言处理、轨迹数据挖掘等）。隐马尔可夫模型（hidden markov model, HMM）是一种结构最简单的动态贝叶斯网络。线性状态空间模型（linear state-space models）如<a href="/blog/滤波技术笔记1">卡尔曼滤波</a>也可以等价看做是动态贝叶斯网络的一种形式<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[Dynamic Bayesian Network, Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Bayesian_network).
 ">[2]</span></a></sup>。</p>
-<p><a href="/blog/静态贝叶斯网络">静态贝叶斯网络</a>反映了一系列变量间的概率依存关系，没有考虑时间因素对变量的影响。相比之下，动态贝叶斯网络是延时间轴变化的贝叶斯网络。</p>
+<p><a href="/blog/静态贝叶斯网络">静态贝叶斯网络</a>反映了一系列变量间的概率依存关系，没有考虑时间因素对变量的影响。相比之下，动态贝叶斯网络是沿时间轴变化的贝叶斯网络。</p>
 <p>动态贝叶斯网络可以看作是应用贝叶斯统计的思想结合<strong>动态结构</strong>的模型，它既考虑系统外部影响因素，又考虑系统的内部间相互的关联，既能够变量之间的概率依存关系，又能描述这一系列变量随时间变化的情况，是贝叶斯网络在时间变化过程上的扩展<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[动态贝叶斯网络简述](http://blog.sina.com.cn/s/blog_13dd6d82a0102vclu.html).
 ">[1]</span></a></sup>。</p>
 <p>在动态贝叶斯网络中，状态随时间的改变是由“动力”（motive force）带来的，这和时序模型是天然相称的。在动态贝叶斯网络中，时间片（time slice）的粒度，既可以是一个时间点也可以是一个时间段。当然，由于时间段可以看做是一组连续的时间点，因此通常时间点是更为合称和具有通用性的表达形式。</p>
@@ -339,7 +339,52 @@
 <blockquote>
 <p>$\hat{x}_t = \psi_{t+1}(\hat{x}_{t+1})$</p>
 </blockquote>
-<h3 id="3-3-学习"><a href="#3-3-学习" class="headerlink" title="3.3 学习"></a>3.3 学习</h3><h3 id="3-4-剪枝"><a href="#3-4-剪枝" class="headerlink" title="3.4 剪枝"></a>3.4 剪枝</h3><h2 id="DBN和HMM的对比"><a href="#DBN和HMM的对比" class="headerlink" title="DBN和HMM的对比"></a>DBN和HMM的对比</h2><p>假定目前有$D$个对象，需要在一组图像序列（$t$个时刻）中进行位置状态追踪。</p>
+<h3 id="3-3-学习"><a href="#3-3-学习" class="headerlink" title="3.3 学习"></a>3.3 学习</h3><p>当DBN网络结构确定时，某些结点间的条件概率依赖无法确切计算，这个时候，就需要考虑对模型参数进行学习调整。EM算法或者GEM（general EM）算法可用来对DBN参数进行学习。</p>
+<blockquote>
+<p>$\log P(X_{0}^{T-1}, Y_{0}^{T-1} \mid \theta) = \log [P(x_0) \prod_{1}^{T-1}P(x_i \mid x_{i-1}) \prod_{0}^{T-1}P(y_i \mid x_i)]$<br>$= \log P(x_0) + \sum_{1}^{T-1}\log P(x_i \mid x_{i-1}) + \sum_{0}^{T-1} \log P(y_i \mid x_i)]$</p>
+</blockquote>
+<p>对上式进行梯度下降，优化的目标为参数向量$\theta$：</p>
+<blockquote>
+<p>$\frac{\partial \log P(x_0)}{\partial \theta} + \sum_{1}^{T-1} \frac{\partial \log P(x_i \mid x_{i-1})}{\partial \theta} + \sum_{0}^{T-1} \frac{\partial \log P(y_i \mid x_i)}{\partial \theta} = 0$</p>
+</blockquote>
+<h3 id="3-4-剪枝"><a href="#3-4-剪枝" class="headerlink" title="3.4 剪枝"></a>3.4 剪枝</h3><p>对DBN进行剪枝的过程是非常复杂的。剪枝通常包括以下步骤：</p>
+<ul>
+<li>删除某个特定结点的某一个状态</li>
+<li>去除两个结点间的关联</li>
+<li>去除一个结点</li>
+</ul>
+<p>例如，对于$t$时刻的某个结点$V_{i}^{(t)}$，如果已经知道其概率$P(V_{i}^{(t)} = s_i) = 1$，即一定等于某个状态$s_i$，则其他的状态可以去除。同时，如果一个结点不存在前继结点同时其对某个状态的概率为0的情况下，该状态也可以被删除。</p>
+<p>剪枝的决定是在推断执行的时间节省和做出错误的可能性间寻找平衡。</p>
+<h2 id="4-构建DBN"><a href="#4-构建DBN" class="headerlink" title="4. 构建DBN"></a>4. 构建DBN</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>结构 / 数据观测</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>已知 / 完整（complete）</td>
+<td>simple statistics</td>
+</tr>
+<tr>
+<td>已知 / 部分（incomplete）- 存在隐变量</td>
+<td>EM or gradient ascent</td>
+</tr>
+<tr>
+<td>未知 / 完整</td>
+<td>search through model space</td>
+</tr>
+<tr>
+<td>未知 / 部分</td>
+<td>structural EM</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="4-1-已知结构和完整观测"><a href="#4-1-已知结构和完整观测" class="headerlink" title="4.1 已知结构和完整观测"></a>4.1 已知结构和完整观测</h3><p>已知结构的情况下，对于参数的确定可以认为是模型参数在观测数据下的最大似然估计。</p>
+<h3 id="4-2-已知结构和部分观测"><a href="#4-2-已知结构和部分观测" class="headerlink" title="4.2 已知结构和部分观测"></a>4.2 已知结构和部分观测</h3><h3 id="4-3-未知结构和完整观测"><a href="#4-3-未知结构和完整观测" class="headerlink" title="4.3 未知结构和完整观测"></a>4.3 未知结构和完整观测</h3><h3 id="4-4-未知结构和部分观测"><a href="#4-4-未知结构和部分观测" class="headerlink" title="4.4 未知结构和部分观测"></a>4.4 未知结构和部分观测</h3><h2 id="DBN和HMM的对比"><a href="#DBN和HMM的对比" class="headerlink" title="DBN和HMM的对比"></a>DBN和HMM的对比</h2><p>假定目前有$D$个对象，需要在一组图像序列（$t$个时刻）中进行位置状态追踪。</p>
 <p>HMM的问题处理：</p>
 <ul>
 <li>假定每个对象每个时刻有$K$个可能状态</li>
@@ -359,7 +404,7 @@
 <h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="http://blog.sina.com.cn/s/blog_13dd6d82a0102vclu.html" target="_blank" rel="noopener">动态贝叶斯网络简述</a>.<a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://en.wikipedia.org/wiki/Dynamic_Bayesian_network" target="_blank" rel="noopener">Dynamic Bayesian Network, Wikipedia</a>.<a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="http://www.cs.ubc.ca/~murphyk/papers/dbntalk.pdf" target="_blank" rel="noopener">A Tutorial on Dynamic Bayesian Networks</a>.<a href="#fnref:3" rev="footnote"> ↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://ris.utwente.nl/ws/portalfiles/portal/27679465" target="_blank" rel="noopener">Dynamic Bayesian Networks: A State of the Art</a>.<a href="#fnref:4" rev="footnote"> ↩</a></span></li></ol></div></div>
           
           <hr>
-          <ul class="pager">
+          <ul class="pager no-print">
               
               
               <li class="next">
@@ -376,7 +421,7 @@
     <div class="toc-wrap">
         Table of Contents
         
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-引言"><span class="toc-text">1. 引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DBN模型结构"><span class="toc-text">2. DBN模型结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-DBN的任务及其问题解决"><span class="toc-text">3. DBN的任务及其问题解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-推断"><span class="toc-text">3.1 推断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-前向传播"><span class="toc-text">3.1.1 前向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-后向传播"><span class="toc-text">3.1.2 后向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-平滑"><span class="toc-text">3.1.3 平滑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-预测"><span class="toc-text">3.1.4 预测</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-解码"><span class="toc-text">3.2 解码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-学习"><span class="toc-text">3.3 学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-剪枝"><span class="toc-text">3.4 剪枝</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DBN和HMM的对比"><span class="toc-text">DBN和HMM的对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-text">引用</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-引言"><span class="toc-text">1. 引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DBN模型结构"><span class="toc-text">2. DBN模型结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-DBN的任务及其问题解决"><span class="toc-text">3. DBN的任务及其问题解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-推断"><span class="toc-text">3.1 推断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-前向传播"><span class="toc-text">3.1.1 前向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-后向传播"><span class="toc-text">3.1.2 后向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-平滑"><span class="toc-text">3.1.3 平滑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-预测"><span class="toc-text">3.1.4 预测</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-解码"><span class="toc-text">3.2 解码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-学习"><span class="toc-text">3.3 学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-剪枝"><span class="toc-text">3.4 剪枝</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-构建DBN"><span class="toc-text">4. 构建DBN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-已知结构和完整观测"><span class="toc-text">4.1 已知结构和完整观测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-已知结构和部分观测"><span class="toc-text">4.2 已知结构和部分观测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-未知结构和完整观测"><span class="toc-text">4.3 未知结构和完整观测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-未知结构和部分观测"><span class="toc-text">4.4 未知结构和部分观测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DBN和HMM的对比"><span class="toc-text">DBN和HMM的对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-text">引用</span></a></li></ol>
         
     </div>
   </div>
@@ -387,7 +432,7 @@
 
 <!-- Footer -->
 <!-- footer.ejs -->
-<footer>
+<footer class="no-print">
     <div class="text-center">
       <ul class="list-inline">
           
@@ -467,7 +512,7 @@
          <p>
              <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> <b>PV</b></span> -
              <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> <b>UV</b></span> -
-             84.9k <b>Words</b>
+             85.4k <b>Words</b>
       </div>
     </div>
 </footer>
