@@ -16,7 +16,7 @@ layout: layout
             <%- config["content_after_post"] %>
           <% } %>
           <hr>
-          <ul class="pager">
+          <ul class="pager no-print">
               <% if (page.prev){ %>
               <li class="previous">
                   <a href="<%- url_for(page.prev.path) %>" data-toggle="tooltip" data-placement="left"

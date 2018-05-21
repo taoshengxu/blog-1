@@ -1182,3 +1182,13 @@ article blockquote cite:before{
 .poetry-comments {
     width: 800px;
 }
+
+@media print {
+    .no-print{
+        display: none;
+    }
+
+    a[href]:after {
+        display: none;
+    }
+}
