@@ -1,4 +1,5 @@
 ---
+author: Copied Elsewhere
 layout: post
 title: 进程通信IPC
 categories:
@@ -745,7 +746,7 @@ int main()
                 sem_v(semid);  /*释放资源*/
                 /*清空标准输入缓冲区*/
                 while((c=getchar())!='\n' && c!=EOF);
-                msg.mtype = 888;  
+                msg.mtype = 888;
                 msg.mtext = 'r';  /*发送消息通知服务器读数据*/
                 msgsnd(msqid, &msg, sizeof(msg.mtext), 0);
                 break;
