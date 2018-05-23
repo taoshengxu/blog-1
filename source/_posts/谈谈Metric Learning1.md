@@ -17,7 +17,7 @@ description:
 cover_img:
 ---
 
-> 最近在学Metric Learning，主要解决在Indoor Sensor Network中对各类传感数据特征的提取和转换的问题，Metric Learning自从02年以来得到了很多关注，虽然有人诟病它是**子空间学习**换汤不换药的产物，但是也许，换个说法它的确会受到更多关注，从而在不断发展中显出价值。
+> 最近在学metric learning，主要解决在Indoor Sensor Network中对各类传感数据特征的提取和转换的问题，metric learning自从02年以来得到了很多关注，虽然有人诟病它是**子空间学习**换汤不换药的产物，但是也许，换个说法它的确会受到更多关注，从而在不断发展中显出价值。
 
 ### 1. 关于Metric
 
@@ -100,4 +100,4 @@ KL散度是不对称的，且KL散度始终是大于零的， 简单的证明[�
 
 ### 结语
 
-> 这些都准备好了，[下一篇](/blog/谈谈Metric Learning2)我们开始讲讲Metric Learning的主要思想和一些分支。
+> 这些都准备好了，[下一篇](/blog/谈谈Metric Learning2)我们开始讲讲metric learning的主要思想和一些分支。

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: '谈谈Metric learning (II)'
+title: '谈谈Metric Learning (II)'
 categories:
-  - "谈谈Metric learning"
+  - "谈谈Metric Learning"
 tags:
   - "Metric Learning"
   - "距离度量"

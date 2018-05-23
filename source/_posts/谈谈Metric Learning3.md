@@ -22,7 +22,7 @@ cover_img:
 
 ### 1. 引言
 
-这一篇我们来谈谈Metric Learning中，更具体而言，是Mahalanobis Distance Learning中的经典算法ITML，也称作**Information-Theoretic Metric Learning**，顾名思义，就是借助信息学理论知识对Mahalanobis distance进行优化。
+这一篇我们来谈谈metric learning中，更具体而言，是Mahalanobis distance learning中的经典算法ITML，也称作**Information-Theoretic Metric Learning**，顾名思义，就是借助信息学理论知识对Mahalanobis distance进行优化。
 
 [这篇文章](https://scholar.google.com/scholar?hl=zh-CN&amp;q=information+theoretic+metric+learning+&amp;btnG=&amp;lr=)发表在2007年机器学习会议ICML上，随后取得了巨大成功，后来的工作很多都得到了作者Jason Davis对于LogDet divergence在metric learning中使用的启发，进行了一系列理论和实验优化。
 
@@ -60,7 +60,7 @@ $u$($l$)是一个值很小(大)的upper（lower）bound。
 
 #### 2.4 使用KL散度
 
-又一次使用散度的概念，这在我们Metric Learning系列的[第一篇](谈谈Metric Learning1)已经提到，散度用于分析随机变量在两个分布下的相似度。这里的两个分布自然是由$A_0$和$A$来度量的，这是因为$A_0$和$A$是两个分布的协方差矩阵的逆。
+又一次使用散度的概念，这在我们metric learning系列的[第一篇](谈谈Metric Learning1)已经提到，散度用于分析随机变量在两个分布下的相似度。这里的两个分布自然是由$A_0$和$A$来度量的，这是因为$A_0$和$A$是两个分布的协方差矩阵的逆。
 
 我们需要来定义一个，$x_i$在$A$下的Gaussian分布：
 
