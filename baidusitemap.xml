@@ -4,8 +4,80 @@
 
     
   <url>
+    <loc>https://longaspire.github.io/blog/blog/%E7%90%86%E8%A7%A3%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</loc>
+    <lastmod>2018-05-23T12:04:01.807Z</lastmod>
+    <data>
+        <display>
+        <title>理解垃圾回收机制</title>
+        <pubTime>2014-12-19T11:22:14.000Z</pubTime>
+        
+        <tag>垃圾回收</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>调度算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="OS" url="https://longaspire.github.io/blog/blog/categories/OS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1IPC/</loc>
+    <lastmod>2018-05-23T12:03:52.882Z</lastmod>
+    <data>
+        <display>
+        <title>进程通信IPC</title>
+        <pubTime>2014-12-13T05:27:09.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>进程通信</tag>
+         
+         
+           
+             
+              <breadCrumb title="OS" url="https://longaspire.github.io/blog/blog/categories/OS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/install-python-numpy-scipy-and-matplotlib-on-mac-os-x/</loc>
+    <lastmod>2018-05-23T12:03:09.219Z</lastmod>
+    <data>
+        <display>
+        <title>Install Python, NumPy, SciPy, and Matplotlib on Mac OS X</title>
+        <pubTime>2013-05-30T11:26:41.000Z</pubTime>
+        
+        <tag>Mac OS</tag>
+         
+        <tag>Matplotlib</tag>
+         
+        <tag>Python</tag>
+         
+        <tag>工具</tag>
+         
+         
+           
+             
+              <breadCrumb title="操作备忘" url="https://longaspire.github.io/blog/blog/categories/%E6%93%8D%E4%BD%9C%E5%A4%87%E5%BF%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://longaspire.github.io/blog/blog/%E5%8A%A8%E6%80%81%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2018-05-18T02:50:53.917Z</lastmod>
+    <lastmod>2018-05-23T11:57:19.736Z</lastmod>
     <data>
         <display>
         <title>动态贝叶斯网络</title>
@@ -31,6 +103,110 @@
     </url>
 
     
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/%E8%B0%88%E8%B0%88Metric%20Learning4/</loc>
+    <lastmod>2018-05-23T11:55:16.611Z</lastmod>
+    <data>
+        <display>
+        <title>谈谈Metric Learning (IV): ITML进阶</title>
+        <pubTime>2015-06-10T11:00:23.000Z</pubTime>
+        
+        <tag>Metric Learning</tag>
+         
+        <tag>Kernelization</tag>
+         
+        <tag>优化</tag>
+         
+        <tag>在线学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="谈谈Metric Learning" url="https://longaspire.github.io/blog/blog/categories/%E8%B0%88%E8%B0%88Metric-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/%E8%B0%88%E8%B0%88Metric%20Learning3/</loc>
+    <lastmod>2018-05-23T11:33:43.642Z</lastmod>
+    <data>
+        <display>
+        <title>谈谈Metric Learning (III): ITML</title>
+        <pubTime>2015-06-03T07:41:19.000Z</pubTime>
+        
+        <tag>距离度量</tag>
+         
+        <tag>KL散度</tag>
+         
+        <tag>Metric Learning</tag>
+         
+        <tag>信息论</tag>
+         
+        <tag>ITML</tag>
+         
+        <tag>LogDet</tag>
+         
+         
+           
+             
+              <breadCrumb title="谈谈Metric Learning" url="https://longaspire.github.io/blog/blog/categories/%E8%B0%88%E8%B0%88Metric-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/%E8%B0%88%E8%B0%88Metric%20Learning2/</loc>
+    <lastmod>2018-05-23T09:40:04.293Z</lastmod>
+    <data>
+        <display>
+        <title>谈谈Metric learning (II)</title>
+        <pubTime>2015-06-03T04:04:04.000Z</pubTime>
+        
+        <tag>距离度量</tag>
+         
+        <tag>Metric Learning</tag>
+         
+        <tag>优化</tag>
+         
+         
+           
+             
+              <breadCrumb title="谈谈Metric learning" url="https://longaspire.github.io/blog/blog/categories/%E8%B0%88%E8%B0%88Metric-learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/%E8%B0%88%E8%B0%88Metric%20Learning1/</loc>
+    <lastmod>2018-05-23T09:36:42.752Z</lastmod>
+    <data>
+        <display>
+        <title>谈谈Metric Learning (I)</title>
+        <pubTime>2015-06-03T02:41:01.000Z</pubTime>
+        
+        <tag>距离度量</tag>
+         
+        <tag>KL散度</tag>
+         
+        <tag>Metric Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="谈谈Metric Learning" url="https://longaspire.github.io/blog/blog/categories/%E8%B0%88%E8%B0%88Metric-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://longaspire.github.io/blog/blog/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%E6%80%BB%E8%A7%88/</loc>
@@ -44,9 +220,9 @@
          
         <tag>概率推断</tag>
          
-        <tag>变分推断</tag>
-         
         <tag>无向图</tag>
+         
+        <tag>变分推断</tag>
          
         <tag>概率参数估计</tag>
          
@@ -165,52 +341,6 @@
 
     
   <url>
-    <loc>https://longaspire.github.io/blog/blog/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1IPC/</loc>
-    <lastmod>2018-05-15T14:45:52.923Z</lastmod>
-    <data>
-        <display>
-        <title>进程通信IPC</title>
-        <pubTime>2014-12-13T05:27:09.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>进程通信</tag>
-         
-         
-           
-             
-              <breadCrumb title="OS" url="https://longaspire.github.io/blog/blog/categories/OS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/%E7%90%86%E8%A7%A3%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</loc>
-    <lastmod>2018-05-15T14:45:52.916Z</lastmod>
-    <data>
-        <display>
-        <title>理解垃圾回收机制</title>
-        <pubTime>2014-12-19T11:22:14.000Z</pubTime>
-        
-        <tag>垃圾回收</tag>
-         
-        <tag>Java</tag>
-         
-        <tag>调度算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="OS" url="https://longaspire.github.io/blog/blog/categories/OS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://longaspire.github.io/blog/blog/%E5%9B%A0%E5%AD%90%E5%9B%BE%E4%BB%8B%E7%BB%8D/</loc>
     <lastmod>2018-05-15T07:23:52.936Z</lastmod>
     <data>
@@ -309,108 +439,6 @@
 
     
   <url>
-    <loc>https://longaspire.github.io/blog/blog/%E8%B0%88%E8%B0%88Metric%20Learning4/</loc>
-    <lastmod>2018-05-14T07:02:36.775Z</lastmod>
-    <data>
-        <display>
-        <title>谈谈Metric Learning (IV): ITML进阶</title>
-        <pubTime>2015-06-10T11:00:23.000Z</pubTime>
-        
-        <tag>Metric Learning</tag>
-         
-        <tag>Kernelization</tag>
-         
-        <tag>优化</tag>
-         
-         
-           
-             
-              <breadCrumb title="谈谈Metric Learning" url="https://longaspire.github.io/blog/blog/categories/%E8%B0%88%E8%B0%88Metric-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/%E8%B0%88%E8%B0%88Metric%20Learning3/</loc>
-    <lastmod>2018-05-14T07:02:36.772Z</lastmod>
-    <data>
-        <display>
-        <title>谈谈Metric Learning (III): ITML</title>
-        <pubTime>2015-06-03T07:41:19.000Z</pubTime>
-        
-        <tag>距离度量</tag>
-         
-        <tag>KL散度</tag>
-         
-        <tag>ITML</tag>
-         
-        <tag>Metric Learning</tag>
-         
-        <tag>信息论</tag>
-         
-        <tag>LogDet</tag>
-         
-         
-           
-             
-              <breadCrumb title="谈谈Metric Learning" url="https://longaspire.github.io/blog/blog/categories/%E8%B0%88%E8%B0%88Metric-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/%E8%B0%88%E8%B0%88Metric%20Learning2/</loc>
-    <lastmod>2018-05-14T07:02:36.769Z</lastmod>
-    <data>
-        <display>
-        <title>谈谈Metric Learning (II)</title>
-        <pubTime>2015-06-03T04:04:04.000Z</pubTime>
-        
-        <tag>距离度量</tag>
-         
-        <tag>Metric Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="谈谈Metric Learning" url="https://longaspire.github.io/blog/blog/categories/%E8%B0%88%E8%B0%88Metric-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/%E8%B0%88%E8%B0%88Metric%20Learning1/</loc>
-    <lastmod>2018-05-14T07:02:36.766Z</lastmod>
-    <data>
-        <display>
-        <title>谈谈Metric Learning (I)</title>
-        <pubTime>2015-06-03T02:41:01.000Z</pubTime>
-        
-        <tag>距离度量</tag>
-         
-        <tag>ITML</tag>
-         
-        <tag>LMNN</tag>
-         
-        <tag>Metric Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="谈谈Metric Learning" url="https://longaspire.github.io/blog/blog/categories/%E8%B0%88%E8%B0%88Metric-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://longaspire.github.io/blog/blog/%E8%AF%97/</loc>
     <lastmod>2018-05-14T07:02:36.764Z</lastmod>
     <data>
@@ -466,32 +494,6 @@
            
              
               <breadCrumb title="文字" url="https://longaspire.github.io/blog/blog/categories/%E6%96%87%E5%AD%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/install-python-numpy-scipy-and-matplotlib-on-mac-os-x/</loc>
-    <lastmod>2018-05-14T07:02:36.752Z</lastmod>
-    <data>
-        <display>
-        <title>Install Python, NumPy, SciPy, and Matplotlib on Mac OS X</title>
-        <pubTime>2013-05-30T11:26:41.000Z</pubTime>
-        
-        <tag>Mac OS</tag>
-         
-        <tag>Matplotlib</tag>
-         
-        <tag>Python</tag>
-         
-        <tag>工具</tag>
-         
-         
-           
-             
-              <breadCrumb title="操作备忘" url="https://longaspire.github.io/blog/blog/categories/%E6%93%8D%E4%BD%9C%E5%A4%87%E5%BF%98/"/>
           
         </display>
     </data>
@@ -602,9 +604,9 @@
          
         <tag>嵌入式</tag>
          
-        <tag>无线</tag>
-         
         <tag>路由器</tag>
+         
+        <tag>无线</tag>
          
          
            
@@ -700,13 +702,13 @@
         <title>LSH那些事儿 (I): 总览</title>
         <pubTime>2013-04-18T07:35:47.000Z</pubTime>
         
-        <tag>概率</tag>
-         
         <tag>Hash</tag>
          
         <tag>Index</tag>
          
         <tag>LSH</tag>
+         
+        <tag>概率</tag>
          
          
            

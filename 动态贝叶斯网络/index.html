@@ -176,7 +176,7 @@
                                <span class="meta-item">Author: Huan Li</span>
                                <span class="meta-item">Date: May 17, 2018</span>
                                
-                                 <span class="meta-item">Updated On: May 18, 2018</span>
+                                 <span class="meta-item">Updated On: May 23, 2018</span>
                                
                           </span>
                           <div class="tags text-center">
@@ -219,7 +219,7 @@
     <div class="container">
       <div class="col-lg-8 col-lg-offset-1 col-sm-9">
           
-          <span class="post-count">3,515 words in total, 15 minutes required.</span>
+          <span class="post-count">5,013 words in total, 21 minutes required.</span>
           <hr>
           
           <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h2><p>动态贝叶斯网络（Dynamic Bayesian Network, DBN）是一种暂态模型（transient state model），能够学习变量间的概率依存关系及其随时间变化的规律。其主要用于时序数据建模（如语音识别、自然语言处理、轨迹数据挖掘等）。隐马尔可夫模型（hidden markov model, HMM）是一种结构最简单的动态贝叶斯网络。线性状态空间模型（linear state-space models）如<a href="/blog/滤波技术笔记1">卡尔曼滤波</a>也可以等价看做是动态贝叶斯网络的一种形式<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[Dynamic Bayesian Network, Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Bayesian_network).
@@ -383,8 +383,80 @@
 </tbody>
 </table>
 </div>
-<h3 id="4-1-已知结构和完整观测"><a href="#4-1-已知结构和完整观测" class="headerlink" title="4.1 已知结构和完整观测"></a>4.1 已知结构和完整观测</h3><p>已知结构的情况下，对于参数的确定可以认为是模型参数在观测数据下的最大似然估计。</p>
-<h3 id="4-2-已知结构和部分观测"><a href="#4-2-已知结构和部分观测" class="headerlink" title="4.2 已知结构和部分观测"></a>4.2 已知结构和部分观测</h3><h3 id="4-3-未知结构和完整观测"><a href="#4-3-未知结构和完整观测" class="headerlink" title="4.3 未知结构和完整观测"></a>4.3 未知结构和完整观测</h3><h3 id="4-4-未知结构和部分观测"><a href="#4-4-未知结构和部分观测" class="headerlink" title="4.4 未知结构和部分观测"></a>4.4 未知结构和部分观测</h3><h2 id="DBN和HMM的对比"><a href="#DBN和HMM的对比" class="headerlink" title="DBN和HMM的对比"></a>DBN和HMM的对比</h2><p>假定目前有$D$个对象，需要在一组图像序列（$t$个时刻）中进行位置状态追踪。</p>
+<h3 id="4-1-已知结构和完整观测"><a href="#4-1-已知结构和完整观测" class="headerlink" title="4.1 已知结构和完整观测"></a>4.1 已知结构和完整观测</h3><p>已知结构$G$的情况下，对于参数的确定可以认为是模型参数在观测数据下的最大似然估计。</p>
+<p>给定$S$个独立的数据序列，数据$\boldsymbol{D}$表示为$\{ D_1, \ldots, D_S \}$。</p>
+<p>我们首先根据链式法则，将所有结点的联合概率分布写为：</p>
+<blockquote>
+<p>$P(X_1, \ldots, X_{m}) = \prod_i P(X_i \mid X_1, \ldots, X_{i-1}) = \prod_i P(X_i \mid Parent(X_i))$</p>
+</blockquote>
+<p>正规化对数似然（normalized log likelihood），也即平均对数似然，可以写为：</p>
+<blockquote>
+<p>$LL = 1/N \cdot \log P(\boldsymbol{D} | G)$</p>
+</blockquote>
+<p>$G$也即整个模型参数，$N$是采样的数量。</p>
+<p>可以进一步写为：</p>
+<blockquote>
+<p>$LL = 1/N \cdot \sum_{i=1}^{m} \sum_{l=1}^{S} \log P(X_i \mid Parent(X_i), D_l)$</p>
+</blockquote>
+<p>按照上述公式，我们可以对每个DBN中每个结点对对数似然的贡献进行单独的计算。</p>
+<h3 id="4-2-已知结构和部分观测"><a href="#4-2-已知结构和部分观测" class="headerlink" title="4.2 已知结构和部分观测"></a>4.2 已知结构和部分观测</h3><p>当结构已知，但是数据是部分观测的情况下，我们需要对模型中的部分未知变量进行估计，这个时候需要借助于一些迭代方法，例如EM或者梯度下降，来找到MLE或者MAP的局部最优解。其要点可参照3.1推断中的内容。</p>
+<h3 id="4-3-未知结构和完整观测"><a href="#4-3-未知结构和完整观测" class="headerlink" title="4.3 未知结构和完整观测"></a>4.3 未知结构和完整观测</h3><p>当结构未知但是观测数据完整的情况下，可以考虑利用观测数据对模型结构进行学习。对于结构的学习，一般是通过初始化一个结构，并通过以下方式的修改，得到一个新的结构，并对其进行评估：</p>
+<ol>
+<li>新增一条边；</li>
+<li>改变图中的某一条边；</li>
+<li>删除图的一条边</li>
+</ol>
+<p>以上操作可以保障修改的静态图结构始终为一个DAG。</p>
+<p>为了完成对模型结构的学习，我们按照如下方式对任务进行定义：</p>
+<ol>
+<li>找到一个能够比较不同结构的度量；</li>
+<li>找到查找不同结构的搜索算法；</li>
+</ol>
+<p>搜索算法可以分为启发式算法和基于条件依赖（CI, conditional independence）的算法—即考量不同结点间的依赖关系强弱。启发式算法虽然在执行上较为快速，但其很难收敛到最优解。相比之下，通过CI测试的方法一般可以获得最优或者近似最优解。</p>
+<h4 id="4-3-1-基于条件依赖测试的方法"><a href="#4-3-1-基于条件依赖测试的方法" class="headerlink" title="4.3.1 基于条件依赖测试的方法"></a>4.3.1 基于条件依赖测试的方法</h4><p>在信息论汇总，两个结点$X_i$和$X_j$的互信息（mutual information）可以定义为：</p>
+<blockquote>
+<p>$I(X_i, X_j) = \sum_{x_i, x_j} P(x_i, x_j) \log \frac{P(x_i, x_j)}{P(x_i)P(x_j)}$</p>
+</blockquote>
+<p>条件互信息（conditional mutual information）则可以定义为：</p>
+<blockquote>
+<p>$I(X_i, X_j \mid Y) = \sum_{x_i, x_j, y} P(x_i, x_j, y) \log \frac{P(x_i, x_j \mid y)}{P(x_i \mid y)P(x_j \mid y)}$</p>
+</blockquote>
+<p>在基于CI测试的方法中，$Y$可以看做一组有依赖关系的结点集合，而当两个结点$X_i$和$X_j$的条件互信息$I(X_i, X_j \mid Y)$小于某个阈值的时候，我们可以用条件集（conditional set）$Y$来对上述两个结点进行d-分割，即两个结点在给定$Y$的情况下条件独立。</p>
+<h4 id="4-3-2-启发式搜索方法"><a href="#4-3-2-启发式搜索方法" class="headerlink" title="4.3.2 启发式搜索方法"></a>4.3.2 启发式搜索方法</h4><p>给定训练集$D$，启发式搜索需要找到一个模型结构$B = (G, \Theta)$来最好地拟合数据$D$。其中，$G$对应于网络中所有的随机变量$X (X_1, \ldots, X_N)$的DAG；而$\Theta$表示的是模型的参数。此时需要引入得分函数，并通过最大化评分函数来找到最优的网络结构和模型参数。参照<a href="/blog/静态贝叶斯网络">静态贝叶斯网络</a>。</p>
+<p>总体而言，我们可将问题形式化为：</p>
+<blockquote>
+<p>$\arg\max\limits_{G}P(G \mid D) = \arg\max\limits_{G}\frac{P(D \mid G)P(G)}{P(D)}$</p>
+</blockquote>
+<p>两边取对数，可以写为：</p>
+<blockquote>
+<p>$\arg\min\limits_{G} \log P(G \mid D) = \arg\min\limits_{G} \log P(D \mid G) + \log P(G) + c$</p>
+</blockquote>
+<p>其中，在给定数据的情况下，可以将$\log P(D)$视为上式中的常数$c$。直接使用精确的贝叶斯推断方法通常很难解，这是由于求边缘分布$P(D) = \sum_{G} P(D,G)$通常会引入指数级的计算量。这种情况下，一般可以对后验概率$P(D \mid B)$进行近似，同时加上一定的惩罚。这个惩罚是针对模型的复杂程度进行的，特别是考虑到通常最大似然的网络结构往往是全连接的。</p>
+<p>典型的Bayesian Information Criterion（BIC）如下：</p>
+<blockquote>
+<p>$\log P(G \mid D) \approx \log P(D \mid G, \hat{\Theta}_{G}) - \frac{\log N}{2} len(G)$</p>
+</blockquote>
+<p>上式中，$len(G)$表示模型的维度，$N$是所有采样值的个数，而$\hat{\Theta}_{G}$是模型$G$的最大似然的参数。</p>
+<blockquote>
+<p>总而言之，也是最为重要的，对于DBN的结构学习方法基本与静态贝叶斯网络的结构学习方法相同。</p>
+</blockquote>
+<h3 id="4-4-未知结构和部分观测"><a href="#4-4-未知结构和部分观测" class="headerlink" title="4.4 未知结构和部分观测"></a>4.4 未知结构和部分观测</h3><p>很多情况下，未知结构和部分观测都是真实世界系统中出现的情况。在此情况下，如果还考虑到DBN中时间维度上的变化，则情况变得更加复杂。考虑到部分观测的情况下时，一般很难保证随机过程的马尔科夫性。</p>
+<p>一般情况下，可以考虑使用EM算法进行求解：</p>
+<ol>
+<li>E步：使用当前评估的参数补充完整观测数据；</li>
+<li>M步：在认为补充值为真实观测值的情况下，重新对最大似然的参数进行计算；</li>
+</ol>
+<p>每一步EM都确保数据的似然提升，直到到达一个局部最优解。</p>
+<p>EM算法在部分观测的情况下，也需要进行一定的调整，如结构化的EM（structural EM, SEM）算法。</p>
+<ol>
+<li>E步：同EM算法，根据当前的结构和参数，计算变量的期望值来补充完整数据；</li>
+<li>M步：分为以下两个部分<ul>
+<li>同EM算法，重新对最大似然的参数进行估计；</li>
+<li>根据当前的结构，利用期望值来评估其他的候选结构。候选结构的获取是通过完全搜索与当前结构类似的结构来获得的。</li>
+</ul>
+</li>
+</ol>
+<h2 id="5-DBN和HMM的对比"><a href="#5-DBN和HMM的对比" class="headerlink" title="5. DBN和HMM的对比"></a>5. DBN和HMM的对比</h2><p>假定目前有$D$个对象，需要在一组图像序列（$t$个时刻）中进行位置状态追踪。</p>
 <p>HMM的问题处理：</p>
 <ul>
 <li>假定每个对象每个时刻有$K$个可能状态</li>
@@ -421,7 +493,7 @@
     <div class="toc-wrap">
         Table of Contents
         
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-引言"><span class="toc-text">1. 引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DBN模型结构"><span class="toc-text">2. DBN模型结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-DBN的任务及其问题解决"><span class="toc-text">3. DBN的任务及其问题解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-推断"><span class="toc-text">3.1 推断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-前向传播"><span class="toc-text">3.1.1 前向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-后向传播"><span class="toc-text">3.1.2 后向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-平滑"><span class="toc-text">3.1.3 平滑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-预测"><span class="toc-text">3.1.4 预测</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-解码"><span class="toc-text">3.2 解码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-学习"><span class="toc-text">3.3 学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-剪枝"><span class="toc-text">3.4 剪枝</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-构建DBN"><span class="toc-text">4. 构建DBN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-已知结构和完整观测"><span class="toc-text">4.1 已知结构和完整观测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-已知结构和部分观测"><span class="toc-text">4.2 已知结构和部分观测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-未知结构和完整观测"><span class="toc-text">4.3 未知结构和完整观测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-未知结构和部分观测"><span class="toc-text">4.4 未知结构和部分观测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DBN和HMM的对比"><span class="toc-text">DBN和HMM的对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-text">引用</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-引言"><span class="toc-text">1. 引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DBN模型结构"><span class="toc-text">2. DBN模型结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-DBN的任务及其问题解决"><span class="toc-text">3. DBN的任务及其问题解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-推断"><span class="toc-text">3.1 推断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-前向传播"><span class="toc-text">3.1.1 前向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-后向传播"><span class="toc-text">3.1.2 后向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-平滑"><span class="toc-text">3.1.3 平滑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-预测"><span class="toc-text">3.1.4 预测</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-解码"><span class="toc-text">3.2 解码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-学习"><span class="toc-text">3.3 学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-剪枝"><span class="toc-text">3.4 剪枝</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-构建DBN"><span class="toc-text">4. 构建DBN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-已知结构和完整观测"><span class="toc-text">4.1 已知结构和完整观测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-已知结构和部分观测"><span class="toc-text">4.2 已知结构和部分观测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-未知结构和完整观测"><span class="toc-text">4.3 未知结构和完整观测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-1-基于条件依赖测试的方法"><span class="toc-text">4.3.1 基于条件依赖测试的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-2-启发式搜索方法"><span class="toc-text">4.3.2 启发式搜索方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-未知结构和部分观测"><span class="toc-text">4.4 未知结构和部分观测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-DBN和HMM的对比"><span class="toc-text">5. DBN和HMM的对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-text">引用</span></a></li></ol>
         
     </div>
   </div>
@@ -512,7 +584,7 @@
          <p>
              <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> <b>PV</b></span> -
              <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> <b>UV</b></span> -
-             85.4k <b>Words</b>
+             86.9k <b>Words</b>
       </div>
     </div>
 </footer>
