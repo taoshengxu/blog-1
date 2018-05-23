@@ -225,7 +225,7 @@
           <span class="post-count">1,822 words in total, 8 minutes required.</span>
           <hr>
           
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h3><p>这一篇我们来谈谈Metric Learning中，更具体而言，是Mahalanobis Distance Learning中的经典算法ITML，也称作<strong>Information-Theoretic Metric Learning</strong>，顾名思义，就是借助信息学理论知识对Mahalanobis distance进行优化。</p>
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h3><p>这一篇我们来谈谈metric learning中，更具体而言，是Mahalanobis distance learning中的经典算法ITML，也称作<strong>Information-Theoretic Metric Learning</strong>，顾名思义，就是借助信息学理论知识对Mahalanobis distance进行优化。</p>
 <p><a href="https://scholar.google.com/scholar?hl=zh-CN&amp;q=information+theoretic+metric+learning+&amp;btnG=&amp;lr=" target="_blank" rel="noopener">这篇文章</a>发表在2007年机器学习会议ICML上，随后取得了巨大成功，后来的工作很多都得到了作者Jason Davis对于LogDet divergence在metric learning中使用的启发，进行了一系列理论和实验优化。</p>
 <h3 id="2-问题定义"><a href="#2-问题定义" class="headerlink" title="2. 问题定义"></a>2. 问题定义</h3><h4 id="2-1-距离"><a href="#2-1-距离" class="headerlink" title="2.1 距离"></a>2.1 距离</h4><p>对于一个$n$个点构成的集合${x_1,…,x_n}$, 其中$x_i \in \mathbb{R}^d$，我们可以得到马氏距离的定义：</p>
 <blockquote>
@@ -245,7 +245,7 @@
 </blockquote>
 <p>同样，对于一些欧式空间的距离度量，我们往往希望distance function是接近欧式距离的，因此，我们需要对我们的PSD matrix也就是$A$采取优化，具体而言就是，当我的先验知识告诉我$A$应该要逼近一个由$A_0$定义的度量时，我们往往需要在满足限制条件的情况下，使得$A$尽可能地接近我们选择的$A_0$。</p>
 <p>这儿，就是ITML的核心思想，如何去选择合适的$A_0$并使得我们learn的$A$尽可能逼近它。</p>
-<h4 id="2-4-使用KL散度"><a href="#2-4-使用KL散度" class="headerlink" title="2.4 使用KL散度"></a>2.4 使用KL散度</h4><p>又一次使用散度的概念，这在我们Metric Learning系列的<a href="谈谈Metric Learning1">第一篇</a>已经提到，散度用于分析随机变量在两个分布下的相似度。这里的两个分布自然是由$A_0$和$A$来度量的，这是因为$A_0$和$A$是两个分布的协方差矩阵的逆。</p>
+<h4 id="2-4-使用KL散度"><a href="#2-4-使用KL散度" class="headerlink" title="2.4 使用KL散度"></a>2.4 使用KL散度</h4><p>又一次使用散度的概念，这在我们metric learning系列的<a href="谈谈Metric Learning1">第一篇</a>已经提到，散度用于分析随机变量在两个分布下的相似度。这里的两个分布自然是由$A_0$和$A$来度量的，这是因为$A_0$和$A$是两个分布的协方差矩阵的逆。</p>
 <p>我们需要来定义一个，$x_i$在$A$下的Gaussian分布：</p>
 <blockquote>
 <p>$p(x;A) = \frac{1}{Z} \cdot \exp \{ -\frac{1}{2} d_A(x,\mu) \}$</p>
@@ -315,7 +315,7 @@
               
               <li class="next">
                   <a href="/blog/谈谈Metric Learning2/" data-toggle="tooltip" data-placement="top"
-                     title="谈谈Metric learning (II)">Next Post&rarr;</a>
+                     title="谈谈Metric Learning (II)">Next Post&rarr;</a>
               </li>
               
           </ul>
