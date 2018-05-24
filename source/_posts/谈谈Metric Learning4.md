@@ -13,9 +13,10 @@ id: 423
 date: 2015-06-10 19:00:23
 comments: false
 toc_number_disable: true
+cover_img: /blog/post_cover_images/firenze.png
+cover_img_from_root: true
 permalink:
 description:
-cover_img:
 ---
 
 ### 1. Kernel Learning Problem
@@ -152,4 +153,4 @@ cover_img:
 
 这个问题中，我们同样用LogDet来表示散度$D$，于是可以得到：
 
-> $A_{t+1} = \arg\min\limits_{A} ~ D_{ld}(A,A_t) + \eta_t (d_t - \widetilde{d_{t}})^2$
+> $A_{t+1} = \arg\min\limits_{A} D_{ld}(A,A_t) + \eta_t (d_t - \widetilde{d_{t}})^2$

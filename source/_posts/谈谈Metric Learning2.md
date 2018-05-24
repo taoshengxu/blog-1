@@ -12,9 +12,10 @@ id: 443
 date: 2015-06-03 12:04:04
 comments: false
 toc_number_disable: true
+cover_img: /blog/post_cover_images/firenze.png
+cover_img_from_root: true
 permalink:
 description:
-cover_img:
 ---
 
 ### 1. 引子

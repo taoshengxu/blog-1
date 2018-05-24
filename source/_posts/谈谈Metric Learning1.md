@@ -12,9 +12,10 @@ id: 347
 date: 2015-06-03 10:41:01
 comments: false
 toc_number_disable: true
+cover_img: /blog/post_cover_images/firenze.png
+cover_img_from_root: true
 permalink:
 description:
-cover_img:
 ---
 
 > 最近在学metric learning，主要解决在Indoor Sensor Network中对各类传感数据特征的提取和转换的问题，metric learning自从02年以来得到了很多关注，虽然有人诟病它是**子空间学习**换汤不换药的产物，但是也许，换个说法它的确会受到更多关注，从而在不断发展中显出价值。

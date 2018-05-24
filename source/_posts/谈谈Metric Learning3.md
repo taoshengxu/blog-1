@@ -15,9 +15,10 @@ id: 380
 date: 2015-06-03 15:41:19
 comments: false
 toc_number_disable: true
+cover_img: /blog/post_cover_images/firenze.png
+cover_img_from_root: true
 permalink:
 description:
-cover_img:
 ---
 
 ### 1. 引言
@@ -94,7 +95,7 @@ $u$($l$)是一个值很小(大)的upper（lower）bound。
 
 > $D_{ld}(A,A_0) = tr(A A^{-1}) - \log\det(A A_0^{-1}) - n$
 
-联系我们在上一节中介绍过的KL散度，两个Metric定义中的矩阵$A$和$A_0$的“closeness”就可以通过散度，也就是LogDet divergence来一起定义，那么写成
+联系我们在上一节中介绍过的KL散度，两个metric定义中的矩阵$A$和$A_0$的“closeness”就可以通过散度，也就是LogDet divergence来一起定义，那么写成
 
 > $ \mathit{KL} (p(x;A_0) \parallel p(x;A)) = \frac{1}{2} \cdot D_{ld}(A_0^{-1},A^{-1}) = \frac{1}{2} \cdot D_{ld}(A,A_0)$
 
