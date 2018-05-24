@@ -4,7 +4,7 @@ title: "OpenWRT学习随录 (III): OpenWRT运行C"
 categories:
   - "OpenWRT学习随录"
 tags:
-  - Linux
+  - "Linux"
   - "无线"
 draft: false
 id: 505

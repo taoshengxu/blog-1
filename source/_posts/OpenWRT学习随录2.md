@@ -4,7 +4,7 @@ title: "OpenWRT学习随录 (II): OpenWRT Buildroot"
 categories:
   - "OpenWRT学习随录"
 tags:
-  - Linux
+  - "Linux"
   - "嵌入式"
   - "无线"
 draft: false

@@ -5,8 +5,8 @@ categories:
   - "OpenWRT学习随录"
 tags:
   - '802.11'
-  - iw
-  - Linux
+  - "iw"
+  - "Linux"
   - "无线"
 draft: false
 id: 526

@@ -4,7 +4,7 @@ title: "OpenWRT学习随录 (I): OpenWRT介绍"
 categories:
   - "OpenWRT学习随录"
 tags:
-  - Linux
+  - "Linux"
   - "嵌入式"
   - "路由器"
   - "无线"
