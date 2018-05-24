@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------
 # title can include HTML code.
 title: Little Stone
-description: This is the site where Steven post his thoughts, ideas and feelings
+description: This is the site where Steven posts his thoughts, ideas and feelings
 author: Huan Li
 language: en
 timezone: Asia/Shanghai
@@ -52,6 +52,7 @@ footer:
 menu:
   home: /
   about: /the-milestone-2018/
+  columns: /columns/
   categories: /categories/
   archives: /archives/
   tags: /tags/
