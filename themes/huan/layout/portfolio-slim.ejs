@@ -3,8 +3,8 @@ layout: layout
 ---
 <style>
     .bg-header {
-        height: 160px;
-        background-color: #676767;
+        height: 100px;
+        background-color: #d93701;
     }
 
     /*icon*/
@@ -27,7 +27,7 @@ layout: layout
     }
     /*presentation*/
    .works-area {
-        margin-top: -150px;
+        margin-top: -85px;
     }
 
     .works-area .works-item {
@@ -71,7 +71,7 @@ layout: layout
     }
 
     .works-area .footer .portfolio-button:hover {
-      background-color: rgb(213, 214, 216);
+      background-color: #ff7e79;
       color: white;
     }
 
@@ -82,9 +82,9 @@ layout: layout
 
     .works-item .title h3 {
         display: inline-block;
-        margin: 0 15px;
-        height: 33px;
-        font-size: 15px;
+        margin: 0px;
+        height: 35px;
+        font-size: 18px;
         font-weight: bold;
     }
 
@@ -185,7 +185,7 @@ layout: layout
                             </span>
                             <% } %>
                         </span>
-                        <a class="btn portfolio-button" href="<%= page.project[i].project_link %>" target="_blank"><%= page.project[i]["button-text"] %></a>
+                        <a class="btn portfolio-button" href="<%= page.project[i].project_link %>" target=""><%= page.project[i]["button-text"] %></a>
                     </div>
                 </div>
                 <% } %>
