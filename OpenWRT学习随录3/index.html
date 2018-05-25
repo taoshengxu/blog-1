@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This is the site where Steven post his thoughts, ideas and feelings">
+    <meta name="description" content="This is the site where Steven posts his thoughts, ideas and feelings">
     <meta name="author" content="Huan Li">
     <meta name="keyword" content="Computer Science, Travel Notes, Ideas and Thoughts">
     <link rel="canonical" href="https://longaspire.github.io/blog/blog/OpenWRT学习随录3/">
@@ -143,6 +143,10 @@
                 </li>
               
                 <li>
+                  <a href="/blog/columns/">columns</a>
+                </li>
+              
+                <li>
                   <a href="/blog/archives/">archives</a>
                 </li>
               
@@ -176,7 +180,7 @@
                                <span class="meta-item">Author: Huan Li</span>
                                <span class="meta-item">Date: Jul 22, 2015</span>
                                
-                                 <span class="meta-item">Updated On: May 14, 2018</span>
+                                 <span class="meta-item">Updated On: May 24, 2018</span>
                                
                           </span>
                           <div class="tags text-center">
@@ -214,11 +218,12 @@
           <hr>
           
           <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>这一篇开始，我要开始实践一下内容，选择的是Ubuntu 12.04 和 Mac OS X Yosemite，参考教程来自于<a href="http://wiki.openwrt.org/doc/howto/buildroot.exigence" target="_blank" rel="noopener">OpenWRT WIKI</a>。必须使用非ROOT用户操作，如果使用ROOT进行操作的话，会提示检查失败，Checking ‘non-root’…failed. 另外温馨提示，目录不能含有空格。</p>
+<p>这一篇开始，我要开始实践一下内容，选择的是Ubuntu 12.04 和 Mac OS X Yosemite，参考教程来自于<a href="http://wiki.openwrt.org/doc/howto/buildroot.exigence" target="_blank" rel="noopener">OpenWRT WIKI</a>。必须使用非ROOT用户操作，如果使用ROOT进行操作的话，会提示检查失败，Checking ‘non-root’…failed。 另外温馨提示，目录不能含有空格。</p>
 </blockquote>
-<h3 id="1-准备工作，安装依赖包和一些utilties"><a href="#1-准备工作，安装依赖包和一些utilties" class="headerlink" title="1. 准备工作，安装依赖包和一些utilties"></a>1. 准备工作，安装依赖包和一些utilties</h3><h4 id="1-1-在Linux上"><a href="#1-1-在Linux上" class="headerlink" title="1.1 在Linux上"></a>1.1 在Linux上</h4><p>首先要安装git来下载OpenWRT的源码，以及build tools来完成交叉编译过程</p>
+<h3 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h3><p>安装依赖包和一些utilties。</p>
+<h4 id="1-1-在Linux上"><a href="#1-1-在Linux上" class="headerlink" title="1.1 在Linux上"></a>1.1 在Linux上</h4><p>首先要安装git来下载OpenWRT的源码，以及build tools来完成交叉编译过程</p>
 <blockquote>
-<p>sudo apt-get update<br>  sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip</p>
+<p>sudo apt-get update<br>sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip</p>
 </blockquote>
 <p>linux操作系统上面开发程序， 光有了gcc 是不行的，它还需要 build-essential软件包用于提供编译程序必须软件包的列表信息。也就是说，编译程序有了这个软件包，它才知道头文件在哪，才知道库函数在哪，还会下载依赖的软件包 ，最后才组成一个开发环境。</p>
 <p>当然，除了git，也许下载代码也需要subversion（svn）或者mercurial，这样可以同样把这两个包装上</p>
@@ -252,11 +257,11 @@
 </blockquote>
 <p>以上完成了，还是不够的，究其缘由就是前面提到，必须需要一个Case-sensetive的FS，而Mac OS X，则是一个Case-insensitive的文件系统，<a href="http://wiki.openwrt.org/easy.build.macosx" target="_blank" rel="noopener">这里</a>给出了解决方案，从Mac上的HDD上分割一块20g，取名叫做OpenWrt.dmg，然后挂载：</p>
 <blockquote>
-<p>hdiutil create -size 20g -fs “Case-sensitive HFS+” -volname OpenWrt OpenWrt.dmg<br>  hdiutil attach OpenWrt.dmg</p>
+<p>hdiutil create -size 20g -fs “Case-sensitive HFS+” -volname OpenWrt OpenWrt.dmg<br>hdiutil attach OpenWrt.dmg</p>
 </blockquote>
 <p>那么接下来，打开所在目录，并且以下操作都在其中完成。</p>
 <blockquote>
-<p>cd /Volumes/OpenWrt<br>  mkdir openwrt</p>
+<p>cd /Volumes/OpenWrt<br>mkdir openwrt</p>
 </blockquote>
 <h3 id="2-git源代码"><a href="#2-git源代码" class="headerlink" title="2. git源代码"></a>2. git源代码</h3><p>一条指令</p>
 <blockquote>
@@ -269,9 +274,13 @@
 </blockquote>
 <h3 id="4-make得到一个configuration-menu"><a href="#4-make得到一个configuration-menu" class="headerlink" title="4. make得到一个configuration menu"></a>4. make得到一个configuration menu</h3><p>指令3选1，普遍选择最后一个：</p>
 <blockquote>
-<p>make defconfig<br>  make prereq<br>  make menuconfig</p>
+<p>make defconfig<br>make prereq<br>make menuconfig</p>
 </blockquote>
-<h3 id="5-按照需求选择自己需要make的内容"><a href="#5-按照需求选择自己需要make的内容" class="headerlink" title="5.按照需求选择自己需要make的内容"></a>5.按照需求选择自己需要make的内容</h3><p>Target system 可以选择对应的处理器芯片<br>SubTarget选择具体的板子型号<br>如果需要其他内容，则可以加入其他软件包一起编译</p>
+<h3 id="5-按照需求选择自己需要make的内容"><a href="#5-按照需求选择自己需要make的内容" class="headerlink" title="5.按照需求选择自己需要make的内容"></a>5.按照需求选择自己需要make的内容</h3><ul>
+<li>Target system：可以选择对应的处理器芯片</li>
+<li>SubTarget选：择具体的板子型号</li>
+<li>如果需要其他内容，则可以加入其他软件包一起编译</li>
+</ul>
 <p>然后键入这个命令就开始编译：</p>
 <blockquote>
 <p>make V=99</p>
@@ -280,18 +289,18 @@
 <blockquote>
 <p>make –j2 V=99</p>
 </blockquote>
-<p>上面是一个双核的例子，切记不要直接使用make –j V=99，，这是无数线程编译，可能导致宕机。这一步需要花费数小时，甚至可能因为各种原因被迫重新开始。</p>
+<p>上面是一个双核的例子，切记不要直接使用make –j V=99，这是无数线程编译，可能导致宕机。这一步需要花费数小时，甚至可能因为各种原因被迫重新开始。</p>
 <h3 id="6-编译完成"><a href="#6-编译完成" class="headerlink" title="6. 编译完成"></a>6. 编译完成</h3><p>如果能过顺利通过上述步骤到达这里，那么首先恭喜，可以检查一下，从staging_dir这个目录下发现三个子目录:</p>
 <blockquote>
-<p>host<br>  target-xxx_xxxxxxx<br>  toolchain-xxx_xxxxxx</p>
+<p>host<br>target-xxx_xxxxxxx<br>toolchain-xxx_xxxxxx</p>
 </blockquote>
-<p>这个时候，我们需要修改下系统路径</p>
+<p>这个时候，我们需要修改下系统路径：</p>
 <blockquote>
 <p>sudo vim /etc/profile</p>
 </blockquote>
 <p>在最后加入需要设置变量的shell语句：</p>
 <blockquote>
-<p>export STAGING_DIR=(your_dir)/(openwrt_dir)/staging_dir/toolchain-xxx_xxxxx<br>  export PATH=$PATH:$STAGING_DIR/bin</p>
+<p>export STAGING_DIR=(your_dir)/(openwrt_dir)/staging_dir/toolchain-xxx_xxxxx<br>export PATH=$PATH:$STAGING_DIR/bin</p>
 </blockquote>
 <p>编辑保存退出后，restart，变量生效。</p>
 <p>your_dir就是所在目录，注意MAC OS X下经过分区后，your_dir就是/Volumes/OpenWrt，而openwrt_dir就是之下建立的文件目录，比如openwrt/</p>
@@ -314,7 +323,7 @@
 </blockquote>
 <p>ssh到路由器上</p>
 <blockquote>
-<p>sudo ssh 192.168.1.1<br>  cd ~<br>  ./hello.o</p>
+<p>sudo ssh 192.168.1.1<br>cd ~<br>./hello.o</p>
 </blockquote>
 <p>得到运行结果，那么简单的SDK环境已经搭建完毕。</p>
 
@@ -335,28 +344,6 @@
               
           </ul>
           
-  <br>
-
-  
-  <!-- livere begin-->
-  <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM1MC8xMjg4NQ">
-      <script type="text/javascript" defer>
-          (function(d, s) {
-              var j, e = d.getElementsByTagName(s)[0];
-
-              if (typeof LivereTower === 'function') { return; }
-
-              j = d.createElement(s);
-              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-              j.async = true;
-              e.parentNode.insertBefore(j, e);
-          })(document, 'script');
-      </script>
-      <noscript> To show LiveRe comment, please use JavaScript</noscript>
-  </div>
-  <!-- livere end -->
-  
-
 
       </div>
       
@@ -364,7 +351,7 @@
     <div class="toc-wrap">
         Table of Contents
         
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-准备工作，安装依赖包和一些utilties"><span class="toc-text">1. 准备工作，安装依赖包和一些utilties</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-在Linux上"><span class="toc-text">1.1 在Linux上</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-在Mac-OSX上"><span class="toc-text">1.2 在Mac OSX上</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-git源代码"><span class="toc-text">2. git源代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-更新和安装所有可用的feeds"><span class="toc-text">3. 更新和安装所有可用的feeds</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-make得到一个configuration-menu"><span class="toc-text">4. make得到一个configuration menu</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-按照需求选择自己需要make的内容"><span class="toc-text">5.按照需求选择自己需要make的内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-编译完成"><span class="toc-text">6. 编译完成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-写一个-hello-world"><span class="toc-text">7. 写一个 hello world</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-上传-执行"><span class="toc-text">8. 上传 执行</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-准备工作"><span class="toc-text">1. 准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-在Linux上"><span class="toc-text">1.1 在Linux上</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-在Mac-OSX上"><span class="toc-text">1.2 在Mac OSX上</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-git源代码"><span class="toc-text">2. git源代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-更新和安装所有可用的feeds"><span class="toc-text">3. 更新和安装所有可用的feeds</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-make得到一个configuration-menu"><span class="toc-text">4. make得到一个configuration menu</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-按照需求选择自己需要make的内容"><span class="toc-text">5.按照需求选择自己需要make的内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-编译完成"><span class="toc-text">6. 编译完成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-写一个-hello-world"><span class="toc-text">7. 写一个 hello world</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-上传-执行"><span class="toc-text">8. 上传 执行</span></a></li></ol>
         
     </div>
   </div>
@@ -455,7 +442,7 @@
          <p>
              <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> <b>PV</b></span> -
              <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> <b>UV</b></span> -
-             86.9k <b>Words</b>
+             88.9k <b>Words</b>
       </div>
     </div>
 </footer>

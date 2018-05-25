@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This is the site where Steven post his thoughts, ideas and feelings">
+    <meta name="description" content="This is the site where Steven posts his thoughts, ideas and feelings">
     <meta name="author" content="Huan Li">
     <meta name="keyword" content="Computer Science, Travel Notes, Ideas and Thoughts">
     <link rel="canonical" href="https://longaspire.github.io/blog/blog/谈谈Metric Learning1/">
@@ -143,6 +143,10 @@
                 </li>
               
                 <li>
+                  <a href="/blog/columns/">columns</a>
+                </li>
+              
+                <li>
                   <a href="/blog/archives/">archives</a>
                 </li>
               
@@ -158,7 +162,7 @@
   
     <style>
        .intro-header {
-          background-image: url('/blog/img/northernlights-sisimiut-lake.jpg');
+          background-image: url('/blog/post_cover_images/firenze.png');
       }
     </style>
 
@@ -176,7 +180,7 @@
                                <span class="meta-item">Author: Huan Li</span>
                                <span class="meta-item">Date: Jun 3, 2015</span>
                                
-                                 <span class="meta-item">Updated On: May 23, 2018</span>
+                                 <span class="meta-item">Updated On: May 25, 2018</span>
                                
                           </span>
                           <div class="tags text-center">
@@ -213,7 +217,7 @@
     <div class="container">
       <div class="col-lg-8 col-lg-offset-1 col-sm-9">
           
-          <span class="post-count">1,111 words in total, 5 minutes required.</span>
+          <span class="post-count">1,112 words in total, 5 minutes required.</span>
           <hr>
           
           <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
@@ -237,11 +241,11 @@
 <p>a (dis)similarity function is a pairwise function $\mathit{K}: \mathit{X} \times \mathit{X} \rightarrow \mathbb{R}$.</p>
 <p>$\mathit{K}$ is symmetric if $\forall x,x’ \in \mathit{X}, \mathit{K}(x,x’) = \mathit{K}(x’,x)$.</p>
 </blockquote>
-<h4 id="2-3-Minkowski-Distances"><a href="#2-3-Minkowski-Distances" class="headerlink" title="2.3 Minkowski Distances"></a>2.3 Minkowski Distances</h4><blockquote>
+<h4 id="2-3-Minkowski-Distance"><a href="#2-3-Minkowski-Distance" class="headerlink" title="2.3 Minkowski Distance"></a>2.3 Minkowski Distance</h4><blockquote>
 <p>$d_p(x,x’) = ||x - x’||_p = (\sum\limits_{i=1}^{d}|(x_i - x’_i)^{p}|)^{\frac{1}{p}}$</p>
 </blockquote>
 <p>$p=1$：Manhattan distance 曼哈顿距离<br>$p =2$：Euclidean distance 欧氏距离<br>$p \rightarrow \infty$：Chebyshev distance 切比雪夫距离，相当于取各维度差的最大值</p>
-<h4 id="2-4-Manhalanobis-distance"><a href="#2-4-Manhalanobis-distance" class="headerlink" title="2.4 Manhalanobis distance"></a>2.4 Manhalanobis distance</h4><blockquote>
+<h4 id="2-4-Manhalanobis-Distance"><a href="#2-4-Manhalanobis-Distance" class="headerlink" title="2.4 Manhalanobis Distance"></a>2.4 Manhalanobis Distance</h4><blockquote>
 <p>$d_M(x,x’) = \sqrt{(x-x’)^TM(x-x’)}$.</p>
 </blockquote>
 <p>其中，$M$是一个对称半正定矩阵（symmetric PSD matrix），对于$M$的解释，可以这样认为，假设$x,x’$是随机向量，符合同样的分布，且其协方差矩阵（covariance matrix）是$\Sigma$，那么，我们可得到$M = \Sigma^{-1}$.</p>
@@ -263,10 +267,10 @@
 <p>如此，同样的字符集上，假设存在另一个概率分布$Q(X)$。如果用概率分布$P(X)$的最优编码（即字符x的编码长度等于$log(\frac{1}{P(x)})$，来为符合分布$Q(X)$的字符编码，那么表示这些字符就会比理想情况多用一些比特数。</p>
 <p>KL-divergence就是用来衡量这种情况下平均每个字符多用的比特数，因此可以用来衡量两个分布的距离。表达公式为：</p>
 <blockquote>
-<p>$D_{KL}(Q||P) = \sum\limits_{x \in \mathit{X}} Q(x) {log}{\frac{1}{P(x)}} - \sum\limits_{x \in \mathit{X}} Q(x) {log}{\frac{1}{Q(x)}} = \sum\limits_{x \in \mathit{X}} Q(x) {log}{\frac{Q(x)}{P(x)}}$</p>
+<p>$D_{KL}(Q \parallel P) = \sum\limits_{x \in \mathit{X}} Q(x) {log}{\frac{1}{P(x)}} - \sum\limits_{x \in \mathit{X}} Q(x) {log}{\frac{1}{Q(x)}} = \sum\limits_{x \in \mathit{X}} Q(x) {log}{\frac{Q(x)}{P(x)}}$</p>
 </blockquote>
 <p>KL散度是不对称的，且KL散度始终是大于零的， 简单的证明<a href="http://blog.csdn.net/caohao2008/article/details/6910794" target="_blank" rel="noopener">在此</a>。</p>
-<h3 id="3-凸优化（Convex-Optimization）"><a href="#3-凸优化（Convex-Optimization）" class="headerlink" title="3. 凸优化（Convex Optimization）"></a>3. 凸优化（Convex Optimization）</h3><p>凸优化实在是太过于重要，这里应该有很多篇幅来讲，这里只讲对于后续有用的一些重要性质：</p>
+<h3 id="3-凸优化"><a href="#3-凸优化" class="headerlink" title="3. 凸优化"></a>3. 凸优化</h3><p>凸优化（Convex Optimization）实在是太过于重要，这里应该有很多篇幅来讲，这里只讲对于后续有用的一些重要性质：</p>
 <ol>
 <li>function $ f : \mathbb{R}^n \rightarrow \mathbb{R}$ is convex if $x_1, x_2 \in \mathbb{R}^n, 0 \leq a \leq 1 \Rightarrow f(ax_1 + (1-a)x_2) \leq af(x_1) + (1-a)f(x_2)$</li>
 <li>function $ f : \mathbb{R}^n \rightarrow \mathbb{R}$ is convex iff its Hessian matrix $\triangledown^2f(x)$ is PSD</li>
@@ -301,7 +305,7 @@
     <div class="toc-wrap">
         Table of Contents
         
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-关于Metric"><span class="toc-text">1. 关于Metric</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Metric基础"><span class="toc-text">2. Metric基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-距离函数定义"><span class="toc-text">2.1 距离函数定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-相似函数定义"><span class="toc-text">2.2 相似函数定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-Minkowski-Distances"><span class="toc-text">2.3 Minkowski Distances</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-Manhalanobis-distance"><span class="toc-text">2.4 Manhalanobis distance</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-Cosine-distance"><span class="toc-text">2.5 Cosine distance</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-Bilinear-similarity"><span class="toc-text">2.6 Bilinear similarity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-KL散度"><span class="toc-text">2.7 KL散度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-凸优化（Convex-Optimization）"><span class="toc-text">3. 凸优化（Convex Optimization）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-关于Metric"><span class="toc-text">1. 关于Metric</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Metric基础"><span class="toc-text">2. Metric基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-距离函数定义"><span class="toc-text">2.1 距离函数定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-相似函数定义"><span class="toc-text">2.2 相似函数定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-Minkowski-Distance"><span class="toc-text">2.3 Minkowski Distance</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-Manhalanobis-Distance"><span class="toc-text">2.4 Manhalanobis Distance</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-Cosine-distance"><span class="toc-text">2.5 Cosine distance</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-Bilinear-similarity"><span class="toc-text">2.6 Bilinear similarity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-KL散度"><span class="toc-text">2.7 KL散度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-凸优化"><span class="toc-text">3. 凸优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
         
     </div>
   </div>
@@ -392,7 +396,7 @@
          <p>
              <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> <b>PV</b></span> -
              <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> <b>UV</b></span> -
-             86.9k <b>Words</b>
+             88.9k <b>Words</b>
       </div>
     </div>
 </footer>

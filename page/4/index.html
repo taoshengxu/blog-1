@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This is the site where Steven post his thoughts, ideas and feelings">
+    <meta name="description" content="This is the site where Steven posts his thoughts, ideas and feelings">
     <meta name="author" content="Huan Li">
     <meta name="keyword" content="Computer Science, Travel Notes, Ideas and Thoughts">
     <link rel="canonical" href="https://longaspire.github.io/blog/blog/page/4/">
@@ -143,6 +143,10 @@
                 </li>
               
                 <li>
+                  <a href="/blog/columns/">columns</a>
+                </li>
+              
+                <li>
                   <a href="/blog/archives/">archives</a>
                 </li>
               
@@ -168,6 +172,56 @@
 <div class="container homepage">
     <div class="row">
         <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 post-container">
+          
+            <div class="post-preview "
+     style="background-image: url('/blog/post_cover_images/drops.jpg')">
+    <a href="/blog/理解垃圾回收机制/">
+        <h2 class="post-title">
+            理解垃圾回收机制
+        </h2>
+        
+        <div class="post-meta">
+          <span>Dec 19, 2014</span>
+          <span class="meta-item">Updated On May 23, 2018</span>
+        </div>
+        <div class="post-content-preview">
+            <p>
+                
+本文转自引用[1]
+
+1. 垃圾回收的意义在C++中，对象所占的内存在程序结束运行之前一直被占用，在明确释放之前不能分配给其它对象；而在Java中，当没有对象引用指向原先分配给某个对象的内存时，该内存便成为垃圾。
+JVM的一个系统级线程会自动释放该内存块。垃圾回收意味着程序不再需要的对象是”无..
+            </p>
+        </div>
+    </a>
+</div>
+<hr>
+
+          
+            <div class="post-preview "
+     style="background-image: url('/blog/post_cover_images/drops.jpg')">
+    <a href="/blog/进程通信IPC/">
+        <h2 class="post-title">
+            进程通信IPC
+        </h2>
+        
+        <div class="post-meta">
+          <span>Dec 13, 2014</span>
+          <span class="meta-item">Updated On May 23, 2018</span>
+        </div>
+        <div class="post-content-preview">
+            <p>
+                
+本文转载自引用[1]
+进程间通信 (IPC, InterProcess Communication) 是指在不同进程之间传播或交换信息。
+
+IPC的方式通常由管道（包括无名管道和命名管道）、消息队列、信号量、共享存储、Socket、Streams等。其中Socket和Streams支持在不同主..
+            </p>
+        </div>
+    </a>
+</div>
+<hr>
+
           
             <div class="post-preview "
      style="background-image: url('/blog/post_cover_images/Aalborg.jpg')">
@@ -284,65 +338,20 @@ Once Upon A Time北欧有那么一个国家，这里出现了世界上第一面�
 
           
             <div class="post-preview "
-     style="background-image: url('/blog/post_cover_images/kalman.png')">
-    <a href="/blog/滤波技术笔记2/">
-        <h2 class="post-title">
-            滤波技术笔记 (II): Kalman Filter实例
-        </h2>
-        
-        <div class="post-meta">
-          <span>May 18, 2014</span>
-          <span class="meta-item">Updated On May 11, 2018</span>
-        </div>
-        <div class="post-content-preview">
-            <p>
-                再举一个例子记得我们上次讲Kalman Filter的时候是在这里，在上篇的基础上，我们再进一步给出一个帮助理解的例子，是从[1]的页面上直接搬过来的:
-考虑在无摩擦的、无限长的直轨道上的一辆车。该车最初停在位置0处，但时不时受到随机的冲击。注意这里我们考虑没有外力的影响，因此忽略掉 $ \ma..
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
-
-          
-            <div class="post-preview "
-     style="background-image: url('/blog/post_cover_images/kalman.png')">
-    <a href="/blog/滤波技术笔记1/">
-        <h2 class="post-title">
-            滤波技术笔记 (I): Kalman Filter初步
-        </h2>
-        
-        <div class="post-meta">
-          <span>Apr 27, 2014</span>
-          <span class="meta-item">Updated On May 11, 2018</span>
-        </div>
-        <div class="post-content-preview">
-            <p>
-                
-Kalman Filter (KF) 是一个高效的递归滤波器，它可以实现从一系列的噪声测量中，估计动态系统的状态。
-
-1. 应用实例一个简单的应用是估计物体的位置和速度；简要描述如下：假设我们可以获取一个物体的包含噪声的一系列位置观测数据，我们可以获得此物体的精确速度和位置连续更新信息。 例如..
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
-
-          
-            <div class="post-preview "
      style="background-image: url('/blog/post_cover_images/firenze.png')">
-    <a href="/blog/introduction-to-histcite/">
+    <a href="/blog/HistCite介绍/">
         <h2 class="post-title">
-            Introduction to HistCite
+            HistCite介绍
         </h2>
         
         <div class="post-meta">
           <span>Sep 16, 2013</span>
-          <span class="meta-item">Updated On May 11, 2018</span>
+          <span class="meta-item">Updated On May 25, 2018</span>
         </div>
         <div class="post-content-preview">
             <p>
-                对于科研工作者来说，除了掌握快速的收集信息和有效管理信息的能力之外，还需要有一定的信息分析能力。譬如，检索某个研究方向，结果文献有上千篇，此时我们该如何对待这些文献？精炼检索条件很可能会导致有价值的文献被排除在外。在交叉科学盛行的今天，如果想了解其它领域的进展情况，由于缺乏相应的专业知识，如何判..
+                
+对于科研工作者来说，除了掌握快速的收集信息和有效管理信息的能力之外，还需要有一定的信息分析能力。譬如，检索某个研究方向，结果文献有上千篇，此时我们该如何对待这些文献？精炼检索条件很可能会导致有价值的文献被排除在外。在交叉科学盛行的今天，如果想了解其它领域的进展情况，由于缺乏相应的专业知识，如何..
             </p>
         </div>
     </a>
@@ -446,7 +455,7 @@ Kalman Filter (KF) 是一个高效的递归滤波器，它可以实现从一系�
          <p>
              <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> <b>PV</b></span> -
              <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> <b>UV</b></span> -
-             86.9k <b>Words</b>
+             88.9k <b>Words</b>
       </div>
     </div>
 </footer>

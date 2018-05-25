@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This is the site where Steven post his thoughts, ideas and feelings">
+    <meta name="description" content="This is the site where Steven posts his thoughts, ideas and feelings">
     <meta name="author" content="Huan Li">
     <meta name="keyword" content="Computer Science, Travel Notes, Ideas and Thoughts">
     <link rel="canonical" href="https://longaspire.github.io/blog/blog/动态贝叶斯网络/">
@@ -143,6 +143,10 @@
                 </li>
               
                 <li>
+                  <a href="/blog/columns/">columns</a>
+                </li>
+              
+                <li>
                   <a href="/blog/archives/">archives</a>
                 </li>
               
@@ -176,7 +180,7 @@
                                <span class="meta-item">Author: Huan Li</span>
                                <span class="meta-item">Date: May 17, 2018</span>
                                
-                                 <span class="meta-item">Updated On: May 23, 2018</span>
+                                 <span class="meta-item">Updated On: May 25, 2018</span>
                                
                           </span>
                           <div class="tags text-center">
@@ -219,10 +223,10 @@
     <div class="container">
       <div class="col-lg-8 col-lg-offset-1 col-sm-9">
           
-          <span class="post-count">5,013 words in total, 21 minutes required.</span>
+          <span class="post-count">5,014 words in total, 21 minutes required.</span>
           <hr>
           
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h2><p>动态贝叶斯网络（Dynamic Bayesian Network, DBN）是一种暂态模型（transient state model），能够学习变量间的概率依存关系及其随时间变化的规律。其主要用于时序数据建模（如语音识别、自然语言处理、轨迹数据挖掘等）。隐马尔可夫模型（hidden markov model, HMM）是一种结构最简单的动态贝叶斯网络。线性状态空间模型（linear state-space models）如<a href="/blog/滤波技术笔记1">卡尔曼滤波</a>也可以等价看做是动态贝叶斯网络的一种形式<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[Dynamic Bayesian Network, Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Bayesian_network).
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h2><p>动态贝叶斯网络（Dynamic Bayesian Network, DBN）是一种暂态模型（transient state model），能够学习变量间的概率依存关系及其随时间变化的规律。其主要用于时序数据建模（如语音识别、自然语言处理、轨迹数据挖掘等）。隐马尔可夫模型（hidden markov model, HMM）是一种结构最简单的动态贝叶斯网络。线性状态空间模型（linear state-space models）如<a href="/blog/卡尔曼滤波">卡尔曼滤波</a>也可以等价看做是动态贝叶斯网络的一种形式<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[Dynamic Bayesian Network, Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Bayesian_network).
 ">[2]</span></a></sup>。</p>
 <p><a href="/blog/静态贝叶斯网络">静态贝叶斯网络</a>反映了一系列变量间的概率依存关系，没有考虑时间因素对变量的影响。相比之下，动态贝叶斯网络是沿时间轴变化的贝叶斯网络。</p>
 <p>动态贝叶斯网络可以看作是应用贝叶斯统计的思想结合<strong>动态结构</strong>的模型，它既考虑系统外部影响因素，又考虑系统的内部间相互的关联，既能够变量之间的概率依存关系，又能描述这一系列变量随时间变化的情况，是贝叶斯网络在时间变化过程上的扩展<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top-right hint--error hint--large" aria-label="[动态贝叶斯网络简述](http://blog.sina.com.cn/s/blog_13dd6d82a0102vclu.html).
@@ -391,7 +395,7 @@
 </blockquote>
 <p>正规化对数似然（normalized log likelihood），也即平均对数似然，可以写为：</p>
 <blockquote>
-<p>$LL = 1/N \cdot \log P(\boldsymbol{D} | G)$</p>
+<p>$LL = 1/N \cdot \log P(\boldsymbol{D} \mid G)$</p>
 </blockquote>
 <p>$G$也即整个模型参数，$N$是采样的数量。</p>
 <p>可以进一步写为：</p>
@@ -477,6 +481,11 @@
           
           <hr>
           <ul class="pager no-print">
+              
+              <li class="previous">
+                  <a href="/blog/动态贝叶斯网络进阶/" data-toggle="tooltip" data-placement="left"
+                     title="动态贝叶斯网络进阶：推断和学习">&larr; Previous Post</a>
+              </li>
               
               
               <li class="next">
@@ -584,7 +593,7 @@
          <p>
              <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> <b>PV</b></span> -
              <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> <b>UV</b></span> -
-             86.9k <b>Words</b>
+             88.9k <b>Words</b>
       </div>
     </div>
 </footer>

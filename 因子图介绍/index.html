@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This is the site where Steven post his thoughts, ideas and feelings">
+    <meta name="description" content="This is the site where Steven posts his thoughts, ideas and feelings">
     <meta name="author" content="Huan Li">
     <meta name="keyword" content="Computer Science, Travel Notes, Ideas and Thoughts">
     <link rel="canonical" href="https://longaspire.github.io/blog/blog/因子图介绍/">
@@ -143,6 +143,10 @@
                 </li>
               
                 <li>
+                  <a href="/blog/columns/">columns</a>
+                </li>
+              
+                <li>
                   <a href="/blog/archives/">archives</a>
                 </li>
               
@@ -176,7 +180,7 @@
                                <span class="meta-item">Author: Huan Li</span>
                                <span class="meta-item">Date: May 11, 2016</span>
                                
-                                 <span class="meta-item">Updated On: May 15, 2018</span>
+                                 <span class="meta-item">Updated On: May 25, 2018</span>
                                
                           </span>
                           <div class="tags text-center">
@@ -225,7 +229,7 @@
     <div class="container">
       <div class="col-lg-8 col-lg-offset-1 col-sm-9">
           
-          <span class="post-count">2,104 words in total, 8 minutes required.</span>
+          <span class="post-count">2,112 words in total, 8 minutes required.</span>
           <hr>
           
           <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
@@ -265,12 +269,12 @@
 </ul>
 <p><img src="ugm.png" alt="马尔科夫随机场的无向图模型"><span class="image-caption-center">马尔科夫随机场的无向图模型</span></p>
 <ul>
-<li>设$\mathbf{X} = (X_1, \ldots, X_n)$和$\mathbf{Y} = (Y_1, \ldots, Y_m)$都是联合随机变量，若随机变量$\mathbf{Y}$构成一个无向图$G = (V, E)$表示的马尔科夫随机场，则条件概率分布$P(\mathbf{Y}|\mathbf{X})$称之为条件随机场（Conditional Random Field, CRF）。</li>
+<li>设$\mathbf{X} = (X_1, \ldots, X_n)$和$\mathbf{Y} = (Y_1, \ldots, Y_m)$都是联合随机变量，若随机变量$\mathbf{Y}$构成一个无向图$G = (V, E)$表示的马尔科夫随机场，则条件概率分布$P(\mathbf{Y} \mid \mathbf{X})$称之为条件随机场（Conditional Random Field, CRF）。</li>
 </ul>
 <p><img src="crf.png" alt="线性链条件随机场的无向图模型"><span class="image-caption-center">线性链条件随机场的无向图模型</span></p>
 <h3 id="4-因子图的转换"><a href="#4-因子图的转换" class="headerlink" title="4. 因子图的转换"></a>4. 因子图的转换</h3><h4 id="4-1-贝叶斯网络示例"><a href="#4-1-贝叶斯网络示例" class="headerlink" title="4.1 贝叶斯网络示例"></a>4.1 贝叶斯网络示例</h4><p>给出上面图中的贝叶斯网络，根据各个变量间的关系，我们可以得到</p>
 <blockquote>
-<p>$p(u,w,x,y,z) = p(u)p(w)p(x|u,w)p(y|x)p(z|x)$</p>
+<p>$p(u,w,x,y,z) = p(u)p(w)p(x \mid u,w)p(y \mid x)p(z \mid x)$</p>
 </blockquote>
 <p>表示为因子图，以下两种形式皆可：</p>
 <p><img src="factor_graph_ugm.png" alt=""></p>
@@ -284,12 +288,12 @@
 <p><img src="markov-chain.png" alt=""></p>
 <p>其对应的全局函数可以表示为：</p>
 <blockquote>
-<p>$p_{XYZ}(X,Y,Z) = p_{X}(X)p_{XY}(Y|X)p_{YZ}(Z|Y)$</p>
+<p>$p_{XYZ}(X,Y,Z) = p_{X}(X)p_{XY}(Y \mid X)p_{YZ}(Z \mid Y)$</p>
 </blockquote>
 <h4 id="4-2-隐马尔可夫模型示例"><a href="#4-2-隐马尔可夫模型示例" class="headerlink" title="4.2 隐马尔可夫模型示例"></a>4.2 隐马尔可夫模型示例</h4><p><img src="hmm.png" alt=""></p>
 <p>其对应的全局函数可以表示为：</p>
 <blockquote>
-<p>$p(X_0, \ldots, X_n, Y_1, \ldots, Y_n) = p(X_0)\prod_{k=1}^{n}p(X_k|X_{k-1})p(Y_{k}|X_{k-1})$</p>
+<p>$p(X_0, \ldots, X_n, Y_1, \ldots, Y_n) = p(X_0)\prod_{k=1}^{n}p(X_k \mid X_{k-1})p(Y_{k} \mid X_{k-1})$</p>
 </blockquote>
 <h3 id="5-Sum-product算法"><a href="#5-Sum-product算法" class="headerlink" title="5. Sum-product算法"></a>5. Sum-product算法</h3><p>有了因子图，我们可以利用Sum-product算法，根据联合概率分布求出边缘概率分布（先验分布）。</p>
 <h4 id="5-1-边缘概率的求解"><a href="#5-1-边缘概率的求解" class="headerlink" title="5.1 边缘概率的求解"></a>5.1 边缘概率的求解</h4><ul>
@@ -500,7 +504,7 @@
          <p>
              <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> <b>PV</b></span> -
              <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> <b>UV</b></span> -
-             86.9k <b>Words</b>
+             88.9k <b>Words</b>
       </div>
     </div>
 </footer>
