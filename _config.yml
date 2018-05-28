@@ -52,8 +52,8 @@ footer:
 menu:
   home: /
   about: /the-milestone-2018/
-  columns: /columns/
   categories: /categories/
+  columns: /columns/
   archives: /archives/
   tags: /tags/
 #  RSS: /atom.xml
