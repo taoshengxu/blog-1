@@ -58,4 +58,18 @@ project:
 	先人常绘奇异风，
 	我靠冬秋叹烦忧。
 	-- 沉风有居客，呓语号惊弦"
+-
+	"title": "OpenWRT学习随录"
+	"date": "2015.07"
+	"img_link": /blog/img/northernlights-sisimiut-lake.jpg
+	"project_link": /blog/categories/#OpenWRT学习随录
+	"button-text": "View"
+	"use":
+		- "Linux"
+	  - "嵌入式"
+	  - "路由器"
+	  - "无线"
+		- '802.11'
+		- "iw"
+	"description": "OpenWRT是一个提供了完全可写文件系统及软件包管理的网络设备嵌入式系统，并且它是开源的。它允许开发人员使用软件包的概念来定制嵌入式设备，使得其受众面广。"
 ---
