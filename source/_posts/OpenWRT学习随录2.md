@@ -11,10 +11,10 @@ draft: false
 id: 511
 date: 2015-07-22 12:13:07
 toc_number_disable: true
+comments: false
 permalink:
 description:
 cover_img:
-comments:
 ---
 
 > OpenWRT Buildroot是一个autotools，或者叫buildsystem，用于构建OpenWRT版本系统，这个工具可以运行在Linux，BSD和MacOSX之上。
@@ -34,20 +34,20 @@ OpenWRT Buildroot是由一系列Makefiles和patches文件组成的，它允许�
 
 ### 2. OpenWRT Buildroot特性
 
-1.  安装软件非常简单
-2.  使用Linux Kernel Menuconfig进行功能配置
-3.  提供集成的交叉编译工具链，如gcc，ld等
-4.  提供autotools（automake，autoconf），cmake，scons的抽象化
-5.  处理标准化的下载，补丁，配置，编译等
-6.  提供一定数量的坏包修复功能
+* 安装软件非常简单
+* 使用Linux Kernel Menuconfig进行功能配置
+* 提供集成的交叉编译工具链，如gcc，ld等
+* 提供autotools（automake，autoconf），cmake，scons的抽象化
+* 处理标准化的下载，补丁，配置，编译等
+* 提供一定数量的坏包修复功能
 
-### 3. Buildroot的交叉编译工具链cross-compilation toolchain
+### 3. Buildroot的交叉编译工具链
 
-包括三个部分：
+交叉编译工具链（cross-compilation toolchain）包括三个部分：
 
 1.  一个编译器，gcc
-2.  binary utils比如汇编器、连接器，binutils
-3.  一个C标准库 uClibc or GNU Libc or dietilbc
+2.  binary utils比如汇编器、连接器
+3.  一个C标准库：uClibc or GNU Libc or dietilbc
 
 ### 4. Buildroot的build序列
 

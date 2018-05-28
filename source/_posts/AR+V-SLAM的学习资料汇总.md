@@ -4,11 +4,11 @@ title: AR + V-SLAM的学习资料汇总
 categories:
   - "科研笔记"
 tags:
-  - Augmented Reality
-  - "Kalman Filter"
-  - Localization
-  - SLAM
-  - SfM
+  - "Augmented Reality"
+  - "卡尔曼滤波"
+  - "定位技术"
+  - "SLAM"
+  - "SfM"
 draft: false
 id: 638
 date: 2015-10-13 09:21:59

@@ -4,8 +4,8 @@ title: 'TRIPS: Translating Raw Indoor Positioning Data into Visual Mobility Sema
 categories:
   - "研究工作"
 tags:
-  - Demo
-  - VLDB
+  - "Demo"
+  - "VLDB"
 draft: false
 id: 735
 date: 2018-03-02 11:16:57

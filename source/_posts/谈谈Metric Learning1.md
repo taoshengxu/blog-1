@@ -43,7 +43,7 @@ description:
 >
 > $\mathit{K}$ is symmetric if $\forall x,x' \in \mathit{X}, \mathit{K}(x,x') = \mathit{K}(x',x)$.
 
-#### 2.3 Minkowski Distances
+#### 2.3 Minkowski Distance
 
 > $d_p(x,x') = ||x - x'||_p = (\sum\limits_{i=1}^{d}|(x_i - x'_i)^{p}|)^{\frac{1}{p}}$
 
@@ -51,7 +51,7 @@ $p=1$：Manhattan distance 曼哈顿距离
 $p =2$：Euclidean distance 欧氏距离
 $p \rightarrow \infty$：Chebyshev distance 切比雪夫距离，相当于取各维度差的最大值
 
-#### 2.4 Manhalanobis distance
+#### 2.4 Manhalanobis Distance
 
 > $d_M(x,x') = \sqrt{(x-x')^TM(x-x')}$.
 
@@ -85,13 +85,13 @@ $p \rightarrow \infty$：Chebyshev distance 切比雪夫距离，相当于取各
 
 KL-divergence就是用来衡量这种情况下平均每个字符多用的比特数，因此可以用来衡量两个分布的距离。表达公式为：
 
-> $D_{KL}(Q||P) = \sum\limits_{x \in \mathit{X}} Q(x) {log}{\frac{1}{P(x)}} - \sum\limits_{x \in \mathit{X}} Q(x) {log}{\frac{1}{Q(x)}} = \sum\limits_{x \in \mathit{X}} Q(x) {log}{\frac{Q(x)}{P(x)}}$
+> $D_{KL}(Q \parallel P) = \sum\limits_{x \in \mathit{X}} Q(x) {log}{\frac{1}{P(x)}} - \sum\limits_{x \in \mathit{X}} Q(x) {log}{\frac{1}{Q(x)}} = \sum\limits_{x \in \mathit{X}} Q(x) {log}{\frac{Q(x)}{P(x)}}$
 
 KL散度是不对称的，且KL散度始终是大于零的， 简单的证明[在此](http://blog.csdn.net/caohao2008/article/details/6910794)。
 
-### 3. 凸优化（Convex Optimization）
+### 3. 凸优化
 
-凸优化实在是太过于重要，这里应该有很多篇幅来讲，这里只讲对于后续有用的一些重要性质：
+凸优化（Convex Optimization）实在是太过于重要，这里应该有很多篇幅来讲，这里只讲对于后续有用的一些重要性质：
 
 1.  function $ f : \mathbb{R}^n \rightarrow \mathbb{R}$ is convex if $x_1, x_2 \in \mathbb{R}^n, 0 \leq a \leq 1 \Rightarrow f(ax_1 + (1-a)x_2) \leq af(x_1) + (1-a)f(x_2)$
 2.  function $ f : \mathbb{R}^n \rightarrow \mathbb{R}$ is convex iff its Hessian matrix $\triangledown^2f(x)$ is PSD

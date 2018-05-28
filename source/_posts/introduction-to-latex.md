@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introduction to Latex
+title: "Introduction to Latex"
 categories:
   - "科研笔记"
 tags:

@@ -19,7 +19,7 @@ permalink:
 description:
 ---
 
-### 1. Kernel Learning Problem
+### 1. Kernel Learning问题
 
 对于Kernel Learning这个问题，我们可以这样认为：
 
@@ -88,7 +88,7 @@ description:
 
 那么，通过这么多的推论和证明，我们终于可以认为ITML算法实际上与low-rank kernel learning的问题是一致的，因此，我们可以将ITML算法的输入由一个初始矩阵$A_0$置换成$K_0$，将限制条件更改为$K_{ii} + K_{jj} - 2K_{ij}$，而相应的输出也变成了一个$K^{\star}$。
 
-### 3. ITML算法的核化Kernelize
+### 3. ITML算法的核化
 
 我们在[上一篇](/blog/谈谈Metric Learning3)提及ITML的思想是希望优化的$A$在满足constraints的情况下尽可能地逼近$A_0$，而$A_0$的选择就体现出了你想要求解一个怎样的问题。
 

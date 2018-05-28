@@ -5,9 +5,9 @@ title: 'Install Python, NumPy, SciPy, and Matplotlib on Mac OS X'
 categories:
   - "操作备忘"
 tags:
-  - Mac OS
-  - Matplotlib
-  - Python
+  - "Mac OS"
+  - "Matplotlib"
+  - "Python"
   - "工具"
 draft: false
 id: 182

@@ -24,11 +24,11 @@ comments:
 
 > Locality-sensitive hashing (LSH) is a method of performing probabilistic [dimension reduction](http://en.wikipedia.org/wiki/Dimension_reduction) of high-dimensional data.
 >
->   The basic idea is to [hash](http://en.wikipedia.org/wiki/Hash_Function) the input items so that similar items are mapped to the same buckets with high probability (the number of buckets being much smaller than the universe of possible input items). This is different from the conventional hash functions, such as those used in [cryptography](http://en.wikipedia.org/wiki/Cryptography) as in this case the goal is to maximize probability of "collision" of similar items rather than avoid collisions.[&#91;1&#93;](http://en.wikipedia.org/wiki/Locality-sensitive_hashing#cite_note-1).
+> The basic idea is to [hash](http://en.wikipedia.org/wiki/Hash_Function) the input items so that similar items are mapped to the same buckets with high probability (the number of buckets being much smaller than the universe of possible input items). This is different from the conventional hash functions, such as those used in [cryptography](http://en.wikipedia.org/wiki/Cryptography) as in this case the goal is to maximize probability of "collision" of similar items rather than avoid collisions.[&#91;1&#93;](http://en.wikipedia.org/wiki/Locality-sensitive_hashing#cite_note-1).
 >
->   Note how locality-sensitive hashing, in many ways, mirrors [data clustering](http://en.wikipedia.org/wiki/Cluster_analysis) and [Nearest neighbor search](http://en.wikipedia.org/wiki/Nearest_neighbor_search).
+> Note how locality-sensitive hashing, in many ways, mirrors [data clustering](http://en.wikipedia.org/wiki/Cluster_analysis) and [Nearest neighbor search](http://en.wikipedia.org/wiki/Nearest_neighbor_search).
 
-_LSH(Location Sensitive Hash)_，即位置敏感哈希函数。与一般哈希函数不同的是位置敏感性，也就是散列前的相似点经过哈希之后，也能够在一定程度上相似，并且具有一定的概率保证。
+**LSH(Location Sensitive Hash)**，即位置敏感哈希函数。与一般哈希函数不同的是位置敏感性，也就是散列前的相似点经过哈希之后，也能够在一定程度上相似，并且具有一定的概率保证。
 
 ## 2. 给定义
 

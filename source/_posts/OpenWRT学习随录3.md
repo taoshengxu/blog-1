@@ -10,22 +10,24 @@ draft: false
 id: 505
 date: 2015-07-22 13:00:36
 toc_number_disable: true
+comments: false
 permalink:
 description:
 cover_img:
-comments:
 ---
 
-> 这一篇开始，我要开始实践一下内容，选择的是Ubuntu 12.04 和 Mac OS X Yosemite，参考教程来自于[OpenWRT WIKI](http://wiki.openwrt.org/doc/howto/buildroot.exigence)。必须使用非ROOT用户操作，如果使用ROOT进行操作的话，会提示检查失败，Checking ‘non-root’...failed. 另外温馨提示，目录不能含有空格。
+> 这一篇开始，我要开始实践一下内容，选择的是Ubuntu 12.04 和 Mac OS X Yosemite，参考教程来自于[OpenWRT WIKI](http://wiki.openwrt.org/doc/howto/buildroot.exigence)。必须使用非ROOT用户操作，如果使用ROOT进行操作的话，会提示检查失败，Checking ‘non-root’...failed。 另外温馨提示，目录不能含有空格。
 
-### 1. 准备工作，安装依赖包和一些utilties
+### 1. 准备工作
+
+安装依赖包和一些utilties。
 
 #### 1.1 在Linux上
 
 首先要安装git来下载OpenWRT的源码，以及build tools来完成交叉编译过程
 
 > sudo apt-get update
->   sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip
+> sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip
 
 linux操作系统上面开发程序， 光有了gcc 是不行的，它还需要 build-essential软件包用于提供编译程序必须软件包的列表信息。也就是说，编译程序有了这个软件包，它才知道头文件在哪，才知道库函数在哪，还会下载依赖的软件包 ，最后才组成一个开发环境。
 
@@ -64,12 +66,12 @@ linux操作系统上面开发程序， 光有了gcc 是不行的，它还需要 
 以上完成了，还是不够的，究其缘由就是前面提到，必须需要一个Case-sensetive的FS，而Mac OS X，则是一个Case-insensitive的文件系统，[这里](http://wiki.openwrt.org/easy.build.macosx)给出了解决方案，从Mac上的HDD上分割一块20g，取名叫做OpenWrt.dmg，然后挂载：
 
 > hdiutil create -size 20g -fs "Case-sensitive HFS+" -volname OpenWrt OpenWrt.dmg
->   hdiutil attach OpenWrt.dmg
+> hdiutil attach OpenWrt.dmg
 
 那么接下来，打开所在目录，并且以下操作都在其中完成。
 
 > cd /Volumes/OpenWrt
->   mkdir openwrt
+> mkdir openwrt
 
 ### 2. git源代码
 
@@ -92,14 +94,14 @@ feeds即一些具有共同位置的软件包的打包集合，feeds可以放在�
 指令3选1，普遍选择最后一个：
 
 > make defconfig
->   make prereq
->   make menuconfig
+> make prereq
+> make menuconfig
 
 ### 5.按照需求选择自己需要make的内容
 
-Target system 可以选择对应的处理器芯片
-SubTarget选择具体的板子型号
-如果需要其他内容，则可以加入其他软件包一起编译
+* Target system：可以选择对应的处理器芯片
+* SubTarget选：择具体的板子型号
+* 如果需要其他内容，则可以加入其他软件包一起编译
 
 然后键入这个命令就开始编译：
 
@@ -109,24 +111,24 @@ SubTarget选择具体的板子型号
 
 > make –j2 V=99
 
-上面是一个双核的例子，切记不要直接使用make –j V=99，，这是无数线程编译，可能导致宕机。这一步需要花费数小时，甚至可能因为各种原因被迫重新开始。
+上面是一个双核的例子，切记不要直接使用make –j V=99，这是无数线程编译，可能导致宕机。这一步需要花费数小时，甚至可能因为各种原因被迫重新开始。
 
 ### 6. 编译完成
 
 如果能过顺利通过上述步骤到达这里，那么首先恭喜，可以检查一下，从staging_dir这个目录下发现三个子目录:
 
 > host
->   target-xxx_xxxxxxx
->   toolchain-xxx_xxxxxx
+> target-xxx_xxxxxxx
+> toolchain-xxx_xxxxxx
 
-这个时候，我们需要修改下系统路径
+这个时候，我们需要修改下系统路径：
 
 > sudo vim /etc/profile
 
 在最后加入需要设置变量的shell语句：
 
 > export STAGING_DIR=(your_dir)/(openwrt_dir)/staging_dir/toolchain-xxx_xxxxx
->   export PATH=$PATH:$STAGING_DIR/bin
+> export PATH=$PATH:$STAGING_DIR/bin
 
 编辑保存退出后，restart，变量生效。
 
@@ -166,7 +168,7 @@ int main(void){
 ssh到路由器上
 
 > sudo ssh 192.168.1.1
->   cd ~
->   ./hello.o
+> cd ~
+> ./hello.o
 
 得到运行结果，那么简单的SDK环境已经搭建完毕。
