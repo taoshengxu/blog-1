@@ -264,6 +264,7 @@ google_site_verification: Q9_p57DiEwLUAkG7RSWhWgytI3usFEsDzkR3UMn-RW8
 # search api , set your custom key
 # It is not working now. It is a feature in the future.
 # swiftype_key:
+search: true
 
 # ---------------------------------------------------------------
 # hexo-image-caption add caption for iamges
