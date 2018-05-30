@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://longaspire.github.io/blog/archives/index.html</loc>
+    
+    <lastmod>2018-05-30T11:56:35.418Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://longaspire.github.io/blog/categories/index.html</loc>
+    
+    <lastmod>2018-05-30T11:56:30.808Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://longaspire.github.io/blog/tags/index.html</loc>
+    
+    <lastmod>2018-05-30T11:56:27.432Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://longaspire.github.io/blog/Latex%E4%B9%A6%E5%86%99%E8%AF%AF%E5%8C%BA/</loc>
     
     <lastmod>2018-05-30T06:24:12.021Z</lastmod>
@@ -285,27 +306,6 @@
     <loc>https://longaspire.github.io/blog/LSH%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF2/</loc>
     
     <lastmod>2018-05-14T07:02:36.728Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://longaspire.github.io/blog/categories/index.html</loc>
-    
-    <lastmod>2018-05-11T10:45:45.171Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://longaspire.github.io/blog/archives/index.html</loc>
-    
-    <lastmod>2018-05-11T10:43:44.719Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://longaspire.github.io/blog/tags/index.html</loc>
-    
-    <lastmod>2018-05-11T10:43:24.184Z</lastmod>
     
   </url>
   
