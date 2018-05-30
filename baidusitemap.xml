@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://longaspire.github.io/blog/blog/Latex%E4%B9%A6%E5%86%99%E8%AF%AF%E5%8C%BA/</loc>
+    <lastmod>2018-05-30T06:24:12.021Z</lastmod>
+    <data>
+        <display>
+        <title>Latex书写误区</title>
+        <pubTime>2018-05-14T11:29:49.000Z</pubTime>
+        
+        <tag>Latex</tag>
+         
+         
+           
+             
+              <breadCrumb title="操作备忘" url="https://longaspire.github.io/blog/blog/categories/%E6%93%8D%E4%BD%9C%E5%A4%87%E5%BF%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://longaspire.github.io/blog/blog/%E9%9D%99%E6%80%81%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2018-05-30T06:08:07.924Z</lastmod>
     <data>
@@ -43,9 +63,9 @@
          
         <tag>概率推断</tag>
          
-        <tag>变分推断</tag>
-         
         <tag>无向图</tag>
+         
+        <tag>变分推断</tag>
          
         <tag>概率参数估计</tag>
          
@@ -754,26 +774,6 @@
            
              
               <breadCrumb title="概率图模型" url="https://longaspire.github.io/blog/blog/categories/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/Latex%E4%B9%A6%E5%86%99%E8%AF%AF%E5%8C%BA/</loc>
-    <lastmod>2018-05-16T06:46:00.966Z</lastmod>
-    <data>
-        <display>
-        <title>Latex书写误区</title>
-        <pubTime>2018-05-14T11:29:49.000Z</pubTime>
-        
-        <tag>Latex</tag>
-         
-         
-           
-             
-              <breadCrumb title="操作备忘" url="https://longaspire.github.io/blog/blog/categories/%E6%93%8D%E4%BD%9C%E5%A4%87%E5%BF%98/"/>
           
         </display>
     </data>
