@@ -18,6 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="/blog/js/search.js"></script>
 
     <title>
         
@@ -193,87 +194,109 @@
 <!-- Footer -->
 <!-- footer.ejs -->
 <footer class="no-print">
+
     <div class="text-center">
-      <ul class="list-inline">
-          
-          
-              <li>
-                  <a target="_blank" href="https://twitter.com/LeeSte7en">
+
+        <ul class="list-inline">
+            
+            
+            <li>
+                <a target="_blank" href="https://twitter.com/LeeSte7en">
                       <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                       </span>
-                  </a>
-              </li>
-          
-          
+                </a>
+            </li>
+            
+            
 
-          
+            
 
-          
-              <li>
-                  <a target="_blank" href="https://www.facebook.com/stevenhuanlee">
+            
+            <li>
+                <a target="_blank" href="https://www.facebook.com/stevenhuanlee">
                       <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
                       </span>
-                  </a>
-              </li>
-          
+                </a>
+            </li>
+            
 
-          
-              <li>
-                  <a target="_blank"  href="https://github.com/longaspire">
+            
+            <li>
+                <a target="_blank" href="https://github.com/longaspire">
                       <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                       </span>
-                  </a>
-              </li>
-          
+                </a>
+            </li>
+            
 
-          
-              <li>
-                  <a target="_blank"  href="https://www.linkedin.com/in/lihuancs">
+            
+            <li>
+                <a target="_blank" href="https://www.linkedin.com/in/lihuancs">
                       <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
                       </span>
-                  </a>
-              </li>
-          
+                </a>
+            </li>
+            
 
-          
-              <li>
-                  <a href="mailto:lihuancs@zju.edu.cn" target="_blank">
+            
+            <li>
+                <a href="mailto:lihuancs@zju.edu.cn" target="_blank">
                       <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
                       </span>
-                  </a>
-              </li>
-          
+                </a>
+            </li>
+            
 
-      </ul>
-     <div class="text-muted copyright">
+        </ul>
+        <div class="text-muted copyright">
             &copy;
             
-              2018
+            2018
             
             -
             Huan Li. All rights reserved.
-        <br>
-          
-              Powered by <a target="_blank" href="https://hexo.io">Hexo</a>
-          
-          
-          
-          | Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
-         <p>
-             <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> <b>PV</b></span> -
-             <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> <b>UV</b></span> -
-             88.9k <b>Words</b>
-      </div>
+            <br>
+            
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>
+            
+            
+            
+            | Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
+            <p>
+                <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> <b>PV</b></span> -
+                <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> <b>UV</b></span> -
+                89.8k <b>Words</b>
+        </div>
+
+        <div class="search-container">
+            <form class="site-search-form">
+                <span class="glyphicon glyphicon-search"></span>
+                <input type="text" id="local-search-input" class="st-search-input" placeholder="Search..."/>
+            </form>
+            <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+        <script type="text/javascript" id="local.search.active">
+            var inputArea = document.querySelector("#local-search-input");
+            inputArea.onclick = function () {
+                var root = "/blog/";
+                getSearchFile(root);
+                this.onclick = null
+            }
+            inputArea.onkeydown = function () {
+                if (event.keyCode == 13) return false
+            }
+        </script>
+
     </div>
 </footer>
 
@@ -283,20 +306,24 @@
 <!-- async load function -->
 <script>
     function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
     }
 </script>
 
 <!--fastClick.js -->
 <script>
-    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
         var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
+        if ($nav) FastClick.attach($nav);
     })
 </script>
 
