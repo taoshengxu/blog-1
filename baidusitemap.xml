@@ -3,6 +3,51 @@
 
 
     
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/vita/</loc>
+    <lastmod>2018-05-31T03:19:49.944Z</lastmod>
+    <data>
+        <display>
+        <title>Vita: A Versatile Toolkit for Generating Indoor Mobility Data for Real-World Buildings</title>
+        <pubTime>2016-05-18T05:10:16.000Z</pubTime>
+        
+        <tag>Demo</tag>
+         
+        <tag>VLDB</tag>
+         
+         
+           
+             
+              <breadCrumb title="研究工作" url="https://longaspire.github.io/blog/blog/categories/%E7%A0%94%E7%A9%B6%E5%B7%A5%E4%BD%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://longaspire.github.io/blog/blog/trips/</loc>
+    <lastmod>2018-05-31T03:19:38.563Z</lastmod>
+    <data>
+        <display>
+        <title>TRIPS: Translating Raw Indoor Positioning Data into Visual Mobility Semantics</title>
+        <pubTime>2018-03-02T03:16:57.000Z</pubTime>
+        
+        <tag>Demo</tag>
+         
+        <tag>VLDB</tag>
+         
+         
+           
+             
+              <breadCrumb title="研究工作" url="https://longaspire.github.io/blog/blog/categories/%E7%A0%94%E7%A9%B6%E5%B7%A5%E4%BD%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>https://longaspire.github.io/blog/blog/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1IPC/</loc>
     <lastmod>2018-05-31T02:57:33.062Z</lastmod>
@@ -354,7 +399,6 @@
     </url>
 
     
-    
   <url>
     <loc>https://longaspire.github.io/blog/blog/AR+V-SLAM%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E6%B1%87%E6%80%BB/</loc>
     <lastmod>2018-05-31T02:23:44.367Z</lastmod>
@@ -543,50 +587,6 @@
            
              
               <breadCrumb title="概率图模型" url="https://longaspire.github.io/blog/blog/categories/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/vita/</loc>
-    <lastmod>2018-05-25T10:00:51.318Z</lastmod>
-    <data>
-        <display>
-        <title>Vita: A Versatile Toolkit for Generating Indoor Mobility Data for Real-World Buildings</title>
-        <pubTime>2016-05-18T05:10:16.000Z</pubTime>
-        
-        <tag>Demo</tag>
-         
-        <tag>VLDB</tag>
-         
-         
-           
-             
-              <breadCrumb title="研究工作" url="https://longaspire.github.io/blog/blog/categories/%E7%A0%94%E7%A9%B6%E5%B7%A5%E4%BD%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://longaspire.github.io/blog/blog/trips/</loc>
-    <lastmod>2018-05-25T10:00:46.316Z</lastmod>
-    <data>
-        <display>
-        <title>TRIPS: Translating Raw Indoor Positioning Data into Visual Mobility Semantics</title>
-        <pubTime>2018-03-02T03:16:57.000Z</pubTime>
-        
-        <tag>Demo</tag>
-         
-        <tag>VLDB</tag>
-         
-         
-           
-             
-              <breadCrumb title="研究工作" url="https://longaspire.github.io/blog/blog/categories/%E7%A0%94%E7%A9%B6%E5%B7%A5%E4%BD%9C/"/>
           
         </display>
     </data>
